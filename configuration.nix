@@ -87,11 +87,28 @@
     description = "Melker";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
-      tmux
-      ghostty
+      antigen
+      atuin
+      bacon
+      bat
       brave
-    #  thunderbird
+      ghostty
+      htop-vim
+      jless
+      jq
+      kdePackages.kate
+      gnumake
+      nix-search-cli
+      nodejs
+      ranger
+      ripgrep
+      rustup
+      tealdeer
+      tmux
+      tree
+      unp
+      zoxide
+      zsh
     ];
   };
 
@@ -108,10 +125,52 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    beeper
+    bitwarden-cli
+    clipboard-jh
+    duf
+    dust
+    eza
+    fd
+    fprintd
+    fx
+    fzf
+    gimp
     git
+    delta
+    git-standup
+    github-cli
+    go
+    hurl
+    hyperfine
+    languagetool
+    lazygit
+    mission-center
+    neovide
     neovim
-  #  wget
+    plotinus
+    quicktype
+    ripdrag
+    screenkey
+    shfmt
+    shutter
+    sioyek
+    slides
+    spicetify-cli
+    spotify
+    sshfs
+    sushi
+    topgrade
+    trash-cli
+    typst
+    vifm
+    vlc
+    wget
+    wl-clipboard-rs
+    zathura
+    zsh-powerlevel10k
   ];
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
