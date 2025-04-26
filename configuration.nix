@@ -166,6 +166,10 @@
     zsh
   ];
 
+  environment.sessionVariables = rec {
+    EDITOR = "nvim";
+  };
+
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
   # This value determines the NixOS release from which the default
