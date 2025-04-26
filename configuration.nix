@@ -42,19 +42,9 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
-
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "se";
-    variant = "us";
-  };
 
   # Configure console keymap
   console.keyMap = "sv-latin1";
@@ -87,34 +77,60 @@
     description = "Melker";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      antigen
-      atuin
-      bacon
-      bat
-      brave
-      ghostty
-      htop-vim
-      jless
-      jq
-      kdePackages.kate
-      gnumake
-      nix-search-cli
-      nodejs
-      ranger
-      ripgrep
-      rustup
-      tealdeer
-      tmux
-      tree
-      unp
-      zoxide
-      zsh
+      beeper
+      bitwarden-cli
+      clipboard-jh
+      delta
+      duf
+      dust
+      eza
+      fd
+      fprintd
+      fx
+      fzf
+      gimp
+      git
+      git-standup
+      github-cli
+      go
+      home-manager
+      hurl
+      hyperfine
+      languagetool
+      lazygit
+      mission-center
+      neovide
+      plotinus
+      quicktype
+      ripdrag
+      screenkey
+      shfmt
+      shutter
+      sioyek
+      slides
+      spicetify-cli
+      spotify
+      sshfs
+      sushi
+      topgrade
+      trash-cli
+      typst
+      vifm
+      vlc
+      wget
+      wl-clipboard-rs
+      zathura
+      zsh-powerlevel10k
     ];
   };
 
+  # Shell
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
+
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "melker";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "melker";
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -125,71 +141,32 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    beeper
-    bitwarden-cli
-    clipboard-jh
-    duf
-    dust
-    eza
-    fd
-    fprintd
-    fx
-    fzf
-    gimp
-    git
-    delta
-    git-standup
-    github-cli
-    go
-    hurl
-    hyperfine
-    languagetool
-    lazygit
-    mission-center
-    neovide
-    neovim
-    plotinus
-    quicktype
-    ripdrag
-    screenkey
-    shfmt
-    shutter
-    sioyek
-    slides
-    spicetify-cli
-    spotify
-    sshfs
-    sushi
-    topgrade
-    trash-cli
-    typst
-    vifm
-    vlc
-    wget
-    wl-clipboard-rs
-    zathura
-    zsh-powerlevel10k
+    antigen
+    atuin
+    bacon
+    bat
+    brave
+    gcc
+    ghostty
+    gnumake
+    htop-vim
+    jless
+    jq
+    kdePackages.kate
+    nix-search-cli
+    nodejs
+    ranger
+    ripgrep
+    rustup
+    tealdeer
+    tmux
+    tree
+    unp
+    zoxide
+    zsh
   ];
 
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -198,5 +175,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
