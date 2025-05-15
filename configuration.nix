@@ -135,6 +135,12 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Neovim
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -165,10 +171,6 @@
     zoxide
     zsh
   ];
-
-  environment.sessionVariables = rec {
-    EDITOR = "nvim";
-  };
 
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
