@@ -1,0 +1,49 @@
+{ pkgs, ... }:
+
+{
+  users.users.melker.packages = with pkgs; [
+    beeper
+    bitwarden-cli
+    clipboard-jh
+    delta
+    duf
+    dust
+    eza
+    fd
+    fprintd
+    fx
+    fzf
+    gimp
+    git
+    git-standup
+    github-cli
+    go
+    hurl
+    hyperfine
+    languagetool
+    lazygit
+    mission-center
+    neovide
+    plotinus
+    quicktype
+    ripdrag
+    screenkey
+    shfmt
+    shutter
+    sioyek
+    slides
+    spicetify-cli
+    spotify
+    sshfs
+    sushi
+    topgrade
+    trash-cli
+    typst
+    vifm
+    vlc
+    wget
+    wl-clipboard-rs
+    zathura
+    zsh-powerlevel10k
+  ];
+}

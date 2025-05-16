@@ -5,9 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
+  imports = [
       ./hardware-configuration.nix
+      ./packages.nix
     ];
 
   # Bootloader.
@@ -68,60 +68,10 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.melker = {
     isNormalUser = true;
     description = "Melker";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      beeper
-      bitwarden-cli
-      clipboard-jh
-      delta
-      duf
-      dust
-      eza
-      fd
-      fprintd
-      fx
-      fzf
-      gimp
-      git
-      git-standup
-      github-cli
-      go
-      home-manager
-      hurl
-      hyperfine
-      languagetool
-      lazygit
-      mission-center
-      neovide
-      plotinus
-      quicktype
-      ripdrag
-      screenkey
-      shfmt
-      shutter
-      sioyek
-      slides
-      spicetify-cli
-      spotify
-      sshfs
-      sushi
-      topgrade
-      trash-cli
-      typst
-      vifm
-      vlc
-      wget
-      wl-clipboard-rs
-      zathura
-      zsh-powerlevel10k
-    ];
   };
 
   # Shell
