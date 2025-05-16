@@ -1,9 +1,21 @@
 { pkgs, ... }:
 
 {
-  users.users.melker.packages = with pkgs; [
+  # Neovim
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
+  # All other packages
+  environment.systemPackages = with pkgs; [
+    antigen
+    atuin
+    bacon
+    bat
     beeper
     bitwarden-cli
+    brave
     clipboard-jh
     delta
     duf
@@ -13,20 +25,32 @@
     fprintd
     fx
     fzf
+    gcc
+    ghostty
     gimp
     git
     git-standup
     github-cli
+    gnumake
     go
+    htop-vim
     hurl
     hyperfine
+    jless
+    jq
+    kdePackages.kate
     languagetool
     lazygit
     mission-center
     neovide
+    nix-search-cli
+    nodejs
     plotinus
     quicktype
+    ranger
     ripdrag
+    ripgrep
+    rustup
     screenkey
     shfmt
     shutter
@@ -36,14 +60,23 @@
     spotify
     sshfs
     sushi
+    tealdeer
+    tmux
     topgrade
     trash-cli
+    tree
     typst
+    unp
     vifm
     vlc
     wget
     wl-clipboard-rs
     zathura
+    zoxide
+    zsh
     zsh-powerlevel10k
   ];
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 }

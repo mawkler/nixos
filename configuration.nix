@@ -29,7 +29,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "sv_SE.UTF-8";
     LC_IDENTIFICATION = "sv_SE.UTF-8";
@@ -68,6 +67,8 @@
     #media-session.enable = true;
   };
 
+
+  # Users
   users.users.melker = {
     isNormalUser = true;
     description = "Melker";
@@ -81,46 +82,6 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "melker";
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Neovim
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    antigen
-    atuin
-    bacon
-    bat
-    brave
-    gcc
-    ghostty
-    gnumake
-    htop-vim
-    jless
-    jq
-    kdePackages.kate
-    nix-search-cli
-    nodejs
-    ranger
-    ripgrep
-    rustup
-    tealdeer
-    tmux
-    tree
-    unp
-    zoxide
-    zsh
-  ];
 
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
