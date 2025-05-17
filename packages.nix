@@ -1,10 +1,14 @@
 { pkgs, ... }:
 
+let
+  unstable = import <nixos-unstable> { config.allowUnfree = true; };
+in
 {
   # Neovim
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+    package = unstable.neovim-unwrapped;
   };
 
   # All other packages
@@ -13,7 +17,7 @@
     atuin
     bacon
     bat
-    beeper
+    unstable.beeper
     bitwarden-cli
     brave
     clipboard-jh
