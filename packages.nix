@@ -1,9 +1,11 @@
 { pkgs, ... }:
 
 let
-  unstable = import <nixos-unstable> { config.allowUnfree = true; };
-in
-{
+  pkgConfig = { allowUnfree = true; }; # Allow unfree packages
+  unstable = import <nixos-unstable> { config = pkgConfig; };
+in {
+  nixpkgs.config = pkgConfig;
+
   # Neovim
   programs.neovim = {
     enable = true;
@@ -17,7 +19,6 @@ in
     atuin
     bacon
     bat
-    unstable.beeper
     bitwarden-cli
     brave
     clipboard-jh
@@ -45,8 +46,13 @@ in
     kdePackages.kate
     languagetool
     lazygit
+    lua
+    mdsf
+    luarocks
+    mdsf
     mission-center
     neovide
+    nerd-fonts.fira-code
     nix-search-cli
     nodejs
     plotinus
@@ -71,6 +77,9 @@ in
     tree
     typst
     unp
+    unstable.beeper
+    unstable.evil-helix
+    unzip
     vifm
     vlc
     wget
@@ -80,7 +89,4 @@ in
     zsh
     zsh-powerlevel10k
   ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 }
