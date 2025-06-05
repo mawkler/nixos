@@ -46,8 +46,7 @@ in {
     kdePackages.kate
     languagetool
     lazygit
-    lua
-    mdsf
+    luajit
     luarocks
     mdsf
     mission-center
@@ -56,6 +55,7 @@ in {
     nix-search-cli
     nodejs
     plotinus
+    python3
     quicktype
     ranger
     ripdrag
