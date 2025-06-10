@@ -53,6 +53,7 @@ in {
     neovide
     nerd-fonts.fira-code
     nix-search-cli
+    nixd
     nodejs
     plotinus
     python3
