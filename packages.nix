@@ -52,6 +52,7 @@ in {
     mission-center
     neovide
     nerd-fonts.fira-code
+    nil
     nix-search-cli
     nixd
     nodejs
