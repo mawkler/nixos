@@ -55,6 +55,7 @@ in {
     nil
     nix-search-cli
     nixd
+    nixfmt-classic
     nodejs
     plotinus
     python3
