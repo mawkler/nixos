@@ -2,13 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
-{
-  imports = [
-    ./hardware-configuration.nix
-    ./packages.nix
-  ];
+{ pkgs, ... }: {
+  imports =
+    [ ./hardware-configuration.nix ./packages.nix ./hyprland.nix ./kanata.nix ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -41,10 +37,6 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
   # Configure console keymap
   console.keyMap = "sv-latin1";
 
@@ -66,7 +58,6 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
 
   # Users
   users.users.melker = {

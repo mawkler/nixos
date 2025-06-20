@@ -13,6 +13,9 @@ in {
     package = unstable.neovim-unwrapped;
   };
 
+  # Fonts
+  fonts.packages = with pkgs; [ nerd-fonts.fira-code noto-fonts-emoji ];
+
   # All other packages
   environment.systemPackages = with pkgs; [
     antigen
@@ -51,7 +54,8 @@ in {
     mdsf
     mission-center
     neovide
-    nerd-fonts.fira-code
+    networkmanager
+    networkmanagerapplet
     nil
     nix-search-cli
     nixd
@@ -87,6 +91,7 @@ in {
     vlc
     wget
     wl-clipboard-rs
+    wlogout
     zathura
     zoxide
     zsh
