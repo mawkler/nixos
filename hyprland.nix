@@ -4,5 +4,11 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
-  environment.systemPackages = with pkgs; [ wofi waybar hyprpaper playerctl ];
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+    hyprpaper
+    playerctl
+    waybar
+    wofi
+  ];
 }
