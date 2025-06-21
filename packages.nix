@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
-let
-  pkgConfig = { allowUnfree = true; }; # Allow unfree packages
-  unstable = import <nixos-unstable> { config = pkgConfig; };
+let pkgConfig = { allowUnfree = true; };
 in {
   nixpkgs.config = pkgConfig;
 
@@ -10,7 +8,6 @@ in {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    package = unstable.neovim-unwrapped;
   };
 
   # Fonts
@@ -42,7 +39,7 @@ in {
     gnumake
     go
     htop-vim
-    hurl
+    # hurl
     hyperfine
     jless
     jq
@@ -84,8 +81,8 @@ in {
     tree
     typst
     unp
-    unstable.beeper
-    unstable.evil-helix
+    beeper
+    evil-helix
     unzip
     vifm
     vlc

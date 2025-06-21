@@ -3,14 +3,18 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, ... }: {
-  imports =
-    [ ./hardware-configuration.nix ./packages.nix ./hyprland.nix ./kanata.nix ];
+  imports = [
+    ./packages.nix
+    ./hyprland.nix
+    ./kanata.nix
+    ./hosts/thinkpad-nixos/hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "thinkpad-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
