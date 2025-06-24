@@ -1,8 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, nixpkgs-unstable, ... }:
 
 let pkgConfig = { allowUnfree = true; };
 in {
   nixpkgs.config = pkgConfig;
+  nixpkgs.overlays = [
+    (final: _prev: {
+      unstable = import nixpkgs-unstable { inherit (final) system config; };
+    })
+  ];
 
   # Neovim
   programs.neovim = {
@@ -12,6 +17,12 @@ in {
 
   # Fonts
   fonts.packages = with pkgs; [ nerd-fonts.fira-code noto-fonts-emoji ];
+
+  # Ollama
+  services.ollama = {
+    enable = true;
+    loadModels = [ "deepseek-r1:1.5b" ];
+  };
 
   # All other packages
   environment.systemPackages = with pkgs; [
