@@ -2,13 +2,15 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }: {
+{ pkgs, overlays, ... }: {
   imports = [
     ./packages.nix
     ./hyprland.nix
     ./kanata.nix
     ./hosts/thinkpad-nixos/hardware-configuration.nix
   ];
+
+  nixpkgs = { inherit overlays; };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
