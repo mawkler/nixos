@@ -3,12 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, overlays, ... }: {
-  imports = [
-    ./packages.nix
-    ./hyprland.nix
-    ./kanata.nix
-    ./hosts/thinkpad-nixos/hardware-configuration.nix
-  ];
+  imports = [ ./packages ./hosts/thinkpad-nixos/hardware-configuration.nix ];
 
   nixpkgs = { inherit overlays; };
 

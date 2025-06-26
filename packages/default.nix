@@ -2,6 +2,8 @@
 
 let pkgConfig = { allowUnfree = true; };
 in {
+  imports = [ ./hyprland.nix ./kanata.nix ];
+
   nixpkgs.config = pkgConfig;
 
   # Neovim
