@@ -1,10 +1,7 @@
-{ pkgs, ... }:
-
-let pkgConfig = { allowUnfree = true; };
-in {
+{ pkgs, inputs, ... }: {
   imports = [ ./hyprland.nix ./kanata.nix ];
 
-  nixpkgs.config = pkgConfig;
+  nixpkgs.config.allowUnfree = true;
 
   # Neovim
   programs.neovim = {
@@ -33,12 +30,14 @@ in {
     atuin
     bacon
     bat
+    beeper
     bitwarden-cli
     brave
     clipboard-jh
     delta
     duf
     dust
+    evil-helix
     eza
     fd
     fprintd
@@ -53,8 +52,9 @@ in {
     gnumake
     go
     htop-vim
-    # hurl
+    hurl
     hyperfine
+    inputs.hyprshell.packages.x86_64-linux.hyprshell
     jless
     jq
     kdePackages.kate
@@ -95,8 +95,6 @@ in {
     tree
     typst
     unp
-    beeper
-    evil-helix
     unzip
     vifm
     vlc

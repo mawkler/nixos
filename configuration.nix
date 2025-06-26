@@ -3,7 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, overlays, ... }: {
-  imports = [ ./packages ./hosts/thinkpad-nixos/hardware-configuration.nix ];
+  imports = [ ./hosts/thinkpad-nixos/hardware-configuration.nix ];
 
   nixpkgs = { inherit overlays; };
 
