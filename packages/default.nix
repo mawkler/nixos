@@ -35,6 +35,7 @@
     brave
     clipboard-jh
     delta
+    kdePackages.dolphin
     duf
     dust
     evil-helix
