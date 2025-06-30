@@ -35,7 +35,6 @@
     brave
     clipboard-jh
     delta
-    kdePackages.dolphin
     duf
     dust
     evil-helix
@@ -52,12 +51,14 @@
     github-cli
     gnumake
     go
+    home-manager
     htop-vim
     hurl
     hyperfine
     inputs.hyprshell.packages.x86_64-linux.hyprshell
     jless
     jq
+    kdePackages.dolphin
     kdePackages.kate
     languagetool
     lazygit

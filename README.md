@@ -3,6 +3,6 @@
 ## Installation
 
 ```sh
-sudo ln -s ~/.config/nixos/flake.nix /etc/nixos/flake.nix
+sudo ln -s ~/.config/nixos/ /etc/nixos/
 sudo nixos-rebuild switch
 ```
