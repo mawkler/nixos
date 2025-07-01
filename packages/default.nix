@@ -3,10 +3,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # Neovim
-  programs.neovim = {
+  # Mulvad VPN
+  services.mullvad-vpn = {
     enable = true;
-    defaultEditor = true;
+    package = pkgs.mullvad-vpn;
   };
 
   # Fonts
