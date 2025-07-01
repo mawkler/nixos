@@ -1,5 +1,5 @@
 { pkgs, inputs, ... }: {
-  imports = [ ./hyprland.nix ./kanata.nix ];
+  imports = [ ./hyprland.nix ./kanata.nix ./neovim.nix ];
 
   nixpkgs.config.allowUnfree = true;
 
