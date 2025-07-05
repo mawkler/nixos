@@ -21,7 +21,7 @@
   # NixAI
   services.nixai = {
     enable = true;
-    mcp.enable = true;
+    mcp.enable = false;
   };
 
   # All other packages
@@ -43,7 +43,6 @@
     fprintd
     fx
     fzf
-    gcc
     ghostty
     gimp
     git
@@ -60,19 +59,11 @@
     jq
     kdePackages.dolphin
     kdePackages.kate
-    languagetool
     lazygit
-    luajit
-    luarocks
-    mdsf
     mission-center
-    neovide
     networkmanager
     networkmanagerapplet
-    nil
     nix-search-cli
-    nixd
-    nixfmt-classic
     nodejs
     plotinus
     python3
@@ -82,7 +73,6 @@
     ripgrep
     rustup
     screenkey
-    shfmt
     shutter
     sioyek
     slides

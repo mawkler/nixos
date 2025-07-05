@@ -5,6 +5,11 @@
   };
 
   environment.systemPackages = with pkgs; [
+    gcc
+    luarocks
+    luajit
+    neovide
+
     # Language servers
     bash-language-server
     bicep-lsp
@@ -23,11 +28,16 @@
     vscode-extensions.dbaeumer.vscode-eslint
     yaml-language-server
     zk
+    languagetool
+    nil
+    nixd
     # azure-pipelines-language-server # Doesn't seem to exist
 
     # Formatters
     mdsf
     nodePackages.prettier
+    shfmt
+    nixfmt-classic
 
     # Linters
     # vacuum # Relies on an insecure package
