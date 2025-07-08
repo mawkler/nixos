@@ -6,18 +6,21 @@
 
   environment.systemPackages = with pkgs; [
     gcc
-    luarocks
     luajit
+    luarocks
     neovide
 
     # Language servers
     bash-language-server
     bicep-lsp
     gopls
+    languagetool
     lemminx
     ltex-ls-plus
     lua-language-server
     next-ls
+    nil
+    nixd
     nodePackages.vscode-json-languageserver
     python312Packages.python-lsp-server
     rust-analyzer
@@ -28,16 +31,14 @@
     vscode-extensions.dbaeumer.vscode-eslint
     yaml-language-server
     zk
-    languagetool
-    nil
-    nixd
     # azure-pipelines-language-server # Doesn't seem to exist
 
     # Formatters
+    keep-sorted
     mdsf
-    nodePackages.prettier
-    shfmt
     nixfmt-classic
+    prettierd
+    shfmt
 
     # Linters
     # vacuum # Relies on an insecure package

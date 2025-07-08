@@ -26,6 +26,7 @@
 
   # All other packages
   environment.systemPackages = with pkgs; [
+    # keep-sorted start
     antigen
     atuin
     bacon
@@ -97,5 +98,6 @@
     zoxide
     zsh
     zsh-powerlevel10k
+    # keep-sorted end
   ];
 }
