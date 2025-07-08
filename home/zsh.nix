@@ -1,5 +1,4 @@
 { lib, ... }: {
-
   # Allow unfree package
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [ "zsh-abbr" ];
@@ -7,21 +6,75 @@
   programs.fzf.enableZshIntegration = true;
   programs.fzf.enableBashIntegration = true;
 
-  programs.zsh = {
+  programs.zsh = rec {
     enable = true;
     history.size = 10000;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    zsh-abbr.enable = true;
     oh-my-zsh.enable = true;
 
     dotDir = ".config/zsh";
-    initContent = (builtins.readFile "/home/melker/.zshrc");
+    initContent = (builtins.readFile ~/.zshrc);
+
+    zsh-abbr = {
+      enable = true;
+      abbreviations = shellAliases;
+    };
 
     shellAliases = {
       nrs = "sudo nixos-rebuild switch";
       hms = "home-manager switch --impure --flake ~/.config/nixos/#melker";
+
+      dots = "dot status";
+
+      src = "exec zsh";
+      less = "less -mgiJr --underline-special --SILENT";
+      xclip = "xclip -selection c";
+      ls = "eza --icons auto";
+      tree = "eza --icons never --tree --git-ignore";
+      open = "xdg-open &>/dev/null";
+      screenkey = "screenkey -t 1.5 -s small";
+      Bat = "bat --pager='less - mgi - -underline-special - -SILENT'";
+      myip = "hostname -i";
+      mv = "mv -i";
+      ag = "ag --hidden --pager='less -R'";
+      rg = "rg --hidden --smart-case";
+      fd = "fd --hidden";
+      mvc = "mullvad connect";
+      mvd = "mullvad disconnect";
+      mvr = "mullvad reconnect";
+
+      g = "git";
+      gs = "git status";
+      gl = "git log --decorate";
+      gd = "git diff -- :!package-lock.json :!yarn.lock :!Cargo.lock";
+      gds = "git diff --staged -- :!package-lock.json :!yarn.lock :!Cargo.lock";
+      gco = "git checkout";
+      gcom = "git checkout `_master_branch`";
+      gmm = "git merge master";
+      gp = "git pull --autostash";
+      gP = "git push";
+      gb = "git branch";
+      gw = "git whatchanged";
+      ga = "git add";
+      gcm = "git commit -mv";
+      gcam = "git commit -avm";
+      gca = "git commit -av";
+      gcaa = "git commit -av --amend";
+      gcA = "git commit -v --amend";
+      gu = "git diff HEAD@{1} HEAD";
+      gly = "git log --since='yesterday'";
+      gr = "git reset";
+      grc = "git rebase --continue";
+      gra = "git rebase --abort";
+      gdm = "git diff `_master_branch`..HEAD";
+      gdu = "diff upstream/`_master_branch`";
+      gru = "git pull --rebase --autostash upstream `_master_branch`";
+      gsp = "git stash pop";
+      gss = "git stash show -p";
+      glm = "git log `_master_branch`";
+      gldm = "git log --decorate --oneline `_master_branch`..";
     };
 
     zplug = {
@@ -32,7 +85,6 @@
         { name = "mawkler/zsh-bd"; }
         { name = "hlissner/zsh-autopair"; }
         { name = "Aloxaf/fzf-tab"; }
-        { name = "olets/zsh-abbr"; }
         {
           name = "romkatv/powerlevel10k";
           tags = [ "as:theme" "depth:1" ];
