@@ -29,11 +29,6 @@
       dots = "dot status";
 
       src = "exec zsh";
-      less = "less -mgiJr --underline-special --SILENT";
-      xclip = "xclip -selection c";
-      ls = "eza --icons auto";
-      tree = "eza --icons never --tree --git-ignore";
-      open = "xdg-open &>/dev/null";
       screenkey = "screenkey -t 1.5 -s small";
       Bat = "bat --pager='less - mgi - -underline-special - -SILENT'";
       myip = "hostname -i";
@@ -50,6 +45,7 @@
       gl = "git log --decorate";
       gd = "git diff -- :!package-lock.json :!yarn.lock :!Cargo.lock";
       gds = "git diff --staged -- :!package-lock.json :!yarn.lock :!Cargo.lock";
+      gc = "git commit -v";
       gco = "git checkout";
       gcom = "git checkout `_master_branch`";
       gmm = "git merge master";
