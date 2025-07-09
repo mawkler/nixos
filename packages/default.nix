@@ -61,6 +61,7 @@
     kdePackages.dolphin
     kdePackages.kate
     lazygit
+    maestral
     mission-center
     networkmanager
     networkmanagerapplet

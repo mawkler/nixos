@@ -15,7 +15,7 @@
     oh-my-zsh.enable = true;
 
     dotDir = ".config/zsh";
-    initContent = (builtins.readFile ~/.zshrc);
+    initContent = "source ~/.zshrc";
 
     zsh-abbr = {
       enable = true;
