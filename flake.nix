@@ -8,6 +8,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hyprshell.url = "github:H3rmt/hyprshell?ref=hyprshell-release";
     hyprshell.inputs.nixpkgs.follows = "nixpkgs";
+    walker.url = "github:abenz1267/walker";
     nixai.url = "github:olafkfreund/nix-ai-help";
   };
 
