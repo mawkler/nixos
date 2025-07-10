@@ -1,9 +1,9 @@
 { pkgs, inputs, ... }: {
-  imports = [ ./hyprland.nix ./kanata.nix ./neovim.nix ];
+  imports = [ ./hyprland.nix ./kanata.nix ./neovim.nix ./stylix.nix ];
 
   nixpkgs.config.allowUnfree = true;
 
-  # Mulvad VPN
+  # Mullvad VPN
   services.mullvad-vpn = {
     enable = true;
     package = pkgs.mullvad-vpn;

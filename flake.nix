@@ -10,9 +10,11 @@
     hyprshell.inputs.nixpkgs.follows = "nixpkgs";
     walker.url = "github:abenz1267/walker";
     nixai.url = "github:olafkfreund/nix-ai-help";
+    stylix.url = "github:nix-community/stylix/release-25.05";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixai, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
     let overlays = import ./overlays { inherit inputs; };
     in {
       nixosConfigurations.thinkpad-nixos = nixpkgs.lib.nixosSystem {
@@ -20,7 +22,13 @@
           inherit inputs;
           inherit overlays;
         };
-        modules = [ ./configuration.nix ./packages nixai.nixosModules.default ];
+
+        modules = with inputs; [
+          ./configuration.nix
+          ./packages
+          nixai.nixosModules.default
+          stylix.nixosModules.stylix
+        ];
       };
 
       homeConfigurations.melker = home-manager.lib.homeManagerConfiguration {
