@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.rofi = {
     enable = true;
     # Importing the theme like this allows modifying the theme without
@@ -19,4 +19,6 @@
       kb-mode-complete = ""; # Unset Control+l mapping
     };
   };
+
+  home.packages = with pkgs; [ rofi-power-menu ];
 }

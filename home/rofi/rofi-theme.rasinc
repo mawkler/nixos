@@ -11,21 +11,22 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser,window";
+	modi:                       "combi,run,recursivebrowser";
+    combi-modes:                "drun,power-menu:rofi-power-menu";
     show-icons:                 true;
-    display-drun:               "";
+    display-combi:              """;
     display-run:                "";
-    display-filebrowser:        "";
+    display-recursivebrowser:   "";
     display-window:             "";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
+    combi-display-format:       "{text}";
 }
 
 
 /*****----- Global Properties -----*****/
 * {
     font:                        "FiraCode Nerd Font 13";
-    text-style: italic;
     background:                  #10101080;
     background-alt:              #252525BF;
     foreground:                  #FFFFFFBF;
