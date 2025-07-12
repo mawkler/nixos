@@ -1,6 +1,6 @@
 { inputs, ... }: {
   imports =
-    [ ./zsh.nix ./rofi ./walker.nix inputs.walker.homeManagerModules.default ];
+    [ ./zsh.nix ./rofi ./walker.nix ./hyprpaper inputs.walker.homeManagerModules.default ];
 
   home = rec {
     username = "melker";

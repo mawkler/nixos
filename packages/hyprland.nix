@@ -7,6 +7,7 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     hyprpaper
+    hyprshot
     playerctl
     waybar
     wofi

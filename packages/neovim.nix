@@ -5,6 +5,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # General dependencies
+    ascii-image-converter
     gcc
     luajit
     luarocks
