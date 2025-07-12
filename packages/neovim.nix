@@ -14,6 +14,7 @@
     bash-language-server
     bicep-lsp
     gopls
+    hyprls
     languagetool
     lemminx
     ltex-ls-plus
