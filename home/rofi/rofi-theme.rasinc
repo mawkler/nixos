@@ -11,8 +11,9 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "combi,run,recursivebrowser";
-    combi-modes:                "drun,power-menu:rofi-power-menu";
+	modes:                      "combi,run,recursivebrowser";
+    matching:                   "fuzzy";
+    combi-modes:                "drun,power-menu:rofi-power-menu --confirm ''";
     show-icons:                 true;
     display-combi:              """;
     display-run:                "";
