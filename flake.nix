@@ -12,6 +12,8 @@
     nixai.url = "github:olafkfreund/nix-ai-help";
     stylix.url = "github:nix-community/stylix/release-25.05";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
+    minimal-tmux.url = "github:niksingh710/minimal-tmux-status";
+    minimal-tmux.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

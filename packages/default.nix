@@ -1,5 +1,6 @@
 { pkgs, inputs, ... }: {
-  imports = [ ./hyprland.nix ./kanata.nix ./neovim.nix ./stylix.nix ];
+  imports =
+    [ ./hyprland.nix ./kanata.nix ./neovim.nix ./stylix.nix ./tmux.nix ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -62,11 +63,13 @@
     kdePackages.kate
     lazygit
     maestral
+    maestral-gui
     mission-center
     networkmanager
     networkmanagerapplet
     nix-search-cli
     nodejs
+    nurl
     plotinus
     python3
     quicktype
@@ -83,7 +86,6 @@
     sshfs
     sushi
     tealdeer
-    tmux
     topgrade
     trash-cli
     tree
