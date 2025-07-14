@@ -29,6 +29,7 @@
   environment.systemPackages = with pkgs; [
     # keep-sorted start
     antigen
+    anytype
     atuin
     bacon
     bat

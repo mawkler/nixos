@@ -7,7 +7,10 @@
     inputs.walker.homeManagerModules.default
   ];
 
-  services.swaync.enable = true;
+  services.swaync = {
+    enable = true;
+    settings = { notification-window-width = 300; };
+  };
 
   home = rec {
     username = "melker";
