@@ -61,6 +61,7 @@
     jless
     jq
     kdePackages.dolphin
+    kdePackages.filelight
     kdePackages.kate
     lazygit
     maestral
