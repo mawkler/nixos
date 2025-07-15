@@ -63,6 +63,7 @@
     kdePackages.dolphin
     kdePackages.filelight
     kdePackages.kate
+    kdePackages.kwallet-pam
     lazygit
     maestral
     maestral-gui
