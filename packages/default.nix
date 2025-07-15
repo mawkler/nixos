@@ -69,6 +69,7 @@
     mission-center
     networkmanager
     networkmanagerapplet
+    nix-output-monitor
     nix-search-cli
     nodejs
     nurl
