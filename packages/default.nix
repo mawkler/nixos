@@ -4,25 +4,25 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # Mullvad VPN
-  services.mullvad-vpn = {
-    enable = true;
-    package = pkgs.mullvad-vpn;
-  };
-
   # Fonts
   fonts.packages = with pkgs; [ nerd-fonts.fira-code noto-fonts-emoji ];
 
-  # Ollama
-  services.ollama = {
-    enable = true;
-    loadModels = [ "deepseek-r1:1.5b" ];
-  };
+  # Services
+  services = {
+    ollama = {
+      enable = true;
+      loadModels = [ "deepseek-r1:1.5b" ];
+    };
 
-  # NixAI
-  services.nixai = {
-    enable = true;
-    mcp.enable = false;
+    mullvad-vpn = {
+      enable = true;
+      package = pkgs.mullvad-vpn;
+    };
+
+    nixai = {
+      enable = true;
+      mcp.enable = false;
+    };
   };
 
   # All other packages
@@ -63,7 +63,9 @@
     kdePackages.dolphin
     kdePackages.filelight
     kdePackages.kate
+    kdePackages.kcmutils
     kdePackages.kwallet-pam
+    kdePackages.kwalletmanager
     lazygit
     maestral
     maestral-gui
@@ -99,7 +101,8 @@
     vifm
     vlc
     wget
-    wl-clipboard-rs
+    # wl-clipboard-rs
+    wl-clipboard
     wlogout
     zathura
     zoxide

@@ -7,9 +7,18 @@
     inputs.walker.homeManagerModules.default
   ];
 
-  services.swaync = {
-    enable = true;
-    settings = { notification-window-width = 300; };
+  services = {
+    # Notifications
+    swaync = {
+      enable = true;
+      settings = { notification-window-width = 300; };
+    };
+
+    # Clipboard history manager
+    cliphist = {
+      enable = true;
+      systemdTargets = [ "xdg-desktop-portal-hyprland.service" ];
+    };
   };
 
   home = rec {
@@ -18,7 +27,7 @@
     stateVersion = "25.05";
 
     sessionVariables = {
-      MARKDOWNS = "${homeDirectory}/Dropbox/Dokument/Markdowns/";
+      ZK_NOTEBOOK_DIR = "${homeDirectory}/Dropbox/Dokument/Markdowns/";
     };
   };
 }

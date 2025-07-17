@@ -23,10 +23,11 @@
     };
 
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch |& nom";
-      nrt = "sudo nixos-rebuild test |& nom";
+      nrs =
+        "sudo nixos-rebuild switch --log-format internal-json |& nom --json";
+      nrt = "sudo nixos-rebuild test --log-format internal-json |& nom --json";
       hms =
-        "home-manager switch --impure --flake ~/.config/nixos/#melker |& nom";
+        "home-manager switch --impure --flake ~/.config/nixos/#melker --log-format internal-json |& nom --json";
 
       dots = "dot status";
 
