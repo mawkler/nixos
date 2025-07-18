@@ -16,7 +16,7 @@
     minimal-tmux.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let overlays = import ./overlays { inherit inputs; };
     in {
       nixosConfigurations.thinkpad-nixos = nixpkgs.lib.nixosSystem {
@@ -35,7 +35,10 @@
 
       homeConfigurations.melker = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = {
+          inherit inputs;
+          pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+        };
         modules = [ ./home ];
       };
     };

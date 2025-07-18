@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ inputs, pkgs-unstable, ... }: {
   imports = [
     ./zsh.nix
     ./rofi
@@ -17,6 +17,7 @@
     clipse = {
       enable = true;
       systemdTarget = "xdg-desktop-portal-hyprland.service";
+      package = pkgs-unstable.clipse;
     };
   };
 
