@@ -22,12 +22,11 @@
       abbreviations = shellAliases;
     };
 
-    shellAliases = {
-      nrs =
-        "sudo nixos-rebuild switch --log-format internal-json |& nom --json";
-      nrt = "sudo nixos-rebuild test --log-format internal-json |& nom --json";
-      hms =
-        "home-manager switch --impure --flake ~/.config/nixos/#melker --log-format internal-json |& nom --json";
+    shellAliases = let pipeToNom = "--log-format internal-json |& nom --json"; in {
+      # TODO: switch to nixos-rebuild-ng
+      nrs = "sudo true && sudo nixos-rebuild switch ${pipeToNom}";
+      nrt = "sudo true && sudo nixos-rebuild test ${pipeToNom}";
+      hms = "home-manager switch --impure --flake ~/.config/nixos/#melker ${pipeToNom}";
 
       dots = "dot status";
 

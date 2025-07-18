@@ -14,10 +14,9 @@
       settings = { notification-window-width = 300; };
     };
 
-    # Clipboard history manager
-    cliphist = {
+    clipse = {
       enable = true;
-      systemdTargets = [ "xdg-desktop-portal-hyprland.service" ];
+      systemdTarget = "xdg-desktop-portal-hyprland.service";
     };
   };
 

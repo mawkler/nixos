@@ -1,8 +1,14 @@
 { pkgs, ... }: {
-  programs.hyprland.enable = true;
-  programs.hyprlock.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  programs = {
+    hyprland.enable = true;
+    hyprlock.enable = true;
+    hyprland.package = pkgs.unstable.hyprland;
+  };
+
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     brightnessctl
