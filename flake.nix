@@ -6,6 +6,8 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    quickshell.url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    quickshell.inputs.nixpkgs.follows = "nixpkgs";
     hyprshell.url = "github:H3rmt/hyprshell?ref=hyprshell-release";
     hyprshell.inputs.nixpkgs.follows = "nixpkgs";
     walker.url = "github:abenz1267/walker";
@@ -17,14 +19,12 @@
   };
 
   outputs = { nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
-    let overlays = import ./overlays { inherit inputs; };
+    let
+      overlays = import ./overlays { inherit inputs; };
+      system = "x86_64-linux";
     in {
       nixosConfigurations.thinkpad-nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          inherit overlays;
-        };
-
+        specialArgs = { inherit inputs overlays; };
         modules = with inputs; [
           ./configuration.nix
           ./packages
@@ -34,9 +34,9 @@
       };
 
       homeConfigurations.melker = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = {
-          inherit inputs;
+          inherit inputs system;
           pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
         };
         modules = [ ./home ];

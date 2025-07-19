@@ -1,4 +1,4 @@
-{ inputs, pkgs-unstable, ... }: {
+{ pkgs-unstable, system, inputs, ... }: {
   imports = [
     ./zsh.nix
     ./rofi
@@ -31,4 +31,8 @@
       ZK_NOTEBOOK_DIR = "${homeDirectory}/Dropbox/Dokument/Markdowns/";
     };
   };
+
+  # Quickshell
+  qt.enable = true;
+  home.packages = [ inputs.quickshell.packages.${system}.default ];
 }

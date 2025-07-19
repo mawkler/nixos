@@ -17,6 +17,7 @@
     bicep-lsp
     gopls
     hyprls
+    kdePackages.qtdeclarative # qmlls
     languagetool
     lemminx
     ltex-ls-plus

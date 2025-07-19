@@ -11,14 +11,14 @@
   services = {
     power-profiles-daemon.enable = true;
 
+    mullvad-vpn = {
+      enable = true;
+      package = pkgs.unstable.mullvad-vpn;
+    };
+
     ollama = {
       enable = true;
       loadModels = [ "deepseek-r1:1.5b" ];
-    };
-
-    mullvad-vpn = {
-      enable = true;
-      package = pkgs.mullvad-vpn;
     };
 
     nixai = {
@@ -68,6 +68,7 @@
     kdePackages.kcmutils
     kdePackages.kwallet-pam
     kdePackages.kwalletmanager
+    kdePackages.qt5compat
     lazygit
     maestral
     maestral-gui
