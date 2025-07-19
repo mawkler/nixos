@@ -2,9 +2,9 @@
   imports = [
     ./zsh.nix
     ./rofi
-    ./walker.nix
     ./hyprpaper
-    inputs.walker.homeManagerModules.default
+    # ./walker.nix
+    # inputs.walker.homeManagerModules.default
   ];
 
   services = {
@@ -14,6 +14,7 @@
       settings = { notification-window-width = 300; };
     };
 
+    # Clipboard history manager
     clipse = {
       enable = true;
       systemdTarget = "xdg-desktop-portal-hyprland.service";

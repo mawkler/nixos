@@ -9,6 +9,8 @@
 
   # Services
   services = {
+    power-profiles-daemon.enable = true;
+
     ollama = {
       enable = true;
       loadModels = [ "deepseek-r1:1.5b" ];
@@ -69,6 +71,7 @@
     lazygit
     maestral
     maestral-gui
+    manix
     mission-center
     networkmanager
     networkmanagerapplet
