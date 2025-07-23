@@ -91,6 +91,7 @@
     nix-search-cli
     nodejs
     nurl
+    onlyoffice-bin
     plotinus
     python3
     quicktype
@@ -103,6 +104,7 @@
     signal-desktop
     sioyek
     slides
+    smile
     spicetify-cli
     spotify
     sshfs
