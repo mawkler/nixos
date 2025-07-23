@@ -1,6 +1,12 @@
 { pkgs, system, inputs, ... }: {
-  imports =
-    [ ./hyprland.nix ./kanata.nix ./neovim.nix ./stylix.nix ./tmux.nix ];
+  imports = [
+    ./hyprland.nix
+    ./kanata.nix
+    ./neovim.nix
+    ./stylix.nix
+    ./tmux.nix
+    ./nix-search-tv.nix
+  ];
 
   nixpkgs.config.allowUnfree = true;
 

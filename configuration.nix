@@ -75,7 +75,8 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "melker";
 
-  nix.settings.experimental-features = [ "flakes" "nix-command" ];
+  nix.settings.experimental-features =
+    [ "flakes" "nix-command" "pipe-operators" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
