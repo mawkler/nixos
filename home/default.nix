@@ -1,4 +1,4 @@
-{ pkgs-unstable, system, inputs, ... }: {
+{ pkgs, pkgs-unstable, system, inputs, ... }: {
   imports = [
     ./zsh.nix
     ./rofi
@@ -12,6 +12,18 @@
     swaync = {
       enable = true;
       settings = { notification-window-width = 300; };
+      style = # css
+        ''
+          .notification-row .text-box .body {
+            font-size: 0.9rem;
+          }
+        '';
+      package = pkgs-unstable.swaynotificationcenter;
+    };
+
+    avizo = {
+      enable = true;
+      package = pkgs-unstable.avizo;
     };
 
     # Clipboard history manager
@@ -34,5 +46,9 @@
 
   # Quickshell
   qt.enable = true;
-  home.packages = [ inputs.quickshell.packages.${system}.default ];
+  home.packages = with pkgs; [
+    cmake
+    inputs.quickshell.packages.${system}.default
+  ];
+  home.sessionVariables.QT_QML_GENERATE_QMLLS_INI = "ON";
 }

@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, system, inputs, ... }: {
   imports =
     [ ./hyprland.nix ./kanata.nix ./neovim.nix ./stylix.nix ./tmux.nix ];
 
@@ -16,15 +16,15 @@
       package = pkgs.unstable.mullvad-vpn;
     };
 
-    ollama = {
-      enable = true;
-      loadModels = [ "deepseek-r1:1.5b" ];
-    };
+    # ollama = {
+    #   enable = true;
+    #   loadModels = [ "deepseek-r1:1.5b" ];
+    # };
 
-    nixai = {
-      enable = true;
-      mcp.enable = false;
-    };
+    # nixai = {
+    #   enable = true;
+    #   mcp.enable = false;
+    # };
   };
 
   # All other packages
@@ -38,6 +38,8 @@
     beeper
     bitwarden-cli
     brave
+    cargo-nextest
+    cargo-update
     clipboard-jh
     delta
     duf
@@ -59,7 +61,9 @@
     htop-vim
     hurl
     hyperfine
-    inputs.hyprshell.packages.x86_64-linux.hyprshell
+    inputs.hyprshell.packages.${system}.hyprshell
+    inputs.nix-search-tv.packages.${system}.default
+    inputs.nox.packages.${system}.default
     jless
     jq
     kdePackages.dolphin
@@ -70,6 +74,7 @@
     kdePackages.kwalletmanager
     kdePackages.qt5compat
     lazygit
+    libnotify
     maestral
     maestral-gui
     manix
@@ -89,6 +94,7 @@
     rustup
     screenkey
     shutter
+    signal-desktop
     sioyek
     slides
     spicetify-cli

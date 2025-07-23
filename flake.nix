@@ -16,6 +16,9 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     minimal-tmux.url = "github:niksingh710/minimal-tmux-status";
     minimal-tmux.inputs.nixpkgs.follows = "nixpkgs";
+    nix-search-tv.url = "github:3timeslazy/nix-search-tv";
+    nox.url = "github:madsbv/nix-options-search";
+    nox.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
@@ -24,7 +27,7 @@
       system = "x86_64-linux";
     in {
       nixosConfigurations.thinkpad-nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs overlays; };
+        specialArgs = { inherit inputs system overlays; };
         modules = with inputs; [
           ./configuration.nix
           ./packages
