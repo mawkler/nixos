@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, system, inputs, ... }: {
+{ pkgs, pkgs-unstable, inputs, ... }: {
   imports = [
     ./zsh.nix
     ./rofi
@@ -11,7 +11,7 @@
     # Notifications
     swaync = {
       enable = true;
-      settings = { notification-window-width = 300; };
+      settings = { notification-window-width = 400; };
       style = # css
         ''
           .notification-row .text-box .body {
@@ -48,7 +48,7 @@
   qt.enable = true;
   home.packages = with pkgs; [
     cmake
-    inputs.quickshell.packages.${system}.default
+    inputs.quickshell.packages.${pkgs.system}.default
   ];
   home.sessionVariables.QT_QML_GENERATE_QMLLS_INI = "ON";
 }

@@ -27,7 +27,7 @@
       system = "x86_64-linux";
     in {
       nixosConfigurations.thinkpad-nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs system overlays; };
+        specialArgs = { inherit inputs overlays; };
         modules = with inputs; [
           ./configuration.nix
           ./packages
@@ -39,8 +39,8 @@
       homeConfigurations.melker = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = {
-          inherit inputs system;
-          pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+          inherit inputs;
+          pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
         };
         modules = [ ./home ];
       };

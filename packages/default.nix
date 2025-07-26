@@ -1,4 +1,4 @@
-{ pkgs, system, inputs, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [
     ./hyprland.nix
     ./kanata.nix
@@ -67,9 +67,9 @@
     htop-vim
     hurl
     hyperfine
-    inputs.hyprshell.packages.${system}.hyprshell
-    inputs.nix-search-tv.packages.${system}.default
-    inputs.nox.packages.${system}.default
+    inputs.hyprshell.packages.${pkgs.system}.hyprshell
+    inputs.nix-search-tv.packages.${pkgs.system}.default
+    inputs.nox.packages.${pkgs.system}.default
     jless
     jq
     kdePackages.dolphin
