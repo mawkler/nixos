@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, overlays, ... }: {
   imports = [
     ./zsh.nix
     ./rofi
@@ -6,6 +6,8 @@
     # ./walker.nix
     # inputs.walker.homeManagerModules.default
   ];
+
+  nixpkgs = { inherit overlays; };
 
   services = {
     # Notifications
