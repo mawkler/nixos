@@ -6,6 +6,7 @@
     ./stylix.nix
     ./tmux.nix
     ./nix-search-tv.nix
+    # nixai.nixosModules.default
   ];
 
   nixpkgs.config.allowUnfree = true;

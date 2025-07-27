@@ -28,12 +28,7 @@
     in {
       nixosConfigurations.thinkpad-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs overlays; };
-        modules = with inputs; [
-          ./configuration.nix
-          ./packages
-          nixai.nixosModules.default
-          stylix.nixosModules.stylix
-        ];
+        modules = [ ./configuration.nix ./packages ];
       };
 
       homeConfigurations.melker = home-manager.lib.homeManagerConfiguration {
