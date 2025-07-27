@@ -24,7 +24,8 @@
 
     shellAliases = let
       pipeToNom = "--log-format internal-json |& nom --json";
-      notifyDone = message: "notify-send NixOS '${message}'";
+      nixIcon = "~/.config/nixos/assets/nix.svg";
+      notifyDone = message: "notify-send --icon ${nixIcon} NixOS '${message}'";
       nixosRebuild = subcommand:
         "sudo true && sudo nixos-rebuild ${subcommand} ${pipeToNom} && ${
           notifyDone "NixOS rebuild finished"
