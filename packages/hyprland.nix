@@ -2,7 +2,6 @@
   programs = {
     hyprland.enable = true;
     hyprlock.enable = true;
-    hyprland.package = pkgs.unstable.hyprland;
   };
 
   services.displayManager.sddm = {

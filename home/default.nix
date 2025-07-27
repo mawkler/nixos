@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, inputs, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [
     ./zsh.nix
     ./rofi
@@ -18,19 +18,14 @@
             font-size: 0.9rem;
           }
         '';
-      package = pkgs-unstable.swaynotificationcenter;
     };
 
-    avizo = {
-      enable = true;
-      package = pkgs-unstable.avizo;
-    };
+    avizo.enable = true;
 
     # Clipboard history manager
     clipse = {
       enable = true;
       systemdTarget = "xdg-desktop-portal-hyprland.service";
-      package = pkgs-unstable.clipse;
     };
   };
 

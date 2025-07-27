@@ -1,8 +1,8 @@
 { inputs, ... }:
 [
-  # Add unstable packages to `pkgs.unstable`
+  # Add stable packages to `pkgs.stable`
   (final: _prev: {
-    unstable = import inputs.nixpkgs-unstable {
+    stable = import inputs.nixpkgs-stable {
       system = final.system;
       config.allowUnfree = true;
     };

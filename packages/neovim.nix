@@ -22,7 +22,7 @@
     lemminx
     ltex-ls-plus
     lua-language-server
-    next-ls
+    stable.next-ls
     nil
     nixd
     nodePackages.vscode-json-languageserver
