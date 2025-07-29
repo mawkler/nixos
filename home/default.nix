@@ -3,12 +3,19 @@
     ./zsh.nix
     ./rofi
     ./hyprpaper
-    ./ashell.nix
     # ./walker.nix
     # inputs.walker.homeManagerModules.default
   ];
 
   nixpkgs = { inherit overlays; };
+
+  programs = {
+    waybar = {
+      enable = true;
+      systemd.enable = true;
+      systemd.target = "xdg-desktop-portal-hyprland.service";
+    };
+  };
 
   services = {
     # Notifications
