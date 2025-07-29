@@ -3,6 +3,7 @@
     ./zsh.nix
     ./rofi
     ./hyprpaper
+    ./ashell.nix
     # ./walker.nix
     # inputs.walker.homeManagerModules.default
   ];

@@ -15,10 +15,10 @@
     stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     minimal-tmux.url = "github:niksingh710/minimal-tmux-status";
-    minimal-tmux.inputs.nixpkgs.follows = "nixpkgs-stable";
+    minimal-tmux.inputs.nixpkgs.follows = "nixpkgs";
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
     nox.url = "github:madsbv/nix-options-search";
-    nox.inputs.nixpkgs.follows = "nixpkgs-stable";
+    nox.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

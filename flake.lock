@@ -311,7 +311,7 @@
     "minimal-tmux": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs-stable"
+          "nixpkgs"
         ]
       },
       "locked": {
@@ -449,7 +449,7 @@
         "flake-utils": "flake-utils_3",
         "gitignore": "gitignore",
         "nixpkgs": [
-          "nixpkgs-stable"
+          "nixpkgs"
         ]
       },
       "locked": {
