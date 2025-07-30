@@ -18,7 +18,10 @@
   services = {
     power-profiles-daemon.enable = true;
 
-    mullvad-vpn = { enable = true; };
+    mullvad-vpn = {
+      enable = true;
+      package = pkgs.mullvad-vpn; # Includes the GUI
+    };
 
     # ollama = {
     #   enable = true;
