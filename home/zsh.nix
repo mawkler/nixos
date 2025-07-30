@@ -27,7 +27,7 @@
       nixIcon = "~/.config/nixos/assets/nix.svg";
       notifyDone = message: "notify-send --icon ${nixIcon} NixOS '${message}'";
       nixosRebuild = subcommand:
-        "sudo true && sudo nixos-rebuild ${subcommand} ${pipeToNom} && ${
+        "sudo true && sudo nixos-rebuild ${subcommand} ${pipeToNom} || ${
           notifyDone "NixOS rebuild finished"
         }";
     in {
@@ -35,7 +35,7 @@
       nrs = nixosRebuild "switch";
       nrt = nixosRebuild "test";
       hms =
-        "home-manager switch --impure --flake ~/.config/nixos/#melker ${pipeToNom} && ${
+        "home-manager switch --impure --flake ~/.config/nixos/#melker ${pipeToNom} || ${
           notifyDone "Home Manager finished"
         }";
 
