@@ -6,8 +6,6 @@
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    quickshell.url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-    quickshell.inputs.nixpkgs.follows = "nixpkgs";
     hyprshell.url = "github:H3rmt/hyprshell?ref=hyprshell-release";
     hyprshell.inputs.nixpkgs.follows = "nixpkgs-stable";
     walker.url = "github:abenz1267/walker";
