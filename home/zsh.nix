@@ -33,6 +33,7 @@
     in {
       # TODO: switch to nixos-rebuild-ng
       nrs = nixosRebuild "switch";
+      nru = nixosRebuild "switch --upgrade";
       nrt = nixosRebuild "test";
       hms =
         "home-manager switch --impure --flake ~/.config/nixos/#melker ${pipeToNom} || ${

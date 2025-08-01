@@ -12,7 +12,11 @@
   nixpkgs.config.allowUnfree = true;
 
   # Fonts
-  fonts.packages = with pkgs; [ nerd-fonts.fira-code noto-fonts-emoji ];
+  fonts.packages = with pkgs; [
+    font-awesome
+    nerd-fonts.fira-code
+    noto-fonts-emoji
+  ];
 
   # Services
   services = {
@@ -80,6 +84,7 @@
     kdePackages.kwallet-pam
     kdePackages.kwalletmanager
     kdePackages.qt5compat
+    killall
     lazygit
     libnotify
     maestral
