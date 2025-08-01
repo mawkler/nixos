@@ -1,11 +1,5 @@
-{ pkgs, inputs, overlays, ... }: {
-  imports = [
-    ./zsh.nix
-    ./rofi
-    ./hyprpaper
-    # ./walker.nix
-    # inputs.walker.homeManagerModules.default
-  ];
+{ pkgs, overlays, ... }: {
+  imports = [ ./zsh.nix ./rofi ./hyprpaper ];
 
   nixpkgs = { inherit overlays; };
 

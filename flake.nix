@@ -4,17 +4,25 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     hyprshell.url = "github:H3rmt/hyprshell?ref=hyprshell-release";
-    hyprshell.inputs.nixpkgs.follows = "nixpkgs-stable";
-    walker.url = "github:abenz1267/walker";
+    hyprshell.inputs.nixpkgs.follows = "nixpkgs";
+
     nixai.url = "github:olafkfreund/nix-ai-help";
+    nixai.inputs.nixpkgs.follows = "nixpkgs";
+
     stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
+
     minimal-tmux.url = "github:niksingh710/minimal-tmux-status";
     minimal-tmux.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
+    nix-search-tv.inputs.nixpkgs.follows = "nixpkgs";
+
     nox.url = "github:madsbv/nix-options-search";
     nox.inputs.nixpkgs.follows = "nixpkgs";
   };
