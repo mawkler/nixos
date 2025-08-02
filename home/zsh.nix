@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ lib, config, ... }: {
   # Allow unfree package
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [ "zsh-abbr" ];
@@ -14,7 +14,7 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh.enable = true;
 
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
     initContent = "source ~/.zshrc";
 
     zsh-abbr = {

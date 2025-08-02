@@ -1,5 +1,5 @@
-{ pkgs, overlays, ... }: {
-  imports = [ ./zsh.nix ./rofi ./hyprpaper ];
+{ overlays, ... }: {
+  imports = [ ./zsh.nix ./rofi ./hyprpaper ./quickshell.nix ];
 
   nixpkgs = { inherit overlays; };
 
@@ -42,12 +42,4 @@
       ZK_NOTEBOOK_DIR = "${homeDirectory}/Dropbox/Dokument/Markdowns/";
     };
   };
-
-  # Quickshell
-  qt.enable = true;
-  home.packages = with pkgs; [
-    cmake
-    inputs.quickshell.packages.${pkgs.system}.default
-  ];
-  home.sessionVariables.QT_QML_GENERATE_QMLLS_INI = "ON";
 }
