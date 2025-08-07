@@ -6,6 +6,7 @@
     ./stylix.nix
     ./tmux.nix
     ./nix-search-tv.nix
+    ./caelestia.nix
     # nixai.nixosModules.default
   ];
 
