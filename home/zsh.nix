@@ -30,15 +30,17 @@
         "sudo true && sudo nixos-rebuild ${subcommand} ${pipeToNom} || ${
           notifyDone "NixOS rebuild finished"
         }";
+      homeManager = "home-manager --flake ~/.config/nixos/#melker";
     in {
       # TODO: switch to nixos-rebuild-ng
       nrs = nixosRebuild "switch";
       nru = nixosRebuild "switch --upgrade";
       nrt = nixosRebuild "test";
-      hms =
-        "home-manager switch --impure --flake ~/.config/nixos/#melker ${pipeToNom} || ${
+      hm = homeManager;
+      hms = "${homeManager} switch --impure ${pipeToNom} || ${
           notifyDone "Home Manager finished"
         }";
+      nr = "nix run nixpkgs#";
 
       dots = "dot status";
 

@@ -7,7 +7,7 @@
     ./tmux.nix
     ./nix-search-tv.nix
     ./caelestia.nix
-    # nixai.nixosModules.default
+    inputs.nixai.nixosModules.default
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -28,15 +28,15 @@
       package = pkgs.mullvad-vpn; # Includes the GUI
     };
 
-    # ollama = {
-    #   enable = true;
-    #   loadModels = [ "deepseek-r1:1.5b" ];
-    # };
+    ollama = {
+      enable = true;
+      loadModels = [ "deepseek-r1:1.5b" ];
+    };
 
-    # nixai = {
-    #   enable = true;
-    #   mcp.enable = false;
-    # };
+    nixai = {
+      enable = true;
+      mcp.enable = false;
+    };
   };
 
   # All other packages
@@ -73,9 +73,9 @@
     htop-vim
     hurl
     hyperfine
-    inputs.hyprshell.packages.${pkgs.system}.hyprshell
-    inputs.nix-search-tv.packages.${pkgs.system}.default
-    inputs.nox.packages.${pkgs.system}.default
+    inputs.hyprshell.packages.${system}.hyprshell
+    inputs.nix-search-tv.packages.${system}.default
+    inputs.nox.packages.${system}.default
     jless
     jq
     kdePackages.dolphin
