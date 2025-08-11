@@ -9,6 +9,8 @@
       systemd.enable = true;
       systemd.target = "xdg-desktop-portal-hyprland.service";
     };
+
+    tealdeer = { enable = true; };
   };
 
   services = {

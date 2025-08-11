@@ -116,7 +116,6 @@
     spotify
     sshfs
     sushi
-    tealdeer
     topgrade
     trash-cli
     tree
