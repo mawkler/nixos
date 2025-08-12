@@ -99,6 +99,7 @@
     nodejs
     nurl
     onlyoffice-bin
+    overskride
     plotinus
     python3
     quicktype

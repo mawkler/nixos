@@ -60,6 +60,10 @@
     #media-session.enable = true;
   };
 
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   # Users
   users.users.melker = {
     isNormalUser = true;
@@ -71,9 +75,11 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "melker";
+  services.displayManager = {
+    # Enable automatic login for the user.
+    autoLogin.enable = true;
+    autoLogin.user = "melker";
+  };
 
   nix.settings.experimental-features =
     [ "flakes" "nix-command" "pipe-operators" ];
