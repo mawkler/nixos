@@ -40,7 +40,7 @@
       hms = "${homeManager} switch --impure ${pipeToNom} || ${
           notifyDone "Home Manager finished"
         }";
-      nr = "nix run nixpkgs#";
+      nr = "nix run nixpkgs#%";
 
       dots = "dot status";
 
@@ -104,4 +104,7 @@
       ];
     };
   };
+
+  # Enable zsh-abbr custom cursor placement
+  home.sessionVariables.ABBR_SET_EXPANSION_CURSOR = 1;
 }

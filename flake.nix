@@ -8,10 +8,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    caelestia-shell.url = "github:caelestia-dots/shell";
-    caelestia-shell.inputs.nixpkgs.follows = "nixpkgs";
-    caelestia-cli.url = "github:caelestia-dots/cli";
-    caelestia-cli.inputs.nixpkgs.follows = "nixpkgs";
+    caelestia.url = "github:caelestia-dots/shell";
+    caelestia.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprshell.url = "github:H3rmt/hyprshell?ref=hyprshell-release";
     hyprshell.inputs.nixpkgs.follows = "nixpkgs";

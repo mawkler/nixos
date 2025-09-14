@@ -6,7 +6,6 @@
     ./stylix.nix
     ./tmux.nix
     ./nix-search-tv.nix
-    ./caelestia.nix
     inputs.nixai.nixosModules.default
   ];
 
@@ -21,6 +20,8 @@
 
   # Services
   services = {
+    upower.enable = true; # Required by Caelestia
+
     power-profiles-daemon.enable = true;
 
     mullvad-vpn = {

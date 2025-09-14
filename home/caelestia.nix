@@ -1,10 +1,19 @@
-{ pkgs, inputs, ... }: {
-  services.upower.enable = true;
+{ inputs, pkgs, ... }: {
+  imports = [ inputs.caelestia.homeManagerModules.default ];
 
-  environment.systemPackages = with pkgs; [
-    inputs.caelestia-shell.packages.${system}.default
-    inputs.caelestia-cli.packages.${system}.default
+  programs.caelestia = {
+    enable = true;
+    systemd = {
+      enable = true;
+      target = "xdg-desktop-portal-hyprland.service";
+    };
+    settings = {
+      # paths.wallpaperDir = "~/Images";
+    };
+    cli = { enable = true; };
+  };
 
+  home.packages = with pkgs; [
     # Not sure if all these dependencies are necessary or not
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
