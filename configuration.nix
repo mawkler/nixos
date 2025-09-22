@@ -81,6 +81,12 @@
     autoLogin.user = "melker";
   };
 
+  # Swapfile
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 16 * 1024; # 16 GB
+  }];
+
   nix.settings.experimental-features =
     [ "flakes" "nix-command" "pipe-operators" ];
 

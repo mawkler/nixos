@@ -74,8 +74,6 @@
     htop-vim
     hurl
     hyperfine
-    inputs.hyprshell.packages.${system}.hyprshell
-    inputs.nix-search-tv.packages.${system}.default
     inputs.nox.packages.${system}.default
     jless
     jq
@@ -94,7 +92,7 @@
     manix
     mission-center
     networkmanager
-    networkmanagerapplet
+    # networkmanagerapplet # Tray icon is provided by Caelestia
     nix-output-monitor
     nix-search-cli
     nodejs

@@ -1,6 +1,7 @@
 {
   description = "NixOS system configuration";
 
+  # TODO: try removing `github:`
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
@@ -10,9 +11,6 @@
 
     caelestia.url = "github:caelestia-dots/shell";
     caelestia.inputs.nixpkgs.follows = "nixpkgs";
-
-    hyprshell.url = "github:H3rmt/hyprshell?ref=hyprshell-release";
-    hyprshell.inputs.nixpkgs.follows = "nixpkgs";
 
     nixai.url = "github:olafkfreund/nix-ai-help";
     nixai.inputs.nixpkgs.follows = "nixpkgs";
