@@ -1,7 +1,6 @@
 {
   description = "NixOS system configuration";
 
-  # TODO: try removing `github:`
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
