@@ -91,8 +91,8 @@
     maestral-gui
     manix
     mission-center
+    netwdorkmanagerapplet
     networkmanager
-    # networkmanagerapplet # Tray icon is provided by Caelestia
     nix-output-monitor
     nix-search-cli
     nodejs
