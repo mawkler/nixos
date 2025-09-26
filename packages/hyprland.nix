@@ -1,8 +1,5 @@
 { pkgs, ... }: {
-  programs = {
-    hyprland.enable = true;
-    hyprlock.enable = true;
-  };
+  programs = { hyprland.enable = true; };
 
   services.displayManager.sddm = {
     enable = true;
