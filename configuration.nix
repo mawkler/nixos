@@ -3,7 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, overlays, ... }: {
-  imports = [ ./hosts/thinkpad-nixos/hardware-configuration.nix ];
+  imports = [ ./hosts/work-laptop/hardware-configuration.nix ];
 
   nixpkgs = { inherit overlays; };
 
@@ -11,7 +11,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "thinkpad-nixos"; # Define your hostname.
+  networking.hostName = builtins.readFile ./hostname;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -39,7 +39,7 @@
   };
 
   # Configure console keymap
-  console.keyMap = "sv-latin1";
+  console.keyMap = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

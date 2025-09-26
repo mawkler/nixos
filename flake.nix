@@ -34,8 +34,9 @@
     let
       overlays = import ./overlays { inherit inputs; };
       system = "x86_64-linux";
+      hostname = builtins.readFile "./hostname";
     in {
-      nixosConfigurations.thinkpad-nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs overlays; };
         modules = [ ./configuration.nix ./packages ];
       };

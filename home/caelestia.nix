@@ -93,5 +93,6 @@
     kdePackages.qt6ct
     libsForQt5.qt5ct
     nerd-fonts.jetbrains-mono
+    pavucontrol
   ];
 }

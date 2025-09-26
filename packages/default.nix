@@ -5,7 +5,7 @@
     ./neovim.nix
     ./stylix.nix
     ./tmux.nix
-    ./nix-search-tv.nix
+    # ./nix-search-tv.nix
     inputs.nixai.nixosModules.default
   ];
 
@@ -42,6 +42,11 @@
 
   # All other packages
   environment.systemPackages = with pkgs; [
+    # TODO: move to its own work-laptop file
+    teams-for-linux
+    slack
+    firefox
+
     # keep-sorted start
     antigen
     anytype
@@ -70,6 +75,7 @@
     github-cli
     gnumake
     go
+    gum
     home-manager
     htop-vim
     hurl
@@ -91,8 +97,9 @@
     maestral-gui
     manix
     mission-center
-    netwdorkmanagerapplet
     networkmanager
+    networkmanagerapplet
+    nix-converter
     nix-output-monitor
     nix-search-cli
     nodejs
