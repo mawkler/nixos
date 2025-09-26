@@ -1,9 +1,17 @@
-{ overlays, ... }: {
-  imports = [ ./zsh.nix ./rofi ./hyprpaper ./caelestia.nix ];
+{ overlays, inputs, ... }: {
+  imports = [
+    inputs.zen-browser.homeModules.beta
+    ./zsh.nix
+    ./rofi
+    ./hyprpaper
+    ./caelestia.nix
+  ];
 
   nixpkgs = { inherit overlays; };
 
   programs = {
+    zen-browser.enable = true;
+
     tealdeer = {
       enable = true;
       settings.updates.auto_update = true;
