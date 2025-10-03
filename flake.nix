@@ -33,44 +33,38 @@
   outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       overlays = import ./overlays { inherit inputs; };
+      specialArgs = { inherit inputs overlays; };
       system = "x86_64-linux";
       username = "melker";
     in {
       nixosConfigurations = {
         thinkpad-nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            # TODO: try to refactor this out so we don't have to duplicate it for each host
-            inherit inputs overlays;
-            hostname = "thinkpad-nixos";
-          };
+          specialArgs = specialArgs // { hostname = "thinkpad-nixos"; };
           modules = [ ./configuration.nix ./packages ];
         };
 
         work-laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs overlays;
-            hostname = "work-laptop";
-          };
+          specialArgs = specialArgs // { hostname = "work-laptop"; };
           modules =
             [ ./configuration.nix ./packages ./hosts/work-laptop/packages ];
         };
       };
 
       homeConfigurations = let
-        extraSpecialArgs = { inherit inputs overlays; };
         pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = { inherit inputs overlays; };
+        config = { inherit extraSpecialArgs pkgs; };
       in {
         # TODO: consider having this be a fallback - i.e., just set the username, not the hostname
         "${username}@thinkpad-nixos" =
-          home-manager.lib.homeManagerConfiguration {
-            inherit extraSpecialArgs pkgs;
+          home-manager.lib.homeManagerConfiguration config // {
             modules = [ ./home ];
           };
 
-        "${username}@work-laptop" = home-manager.lib.homeManagerConfiguration {
-          inherit extraSpecialArgs pkgs;
-          modules = [ ./home ./hosts/work-laptop/home ];
-        };
+        "${username}@work-laptop" =
+          home-manager.lib.homeManagerConfiguration config // {
+            modules = [ ./home ./hosts/work-laptop/home ];
+          };
       };
     };
 }
