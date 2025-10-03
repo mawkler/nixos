@@ -34,17 +34,43 @@
     let
       overlays = import ./overlays { inherit inputs; };
       system = "x86_64-linux";
-      hostname = builtins.readFile "./hostname";
+      username = "melker";
     in {
-      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs overlays; };
-        modules = [ ./configuration.nix ./packages ];
+      nixosConfigurations = {
+        thinkpad-nixos = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            # TODO: try to refactor this out so we don't have to duplicate it for each host
+            inherit inputs overlays;
+            hostname = "thinkpad-nixos";
+          };
+          modules = [ ./configuration.nix ./packages ];
+        };
+
+        work-laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs overlays;
+            hostname = "work-laptop";
+          };
+          modules =
+            [ ./configuration.nix ./packages ./hosts/work-laptop/packages ];
+        };
       };
 
-      homeConfigurations.melker = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
+      homeConfigurations = let
         extraSpecialArgs = { inherit inputs overlays; };
-        modules = [ ./home ];
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        # TODO: consider having this be a fallback - i.e., just set the username, not the hostname
+        "${username}@thinkpad-nixos" =
+          home-manager.lib.homeManagerConfiguration {
+            inherit extraSpecialArgs pkgs;
+            modules = [ ./home ];
+          };
+
+        "${username}@work-laptop" = home-manager.lib.homeManagerConfiguration {
+          inherit extraSpecialArgs pkgs;
+          modules = [ ./home ./hosts/work-laptop/home ];
+        };
       };
     };
 }

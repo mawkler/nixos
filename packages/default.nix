@@ -42,11 +42,6 @@
 
   # All other packages
   environment.systemPackages = with pkgs; [
-    # TODO: move to its own work-laptop file
-    teams-for-linux
-    slack
-    firefox
-
     # keep-sorted start
     antigen
     anytype
@@ -91,6 +86,7 @@
     kdePackages.kwalletmanager
     kdePackages.qt5compat
     killall
+    kitty
     lazygit
     libnotify
     maestral
@@ -101,7 +97,7 @@
     networkmanagerapplet
     nix-converter
     nix-output-monitor
-    nix-search-cli
+    nix-search
     nodejs
     nurl
     onlyoffice-bin

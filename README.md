@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-hostname=nixos # Set your desired hostname here
+hostname=nixos # Set your hostname here
 path=~/.config/nixos
 
 nix-shell -p git home-manager
@@ -15,10 +15,9 @@ mkdir -p $path/hosts/$hostname
 cp /etc/nixos-old/hardware-configuration.nix $path/hosts/$hostname
 
 hostname $hostname
-# TODO: read in the hostname dynamically inside configuration, including configuration.nix
-echo -n $hostname > hostname
+echo -n $hostname > .hostname
 
 sudo nixos-rebuild switch
 curl -s https://raw.githubusercontent.com/mawkler/dotfiles/master/.dotfiles/install-dotfiles.sh | bash
-home-manager switch --flake ~/.config/nixos#melker --impure --extra-experimental-features nix-command --extra-experimental-features flakes
+home-manager switch --flake ~/.config/nixos#melker@$hostname --impure --extra-experimental-features nix-command --extra-experimental-features flakes
 ```

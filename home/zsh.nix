@@ -23,14 +23,17 @@
     };
 
     shellAliases = let
+      path = "~/.config/nixos";
+      hostname = "$(cat ${path}/.hostname)";
       pipeToNom = "--log-format internal-json |& nom --json";
-      nixIcon = "~/.config/nixos/assets/nix.svg";
+      nixIcon = "${path}/assets/nix.svg";
       notifyDone = message: "notify-send --icon ${nixIcon} NixOS '${message}'";
       nixosRebuild = subcommand:
-        "sudo true && sudo nixos-rebuild ${subcommand} ${pipeToNom} || ${
+        "sudo true && hostname=${hostname} && sudo nixos-rebuild --flake ${path}#$hostname ${subcommand} ${pipeToNom} || ${
           notifyDone "NixOS rebuild finished"
         }";
-      homeManager = "home-manager --flake ~/.config/nixos/#melker";
+      homeManager =
+        "hostname=${hostname} && home-manager --flake ${path}#melker@$hostname";
     in {
       # TODO: switch to nixos-rebuild-ng
       nrs = nixosRebuild "switch";

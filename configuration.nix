@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, overlays, ... }: {
+{ pkgs, overlays, hostname, ... }: {
   imports = [ ./hosts/work-laptop/hardware-configuration.nix ];
 
   nixpkgs = { inherit overlays; };
@@ -11,7 +11,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = builtins.readFile ./hostname;
+  networking.hostName = hostname;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
