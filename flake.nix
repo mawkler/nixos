@@ -56,15 +56,11 @@
         config = { inherit extraSpecialArgs pkgs; };
       in {
         # TODO: consider having this be a fallback - i.e., just set the username, not the hostname
-        "${username}@thinkpad-nixos" =
-          home-manager.lib.homeManagerConfiguration config // {
-            modules = [ ./home ];
-          };
+        "${username}@thinkpad-nixos" = home-manager.lib.homeManagerConfiguration
+          (config // { modules = [ ./home ]; });
 
-        "${username}@work-laptop" =
-          home-manager.lib.homeManagerConfiguration config // {
-            modules = [ ./home ./hosts/work-laptop/home ];
-          };
+        "${username}@work-laptop" = home-manager.lib.homeManagerConfiguration
+          (config // { modules = [ ./home ./hosts/work-laptop/home ]; });
       };
     };
 }
