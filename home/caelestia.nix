@@ -70,7 +70,6 @@
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
     hyprpicker
-    hypridle
     wl-clipboard
     cliphist
     bluez
