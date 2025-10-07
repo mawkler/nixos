@@ -5,6 +5,7 @@
     ./rofi
     ./hyprpaper
     ./caelestia.nix
+    ./vicinae.nix
   ];
 
   nixpkgs = { inherit overlays; };
