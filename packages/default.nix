@@ -71,6 +71,7 @@
     gnumake
     go
     gum
+    headsetcontrol
     home-manager
     htop-vim
     hurl
@@ -93,6 +94,7 @@
     maestral-gui
     manix
     mission-center
+    nautilus
     networkmanager
     networkmanagerapplet
     nix-converter

@@ -32,12 +32,14 @@
         "sudo true && hostname=${hostname} && sudo nixos-rebuild --flake ${path}#$hostname ${subcommand} ${pipeToNom} || ${
           notifyDone "NixOS rebuild finished"
         }";
+      nixFlakeUpdate = "nix flake update --flake ${path}";
       homeManager =
         "hostname=${hostname} && home-manager --flake ${path}#melker@$hostname";
     in {
       # TODO: switch to nixos-rebuild-ng
       nrs = nixosRebuild "switch";
-      nru = nixosRebuild "switch --upgrade";
+      nru = "sudo true && ${nixFlakeUpdate} ${pipeToNom} &&"
+        + nixosRebuild "switch --upgrade";
       nrt = nixosRebuild "test";
       hm = homeManager;
       hms = "${homeManager} switch --impure ${pipeToNom} || ${

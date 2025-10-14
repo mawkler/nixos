@@ -2,7 +2,6 @@
   imports = [
     inputs.zen-browser.homeModules.beta
     ./zsh.nix
-    ./rofi
     ./hyprpaper
     ./caelestia.nix
     ./vicinae.nix

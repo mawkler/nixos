@@ -23,6 +23,24 @@
           terminal = [ "ghostty" ];
           audio = [ "pavucontrol" ];
         };
+        idle = {
+          timeouts = let minutes = 60;
+          in [
+            {
+              timeout = 10 * minutes;
+              idleAction = "lock";
+            }
+            {
+              timeout = 15 * minutes;
+              idleAction = "dpms off";
+              returnAction = "dpms on";
+            }
+            {
+              timeout = 20 * minutes;
+              idleAction = [ "systemctl" "suspend-then-hibernate" ];
+            }
+          ];
+        };
       };
       background = { desktopClock = { enabled = true; }; };
       bar = {
