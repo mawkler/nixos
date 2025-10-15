@@ -116,7 +116,6 @@
     signal-desktop
     sioyek
     slides
-    smile
     spicetify-cli
     spotify
     sshfs
