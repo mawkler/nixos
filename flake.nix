@@ -36,7 +36,7 @@
   outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       overlays = import ./overlays { inherit inputs; };
-      specialArgs = { inherit inputs overlays; };
+      specialArgs = { inherit inputs overlays username; };
       system = "x86_64-linux";
       username = "melker";
     in {
@@ -55,7 +55,7 @@
 
       homeConfigurations = let
         pkgs = nixpkgs.legacyPackages.${system};
-        extraSpecialArgs = { inherit inputs overlays; };
+        extraSpecialArgs = specialArgs;
         config = { inherit extraSpecialArgs pkgs; };
       in {
         # TODO: consider having this be a fallback - i.e., just set the username, not the hostname
