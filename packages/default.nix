@@ -106,7 +106,6 @@
     networkmanager
     networkmanagerapplet
     nix-converter
-    nix-output-monitor
     nix-search
     nodejs
     nurl

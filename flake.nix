@@ -55,8 +55,10 @@
 
       homeConfigurations = let
         pkgs = nixpkgs.legacyPackages.${system};
-        extraSpecialArgs = specialArgs;
-        config = { inherit extraSpecialArgs pkgs; };
+        config = {
+          inherit pkgs;
+          extraSpecialArgs = specialArgs;
+        };
       in {
         # TODO: consider having this be a fallback - i.e., just set the username, not the hostname
         "${username}@thinkpad-nixos" = home-manager.lib.homeManagerConfiguration
