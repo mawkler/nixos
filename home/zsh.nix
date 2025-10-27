@@ -31,6 +31,7 @@
       nos = nhOs "switch";
       nou = nhOs "switch --update";
       not = nhOs "test";
+      nob = nhOs "build";
       hms = "nh home switch";
       hm = "home-manager --flake ${path}#melker@${hostname}";
       nr = "nix run nixpkgs#%";

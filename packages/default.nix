@@ -7,6 +7,7 @@
     ./tmux.nix
     # ./nix-search-tv.nix
     inputs.nixai.nixosModules.default
+    inputs.nix-index-database.nixosModules.nix-index
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -19,11 +20,15 @@
   ];
 
   # Programs
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 7d --keep 10";
-    flake = "/home/${username}/.config/nixos/";
+  programs = {
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 7d --keep 10";
+      flake = "/home/${username}/.config/nixos/";
+    };
+
+    nix-index-database.comma.enable = true;
   };
 
   # Services
@@ -62,12 +67,14 @@
     cargo-nextest
     cargo-update
     clipboard-jh
+    comma
     delta
     duf
     dust
     evil-helix
     eza
     fd
+    file
     fprintd
     fx
     fzf
@@ -98,8 +105,6 @@
     kitty
     lazygit
     libnotify
-    maestral
-    maestral-gui
     manix
     mission-center
     nautilus
@@ -126,6 +131,9 @@
     spicetify-cli
     spotify
     sshfs
+    # Currently broken on unstable: https://github.com/samschott/maestral/issues/1132
+    stable.maestral
+    stable.maestral-gui
     sushi
     topgrade
     trash-cli
