@@ -1,6 +1,7 @@
 { overlays, inputs, ... }: {
   imports = [
     inputs.zen-browser.homeModules.beta
+    ./ghostty.nix
     ./zsh.nix
     ./hyprpaper
     ./caelestia.nix

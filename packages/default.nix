@@ -79,7 +79,6 @@
     fprintd
     fx
     fzf
-    ghostty
     gimp
     git
     git-standup
