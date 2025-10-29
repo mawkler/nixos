@@ -49,7 +49,6 @@
           showAudio = true;
           showMicrophone = true;
         };
-        tray = { recolour = false; };
         workspaces = {
           activeLabel = "";
           label = "";
