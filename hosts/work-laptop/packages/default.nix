@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
   services.onedrive.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -9,4 +9,11 @@
     teams-for-linux
     # keep-sorted end
   ];
+
+  # Docker
+  virtualisation.docker = {
+    enable = true;
+    rootless.enable = true;
+  };
+  users.users.${username}.extraGroups = [ "docker" ];
 }
