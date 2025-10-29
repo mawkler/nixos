@@ -71,6 +71,7 @@
     delta
     duf
     dust
+    entr
     evil-helix
     eza
     fd
@@ -116,7 +117,6 @@
     nurl
     onlyoffice-bin
     overskride
-    plotinus
     python3
     quicktype
     ranger
@@ -131,9 +131,9 @@
     spicetify-cli
     spotify
     sshfs
-    # Currently broken on unstable: https://github.com/samschott/maestral/issues/1132
     stable.maestral
     stable.maestral-gui
+    stable.plotinus
     sushi
     topgrade
     trash-cli
