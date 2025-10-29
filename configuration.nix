@@ -86,6 +86,9 @@
     size = 16 * 1024; # 16 GB
   }];
 
+  # To be able to see disks in file explorers
+  services.gvfs.enable = true;
+
   nix.settings.experimental-features =
     [ "flakes" "nix-command" "pipe-operators" ];
 
