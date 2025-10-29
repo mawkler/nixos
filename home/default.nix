@@ -41,6 +41,17 @@
     };
   };
 
+  # Default applications
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = "org.gnome.Nautilus.desktop";
+      "application/pdf" = "sioyek-4.desktop";
+      "x-scheme-handler/http" = "brave-browser.desktop";
+      "x-scheme-handler/https" = "brave-browser.desktop";
+    };
+  };
+
   home = rec {
     username = "melker";
     homeDirectory = "/home/${username}";
