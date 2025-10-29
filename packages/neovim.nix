@@ -53,5 +53,8 @@
     vscode-extensions.golang.go
     vscode-js-debug
     # bash-debug-adapter # Doesn't exist
+
+    # Plugin dependencies
+    mime-types # rest.nvim
   ];
 }
