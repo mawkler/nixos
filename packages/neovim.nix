@@ -55,6 +55,6 @@
     # bash-debug-adapter # Doesn't exist
 
     # Plugin dependencies
-    mime-types # rest.nvim
+    mailcap # rest.nvim
   ];
 }

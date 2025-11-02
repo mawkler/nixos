@@ -16,7 +16,7 @@
   fonts.packages = with pkgs; [
     font-awesome
     nerd-fonts.fira-code
-    noto-fonts-emoji
+    noto-fonts-color-emoji
   ];
 
   # Programs
@@ -63,7 +63,6 @@
     bat
     beeper
     bitwarden-cli
-    brave
     cargo-nextest
     cargo-update
     clipboard-jh
@@ -114,7 +113,7 @@
     nix-search
     nodejs
     nurl
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     overskride
     python3
     quicktype

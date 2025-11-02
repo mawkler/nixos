@@ -1,4 +1,4 @@
-{ overlays, inputs, ... }: {
+{ overlays, inputs, pkgs, ... }: {
   imports = [
     inputs.zen-browser.homeModules.beta
     ./ghostty.nix
@@ -22,6 +22,12 @@
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
+    };
+
+    brave = {
+      enable = true;
+      # Send proper notifications, don't just spawn a window with the notification
+      nativeMessagingHosts = [ pkgs.kdePackages.plasma-browser-integration ];
     };
   };
 
