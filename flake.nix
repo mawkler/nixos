@@ -34,6 +34,26 @@
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+
+    niri.url = "github:sodiboo/niri-flake";
+    niri.inputs.nixpkgs.follows = "nixpkgs";
+
+    # DankMaterialShell dependencies
+    dgop.url = "github:AvengeMedia/dgop";
+    dgop.inputs.nixpkgs.follows = "nixpkgs";
+
+    dms-cli.url = "github:AvengeMedia/danklinux";
+    dms-cli.inputs.nixpkgs.follows = "nixpkgs";
+
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        dgop.follows = "dgop";
+        dms-cli.follows = "dms-cli";
+      };
+    };
+
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

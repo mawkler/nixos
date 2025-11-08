@@ -6,12 +6,5 @@
     wayland.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    brightnessctl
-    hyprpaper
-    hyprshot
-    playerctl
-    waybar
-    wofi
-  ];
+  environment.systemPackages = with pkgs; [ brightnessctl hyprshot playerctl ];
 }

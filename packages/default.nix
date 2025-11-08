@@ -1,6 +1,7 @@
 { pkgs, inputs, username, ... }: {
   imports = [
-    ./hyprland.nix
+    # ./hyprland.nix
+    ./niri.nix
     ./kanata.nix
     ./neovim.nix
     ./stylix.nix
