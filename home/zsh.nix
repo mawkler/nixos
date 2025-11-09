@@ -25,9 +25,10 @@
     shellAliases = let
       path = "~/.config/nixos";
       hostname = "$(cat ${path}/.hostname)";
-      notify = "notify-send --icon ~/.config/nixos/assets/nix.svg NixOS Done";
+      iconPath = "~/.config/nixos/assets/nix.svg";
+      notifyDone = "notify-send --icon ${iconPath} NixOS Done";
       hms = "nh home switch";
-      nhOs = command: "sudo true && nh os ${command} && ${hms} && ${notify}";
+      nhOs = cmd: "sudo true && nh os ${cmd} && ${hms} && ${notifyDone}";
     in {
       n = "nh";
       nos = nhOs "switch";
@@ -35,7 +36,7 @@
       nou = nhOs "switch --update";
       not = nhOs "test";
       nob = nhOs "build";
-      hms = hms;
+      hms = "${hms} && ${notifyDone}";
       hm = "home-manager --flake ${path}#melker@${hostname}";
       nr = "nix run nixpkgs#%";
 

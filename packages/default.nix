@@ -1,6 +1,5 @@
 { pkgs, inputs, username, ... }: {
   imports = [
-    # ./hyprland.nix
     ./niri.nix
     ./kanata.nix
     ./neovim.nix
@@ -48,10 +47,10 @@
       loadModels = [ "deepseek-r1:1.5b" ];
     };
 
-    nixai = {
-      enable = true;
-      mcp.enable = false;
-    };
+    # nixai = {
+    #   enable = true;
+    #   mcp.enable = false;
+    # };
   };
 
   # All other packages
