@@ -6,7 +6,6 @@
     ./hyprpaper
     ./caelestia.nix
     ./dank-material-shell.nix
-    # TODO: switch to home-manager's vicinae distributioe
     ./vicinae.nix
   ];
 

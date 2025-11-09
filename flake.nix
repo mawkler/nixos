@@ -14,9 +14,6 @@
     caelestia.url = "github:caelestia-dots/shell";
     caelestia.inputs.nixpkgs.follows = "nixpkgs";
 
-    vicinae.url = "github:vicinaehq/vicinae";
-    vicinae.inputs.nixpkgs.follows = "nixpkgs";
-
     nixai.url = "github:olafkfreund/nix-ai-help";
     nixai.inputs.nixpkgs.follows = "nixpkgs";
 
