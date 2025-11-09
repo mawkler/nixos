@@ -67,7 +67,11 @@
   users.users.melker = {
     isNormalUser = true;
     description = "Melker";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout" # To enable serial port access in the browser (to access keyboards, etc.)
+    ];
   };
 
   # Shell
