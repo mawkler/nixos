@@ -32,8 +32,8 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
-    niri.url = "github:sodiboo/niri-flake";
-    niri.inputs.nixpkgs.follows = "nixpkgs";
+    raisin.url = "github:mawkler/raisin";
+    raisin.inputs.nixpkgs.follows = "nixpkgs";
 
     # DankMaterialShell dependencies
     dgop.url = "github:AvengeMedia/dgop";

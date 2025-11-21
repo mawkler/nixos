@@ -1,4 +1,4 @@
-{ pkgs, username, ... }: {
+{ pkgs, username, inputs, ... }: {
   programs.niri.enable = true;
 
   services = {
@@ -20,5 +20,6 @@
     fuzzel
 
     xwayland-satellite
+    inputs.raisin.defaultPackage.${system}
   ];
 }
