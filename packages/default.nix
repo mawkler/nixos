@@ -68,6 +68,7 @@
     clipboard-jh
     comma
     delta
+    discord
     duf
     dust
     entr
@@ -104,6 +105,7 @@
     kitty
     lazygit
     libnotify
+    localsend
     manix
     mission-center
     nautilus
@@ -126,6 +128,7 @@
     signal-desktop
     sioyek
     slides
+    spacedrive
     spicetify-cli
     spotify
     sshfs
