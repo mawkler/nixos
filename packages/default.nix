@@ -91,7 +91,7 @@
     htop-vim
     hurl
     hyperfine
-    inputs.nox.packages.${system}.default
+    inputs.nox.packages.${stdenv.hostPlatform.system}.default
     jless
     jq
     kdePackages.dolphin
