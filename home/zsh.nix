@@ -35,7 +35,7 @@
       noS = "sudo true && nh os switch";
       nou = nhOs "switch --update";
       not = nhOs "test";
-      nob = nhOs "build";
+      nob = "nh os build && ${notifyDone}";
       hms = "${hms} && ${notifyDone}";
       hm = "home-manager --flake ${path}#melker@${hostname}";
       nr = "nix run nixpkgs#%";
