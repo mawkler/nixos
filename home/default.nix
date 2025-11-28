@@ -4,7 +4,7 @@
     ./ghostty.nix
     ./zsh.nix
     ./hyprpaper
-    ./caelestia.nix
+    # ./caelestia.nix
     ./dank-material-shell.nix
     ./vicinae.nix
   ];
