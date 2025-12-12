@@ -15,7 +15,7 @@
     oh-my-zsh.enable = true;
 
     dotDir = "${config.xdg.configHome}/zsh";
-    initContent = "source ~/.zshrc";
+    initContent = lib.mkOrder 1200 "source ~/.zshrc";
 
     zsh-abbr = {
       enable = true;

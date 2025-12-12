@@ -43,6 +43,7 @@
     nixfmt-classic
     prettierd
     shfmt
+    rumdl
 
     # Linters
     # vacuum # Relies on an insecure package

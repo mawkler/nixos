@@ -23,8 +23,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "vicinaehq";
             repo = "extensions";
-            rev = "ec7334e9bb636f4771580238bd3569b58dbce879";
-            sha256 = "sha256-C2b6upygLE6xUP/cTSKZfVjMXOXOOqpP5Xmgb9r2dhA=";
+            rev = "b698ce7ecb58dec1efe297f87370253d8f6ba9d5";
+            sha256 = "sha256-jhlWZ6WfFBjS7CXbUOreZ2zEnYiVYfeqKOaZguFFslA=";
           } + "/extensions/${name}";
         });
     in [

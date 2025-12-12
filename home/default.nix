@@ -35,10 +35,7 @@
         command = "systemd-ac-power || ${suspend}";
       }
     ];
-    events = [{
-      event = "before-sleep";
-      command = lock;
-    }];
+    events = { before-sleep = lock; };
   };
 
   programs = {
