@@ -62,7 +62,8 @@
   services = {
     avizo.enable = true;
     hyprshell = {
-      enable = true;
+      # Disabled because I'm not on hyprland
+      enable = false;
       settings = {
         version = 2;
         windows = {
