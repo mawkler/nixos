@@ -4,32 +4,34 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/mapper/luks-465ae7a9-98cc-402d-a7b6-3f35ae56e8f2";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/mapper/luks-465ae7a9-98cc-402d-a7b6-3f35ae56e8f2";
+    fsType = "ext4";
+  };
 
-  boot.initrd.luks.devices."luks-465ae7a9-98cc-402d-a7b6-3f35ae56e8f2".device = "/dev/disk/by-uuid/465ae7a9-98cc-402d-a7b6-3f35ae56e8f2";
+  boot.initrd.luks.devices."luks-465ae7a9-98cc-402d-a7b6-3f35ae56e8f2".device =
+    "/dev/disk/by-uuid/465ae7a9-98cc-402d-a7b6-3f35ae56e8f2";
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C23A-D645";
-      fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/C23A-D645";
+    fsType = "vfat";
+    options = [ "fmask=0077" "dmask=0077" ];
+  };
 
-  swapDevices =
-    [ { device = "/dev/mapper/luks-f590b315-e453-45cc-80cc-3cbbad7de2b9"; }
-    ];
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 32 * 1024;
+  }];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
