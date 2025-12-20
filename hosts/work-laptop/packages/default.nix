@@ -1,14 +1,12 @@
 { pkgs, username, ... }: {
   services.onedrive.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    # keep-sorted start
-    aws-workspaces
-    firefox
-    slack
-    teams-for-linux
-    # keep-sorted end
-  ];
+  environment.systemPackages = with pkgs;
+    [
+      # keep-sorted start
+      slack
+      # keep-sorted end
+    ];
 
   # Docker
   virtualisation.docker = {
