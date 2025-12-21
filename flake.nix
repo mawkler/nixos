@@ -32,16 +32,12 @@
     raisin.url = "github:mawkler/raisin";
     raisin.inputs.nixpkgs.follows = "nixpkgs";
 
-    # caelestia.url = "github:caelestia-dots/shell";
-    # caelestia.inputs.nixpkgs.follows = "nixpkgs";
-
-    # DankMaterialShell dependencies
+    # DankMaterialShell
     dgop.url = "github:AvengeMedia/dgop";
     dgop.inputs.nixpkgs.follows = "nixpkgs";
-
-    dankMaterialShell.url = "github:AvengeMedia/DankMaterialShell";
-    dankMaterialShell.inputs.nixpkgs.follows = "nixpkgs";
-    dankMaterialShell.inputs.dgop.follows = "dgop";
+    dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";
+    dank-material-shell.inputs.nixpkgs.follows = "nixpkgs";
+    dank-material-shell.inputs.dgop.follows = "dgop";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

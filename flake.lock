@@ -68,7 +68,7 @@
         "type": "github"
       }
     },
-    "dankMaterialShell": {
+    "dank-material-shell": {
       "inputs": {
         "dgop": [
           "dgop"
@@ -516,7 +516,7 @@
     "quickshell": {
       "inputs": {
         "nixpkgs": [
-          "dankMaterialShell",
+          "dank-material-shell",
           "nixpkgs"
         ]
       },
@@ -559,7 +559,7 @@
     },
     "root": {
       "inputs": {
-        "dankMaterialShell": "dankMaterialShell",
+        "dank-material-shell": "dank-material-shell",
         "dgop": "dgop",
         "home-manager": "home-manager",
         "minimal-tmux": "minimal-tmux",
