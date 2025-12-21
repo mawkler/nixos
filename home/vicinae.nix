@@ -37,12 +37,11 @@
       (mkExtension "wifi-commander")
       # (mkExtension "systemd")
 
-      # Gives a 404 when trying to build
-      # (config.lib.vicinae.mkRayCastExtension {
-      #   name = "gif-search";
-      #   sha256 = "sha256-G7il8T1L+P/2mXWJsb68n4BCbVKcrrtK8GnBNxzt73Q=";
-      #   rev = "4d417c2dfd86a5b2bea202d4a7b48d8eb3dbaeb1";
-      # })
+      (config.lib.vicinae.mkRayCastExtension {
+        name = "gif-search";
+        sha256 = "sha256-NKmNqRqAnxtOXipFZFXOIgFlVzc0c3B5/Qr4DzKzAx4=";
+        rev = "27c8726a793b985df4cc8f1a771e354e9c12b195";
+      })
     ];
   };
 }
