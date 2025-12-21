@@ -10,6 +10,7 @@
     gcc
     luajit
     luarocks
+    tree-sitter
     neovide
 
     # Language servers
