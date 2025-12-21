@@ -1,5 +1,6 @@
 { pkgs, username, ... }: {
-  services.onedrive.enable = true;
+  # https://community.frame.work/t/rdseed32-is-broken-disabling-the-corresponding-cpuid-bit/77830/12
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   environment.systemPackages = with pkgs;
     [
