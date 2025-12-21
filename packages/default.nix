@@ -85,6 +85,7 @@
     github-cli
     gnumake
     go
+    grayjay
     gum
     headsetcontrol
     home-manager
