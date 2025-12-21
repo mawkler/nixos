@@ -84,12 +84,6 @@
     autoLogin.user = "melker";
   };
 
-  # Swapfile
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 16 * 1024; # 16 GB
-  }];
-
   # To be able to see disks in file explorers
   services.gvfs.enable = true;
 
