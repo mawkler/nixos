@@ -136,6 +136,7 @@
     stable.maestral
     stable.maestral-gui
     stable.plotinus
+    steam
     sushi
     topgrade
     trash-cli
