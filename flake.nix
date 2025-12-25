@@ -43,9 +43,10 @@
   outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       overlays = import ./overlays { inherit inputs; };
-      specialArgs = { inherit inputs overlays username; };
+      specialArgs = { inherit inputs overlays username rootPath; };
       system = "x86_64-linux";
       username = "melker";
+      rootPath = "~/.config/nixos";
     in {
       nixosConfigurations = {
         thinkpad-nixos = nixpkgs.lib.nixosSystem {

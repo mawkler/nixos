@@ -1,4 +1,4 @@
-{ pkgs, inputs, username, ... }: {
+{ pkgs, inputs, username, rootPath, ... }: {
   imports = [
     ./niri.nix
     ./kanata.nix
@@ -25,7 +25,7 @@
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 7d --keep 10";
-      flake = "/home/${username}/.config/nixos/";
+      flake = "/home/${username}/${rootPath}";
     };
 
     nix-index-database.comma.enable = true;
@@ -58,11 +58,11 @@
     # keep-sorted start
     antigen
     anytype
-    atuin
     bacon
     bat
     beeper
     bitwarden-cli
+    calibre
     cargo-nextest
     cargo-update
     clipboard-jh
@@ -76,13 +76,13 @@
     eza
     fd
     file
-    fprintd
     fx
     fzf
     gimp
     git
     git-standup
     github-cli
+    gnome-disk-utility
     gnumake
     go
     grayjay
@@ -118,6 +118,7 @@
     nurl
     onlyoffice-desktopeditors
     overskride
+    popsicle
     python3
     quicktype
     ranger
@@ -151,7 +152,6 @@
     wl-clipboard
     wlogout
     zathura
-    zoxide
     zsh
     zsh-powerlevel10k
     # keep-sorted end

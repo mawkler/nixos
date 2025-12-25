@@ -1,8 +1,10 @@
 { overlays, inputs, pkgs, ... }: {
   imports = [
     inputs.zen-browser.homeModules.beta
+    ./shell/zsh.nix
+    ./shell/fish
+    ./shell/zoxide.nix
     ./ghostty.nix
-    ./zsh.nix
     ./hyprpaper
     # ./caelestia.nix
     ./dank-material-shell.nix
@@ -39,6 +41,14 @@
   };
 
   programs = {
+    # TODO: move to `shell.nix`
+    atuin = {
+      enable = true;
+      flags = [ "--disable-up-arrow" ];
+      enableZshIntegration = true;
+      enableFishIntegration = true;
+    };
+
     zen-browser.enable = true;
 
     tealdeer = {

@@ -77,6 +77,7 @@
   # Shell
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   services.displayManager = {
     # Enable automatic login for the user.
