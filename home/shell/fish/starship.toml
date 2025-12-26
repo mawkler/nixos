@@ -1,0 +1,18 @@
+format = "$directory$username$hostname$character"
+right_format = "$all$time"
+
+add_newline = false
+
+[time]
+disabled = false
+format = "[$time]($style)"
+time_format = "%R"
+style = "italic dimmed white"
+
+[directory]
+truncation_length = 5
+fish_style_pwd_dir_length = 1
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = '󰊢 '

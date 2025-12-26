@@ -46,7 +46,7 @@
       specialArgs = { inherit inputs overlays username rootPath; };
       system = "x86_64-linux";
       username = "melker";
-      rootPath = "~/.config/nixos";
+      rootPath = "/home/melker/.config/nixos";
     in {
       nixosConfigurations = {
         thinkpad-nixos = nixpkgs.lib.nixosSystem {

@@ -1,9 +1,8 @@
 { config, rootPath, ... }:
-let
-  inherit (config.lib.file) mkOutOfStoreSymlink;
-  fishPath = "~/.config/fish/config.fish";
+let inherit (config.lib.file) mkOutOfStoreSymlink;
 in {
-  xdg.configFile."${fishPath}".source = mkOutOfStoreSymlink ./config.fish;
+  xdg.configFile."starship.toml".source =
+    mkOutOfStoreSymlink "${rootPath}/home/shell/fish/starship.toml";
 
   programs = {
     fish = {
@@ -17,8 +16,6 @@ in {
       enable = true;
       enableFishIntegration = true;
       enableTransience = true;
-      # TODO: customize starship
-      # xdg.configFile."starship.toml".source = ./starship.toml;
     };
 
     fzf = let
