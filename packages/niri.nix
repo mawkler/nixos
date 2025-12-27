@@ -1,4 +1,4 @@
-{ pkgs, username, inputs, ... }: {
+{ pkgs, inputs, ... }: {
   programs.niri.enable = true;
 
   services = {
@@ -6,12 +6,17 @@
       enable = true;
       wayland.enable = true;
     };
-
-    gnome.gnome-keyring.enable = true;
   };
 
-  # Auto unlock wallet on login
-  security.pam.services.${username}.kwallet.enable = true;
+  # This is an attempt at removing the "keyring did not get unlocked" prompt at
+  # startup, but it doesn't seem to work as of 2025-12-27.
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
+  security.pam.services = {
+    greetd.enableGnomeKeyring = true;
+    greetd-password.enableGnomeKeyring = true;
+    login.enableGnomeKeyring = true;
+  };
 
   environment.systemPackages = with pkgs; [
     brightnessctl
