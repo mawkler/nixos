@@ -1,4 +1,4 @@
-{ overlays, inputs, pkgs, ... }: {
+{ pkgs, overlays, inputs, ... }: {
   imports = [
     inputs.zen-browser.homeModules.beta
     ./shell/zsh.nix
@@ -13,6 +13,7 @@
 
   nixpkgs = { inherit overlays; };
 
+  # TODO: DankMaterialShell has this stuff built-in now?
   services.swayidle = let
     minutes = 60;
     suspend = "${pkgs.systemd}/bin/systemctl suspend";
@@ -66,6 +67,16 @@
       enable = true;
       # Send proper notifications, don't just spawn a window with the notification
       nativeMessagingHosts = [ pkgs.kdePackages.plasma-browser-integration ];
+    };
+
+    mullvad-vpn = {
+      enable = true;
+      settings = {
+        autoConnect = true;
+        enableSystemNotifications = true;
+        monochromaticIcon = true;
+        startMinimized = true;
+      };
     };
   };
 

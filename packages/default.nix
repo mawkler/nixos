@@ -43,7 +43,7 @@
     };
 
     ollama = {
-      enable = true;
+      enable = false;
       loadModels = [ "deepseek-r1:1.5b" ];
     };
 
@@ -57,7 +57,6 @@
   environment.systemPackages = with pkgs; [
     # keep-sorted start
     antigen
-    anytype
     bacon
     bat
     beeper
@@ -134,6 +133,7 @@
     spicetify-cli
     spotify
     sshfs
+    stable.anytype # unstable version throws an error on startup
     stable.maestral
     stable.maestral-gui
     stable.plotinus
