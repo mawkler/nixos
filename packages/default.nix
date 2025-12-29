@@ -1,4 +1,4 @@
-{ pkgs, inputs, username, rootPath, ... }: {
+{ pkgs, inputs, rootPath, ... }: {
   imports = [
     ./niri.nix
     ./kanata.nix
@@ -123,6 +123,7 @@
     ranger
     ripdrag
     ripgrep
+    rumdl
     rustup
     screenkey
     shutter
@@ -156,4 +157,11 @@
     zsh-powerlevel10k
     # keep-sorted end
   ];
+
+  environment.sessionVariables = {
+    RUMDL_CACHE_DIR = "$HOME/.cache/rumdl";
+    # This variable I just made up in order to dependency inject it into my
+    # Neovim config, the above variable is native to rumdl
+    RUMDL_CONFIG_PATH = "${rootPath}/packages/configs/rumdl.toml";
+  };
 }
