@@ -32,12 +32,8 @@
     raisin.url = "github:mawkler/raisin";
     raisin.inputs.nixpkgs.follows = "nixpkgs";
 
-    # DankMaterialShell
-    dgop.url = "github:AvengeMedia/dgop";
-    dgop.inputs.nixpkgs.follows = "nixpkgs";
     dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";
     dank-material-shell.inputs.nixpkgs.follows = "nixpkgs";
-    dank-material-shell.inputs.dgop.follows = "dgop";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
