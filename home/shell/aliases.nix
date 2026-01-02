@@ -12,7 +12,7 @@ in {
   not = nhOs "test";
   nob = "nh os build || ${notifyDone}";
   hms = "${hms} || ${notifyDone}";
-  hm = "home-manager --flake ${rootPath}#melker@$(hostname)";
+  hm = "home-manager --flake ${rootPath}";
   nr = "nix run nixpkgs#%";
 
   dots = "dot status";

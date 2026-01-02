@@ -1,0 +1,10 @@
+
+[global]
+line-length = 100
+disable = [
+  "MD013", # Maximum line length
+  "MD034"  # Put `<angle brackets>` around URLs
+]
+
+[MD060] # Table formatting
+enabled = true

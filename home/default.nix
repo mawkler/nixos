@@ -1,4 +1,6 @@
-{ pkgs, overlays, inputs, ... }: {
+{ pkgs, config, overlays, inputs, rootPath, ... }:
+let configs = (import ./configs { inherit config; });
+in {
   imports = [
     inputs.zen-browser.homeModules.beta
     ./shell/zsh.nix
@@ -12,6 +14,9 @@
   ];
 
   nixpkgs = { inherit overlays; };
+
+  # Symlink every file inside `configs/` to `~/.config/`
+  xdg.configFile = configs.configSymlinks ./configs "${rootPath}/home/configs";
 
   # TODO: DankMaterialShell has this stuff built-in now?
   services.swayidle = let
