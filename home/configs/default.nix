@@ -1,10 +1,10 @@
 { config }:
 {
   # -------------------------------------------------------------------------
-  #   `configsPath` : a path value to a directory who's files/directories shoul
-  #   be symlinked to from `~/.config/`.
+  #   `configsPath`: a path value to a directory who's files/directories
+  #   should be symlinked to from `~/.config/`.
   #
-  #   `configsAbsolutePath` : an absolute path to `configsPath`.
+  #   `configsAbsolutePath`: an absolute path to `configsPath`.
   #
   #   The reason this function requires two path parameters to the same
   #   directory is that it uses `builtins.readDir` which would require
@@ -22,13 +22,10 @@
         name = name;
         value.source = mkOutOfStoreSymlink "${configsAbsolutePath}/${name}";
       };
-
-      symlinks = configsPath 
-        |> builtins.readDir 
-        |> builtins.attrNames
-        # Don't symlink this file
-        |> builtins.filter (name: name !=  "default.nix")
-        |> map mkSymlink
-        |> builtins.listToAttrs;
-    in symlinks;
+    in configsPath 
+      |> builtins.readDir 
+      |> builtins.attrNames
+      |> builtins.filter (name: name !=  "default.nix") # Don't symlink this file
+      |> map mkSymlink
+      |> builtins.listToAttrs;
 }

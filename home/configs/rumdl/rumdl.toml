@@ -1,9 +1,13 @@
+# List of ruls:
+# https://github.com/DavidAnson/markdownlint?tab=readme-ov-file#rules--aliases
 
 [global]
 line-length = 100
 disable = [
   "MD013", # Maximum line length
-  "MD034"  # Put `<angle brackets>` around URLs
+  "MD034", # Put `<angle brackets>` around URLs
+  "MD025", # Only one h1 heading allowed
+  "MD040", # All code blocks should have a language
 ]
 
 [MD060] # Table formatting

@@ -64,6 +64,7 @@
     calibre
     cargo-nextest
     cargo-update
+    cheese
     clipboard-jh
     comma
     delta
