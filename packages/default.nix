@@ -5,6 +5,7 @@
     ./neovim.nix
     ./stylix.nix
     ./tmux.nix
+    ./dank-material-shell.nix
     # ./nix-search-tv.nix
     inputs.nixai.nixosModules.default
     inputs.nix-index-database.nixosModules.nix-index
