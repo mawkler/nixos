@@ -41,7 +41,7 @@
     # Formatters
     keep-sorted
     mdsf
-    nixfmt-classic
+    nixfmt
     prettierd
     shfmt
     rumdl
