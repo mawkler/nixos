@@ -60,4 +60,8 @@ in {
   gss = "git stash show -p";
   glm = "git log `_master_branch`";
   gldm = "git log --decorate --oneline `_master_branch`..";
+
+  cd = "z";
+  zoxide-add-directories =
+    "fd --type directory --max-depth 1 | xargs zoxide add";
 }

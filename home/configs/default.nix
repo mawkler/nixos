@@ -22,8 +22,8 @@
         name = name;
         value.source = mkOutOfStoreSymlink "${configsAbsolutePath}/${name}";
       };
-    in configsPath 
-      |> builtins.readDir 
+    in configsPath
+      |> builtins.readDir
       |> builtins.attrNames
       |> builtins.filter (name: name !=  "default.nix") # Don't symlink this file
       |> map mkSymlink

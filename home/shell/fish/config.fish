@@ -3,6 +3,9 @@ if not tmux list-sessions &> /dev/null
   exec tmux
 end
 
+# Disable greeting when starting a new shell
+set -U fish_greeting
+
 # Enable Vi mode
 set -g fish_key_bindings fish_vi_key_bindings
 
