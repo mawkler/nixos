@@ -1,0 +1,94 @@
+[user]
+	email  = melker.ulander@pm.me
+	name   = Melker Ulander
+[alias]
+	co     = checkout
+	s      = status
+	p      = pull --autostash
+	b      = branch
+	c      = commit -v
+	cm     = commit -vm
+	ca     = commit -va
+	cam    = commit -vam
+	com    = "!if git rev-parse --quiet --verify master > /dev/null; then git checkout master; else git checkout main; fi"
+	l      = log --decorate
+	w      = whatchanged
+	d      = diff
+	diff1  = !git diff | delta --features=one-window
+	g      = grep -ni
+	u      = diff HEAD@{1} HEAD
+	plog   = log --pretty=format:'%Cred%h%Creset %s -%C(yellow)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lol    = log --graph --decorate --pretty=oneline --abbrev-commit
+	subupd = submodule update --recursive --init
+	ignore = update-index --assume-unchanged
+	unignore = update-index --no-assume-unchanged
+	store  = config credential.helper store
+	prune-local = !git checkout main && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d
+	countlines = !git ls-files | xargs wc -l
+	panic = pull --ff --rebase
+	unique = !git log --graph \
+		--pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' \
+		--abbrev-commit \
+		--date=relative \
+		$1..$(git rev-parse --abbrev-ref HEAD)
+	make = !make --directory $(git rev-parse --show-toplevel)
+	ls = ls-tree -r HEAD --name-only
+	pull-all = ls | xargs -P10 -I {} sh -c "echo Pulling changes in {}... && git -C {} pull"
+	clone-private = clone --config user.email=melker.ulander@pm.me --config github.user=mawkler
+	clone-work = clone --config user.email=melker.ulander@omegapoint.se --config github.user=melkerulander-op
+	diff-branch = !git diff `git merge-base master HEAD` HEAD
+	fork-plugin = !gh repo fork && git remote rename origin fork && git remote rename upstream origin
+[core]
+	excludesfile = /home/melker/.gitignore-global
+	pager = "{                                                       \
+		COLUMNS=$(tput cols);                                        \
+		if [ $COLUMNS -ge 160 ] && [ -z $FZF_PREVIEW_COLUMNS ]; then \
+			delta --side-by-side -w $COLUMNS;                        \
+		elif [ $COLUMNS -ge 200 ] && [ $FZF_PREVIEW_COLUMNS ]; then  \
+			delta --side-by-side -w $FZF_PREVIEW_COLUMNS;            \
+		else                                                         \
+			delta --features=one-window;                             \
+		fi                                                           \
+	}"
+	eol = lf
+; [interactive]
+;     diffFilter = "if type delta &> /dev/null; then delta --color-only; else less; fi"
+[delta]
+	features = line-numbers
+	syntax-theme = TwoDark
+	plus-emph-style = syntax "#1e5427"
+	plus-style = syntax "#263731"
+	minus-emph-style = syntax "#731d22"
+	minus-style = syntax "#3d282f"
+	file-decoration-style = blue box
+	hunk-header-decoration-style = box "#444957"
+	hunk-header-style = syntax line-number
+	navigate = true
+	tabs = 4
+[delta "one-window"]
+	side-by-side = false
+[github]
+	user = mawkler
+[color]
+	ui = true
+[dude]
+	interval = 10
+[credential]
+	helper = cache --timeout=1800
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[rerere]
+	enabled = true
+[diff]
+	algorithm = patience
+[init]
+	defaultBranch = main
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

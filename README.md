@@ -16,6 +16,5 @@ cp /etc/nixos-old/hardware-configuration.nix $config_path/hosts/$hostname
 
 sudo hostname $hostname
 sudo nixos-rebuild switch
-curl -s https://raw.githubusercontent.com/mawkler/dotfiles/nixos/.dotfiles/install-dotfiles.sh | bash
 home-manager switch --flake ~/.config/nixos#melker@$hostname --impure --extra-experimental-features nix-command --extra-experimental-features flakes
 ```
