@@ -1,5 +1,8 @@
 { pkgs, config, overlays, inputs, rootPath, ... }:
-let configs = (import ./configs { inherit config; });
+let
+  dotfileUtils = (import ./dotfiles { inherit pkgs config; });
+  inherit (dotfileUtils) mkSymlink;
+  dotfiles = "${rootPath}/home/dotfiles";
 in {
   imports = [
     inputs.zen-browser.homeModules.beta
@@ -15,8 +18,21 @@ in {
 
   nixpkgs = { inherit overlays; };
 
-  # Symlink every file inside `configs/` to `~/.config/`
-  xdg.configFile = configs.configSymlinks ./configs "${rootPath}/home/configs";
+  home = rec {
+    username = "melker";
+    homeDirectory = "/home/${username}";
+    stateVersion = "25.05";
+
+    sessionVariables = {
+      ZK_NOTEBOOK_DIR = "${homeDirectory}/Dropbox/Dokument/Markdowns/";
+    };
+  };
+
+  # Symlink every file in `./dotfiles/dot-config` to `~/.config/`
+  xdg.configFile = mkSymlink ./dotfiles/dot-config "${dotfiles}/dot-config";
+
+  # Symlink every file in `./dotfiles/home/` to `~/`
+  home.file = mkSymlink ./dotfiles/home "${dotfiles}/home";
 
   # TODO: DankMaterialShell has this stuff built-in now?
   services.swayidle = let
@@ -110,16 +126,6 @@ in {
       "application/pdf" = "sioyek-4.desktop";
       "x-scheme-handler/http" = "brave-browser.desktop";
       "x-scheme-handler/https" = "brave-browser.desktop";
-    };
-  };
-
-  home = rec {
-    username = "melker";
-    homeDirectory = "/home/${username}";
-    stateVersion = "25.05";
-
-    sessionVariables = {
-      ZK_NOTEBOOK_DIR = "${homeDirectory}/Dropbox/Dokument/Markdowns/";
     };
   };
 }

@@ -1,4 +1,4 @@
-{ config }:
+{ pkgs, config, ... }:
 {
   # -------------------------------------------------------------------------
   #   `configsPath`: a path value to a directory who's files/directories
@@ -14,7 +14,7 @@
   #
   #   `returns`: an attribute set suitable for `xdg.configFile`.
   # -----------------------------------------------------------------
-  configSymlinks = configsPath: configsAbsolutePath:
+  mkSymlink = configsPath: configsAbsolutePath:
     let
       inherit (config.lib.file) mkOutOfStoreSymlink;
 
@@ -25,7 +25,6 @@
     in configsPath
       |> builtins.readDir
       |> builtins.attrNames
-      |> builtins.filter (name: name !=  "default.nix") # Don't symlink this file
       |> map mkSymlink
       |> builtins.listToAttrs;
 }

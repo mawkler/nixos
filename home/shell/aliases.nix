@@ -43,6 +43,7 @@ in {
   gb = "git branch";
   gw = "git whatchanged";
   ga = "git add";
+  gai = "git add --intent-to-add";
   gcm = "git commit -mv";
   gcam = "git commit -avm";
   gca = "git commit -av";
