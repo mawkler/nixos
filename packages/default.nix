@@ -1,4 +1,10 @@
-{ pkgs, inputs, rootPath, ... }: {
+{
+  pkgs,
+  inputs,
+  rootPath,
+  ...
+}:
+{
   imports = [
     ./niri.nix
     ./kanata.nix
@@ -113,6 +119,7 @@
     networkmanager
     networkmanagerapplet
     nix-converter
+    nix-inspect
     nix-search
     nodejs
     nurl
@@ -159,5 +166,7 @@
     # keep-sorted end
   ];
 
-  environment.sessionVariables = { RUMDL_CACHE_DIR = "$HOME/.cache/rumdl"; };
+  environment.sessionVariables = {
+    RUMDL_CACHE_DIR = "$HOME/.cache/rumdl";
+  };
 }

@@ -1,16 +1,24 @@
-{ pkgs, config, overlays, inputs, rootPath, ... }:
+{
+  pkgs,
+  config,
+  overlays,
+  inputs,
+  rootPath,
+  ...
+}:
 let
   dotfileUtils = (import ./dotfiles { inherit pkgs config; });
-  inherit (dotfileUtils) mkSymlink;
+  inherit (dotfileUtils) mkSymlinks;
   dotfiles = "${rootPath}/home/dotfiles";
-in {
+in
+{
   imports = [
     inputs.zen-browser.homeModules.beta
     ./shell/zsh.nix
     ./shell/fish
     ./shell/zoxide.nix
     ./ghostty.nix
-    ./hyprpaper
+    # ./hyprpaper
     # ./caelestia.nix
     ./dank-material-shell.nix
     ./vicinae.nix
@@ -29,38 +37,41 @@ in {
   };
 
   # Symlink every file in `./dotfiles/dot-config` to `~/.config/`
-  xdg.configFile = mkSymlink ./dotfiles/dot-config "${dotfiles}/dot-config";
+  xdg.configFile = mkSymlinks ./dotfiles/dot-config "${dotfiles}/dot-config";
 
   # Symlink every file in `./dotfiles/home/` to `~/`
-  home.file = mkSymlink ./dotfiles/home "${dotfiles}/home";
+  home.file = mkSymlinks ./dotfiles/home "${dotfiles}/home";
 
   # TODO: DankMaterialShell has this stuff built-in now?
-  services.swayidle = let
-    minutes = 60;
-    suspend = "${pkgs.systemd}/bin/systemctl suspend";
-    lock = "${pkgs.systemd}/bin/loginctl lock-session";
-    display = status:
-      "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
-  in {
-    enable = true;
-    timeouts = [
-      {
-        timeout = 10 * minutes;
-        command = lock;
-      }
-      {
-        timeout = 11 * minutes;
-        command = display "off";
-        resumeCommand = display "on";
-      }
-      {
-        timeout = 25 * minutes;
-        # Don't suspend if laptop charger is plugged in
-        command = "systemd-ac-power || ${suspend}";
-      }
-    ];
-    events = { before-sleep = lock; };
-  };
+  services.swayidle =
+    let
+      minutes = 60;
+      suspend = "${pkgs.systemd}/bin/systemctl suspend";
+      lock = "${pkgs.systemd}/bin/loginctl lock-session";
+      display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
+    in
+    {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 10 * minutes;
+          command = lock;
+        }
+        {
+          timeout = 11 * minutes;
+          command = display "off";
+          resumeCommand = display "on";
+        }
+        {
+          timeout = 25 * minutes;
+          # Don't suspend if laptop charger is plugged in
+          command = "systemd-ac-power || ${suspend}";
+        }
+      ];
+      events = {
+        before-sleep = lock;
+      };
+    };
 
   programs = {
     # TODO: move to `shell.nix`

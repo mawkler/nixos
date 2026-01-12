@@ -1,10 +1,10 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 {
   # -------------------------------------------------------------------------
-  #   `configsPath`: a path value to a directory who's files/directories
+  #   `configsNixPath`: a Nix path type to a directory who's files/directories
   #   should be symlinked to from `~/.config/`.
   #
-  #   `configsAbsolutePath`: an absolute path to `configsPath`.
+  #   `configsAbsPath`: an absolute string path to `configsPath`.
   #
   #   The reason this function requires two path parameters to the same
   #   directory is that it uses `builtins.readDir` which would require
@@ -14,17 +14,34 @@
   #
   #   `returns`: an attribute set suitable for `xdg.configFile`.
   # -----------------------------------------------------------------
-  mkSymlink = configsPath: configsAbsolutePath:
+  mkSymlinks =
+    configsAbsPath: configsNixPath:
     let
       inherit (config.lib.file) mkOutOfStoreSymlink;
 
-      mkSymlink = name: {
-        name = name;
-        value.source = mkOutOfStoreSymlink "${configsAbsolutePath}/${name}";
+      # Turn relative paths into xdg.configFile entries
+      mkSymlink = nixPath: {
+        name = nixPath;
+        value.source = mkOutOfStoreSymlink "${configsNixPath}/${nixPath}";
       };
-    in configsPath
-      |> builtins.readDir
-      |> builtins.attrNames
-      |> map mkSymlink
-      |> builtins.listToAttrs;
+
+      # Recursively read in all files in all subdirectories
+      readDirRecursive =
+        relPath: nixPath:
+        nixPath
+        |> builtins.readDir
+        |> builtins.attrNames
+        |> map (
+          name:
+          let
+            entryType = nixPath |> builtins.readDir |> (entries: entries.${name});
+            relPath' = if relPath == "" then name else "${relPath}/${name}";
+            nixPath' = "${nixPath}/${name}";
+          in
+          # Don't include paths to the directories themselves
+          if entryType == "directory" then readDirRecursive relPath' nixPath' else [ relPath' ]
+        )
+        |> builtins.concatLists;
+    in
+    readDirRecursive "" configsAbsPath |> map mkSymlink |> builtins.listToAttrs;
 }
