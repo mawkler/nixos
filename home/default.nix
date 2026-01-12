@@ -110,6 +110,8 @@ in
         startMinimized = true;
       };
     };
+
+    jujutsu.enable = true;
   };
 
   services = {
