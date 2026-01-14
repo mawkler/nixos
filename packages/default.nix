@@ -122,6 +122,7 @@
     nix-inspect
     nix-search
     nodejs
+    nps
     nurl
     onlyoffice-desktopeditors
     overskride
