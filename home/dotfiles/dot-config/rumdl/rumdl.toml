@@ -7,7 +7,8 @@ disable = [
   "MD013", # Maximum line length
   "MD034", # Put `<angle brackets>` around URLs
   "MD025", # Only one h1 heading allowed
-  "MD040", # All code blocks should have a language
+  "MD040", # Code blocks should have a language
+  "MD031", # Code blocks should be surrounded by blank lines
 ]
 
 [MD060] # Table formatting
