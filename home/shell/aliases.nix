@@ -4,7 +4,9 @@ let
   notifyDone = "notify-send --icon ${iconPath} NixOS Done";
   hms = "nh home switch";
   nhOs = cmd: "sudo true && nh os ${cmd} && ${hms} || ${notifyDone}";
-in {
+in
+{
+  # NixOS/home-manager
   n = "nh";
   nos = nhOs "switch";
   noS = "sudo true && nh os switch";
@@ -15,20 +17,7 @@ in {
   hm = "home-manager --flake ${rootPath}";
   nr = "nix run nixpkgs#%";
 
-  dots = "dot status";
-
-  src = "exec zsh";
-  screenkey = "screenkey -t 1.5 -s small";
-  Bat = "bat --pager='less - mgi - -underline-special - -SILENT'";
-  myip = "hostname -i";
-  mv = "mv -i";
-  ag = "ag --hidden --pager='less -R'";
-  rg = "rg --hidden --smart-case";
-  fd = "fd --hidden";
-  mvc = "mullvad connect";
-  mvd = "mullvad disconnect";
-  mvr = "mullvad reconnect";
-
+  # Git
   g = "git";
   gs = "git status";
   gl = "git log --decorate";
@@ -62,7 +51,27 @@ in {
   glm = "git log `_master_branch`";
   gldm = "git log --decorate --oneline `_master_branch`..";
 
+  # Jujutsu
+  js = "jj status";
+  jl = "jj log";
+  jd = "jj diff";
+
+  # Zoxide
   cd = "z";
-  zoxide-add-directories =
-    "fd --type directory --max-depth 1 | xargs zoxide add";
+  zoxide-add-directories = "fd --type directory --max-depth 1 | xargs zoxide add";
+
+  # Mullvad
+  mvc = "mullvad connect";
+  mvd = "mullvad disconnect";
+  mvr = "mullvad reconnect";
+
+  # Other
+  src = "exec zsh";
+  screenkey = "screenkey -t 1.5 -s small";
+  Bat = "bat --pager='less - mgi - -underline-special - -SILENT'";
+  myip = "hostname -i";
+  mv = "mv -i";
+  ag = "ag --hidden --pager='less -R'";
+  rg = "rg --hidden --smart-case";
+  fd = "fd --hidden";
 }
