@@ -1,0 +1,12 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "Melker Ulander"
+email = "melker.ulander@pm.me"
+
+[ui]
+diff-formatter="delta"
+pager = ["delta", "--pager", "less"] # Hide output when quitting pager
+
+[merge-tools]
+delta.diff-expected-exit-codes = [0, 1]
