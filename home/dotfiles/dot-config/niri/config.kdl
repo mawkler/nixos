@@ -125,8 +125,8 @@ layout {
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
         // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
-        proportion 0.33333
         proportion 0.5
+        proportion 0.33333
 
         // Fixed sets the width in logical pixels exactly.
         // fixed 1920
@@ -335,7 +335,7 @@ binds {
 
     Mod+Return { spawn "vicinae" "vicinae://toggle?popToRoot=true";                    }
     Mod+V      { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history";     }
-    Mod+Period { spawn "vicinae" "vicinae://extensions/vicinae/vicinae/search-emojis"; }
+    Mod+Period { spawn "vicinae" "vicinae://extensions/vicinae/core/search-emojis"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -590,5 +590,11 @@ binds {
     }
     Mod+M hotkey-overlay-title="Task Manager" {
         spawn "dms" "ipc" "call" "processlist" "toggle";
+    }
+    Mod+Ctrl+Comma hotkey-overlay-title="DankMaterialShell Settings" {
+        spawn "dms" "ipc" "call" "settings" "focusOrToggle";
+    }
+    Mod+Backspace hotkey-overlay-title="DankMaterialShell power meny" {
+        spawn "dms" "ipc" "call" "powermenu" "toggle"
     }
 }
