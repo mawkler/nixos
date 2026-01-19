@@ -1,8 +1,12 @@
 { config, rootPath, ... }:
-let inherit (config.lib.file) mkOutOfStoreSymlink;
+let
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+  fishConfig = "${rootPath}/home/shell/fish";
 in {
-  xdg.configFile."starship.toml".source =
-    mkOutOfStoreSymlink "${rootPath}/home/shell/fish/starship.toml";
+  xdg.configFile = {
+    "starship.toml".source = mkOutOfStoreSymlink "${fishConfig}/starship.toml";
+    "fish/themes".source = mkOutOfStoreSymlink "${fishConfig}/themes";
+  };
 
   programs = {
     fish = {

@@ -6,9 +6,11 @@ let
     rev = "14f7cd035f1b483dfe46ba11aef7377b6c4c687d";
     sha256 = "sha256-ky343PVJklT4MqF5whULGwC5e5YfKF7PRGjB+CoBVUI=";
   };
-in {
+in
+{
+  programs.ghostty.enable = true;
   home = {
     file.".config/ghostty/shaders".source = ghosttyShaders;
-    packages = with pkgs; [ ghostty ];
+    # packages = with pkgs; [ ghostty ];
   };
 }
