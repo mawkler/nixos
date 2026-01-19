@@ -58,6 +58,7 @@
   "controlCenterShowMicPercent": false,
   "controlCenterShowBatteryIcon": false,
   "controlCenterShowPrinterIcon": false,
+  "controlCenterShowScreenSharingIcon": true,
   "showPrivacyButton": true,
   "privacyShowMicIcon": false,
   "privacyShowCameraIcon": false,
@@ -105,17 +106,18 @@
     }
   ],
   "showWorkspaceIndex": true,
-  "showWorkspaceName": false,
+  "showWorkspaceName": true,
   "showWorkspacePadding": false,
   "workspaceScrolling": false,
   "showWorkspaceApps": true,
-  "maxWorkspaceIcons": 3,
+  "maxWorkspaceIcons": 4,
   "groupWorkspaceApps": true,
   "workspaceFollowFocus": false,
   "showOccupiedWorkspacesOnly": false,
   "reverseScrolling": false,
   "dwlShowAllTags": false,
   "workspaceColorMode": "default",
+  "workspaceOccupiedColorMode": "none",
   "workspaceUnfocusedColorMode": "default",
   "workspaceUrgentColorMode": "default",
   "workspaceFocusedBorderEnabled": false,
@@ -172,7 +174,7 @@
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "auto",
-  "vpnLastConnected": "cb6e365d-3233-44cf-9684-46a8d5e8832e",
+  "vpnLastConnected": "82f96105-047c-48a5-aa42-51a2315e4508",
   "iconTheme": "System Default",
   "cursorSettings": {
     "theme": "System Default",
@@ -262,6 +264,7 @@
   "matugenTemplateVscode": true,
   "showDock": false,
   "dockAutoHide": false,
+  "dockSmartAutoHide": false,
   "dockGroupByApp": false,
   "dockOpenOnOverview": false,
   "dockPosition": 1,
@@ -283,14 +286,15 @@
   "lockScreenShowDate": true,
   "lockScreenShowProfileImage": true,
   "lockScreenShowPasswordField": true,
+  "lockScreenPowerOffMonitorsOnLock": false,
   "enableFprint": true,
   "maxFprintTries": 15,
   "lockScreenActiveMonitor": "all",
   "lockScreenInactiveColor": "#000000",
-  "lockScreenNotificationMode": 0,
+  "lockScreenNotificationMode": 2,
   "hideBrightnessSlider": false,
-  "notificationTimeoutLow": 5000,
-  "notificationTimeoutNormal": 5000,
+  "notificationTimeoutLow": 2000,
+  "notificationTimeoutNormal": 2000,
   "notificationTimeoutCritical": 0,
   "notificationCompactMode": false,
   "notificationPopupPosition": 0,
@@ -300,7 +304,7 @@
   "notificationHistorySaveLow": true,
   "notificationHistorySaveNormal": true,
   "notificationHistorySaveCritical": true,
-  "osdAlwaysShowValue": false,
+  "osdAlwaysShowValue": true,
   "osdPosition": 5,
   "osdVolumeEnabled": true,
   "osdMediaVolumeEnabled": true,
@@ -308,7 +312,7 @@
   "osdIdleInhibitorEnabled": true,
   "osdMicMuteEnabled": true,
   "osdCapsLockEnabled": true,
-  "osdPowerProfileEnabled": false,
+  "osdPowerProfileEnabled": true,
   "osdAudioOutputEnabled": true,
   "powerActionConfirm": true,
   "powerActionHoldDuration": 0.5,
@@ -349,12 +353,24 @@
       "centerWidgets": ["music", "clock", "weather"],
       "rightWidgets": [
         "systemTray",
-        "clipboard",
         "cpuUsage",
         "memUsage",
         "notificationButton",
-        "battery",
-        "controlCenterButton"
+        {
+          "id": "battery",
+          "enabled": true
+        },
+        {
+          "id": "controlCenterButton",
+          "enabled": true,
+          "showBluetoothIcon": true,
+          "showAudioIcon": true,
+          "showAudioPercent": false,
+          "showBrightnessIcon": false,
+          "showBrightnessPercent": false,
+          "showBatteryIcon": false,
+          "showPrinterIcon": true
+        }
       ],
       "spacing": 4,
       "innerPadding": 4,
@@ -459,6 +475,10 @@
   "desktopWidgetGridSettings": {},
   "desktopWidgetInstances": [],
   "desktopWidgetGroups": [],
-  "builtInPluginSettings": {},
+  "builtInPluginSettings": {
+    "dms_settings_search": {
+      "trigger": "?"
+    }
+  },
   "configVersion": 5
 }
