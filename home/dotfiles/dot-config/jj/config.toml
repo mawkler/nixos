@@ -7,6 +7,7 @@ email = "melker.ulander@pm.me"
 [ui]
 diff-formatter="delta"
 pager = ["delta", "--pager", "less"] # Hide output when quitting pager
+diff-editor = ":builtin"
 
 [merge-tools]
 delta.diff-expected-exit-codes = [0, 1]
