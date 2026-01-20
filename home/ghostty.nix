@@ -9,8 +9,5 @@ let
 in
 {
   programs.ghostty.enable = true;
-  home = {
-    file.".config/ghostty/shaders".source = ghosttyShaders;
-    # packages = with pkgs; [ ghostty ];
-  };
+  home.file.".config/ghostty/shaders".source = ghosttyShaders;
 }

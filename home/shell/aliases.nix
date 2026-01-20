@@ -54,7 +54,11 @@ in
   # Jujutsu
   js = "jj status";
   jl = "jj log";
+  jc = "jj commit";
+  jci = "jj commit --interactive";
+  jn = "jj new";
   jd = "jj diff";
+  jgp = "jj git push";
 
   # Zoxide
   cd = "z";
