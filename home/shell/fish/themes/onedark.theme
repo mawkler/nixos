@@ -6,7 +6,7 @@ fish_color_quote       98c379
 fish_color_redirection e59b4e
 fish_color_end         e59b4e
 fish_color_error       e06c75
-fish_color_param       528bff
+fish_color_param       abb2bf
 fish_color_comment     5c6370
 fish_color_match       56b6c2
 fish_color_search_match --background=2e6399
