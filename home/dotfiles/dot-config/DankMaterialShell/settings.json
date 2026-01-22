@@ -181,7 +181,7 @@
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "auto",
-  "vpnLastConnected": "3ffdadee-1f8e-4e54-9d84-031460837bad",
+  "vpnLastConnected": "b1b781c9-a181-4693-8251-48dbbcedb24b",
   "iconTheme": "System Default",
   "cursorSettings": {
     "theme": "System Default",
@@ -264,7 +264,7 @@
   "matugenTemplateKitty": true,
   "matugenTemplateFoot": true,
   "matugenTemplateAlacritty": true,
-  "matugenTemplateNeovim": true,
+  "matugenTemplateNeovim": false,
   "matugenTemplateWezterm": true,
   "matugenTemplateDgop": true,
   "matugenTemplateKcolorscheme": true,
