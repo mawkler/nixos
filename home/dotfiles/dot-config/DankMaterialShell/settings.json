@@ -170,11 +170,18 @@
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
+  "spotlightSectionViewModes": {},
+  "appDrawerSectionViewModes": {},
   "niriOverviewOverlayEnabled": true,
+  "dankLauncherV2Size": "compact",
+  "dankLauncherV2BorderEnabled": false,
+  "dankLauncherV2BorderThickness": 2,
+  "dankLauncherV2BorderColor": "primary",
+  "dankLauncherV2ShowFooter": true,
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "auto",
-  "vpnLastConnected": "ef3ff04c-1082-4902-a7f1-0948f373d02f",
+  "vpnLastConnected": "3ffdadee-1f8e-4e54-9d84-031460837bad",
   "iconTheme": "System Default",
   "cursorSettings": {
     "theme": "System Default",
@@ -262,6 +269,7 @@
   "matugenTemplateDgop": true,
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": true,
+  "matugenTemplateEmacs": true,
   "showDock": false,
   "dockAutoHide": false,
   "dockSmartAutoHide": false,
@@ -480,5 +488,7 @@
       "trigger": "?"
     }
   },
+  "launcherPluginVisibility": {},
+  "launcherPluginOrder": [],
   "configVersion": 5
 }
