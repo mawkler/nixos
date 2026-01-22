@@ -344,10 +344,17 @@
   "updaterUseCustomCommand": false,
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
-  "displayNameMode": "system",
+  "displayNameMode": "model",
   "screenPreferences": {},
   "showOnLastDisplay": {},
-  "niriOutputSettings": {},
+  "niriOutputSettings": {
+    "ASUSTek COMPUTER INC VG248 L7LMQS216433": {
+      "vrrOnDemand": true
+    },
+    "BOE NE135A1M-NY1 Unknown": {
+      "vrrOnDemand": true
+    }
+  },
   "hyprlandOutputSettings": {},
   "barConfigs": [
     {
