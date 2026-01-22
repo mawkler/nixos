@@ -127,6 +127,7 @@
     nps
     nurl
     onlyoffice-desktopeditors
+    opencode
     overskride
     popsicle
     python3
@@ -144,6 +145,7 @@
     spacedrive
     spicetify-cli
     spotify
+    spotube
     sshfs
     stable.anytype # unstable version throws an error on startup
     stable.maestral
