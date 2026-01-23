@@ -52,13 +52,18 @@ in
   gldm = "git log --decorate --oneline `_master_branch`..";
 
   # Jujutsu
+  j = "jj";
   js = "jj status";
   jl = "jj log";
   jc = "jj commit";
   jci = "jj commit --interactive";
   jn = "jj new";
   jd = "jj diff";
+  je = "jj edit";
+  jb = "jj bookmark";
+  jbs = "jj bookmark set";
   jgp = "jj git push";
+  jP = "jj bookmark set main -r @- && jj git push";
 
   # Zoxide
   cd = "z";
