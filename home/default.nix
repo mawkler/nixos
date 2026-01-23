@@ -136,7 +136,7 @@ in
     enable = true;
     defaultApplications = {
       "inode/directory" = "org.gnome.Nautilus.desktop";
-      "application/pdf" = "sioyek-4.desktop";
+      "application/pdf" = "sioyek.desktop";
       "x-scheme-handler/http" = "brave-browser.desktop";
       "x-scheme-handler/https" = "brave-browser.desktop";
     };

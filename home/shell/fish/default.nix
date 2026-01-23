@@ -14,6 +14,14 @@ in {
       preferAbbrs = true;
       shellAbbrs = import ../aliases.nix { inherit rootPath; };
       shellInitLast = "source ${rootPath}/home/shell/fish/config.fish";
+      shellAliases = {
+        ls = "eza --icons auto";
+        tree="eza --icons never --tree --git-ignore";
+        less="less -mgiJr --underline-special --SILENT";
+      };
+      functions = {
+        open = "xdg-open &>/dev/null $argv & disown";
+      };
     };
 
     starship = {
