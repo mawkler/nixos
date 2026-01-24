@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -36,6 +37,7 @@
     vscode-extensions.dbaeumer.vscode-eslint
     yaml-language-server
     zk
+    fish-lsp
     # azure-pipelines-language-server # Doesn't seem to exist
 
     # Formatters
@@ -45,6 +47,7 @@
     prettierd
     shfmt
     rumdl
+    kdlfmt
 
     # Linters
     # vacuum # Relies on an insecure package

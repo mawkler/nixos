@@ -34,6 +34,12 @@ in
     sessionVariables = {
       ZK_NOTEBOOK_DIR = "${homeDirectory}/Dropbox/Dokument/Markdowns/";
     };
+
+    pointerCursor = {
+      name = "phinger-cursors-dark";
+      package = pkgs.phinger-cursors;
+      gtk.enable = true;
+    };
   };
 
   # Symlink every file in `./dotfiles/dot-config` to `~/.config/`
