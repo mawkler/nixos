@@ -1,4 +1,4 @@
-{ config, rootPath, ... }:
+{ pkgs, config, rootPath, ... }:
 let
   inherit (config.lib.file) mkOutOfStoreSymlink;
   fishConfig = "${rootPath}/home/shell/fish";
@@ -67,4 +67,6 @@ in {
       changeDirWidgetOptions = [ "--preview '${eza}'" ];
     };
   };
+
+  home.packages = with pkgs; [ fishPlugins.fish-bd ];
 }
