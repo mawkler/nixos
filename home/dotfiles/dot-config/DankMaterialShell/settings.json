@@ -182,8 +182,8 @@
   "dankLauncherV2ShowFooter": true,
   "useAutoLocation": false,
   "weatherEnabled": true,
-  "networkPreference": "auto",
-  "vpnLastConnected": "4b3a3826-6d97-49d4-9a46-e3b9fcf15245",
+  "networkPreference": "wifi",
+  "vpnLastConnected": "577ea362-919c-4772-8d54-c46eb89e3c7a",
   "iconTheme": "System Default",
   "cursorSettings": {
     "theme": "System Default",
