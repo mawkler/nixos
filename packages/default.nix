@@ -68,6 +68,7 @@
     bat
     beeper
     bitwarden-cli
+    bitwarden-desktop
     calibre
     cargo-nextest
     cargo-update
