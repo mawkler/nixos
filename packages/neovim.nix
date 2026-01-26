@@ -38,12 +38,12 @@
     yaml-language-server
     zk
     fish-lsp
-    # azure-pipelines-language-server # Doesn't seem to exist
 
     # Formatters
     keep-sorted
     mdsf
     nixfmt
+    alejandra
     prettierd
     shfmt
     rumdl
