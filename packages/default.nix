@@ -153,7 +153,6 @@
     stable.plotinus
     steam
     sushi
-    topgrade
     trash-cli
     tree
     typst
