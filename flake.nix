@@ -50,10 +50,10 @@
           modules = [ ./configuration.nix ./packages ];
         };
 
-        work-laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = specialArgs // { hostname = "work-laptop"; };
+        framework13-df = nixpkgs.lib.nixosSystem {
+          specialArgs = specialArgs // { hostname = "framework13-df"; };
           modules =
-            [ ./configuration.nix ./packages ./hosts/work-laptop/packages ];
+            [ ./configuration.nix ./packages ./hosts/framework13-df/packages ];
         };
       };
 
@@ -64,12 +64,11 @@
           extraSpecialArgs = specialArgs;
         };
       in {
-        # TODO: consider having this be a fallback - i.e., just set the username, not the hostname
         "${username}@thinkpad-nixos" = home-manager.lib.homeManagerConfiguration
-          (config // { modules = [ ./home ]; });
+          (config // { modules = [ ./home ./home/dank-material-shell.nix ./home/swayidle.nix ]; });
 
-        "${username}@work-laptop" = home-manager.lib.homeManagerConfiguration
-          (config // { modules = [ ./home ./hosts/work-laptop/home ]; });
+        "${username}@framework13-df" = home-manager.lib.homeManagerConfiguration
+          (config // { modules = [ ./home ./hosts/framework13-df/home ]; });
       };
     };
 }
