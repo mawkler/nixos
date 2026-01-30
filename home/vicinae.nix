@@ -4,6 +4,7 @@
     systemd.enable = true;
 
     settings = {
+      providers.core.entrypoints.search-emojis.preferences.skinTone = "light";
       faviconService = "twenty";
       font.size = 12;
       popToRootOnClose = false;
