@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
   programs.vicinae = {
     enable = true;
     systemd.enable = true;
@@ -17,31 +17,22 @@
     };
 
     extensions = let
-      mkExtension = name:
-        (config.lib.vicinae.mkExtension {
-          inherit name;
-          src = pkgs.fetchFromGitHub {
-            owner = "vicinaehq";
-            repo = "extensions";
-            rev = "b698ce7ecb58dec1efe297f87370253d8f6ba9d5";
-            sha256 = "sha256-jhlWZ6WfFBjS7CXbUOreZ2zEnYiVYfeqKOaZguFFslA=";
-          } + "/extensions/${name}";
-        });
-    in [
-      (mkExtension "mullvad")
-      (mkExtension "bluetooth")
-      (mkExtension "nix")
-      (mkExtension "niri")
-      (mkExtension "power-profile")
-      (mkExtension "port-killer")
-      (mkExtension "wifi-commander")
-      # (mkExtension "systemd")
-
-      (config.lib.vicinae.mkRayCastExtension {
+      system = pkgs.stdenv.hostPlatform.system;
+      extensions = inputs.vicinae-extensions.packages.${system};
+      gifSearch = config.lib.vicinae.mkRayCastExtension {
         name = "gif-search";
         sha256 = "sha256-NKmNqRqAnxtOXipFZFXOIgFlVzc0c3B5/Qr4DzKzAx4=";
         rev = "27c8726a793b985df4cc8f1a771e354e9c12b195";
-      })
-    ];
+      };
+      builtinExtensions = with extensions; [
+        mullvad
+        bluetooth
+        nix
+        niri
+        power-profile
+        port-killer
+        wifi-commander
+      ];
+    in builtinExtensions ++ [ gifSearch ];
   };
 }

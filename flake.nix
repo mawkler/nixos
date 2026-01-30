@@ -34,6 +34,9 @@
 
     dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";
     dank-material-shell.inputs.nixpkgs.follows = "nixpkgs";
+
+    vicinae-extensions.url = "github:vicinaehq/extensions";
+    vicinae-extensions.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
