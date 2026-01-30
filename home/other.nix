@@ -40,7 +40,5 @@
         startMinimized = true;
       };
     };
-
-    jujutsu.enable = true;
   };
 }

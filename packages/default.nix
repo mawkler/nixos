@@ -113,7 +113,6 @@
     killall
     kitty
     lazygit
-    lazyjj
     libnotify
     localsend
     manix

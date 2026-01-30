@@ -18,6 +18,7 @@ in
     ./shell/zoxide.nix
     ./ghostty.nix
     ./vicinae.nix
+    ./jj.nix
   ];
 
   nixpkgs = { inherit overlays; };
