@@ -19,6 +19,7 @@
     bicep-lsp
     gopls
     hyprls
+    just-lsp
     kdePackages.qtdeclarative # qmlls
     languagetool
     lemminx

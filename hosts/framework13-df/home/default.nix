@@ -13,6 +13,7 @@
     bacon
     bat
     beeper
+    cargo-insta
     cargo-nextest
     comma
     eza
@@ -25,6 +26,7 @@
     jjui
     just
     keep-sorted
+    librepods
     luarocks
     neovide
     neovim
