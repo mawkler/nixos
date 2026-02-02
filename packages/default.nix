@@ -101,6 +101,7 @@
     hurl
     hyperfine
     inputs.nox.packages.${stdenv.hostPlatform.system}.default
+    jjui
     jless
     jq
     kdePackages.dolphin

@@ -1,50 +1,6 @@
 # Launch tmux if there's no tmux session already running
 if [[ ! $(tmux list-sessions 2> /dev/null) ]]; then exec tmux; fi
 
-if [[ ! -f "/etc/NIXOS" ]]; then
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-ZSH_THEME="agnoster" # Backup theme
-DISABLE_AUTO_UPDATE="true"
-export ANTIGEN_CACHE=false # Fixes issue with completion for azure-cli not working
-
-# ------------- Antigen -------------
-
-source /usr/share/zsh/share/antigen.zsh
-
-autoload -Uz compinit && compinit
-
-antigen use oh-my-zsh # Load the oh-my-zsh's library.
-antigen bundles << EOBUNDLES
-  pip
-  npm
-  lein
-  command-not-found
-  colorize
-  colored-man-pages
-  extract
-  zsh-users/zsh-autosuggestions
-  zsh-users/zsh-syntax-highlighting
-  zsh-users/zsh-history-substring-search
-  zsh-users/zsh-completions
-  l4u/zsh-output-highlighting
-  mawkler/zsh-bd
-  hlissner/zsh-autopair
-  unixorn/autoupdate-antigen.zshplugin
-  Aloxaf/fzf-tab
-  olets/zsh-abbr@main
-  lukechilds/zsh-better-npm-completion
-EOBUNDLES
-
-antigen theme romkatv/powerlevel10k
-antigen apply # Tell Antigen that you're done.
-
-fi
-
 # -----------------------------------
 
 HYPHEN_INSENSITIVE="true"            # Use hyphen-insensitive completion
