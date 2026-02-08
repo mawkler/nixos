@@ -37,6 +37,9 @@
 
     vicinae-extensions.url = "github:vicinaehq/extensions";
     vicinae-extensions.inputs.nixpkgs.follows = "nixpkgs";
+
+    ns-tui.url = "github:briheet/ns-tui";
+    ns-tui.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
