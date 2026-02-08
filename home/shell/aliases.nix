@@ -55,6 +55,7 @@ in
   j = "jj";
   js = "jj status";
   jl = "jj log";
+  jL = "jj log -r ..";
   jc = "jj commit";
   jci = "jj commit --interactive";
   jn = "jj new";
