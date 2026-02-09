@@ -60,6 +60,7 @@ in
   jn = "jj new";
   jd = "jj diff";
   je = "jj edit";
+  jr = "jj rebase";
   jb = "jj bookmark";
   jbs = "jj bookmark set";
   jgp = "jj git push";
