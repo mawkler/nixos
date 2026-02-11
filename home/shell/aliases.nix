@@ -63,6 +63,7 @@ in
   jr = "jj rebase";
   jb = "jj bookmark";
   jbs = "jj bookmark set";
+  jbt = "jj bookmark track --remote=origin";
   jgp = "jj git push";
   jgf = "jj git fetch";
   jP = "jj bookmark set main -r @- && jj git push";

@@ -13,6 +13,12 @@ in {
       enable = true;
       preferAbbrs = true;
       shellAbbrs = import ../aliases.nix { inherit rootPath; };
+      # shellInit = # fish
+      # ''
+      #   if type -q atuin
+      #     atuin init fish | source
+      #   end
+      # '';
       shellInitLast = "source ${rootPath}/home/shell/fish/config.fish";
       shellAliases = {
         ls = "eza --icons auto";
