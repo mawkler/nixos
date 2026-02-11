@@ -1,0 +1,5 @@
+[target.x86_64-unknown-linux-gnu]
+rustflags = [
+    "-Z", "share-generics=y", # Share generic code over multiple compiler units
+    "-Z", "threads=8", # Expand macros in parallel
+]
