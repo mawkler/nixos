@@ -22,8 +22,9 @@
     font-awesome
     fzf
     gimp
-    grayjay
+    github-cli
     jjui
+    jless
     just
     keep-sorted
     librepods
