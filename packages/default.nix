@@ -116,6 +116,7 @@
     kitty
     lazygit
     libnotify
+    librepods
     localsend
     manix
     mission-center
