@@ -69,6 +69,7 @@
     beeper
     bitwarden-cli
     bitwarden-desktop
+    btop
     calibre
     cargo-nextest
     cargo-update
