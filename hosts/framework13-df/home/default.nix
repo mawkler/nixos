@@ -23,6 +23,7 @@
     fzf
     gimp
     github-cli
+    glab
     jjui
     jless
     just
