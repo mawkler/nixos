@@ -6,5 +6,8 @@
     systemd.enable = true;
   };
 
-  home.packages = with pkgs; [ polkit ];
+  home.packages = with pkgs; [
+    polkit
+    prettier # For formatting `settings.json`
+  ];
 }

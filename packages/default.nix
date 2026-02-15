@@ -157,6 +157,7 @@
     stable.plotinus
     steam
     sushi
+    tailscale
     trash-cli
     tree
     typst
