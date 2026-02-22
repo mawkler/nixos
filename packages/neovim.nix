@@ -17,6 +17,7 @@
     # Language servers
     bash-language-server
     bicep-lsp
+    fish-lsp
     gopls
     hyprls
     just-lsp
@@ -25,12 +26,13 @@
     lemminx
     ltex-ls-plus
     lua-language-server
-    stable.next-ls
     nil
     nixd
     nodePackages.vscode-json-languageserver
     python312Packages.python-lsp-server
     rust-analyzer
+    stable.next-ls
+    taplo
     tinymist
     typescript-language-server
     typos-lsp
@@ -38,7 +40,6 @@
     vscode-extensions.dbaeumer.vscode-eslint
     yaml-language-server
     zk
-    fish-lsp
 
     # Formatters
     keep-sorted
