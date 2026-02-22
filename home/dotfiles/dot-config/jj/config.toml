@@ -5,13 +5,11 @@ name = "Melker Ulander"
 email = "melker.ulander@pm.me"
 
 [ui]
-diff-formatter="delta"
+diff-formatter = "delta"
 pager = ["delta", "--pager", "less"] # Hide output when quitting pager
 diff-editor = ":builtin"
 default-command = "log"
-
-[merge-tools]
-delta.diff-expected-exit-codes = [0, 1]
+merge-editor = "diffconflicts"
 
 [templates]
 draft_commit_description = '''
@@ -21,3 +19,21 @@ concat(
   diff.git(),
 )
 '''
+
+[merge-tools]
+# Fixes `tool exited with exit status: 1` warning
+delta.diff-expected-exit-codes = [0, 1]
+
+[merge-tools.diffconflicts]
+program = "nvim"
+merge-args = [
+  "-c",
+  "let g:jj_diffconflicts_marker_length=$marker_length",
+  "-c",
+  "JJDiffConflicts",
+  "$output",
+  "$base",
+  "$left",
+  "$right",
+]
+merge-tool-edits-conflict-markers = true
