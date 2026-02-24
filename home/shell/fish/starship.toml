@@ -1,5 +1,11 @@
 format = "$directory$username$hostname$character"
-right_format = "$all$time"
+right_format = "$custom$all$time"
+
+# Disable Git in favour of Jujutsu
+git_branch.disabled = true
+git_commit.disabled = true
+git_state.disabled = true
+git_status.disabled = true
 
 add_newline = false
 
@@ -14,5 +20,7 @@ truncation_length = 5
 fish_style_pwd_dir_length = 1
 truncation_symbol = "…/"
 
-[git_branch]
-symbol = '󰊢 '
+[custom.jj]
+when = "jj-starship detect"
+shell = ["jj-starship", "--jj-symbol", "󱗆 ", "--git-symbol", "󰊢 "]
+format = "$output "

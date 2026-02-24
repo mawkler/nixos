@@ -74,5 +74,8 @@ in {
     };
   };
 
-  home.packages = with pkgs; [ fishPlugins.fish-bd ];
+  home.packages = with pkgs; [
+    fishPlugins.fish-bd
+    jj-starship
+  ];
 }

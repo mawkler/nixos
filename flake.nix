@@ -43,11 +43,14 @@
 
     ns-tui.url = "github:briheet/ns-tui";
     ns-tui.inputs.nixpkgs.follows = "nixpkgs";
+
+    jj-starship.url = "github:dmmulroy/jj-starship";
+    jj-starship.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
     let
-      overlays = import ./overlays { inherit inputs; };
+      overlays = import ./overlays { inherit inputs; } ++ [ inputs.jj-starship.overlays.default ];
       specialArgs = { inherit inputs overlays username rootPath; };
       system = "x86_64-linux";
       username = "melker";
@@ -67,9 +70,8 @@
       };
 
       homeConfigurations = let
-        pkgs = nixpkgs.legacyPackages.${system};
         config = {
-          inherit pkgs;
+          pkgs = nixpkgs.legacyPackages.${system};
           extraSpecialArgs = specialArgs;
         };
       in {
