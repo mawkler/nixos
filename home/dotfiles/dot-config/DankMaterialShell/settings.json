@@ -420,10 +420,26 @@
       "leftWidgets": ["workspaceSwitcher", "focusedWindow"],
       "centerWidgets": ["music", "clock", "weather"],
       "rightWidgets": [
-        "systemTray",
-        "cpuUsage",
-        "memUsage",
-        "notificationButton",
+        {
+          "id": "systemTray",
+          "enabled": true
+        },
+        {
+          "id": "dankKDEConnect",
+          "enabled": true
+        },
+        {
+          "id": "cpuUsage",
+          "enabled": true
+        },
+        {
+          "id": "memUsage",
+          "enabled": true
+        },
+        {
+          "id": "notificationButton",
+          "enabled": true
+        },
         {
           "id": "battery",
           "enabled": true
