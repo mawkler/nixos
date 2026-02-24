@@ -63,6 +63,7 @@ in
   je = "jj edit";
   jr = "jj rebase";
   jb = "jj bookmark";
+  jbm = "jj bookmark move";
   jbs = "jj bookmark set";
   jbt = "jj bookmark track main --remote=origin";
   jP = "jj bookmark set main -r @- && jj git push";
@@ -70,6 +71,8 @@ in
   jgf = "jj git fetch";
   jp = "jj prev";
   jN = "jj next";
+
+  J = "jjui";
 
   # Zoxide
   cd = "z";
