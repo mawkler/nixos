@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   imports = [
     inputs.zen-browser.homeModules.beta
   ];
@@ -12,7 +13,12 @@
       enableFishIntegration = true;
     };
 
-    zen-browser.enable = true;
+    zen-browser = {
+      enable = true;
+      # 2026-02-23: since update 18.18.6b:
+      # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file#missing-configuration-after-update
+      suppressXdgMigrationWarning = true;
+    };
 
     tealdeer = {
       enable = true;
