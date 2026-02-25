@@ -417,8 +417,21 @@
       "position": 0,
       "screenPreferences": ["all"],
       "showOnLastDisplay": true,
-      "leftWidgets": ["workspaceSwitcher", "focusedWindow"],
-      "centerWidgets": ["music", "clock", "weather"],
+      "leftWidgets": [
+        "workspaceSwitcher",
+        "focusedWindow",
+        {
+          "id": "music",
+          "enabled": true
+        }
+      ],
+      "centerWidgets": [
+        "clock",
+        {
+          "id": "weather",
+          "enabled": true
+        }
+      ],
       "rightWidgets": [
         {
           "id": "systemTray",
@@ -430,11 +443,14 @@
         },
         {
           "id": "cpuUsage",
-          "enabled": true
+          "enabled": true,
+          "minimumWidth": false
         },
         {
           "id": "memUsage",
-          "enabled": true
+          "enabled": true,
+          "minimumWidth": false,
+          "showSwap": false
         },
         {
           "id": "notificationButton",
