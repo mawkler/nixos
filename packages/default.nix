@@ -37,7 +37,10 @@
 
     nix-index-database.comma.enable = true;
 
-    kdeconnect.enable = true;
+    kdeconnect = {
+      enable = true;
+      package = pkgs.valent;
+    };
   };
 
   # Services
