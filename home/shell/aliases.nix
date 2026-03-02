@@ -68,6 +68,8 @@ in
   jP = "jj bookmark set main -r @- && jj git push";
   jgp = "jj git push";
   jgf = "jj git fetch";
+  jp = "jj prev";
+  jN = "jj next";
 
   # Zoxide
   cd = "z";
