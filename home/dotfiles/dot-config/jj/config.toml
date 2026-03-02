@@ -7,9 +7,9 @@ email = "melker.ulander@pm.me"
 [ui]
 diff-formatter = "delta"
 pager = ["delta", "--pager", "less"] # Hide output when quitting pager
-diff-editor = ":builtin"
 default-command = "log"
 merge-editor = "diffconflicts"
+diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
 
 [templates]
 draft_commit_description = '''
