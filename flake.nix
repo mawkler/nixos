@@ -50,7 +50,7 @@
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
     let
-      overlays = import ./overlays { inherit inputs; } ++ [ inputs.jj-starship.overlays.default ];
+      overlays = import ./overlays { inherit inputs; };
       specialArgs = { inherit inputs overlays username rootPath; };
       system = "x86_64-linux";
       username = "melker";
