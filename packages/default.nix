@@ -6,15 +6,16 @@
 }:
 {
   imports = [
-    ./niri.nix
+    # keep-sorted start
+    ./boot.nix
     ./kanata.nix
     ./neovim.nix
+    ./niri.nix
     ./stylix.nix
     ./tmux.nix
-    ./boot.nix
-    # ./nix-search-tv.nix
-    inputs.nixai.nixosModules.default
     inputs.nix-index-database.nixosModules.nix-index
+    inputs.nixai.nixosModules.default
+    # keep-sorted end
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -68,6 +69,7 @@
   # All other packages
   environment.systemPackages = with pkgs; [
     # keep-sorted start
+    alejandra
     antigen
     bacon
     bat
@@ -108,7 +110,6 @@
     hyperfine
     inputs.nox.packages.${stdenv.hostPlatform.system}.default
     inputs.ns-tui.packages.${stdenv.hostPlatform.system}.default
-    jjui
     jless
     jq
     kdePackages.dolphin
