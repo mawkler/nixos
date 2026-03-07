@@ -1,11 +1,14 @@
-{ pkgs, rootPath, ... }: {
+{ pkgs, rootPath, ... }:
+{
   programs.rofi = {
     enable = true;
     # Importing the theme like this allows modifying the theme without
     # reloading home-manager.
     #
     # TODO: rewrite as Nix and inject Stylix colors
-    theme = { "@import" = "${rootPath}/home/rofi/rofi-theme"; };
+    theme = {
+      "@import" = "${rootPath}/home/rofi/rofi-theme";
+    };
     extraConfig = {
       # Keybindings
       kb-row-down = "Control+j,Down";

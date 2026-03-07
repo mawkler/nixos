@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   imports = [ inputs.caelestia.homeManagerModules.default ];
 
   programs.caelestia = {
@@ -10,8 +11,14 @@
     settings = {
       # paths.wallpaperDir = "~/Images";
       appearance = {
-        anim = { durations = { scale = 0.7; }; };
-        padding = { scale = 0.5; };
+        anim = {
+          durations = {
+            scale = 0.7;
+          };
+        };
+        padding = {
+          scale = 0.5;
+        };
         transparency = {
           enabled = true;
           base = 0.6;
@@ -24,27 +31,39 @@
           audio = [ "pavucontrol" ];
         };
         idle = {
-          timeouts = let minutes = 60;
-          in [
-            {
-              timeout = 10 * minutes;
-              idleAction = "lock";
-            }
-            {
-              timeout = 15 * minutes;
-              idleAction = "dpms off";
-              returnAction = "dpms on";
-            }
-            {
-              timeout = 20 * minutes;
-              idleAction = [ "systemctl" "suspend-then-hibernate" ];
-            }
-          ];
+          timeouts =
+            let
+              minutes = 60;
+            in
+            [
+              {
+                timeout = 10 * minutes;
+                idleAction = "lock";
+              }
+              {
+                timeout = 15 * minutes;
+                idleAction = "dpms off";
+                returnAction = "dpms on";
+              }
+              {
+                timeout = 20 * minutes;
+                idleAction = [
+                  "systemctl"
+                  "suspend-then-hibernate"
+                ];
+              }
+            ];
         };
       };
-      background = { desktopClock = { enabled = true; }; };
+      background = {
+        desktopClock = {
+          enabled = true;
+        };
+      };
       bar = {
-        sizes = { innerWidth = 32; };
+        sizes = {
+          innerWidth = 32;
+        };
         status = {
           showAudio = true;
           showMicrophone = true;
@@ -56,8 +75,12 @@
           shown = 5;
         };
       };
-      border = { thickness = 1; };
-      dashboard = { dragThreshold = 10; };
+      border = {
+        thickness = 1;
+      };
+      dashboard = {
+        dragThreshold = 10;
+      };
       launcher = {
         vimKeybinds = true;
         enableDangerousActions = true;
@@ -67,19 +90,36 @@
         actionOnClick = true;
         defaultExpireTimeout = 3000;
       };
-      osd = { hideDelay = 1000; };
+      osd = {
+        hideDelay = 1000;
+      };
       session = {
         vimKeybinds = true;
         commands = {
-          logout = [ "loginctl" "terminate-user" "" ];
-          shutdown = [ "systemctl" "poweroff" ];
-          hibernate = [ "systemctl" "hibernate" ];
-          reboot = [ "systemctl" "reboot" ];
+          logout = [
+            "loginctl"
+            "terminate-user"
+            ""
+          ];
+          shutdown = [
+            "systemctl"
+            "poweroff"
+          ];
+          hibernate = [
+            "systemctl"
+            "hibernate"
+          ];
+          reboot = [
+            "systemctl"
+            "reboot"
+          ];
         };
       };
     };
 
-    cli = { enable = true; };
+    cli = {
+      enable = true;
+    };
   };
 
   home.packages = with pkgs; [

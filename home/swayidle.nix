@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # TODO: DankMaterialShell has this stuff built-in now?
   services.swayidle =
     let

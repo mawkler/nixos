@@ -45,7 +45,6 @@
     keep-sorted
     mdsf
     nixfmt
-    alejandra
     prettierd
     shfmt
     rumdl

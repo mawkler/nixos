@@ -1,7 +1,12 @@
-{ lib, config, rootPath, ... }: {
+{
+  lib,
+  config,
+  rootPath,
+  ...
+}:
+{
   # Allow unfree package
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [ "zsh-abbr" ];
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "zsh-abbr" ];
 
   programs.fzf.enableZshIntegration = true;
   programs.fzf.enableBashIntegration = true;
@@ -14,18 +19,24 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh.enable = true;
     dotDir = "${config.xdg.configHome}/zsh";
-    initContent = let
-      # Load fish instead of zsh
-      # https://wiki.nixos.org/wiki/Fish#Setting_fish_as_default_shell
-      loadFish = lib.mkBefore # sh
-        ''
-          if [[ $(ps -o command= -p "$PPID" | awk '{print $1}') != 'fish' ]]
-          then
-              exec fish -l
-          fi
-        '';
-      loadZsh = "source ~/.zshrc";
-    in lib.mkMerge [ loadFish loadZsh ];
+    initContent =
+      let
+        # Load fish instead of zsh
+        # https://wiki.nixos.org/wiki/Fish#Setting_fish_as_default_shell
+        loadFish =
+          lib.mkBefore # sh
+            ''
+              if [[ $(ps -o command= -p "$PPID" | awk '{print $1}') != 'fish' ]]
+              then
+                  exec fish -l
+              fi
+            '';
+        loadZsh = "source ~/.zshrc";
+      in
+      lib.mkMerge [
+        loadFish
+        loadZsh
+      ];
 
     shellAliases = import ./aliases.nix { inherit rootPath; };
     zsh-abbr = {
@@ -43,7 +54,10 @@
         { name = "Aloxaf/fzf-tab"; }
         {
           name = "romkatv/powerlevel10k";
-          tags = [ "as:theme" "depth:1" ];
+          tags = [
+            "as:theme"
+            "depth:1"
+          ];
         }
       ];
     };

@@ -48,38 +48,76 @@
     jj-starship.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    { nixpkgs, home-manager, ... }@inputs:
     let
       overlays = import ./overlays { inherit inputs; };
-      specialArgs = { inherit inputs overlays username rootPath; };
+      specialArgs = {
+        inherit
+          inputs
+          overlays
+          username
+          rootPath
+          ;
+      };
       system = "x86_64-linux";
       username = "melker";
       rootPath = "/home/melker/.config/nixos";
-    in {
+    in
+    {
+      # NixOS
       nixosConfigurations = {
         thinkpad-nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = specialArgs // { hostname = "thinkpad-nixos"; };
-          modules = [ ./configuration.nix ./packages ];
+          specialArgs = specialArgs // {
+            hostname = "thinkpad-nixos";
+          };
+          modules = [
+            ./configuration.nix
+            ./packages
+          ];
         };
 
         framework13-df = nixpkgs.lib.nixosSystem {
-          specialArgs = specialArgs // { hostname = "framework13-df"; };
-          modules =
-            [ ./configuration.nix ./packages ./hosts/framework13-df/packages ];
+          specialArgs = specialArgs // {
+            hostname = "framework13-df";
+          };
+          modules = [
+            ./configuration.nix
+            ./packages
+            ./hosts/framework13-df/packages
+          ];
         };
       };
 
-      homeConfigurations = let
-        config = {
-          pkgs = nixpkgs.legacyPackages.${system};
-          extraSpecialArgs = specialArgs;
-        };
-      in {
-        "${username}@thinkpad-nixos" = home-manager.lib.homeManagerConfiguration
-          (config // { modules = [ ./home ./home/dank-material-shell.nix ./home/swayidle.nix ]; });
+      # Home Manager
+      homeConfigurations =
+        let
+          config = {
+            pkgs = nixpkgs.legacyPackages.${system};
+            extraSpecialArgs = specialArgs;
+          };
+        in
+        {
+          "${username}@thinkpad-nixos" = home-manager.lib.homeManagerConfiguration (
+            config
+            // {
+              modules = [
+                ./home
+                ./home/dank-material-shell.nix
+                ./home/swayidle.nix
+              ];
+            }
+          );
 
-        "${username}@framework13-df" = home-manager.lib.homeManagerConfiguration
-          (config // { modules = [ ./home ./hosts/framework13-df/home ]; });
-      };
+          "${username}@framework13-df" = home-manager.lib.homeManagerConfiguration (
+            config
+            // {
+              modules = [
+                ./home
+                ./hosts/framework13-df/home
+              ];
+            }
+          );
+        };
     };
 }

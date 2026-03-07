@@ -2,7 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, overlays, hostname, ... }: {
+{
+  pkgs,
+  overlays,
+  hostname,
+  ...
+}:
+{
   imports = [ ./hosts/${hostname}/hardware-configuration.nix ];
 
   nixpkgs = { inherit overlays; };
@@ -87,8 +93,11 @@
   # To be able to see disks in file explorers
   services.gvfs.enable = true;
 
-  nix.settings.experimental-features =
-    [ "flakes" "nix-command" "pipe-operators" ];
+  nix.settings.experimental-features = [
+    "flakes"
+    "nix-command"
+    "pipe-operators"
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
