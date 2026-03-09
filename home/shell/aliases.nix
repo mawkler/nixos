@@ -15,7 +15,7 @@ in
   nob = "nh os build || ${notifyDone}";
   hms = "${hms} || ${notifyDone}";
   hm = "home-manager --flake ${rootPath}";
-  nr = "nix run nixpkgs#%";
+  nr = "nix run nixpkgs#";
 
   # Git
   g = "git";
@@ -66,7 +66,7 @@ in
   jb = "jj bookmark";
   jbm = "jj bookmark move";
   jbs = "jj bookmark set";
-  jbt = "jj bookmark track main --remote=origin";
+  jbt = "jj bookmark track --remote=origin";
   jP = "jj bookmark set main -r @- && jj git push";
   jgp = "jj git push";
   jgf = "jj git fetch";

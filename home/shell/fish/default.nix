@@ -23,7 +23,12 @@ in
     fish = {
       enable = true;
       preferAbbrs = true;
-      shellAbbrs = import ../aliases.nix { inherit rootPath; };
+      shellAbbrs = (import ../aliases.nix { inherit rootPath; }) // {
+        nr = { 
+          expansion = "nix run nixpkgs#%";
+          setCursor = true;
+        };
+      };
       # shellInit = # fish
       # ''
       #   if type -q atuin
