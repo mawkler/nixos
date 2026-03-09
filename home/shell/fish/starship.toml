@@ -7,6 +7,8 @@ git_commit.disabled = true
 git_state.disabled = true
 git_status.disabled = true
 
+gcloud.disabled = true
+
 add_newline = false
 
 [time]
