@@ -34,6 +34,10 @@ in
       functions = {
         open = "xdg-open &>/dev/null $argv & disown";
       };
+      binds."tab" = {
+        command = "fzf-completion";
+        mode = "insert";
+      };
     };
 
     starship = {
