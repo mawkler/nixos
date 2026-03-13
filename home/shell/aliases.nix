@@ -62,6 +62,7 @@ in
   jd = "jj diff";
   je = "jj edit";
   jr = "jj rebase";
+  jS = "jj squash";
   jb = "jj bookmark";
   jbm = "jj bookmark move";
   jbs = "jj bookmark set";
