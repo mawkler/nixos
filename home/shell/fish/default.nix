@@ -7,6 +7,11 @@
 let
   inherit (config.lib.file) mkOutOfStoreSymlink;
   fishConfig = "${rootPath}/home/shell/fish";
+  batPreview = "bat --style=numbers --color=always --line-range :100 {}";
+  ezaPreview = ''
+    eza --color=always -T --level=2 --icons auto --git-ignore --git \
+    --ignore-glob=.git {}
+  '';
 in
 {
   xdg.configFile = {
@@ -34,10 +39,42 @@ in
       functions = {
         open = "xdg-open &>/dev/null $argv & disown";
       };
-      binds."tab" = {
-        command = "fzf-completion";
-        mode = "insert";
-      };
+      binds =
+        let
+          bind = command: {
+            inherit command;
+            mode = "insert";
+          };
+        in
+        {
+          "tab" = bind "fzf-completion";
+          "alt-t" =
+            bind
+              # fish
+              ''
+                set dirs (fd --type directory --exclude .git 2>/dev/null \
+                    | fzf --multi --reverse --preview "${ezaPreview}")
+
+                if test -n "$dirs"
+                    set escaped (string escape --style=script $dirs)
+                    commandline -i -- (string join " " $escaped)
+                    commandline -f repaint
+                end
+              '';
+          # Clear the current prompt's text, and restore it after running
+          # another command (like in zsh)
+          "ctrl-q" =
+            bind
+              # fish
+              ''
+                set -g __fish_pushed_line (commandline)
+                commandline ""
+                function after-next-prompt --on-event fish_postexec
+                    commandline $__fish_pushed_line
+                    functions --erase after-next-prompt
+                end
+              '';
+        };
     };
 
     starship = {
@@ -46,43 +83,38 @@ in
       enableTransience = true;
     };
 
-    fzf =
-      let
-        eza = "eza --color=always -T --level=2 --icons auto --git-ignore --git --ignore-glob=.git {}";
-        bat = "bat --style=numbers --color=always --line-range :100 {}";
-      in
-      {
-        enable = true;
-        enableFishIntegration = true;
-        defaultOptions = [
-          "--history=$HOME/.fzf_history"
-          "--history-size=10000"
-          "--height 50%"
-          "--pointer '▶'"
-          "--gutter ' '"
-        ];
-        colors = {
-          "fg" = "-1";
-          "fg+" = "#61afef";
-          "bg" = "-1";
-          "bg+" = "#444957";
-          "hl" = "#E06C75";
-          "hl+" = "#E06C75";
-          "gutter" = "-1";
-          "pointer" = "#61afef";
-          "marker" = "#98C379";
-          "header" = "#61afef";
-          "info" = "#98C379";
-          "spinner" = "#61afef";
-          "prompt" = "#c678dd";
-          "border" = "#798294";
-        };
-        # TODO: switch to real nix paths for rg, bat and eza
-        fileWidgetCommand = "rg --hidden --files --no-messages";
-        fileWidgetOptions = [ "--preview '${bat}'" ];
-        changeDirWidgetCommand = "fd --type directory -H --ignore-file ~/.ignore";
-        changeDirWidgetOptions = [ "--preview '${eza}'" ];
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+      defaultOptions = [
+        "--history=$HOME/.fzf_history"
+        "--history-size=10000"
+        "--height 50%"
+        "--pointer '▶'"
+        "--gutter ' '"
+      ];
+      colors = {
+        "fg" = "-1";
+        "fg+" = "#61afef";
+        "bg" = "-1";
+        "bg+" = "#444957";
+        "hl" = "#E06C75";
+        "hl+" = "#E06C75";
+        "gutter" = "-1";
+        "pointer" = "#61afef";
+        "marker" = "#98C379";
+        "header" = "#61afef";
+        "info" = "#98C379";
+        "spinner" = "#61afef";
+        "prompt" = "#c678dd";
+        "border" = "#798294";
       };
+      # TODO: switch to real nix paths for rg, bat and eza
+      fileWidgetCommand = "rg --hidden --files --no-messages";
+      fileWidgetOptions = [ "--preview '${batPreview}'" ];
+      changeDirWidgetCommand = "fd --type directory -H --ignore-file ~/.ignore";
+      changeDirWidgetOptions = [ "--preview '${ezaPreview}'" ];
+    };
   };
 
   home.packages = with pkgs; [
