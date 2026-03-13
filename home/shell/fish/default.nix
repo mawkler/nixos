@@ -7,9 +7,9 @@
 let
   inherit (config.lib.file) mkOutOfStoreSymlink;
   fishConfig = "${rootPath}/home/shell/fish";
-  batPreview = "bat --style=numbers --color=always --line-range :100 {}";
+  batPreview = "${pkgs.bat}/bin/bat --style=numbers --color=always --line-range :100 {}";
   ezaPreview = ''
-    eza --color=always -T --level=2 --icons auto --git-ignore --git \
+    ${pkgs.eza}/bin/eza --color=always -T --level=2 --icons auto --git-ignore --git \
     --ignore-glob=.git {}
   '';
 in
@@ -53,13 +53,13 @@ in
               # fish
               ''
                 set dirs (fd --type directory --exclude .git 2>/dev/null \
-                    | fzf --multi --reverse --preview "${ezaPreview}")
+                    | ${pkgs.fzf}/bin/fzf --multi --reverse --preview "${ezaPreview}")
 
                 if test -n "$dirs"
                     set escaped (string escape --style=script $dirs)
                     commandline -i -- (string join " " $escaped)
-                    commandline -f repaint
                 end
+                commandline -f repaint
               '';
           # Clear the current prompt's text, and restore it after running
           # another command (like in zsh)
@@ -109,10 +109,9 @@ in
         "prompt" = "#c678dd";
         "border" = "#798294";
       };
-      # TODO: switch to real nix paths for rg, bat and eza
-      fileWidgetCommand = "rg --hidden --files --no-messages";
+      fileWidgetCommand = "${pkgs.ripgrep}/bin/rg --hidden --files --no-messages";
       fileWidgetOptions = [ "--preview '${batPreview}'" ];
-      changeDirWidgetCommand = "fd --type directory -H --ignore-file ~/.ignore";
+      changeDirWidgetCommand = "${pkgs.fd}/bin/fd --type directory -H --ignore-file ~/.ignore";
       changeDirWidgetOptions = [ "--preview '${ezaPreview}'" ];
     };
   };
