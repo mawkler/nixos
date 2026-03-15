@@ -37,3 +37,17 @@ merge-args = [
   "$right",
 ]
 merge-tool-edits-conflict-markers = true
+
+[revset-aliases]
+"closest_pushable(to)" = 'heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'
+"closest_bookmark(to)" = "heads(::to & bookmarks())"
+
+[aliases]
+# Move the closest bookmark (or passed in bookmark name) to the closest pushable commit
+tug = ["util", "exec", "--", "sh", "-c", """
+  if [ "x$1" = "x" ]; then
+    jj bookmark move --from "closest_bookmark(@)" --to "closest_pushable(@)"
+  else
+    jj bookmark move --to "closest_pushable(@)" "$@"
+  fi
+  """, ""]
