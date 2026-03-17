@@ -51,3 +51,53 @@ tug = ["util", "exec", "--", "sh", "-c", """
     jj bookmark move --to "closest_pushable(@)" "$@"
   fi
   """, ""]
+
+pull = [
+  "util",
+  "exec",
+  "--",
+  "bash",
+  "-c",
+  """
+closest="$(jj log -r 'closest_bookmark(@)' -n 1 -T 'bookmarks' --no-graph | cut -d ' ' -f 1)"
+closest="${closest%\\*}"
+jj git fetch
+jj log -n 1 -r "${closest}" 2>&1 > /dev/null && jj rebase -d "${closest}" || jj rebase -d 'trunk()'
+jj log -r 'stack()'
+""",
+]
+
+push = [
+  "util",
+  "exec",
+  "--",
+  "bash",
+  "-c",
+  """
+  tuggable="$(jj log -r 'closest_bookmark(@)..closest_pushable(@)' -T '"n"' --no-graph)"
+  [[ -n "$tuggable" ]] && jj tug
+  pushable="$(jj log -r 'remote_bookmarks(remote=origin)..@' -T 'bookmarks' --no-graph)"
+  [[ -n "$pushable" ]] && jj git push || echo "Nothing to push."
+  closest="$(jj log -r 'closest_bookmark(@)' -n 1 -T 'bookmarks' --no-graph | cut -d ' ' -f 1)"
+  closest="${closest%\\*}"
+  tracked="$(jj bookmark list -r ${closest} -t -T 'if(remote == "origin", name)')"
+  [[ "$tracked" == "$closest" ]] || jj bookmark track "${closest}@origin"
+  """,
+]
+
+z = [
+  "util",
+  "exec",
+  "--",
+  "sh",
+  "-c",
+  """
+if [ "x$1" = "x" ]; then
+  jj bookmark list
+else
+  jj bookmark list -a -T 'separate("@", name, remote) ++ "\n"' 2> /dev/null | sort | uniq | fzf -f "$1" | head -n1 | xargs jj new
+fi
+""",
+  "",
+]
+za = ["bookmark", "list", "-a"]
