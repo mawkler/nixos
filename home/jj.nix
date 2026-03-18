@@ -16,8 +16,8 @@
         ui = {
           diff-formatter = "delta";
           # Hide output when quitting pager
-          pager = cmd "delta --pager less";
-          default-command = "log";
+          pager = cmd "delta --pager less";;
+          default-command = "status";
           merge-editor = "diffconflicts";
           diff-editor = [
             "nvim"
