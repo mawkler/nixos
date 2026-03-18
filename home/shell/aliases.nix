@@ -62,6 +62,7 @@ in
   jd = "jj diff";
   je = "jj edit";
   jr = "jj rebase";
+  jrot = "jj rebase --onto 'trunk()'";
   jS = "jj squash";
   jb = "jj bookmark";
   jbm = "jj bookmark move";
@@ -73,6 +74,8 @@ in
   jp = "jj prev";
   jN = "jj next";
 
+  # Jujuts (custom commands)
+  jt = "jj tug";
   J = "jjui";
 
   # Zoxide
