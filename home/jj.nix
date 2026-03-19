@@ -5,14 +5,8 @@
     enable = true;
     settings =
       let
-        exec = cmd: [
-          "util"
-          "exec"
-          "--"
-          "bash"
-          "-c"
-          cmd
-        ];
+        cmd = pkgs.lib.splitString " ";
+        exec = command: (cmd "util exec -- bash -c") ++ [ command ];
       in
       {
         user = {
@@ -22,18 +16,10 @@
         ui = {
           diff-formatter = "delta";
           # Hide output when quitting pager
-          pager = [
-            "delta"
-            "--pager"
-            "less"
-          ];
+          pager = cmd "delta --pager less";
           default-command = "log";
           merge-editor = "diffconflicts";
-          diff-editor = [
-            "nvim"
-            "-c"
-            "DiffEditor $left $right $output"
-          ];
+          diff-editor = cmd "nvim -c DiffEditor $left $right $output";
         };
         templates = {
           draft_commit_description = /* nix */ ''
@@ -72,10 +58,17 @@
             ''heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'';
           "closest_bookmark(to)" = # nix
             "heads(::to & bookmarks())";
+
+          "stack()" = /* nix */ "stack(@)";
+          "stack(x)" = /* nix */ "stack(x, 2)";
+          "stack(x, n)" = /* nix */ "ancestors(reachable(x, mutable()), n)";
         };
         aliases = {
           # Move the closest bookmark (or passed in bookmark name) to the closest pushable commit
           tug = exec /* sh */ ''
+            if [ -z "$(jj log -r 'closest_pushable(@)')" ]; then
+              echo "No commit is tuggable" && exit 0
+            fi
             if [ "x$1" = "x" ]; then
               jj bookmark move --from "closest_bookmark(@)" --to "closest_pushable(@)"
             else
@@ -117,11 +110,7 @@
             fi
 
           '';
-          za = [
-            "bookmark"
-            "list"
-            "-a"
-          ];
+          za = cmd "bookmark list -a";
 
           pr = exec /* sh */ ''
             gh pr create --head $(jj log -r 'closest_bookmark(@)' \
