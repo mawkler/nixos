@@ -58,8 +58,10 @@ in
   jL = "jj log -r ..";
   jc = "jj commit";
   jci = "jj commit --interactive";
-  jn = "jj new";
+  jN = "jj new";
   jd = "jj diff";
+  jdf = "jj diff --from";
+  jdt = "jj diff --from 'trunk()'";
   je = "jj edit";
   jr = "jj rebase";
   jrot = "jj rebase --onto 'trunk()'";
@@ -72,7 +74,14 @@ in
   jgp = "jj git push";
   jgf = "jj git fetch";
   jp = "jj prev";
-  jN = "jj next";
+  jpe = "jj prev --edit";
+  jpc = "jj prev --conflict";
+  jn = "jj next";
+  jne = "jj next --edit";
+  jnc = "jj next --conflict";
+
+  # Cargo
+  cb = "cargo build";
 
   # Jujuts (custom commands)
   jt = "jj tug";
