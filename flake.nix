@@ -104,7 +104,6 @@
               modules = [
                 ./home
                 ./home/dank-material-shell.nix
-                ./home/swayidle.nix
               ];
             }
           );

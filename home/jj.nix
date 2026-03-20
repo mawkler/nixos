@@ -19,7 +19,11 @@
           pager = cmd "delta --pager less";
           default-command = "log";
           merge-editor = "diffconflicts";
-          diff-editor = cmd "nvim -c DiffEditor $left $right $output";
+          diff-editor = [
+            "nvim"
+            "-c"
+            "DiffEditor $left $right $output"
+          ];
         };
         templates = {
           draft_commit_description = /* nix */ ''
