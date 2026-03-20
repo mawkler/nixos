@@ -16,6 +16,12 @@ in
   hms = "${hms} || ${notifyDone}";
   hm = "home-manager --flake ${rootPath}";
   nr = "nix run nixpkgs#";
+  noc =
+    let
+      dmsSettings = "home/dotfiles/dot-config/DankMaterialShell/settings.json";
+    in
+    # DankMaterialShell keeps adding new settings on updates
+    ''prettier --write ${dmsSettings} && jj commit ${dmsSettings} flake.lock  -m "Update"'';
 
   # Git
   g = "git";
