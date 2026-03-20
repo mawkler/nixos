@@ -1,0 +1,2 @@
+# Main jj config is in `home/jj.nix`. This file is mainly for trying out stuff
+# without having to do `home-manager switch` on each change.
