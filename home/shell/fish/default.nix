@@ -24,7 +24,7 @@ in
       enable = true;
       preferAbbrs = true;
       shellAbbrs = (import ../aliases.nix { inherit rootPath; }) // {
-        nr = { 
+        nr = {
           expansion = "nix run nixpkgs#%";
           setCursor = true;
         };
