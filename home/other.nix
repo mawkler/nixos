@@ -5,6 +5,13 @@
   ];
 
   programs = {
+    zen-browser.enable = true;
+
+    mergiraf = {
+      enable = true;
+      enableJujutsuIntegration = false;
+    };
+
     # TODO: move to `shell.nix`
     atuin = {
       enable = true;
@@ -12,8 +19,6 @@
       enableZshIntegration = true;
       enableFishIntegration = true;
     };
-
-    zen-browser.enable = true;
 
     tealdeer = {
       enable = true;
