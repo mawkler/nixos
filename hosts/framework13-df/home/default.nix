@@ -22,6 +22,7 @@
     beeper
     cargo-insta
     cargo-nextest
+    claude-code
     comma
     eza
     fd
@@ -37,8 +38,8 @@
     keep-sorted
     librepods
     luarocks
-    neovide
-    neovim
+    maestral
+    maestral-gui
     nerd-fonts.fira-code
     nix-search
     nixd
@@ -55,8 +56,16 @@
     tmux
     trash-cli
     wl-clipboard
+    zed-editor
     # redisinsight
     # keep-sorted end
+
+    # For Neovim
+    luaPackages.mimetypes
+    luaPackages.xml2lua
+    neovide
+    neovim
+    tree-sitter
   ];
 
   home.sessionVariables = {
@@ -70,6 +79,8 @@
       clean.extraArgs = "--keep-since 7d --keep 10";
       flake = rootPath;
     };
+
+    fish.shellAbbrs = { rt = "just run-tool"; };
   };
 
   fonts.fontconfig.enable = true;
