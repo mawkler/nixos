@@ -70,6 +70,7 @@ in
   jdt = "jj diff -r 'fork_point(@ | master)..@'";
   je = "jj edit";
   jr = "jj rebase";
+  jR = "jj resolve";
   jrot = "jj rebase --onto 'trunk()'";
   jS = "jj squash";
   jb = "jj bookmark";
@@ -85,6 +86,8 @@ in
   jn = "jj next";
   jne = "jj next --edit";
   jnc = "jj next --conflict";
+  jwu = "jj workspace update-stale";
+  jwa = "jj workspace add";
 
   # Cargo
   cb = "cargo build";

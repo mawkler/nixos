@@ -66,6 +66,7 @@
           "stack()" = /* nix */ "stack(@)";
           "stack(x)" = /* nix */ "stack(x, 2)";
           "stack(x, n)" = /* nix */ "ancestors(reachable(x, mutable()), n)";
+          "feature_branch(x)" = /* nix */ "reachable(x, ~::trunk())";
         };
         aliases = {
           # Move the closest bookmark (or passed in bookmark name) to the closest pushable commit
