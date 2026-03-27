@@ -22,6 +22,7 @@
     beeper
     cargo-insta
     cargo-nextest
+    chromedriver
     claude-code
     comma
     eza
@@ -50,6 +51,7 @@
     ripgrep
     rumdl
     rustup
+    sccache
     signal-desktop
     sioyek
     spotify
@@ -57,7 +59,6 @@
     trash-cli
     wl-clipboard
     zed-editor
-    # redisinsight
     # keep-sorted end
 
     # For Neovim
@@ -79,8 +80,10 @@
       clean.extraArgs = "--keep-since 7d --keep 10";
       flake = rootPath;
     };
-
-    fish.shellAbbrs = { rt = "just run-tool"; };
+    fish = {
+      shellAbbrs = { rt = "just run-tool"; };
+      shellInitLast = "source ~/gitrepos/dfmain/tools/rust_tools/completions/completions.fish";
+    };
   };
 
   fonts.fontconfig.enable = true;
