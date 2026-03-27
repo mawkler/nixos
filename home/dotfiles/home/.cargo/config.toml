@@ -3,3 +3,6 @@ rustflags = [
     "-Z", "share-generics=y", # Share generic code over multiple compiler units
     "-Z", "threads=8", # Expand macros in parallel
 ]
+
+[build]
+jobs = 20 # number of parallel jobs
