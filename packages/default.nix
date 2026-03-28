@@ -7,7 +7,6 @@
 {
   imports = [
     # keep-sorted start
-    ./boot.nix
     ./kanata.nix
     ./neovim.nix
     ./niri.nix
