@@ -72,7 +72,7 @@
             hostname = "thinkpad-nixos";
           };
           modules = [
-            ./configuration.nix
+            ./core
             ./packages
           ];
         };
@@ -82,7 +82,7 @@
             hostname = "framework13-df";
           };
           modules = [
-            ./configuration.nix
+            ./core
             ./packages
             ./hosts/framework13-df/packages
           ];

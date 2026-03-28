@@ -9,7 +9,7 @@
   ...
 }:
 {
-  imports = [ ./hosts/${hostname}/hardware-configuration.nix ];
+  imports = [ ../hosts/${hostname}/hardware-configuration.nix ];
 
   nixpkgs = { inherit overlays; };
 
