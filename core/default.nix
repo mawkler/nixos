@@ -1,7 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
+# This was once a `configuration.nix`
 {
   pkgs,
   overlays,
@@ -14,45 +11,39 @@
     ../hosts/${hostname}/hardware-configuration.nix
   ];
 
+  # Overlays
   nixpkgs = { inherit overlays; };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
+  # Networking
   networking.hostName = hostname;
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
+  # Locale
   time.timeZone = "Europe/Stockholm";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "sv_SE.UTF-8";
-    LC_IDENTIFICATION = "sv_SE.UTF-8";
-    LC_MEASUREMENT = "sv_SE.UTF-8";
-    LC_MONETARY = "sv_SE.UTF-8";
-    LC_NAME = "sv_SE.UTF-8";
-    LC_NUMERIC = "sv_SE.UTF-8";
-    LC_PAPER = "sv_SE.UTF-8";
-    LC_TELEPHONE = "sv_SE.UTF-8";
-    LC_TIME = "sv_SE.UTF-8";
-  };
-
-  # Configure console keymap
   console.keyMap = "us";
+  i18n =
+    let
+      swedish = "sv_SE.UTF-8";
+    in
+    {
+      defaultLocale = "en_US.UTF-8";
+      extraLocaleSettings = {
+        LC_ADDRESS = swedish;
+        LC_IDENTIFICATION = swedish;
+        LC_MEASUREMENT = swedish;
+        LC_MONETARY = swedish;
+        LC_NAME = swedish;
+        LC_NUMERIC = swedish;
+        LC_PAPER = swedish;
+        LC_TELEPHONE = swedish;
+        LC_TIME = swedish;
+      };
+    };
 
-  # Enable CUPS to print documents.
+  # Printin
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+  # Sound
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -61,10 +52,6 @@
     pulse.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Bluetooth
@@ -78,7 +65,8 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "dialout" # To enable serial port access in the browser (to access keyboards, etc.)
+      # Enable serial port access in the browser (i.e. CharaCorder connection)
+      "dialout"
     ];
   };
 
@@ -96,6 +84,7 @@
   # To be able to see disks in file explorers
   services.gvfs.enable = true;
 
+  # Nix
   nix.settings.experimental-features = [
     "flakes"
     "nix-command"

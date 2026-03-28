@@ -1,6 +1,10 @@
 { pkgs, ... }:
 {
   boot = {
+    # Came with default `configuration.nix`
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+
     # Silence the log outputs to make the boot process more aesthetically clean
     consoleLogLevel = 3;
     initrd.verbose = false;
