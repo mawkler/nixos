@@ -163,6 +163,7 @@
     steam
     sushi
     tailscale
+    tokei
     trash-cli
     tree
     typst

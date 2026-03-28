@@ -59,7 +59,7 @@ in
 
   # Jujutsu
   j = "jj";
-  js = "jj status";
+  js = "jj split";
   jl = "jj log";
   jL = "jj log -r ..";
   jc = "jj commit";
