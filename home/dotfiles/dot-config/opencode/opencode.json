@@ -1,6 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "permission": {
-    "bash": "ask"
+    "bash": "ask",
+    "nix eval *": "allow",
+    "nix flake show *": "allow",
+    "grep *": "allow",
+    "head *": "allow"
   }
 }
