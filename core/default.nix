@@ -86,11 +86,16 @@
   services.gvfs.enable = true;
 
   # Nix
-  nix.settings.experimental-features = [
-    "flakes"
-    "nix-command"
-    "pipe-operators"
-  ];
+  nix = {
+    settings.experimental-features = [
+      "flakes"
+      "nix-command"
+      "pipe-operators"
+    ];
+
+    gc.options = "--delete-older-than 14d";
+    optimise.automatic = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -16,6 +16,7 @@ in
   hms = "${hms} || ${notifyDone}";
   hm = "home-manager --flake ${rootPath}";
   nr = "nix run nixpkgs#";
+  ns = "nix-search";
   noc =
     let
       dmsSettings = "home/dotfiles/dot-config/DankMaterialShell/settings.json";

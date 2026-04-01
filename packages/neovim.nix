@@ -11,7 +11,7 @@
     gcc
     luajit
     luarocks
-    tree-sitter
+    luajitPackages.tree-sitter-cli
     neovide
 
     # Language servers
@@ -28,7 +28,7 @@
     lua-language-server
     nil
     nixd
-    nodePackages.vscode-json-languageserver
+    vscode-json-languageserver
     python312Packages.python-lsp-server
     rust-analyzer
     stable.next-ls
