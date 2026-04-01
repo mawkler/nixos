@@ -38,7 +38,7 @@ in
       shellInitLast = "source ${rootPath}/home/shell/fish/config.fish";
       shellAliases = {
         ls = "eza --icons auto";
-        tree = "eza --icons never --tree --git-ignore";
+        tree = "eza --tree --git-ignore";
         less = "less -mgiJr --underline-special --SILENT";
       };
       functions = {
@@ -52,7 +52,8 @@ in
           };
         in
         {
-          "tab" = bind "fzf-completion";
+          "tab" = bind "fzf_complete";
+          "shift-tab" = bind "complete";
           "alt-t" =
             bind
               # fish
