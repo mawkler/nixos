@@ -102,7 +102,7 @@
 
           init = exec /* sh */ ''
             jj git init --colocate
-            jj bookmark track 'glob:*@origin' # only track origin branches, not upstream or others
+            jj bookmark track 'glob:*' --remote 'origin' # only track origin branches, not upstream or others
           '';
 
           z = exec /* sh */ ''
