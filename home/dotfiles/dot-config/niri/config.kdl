@@ -359,9 +359,9 @@ binds {
     XF86MonBrightnessUp   allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
 
-    XF86AudioNext  { spawn "playerctl" "next";       }
     XF86AudioPause { spawn "playerctl" "play-pause"; }
     XF86AudioPlay  { spawn "playerctl" "play-pause"; }
+    XF86AudioNext  { spawn "playerctl" "next";       }
     XF86AudioPrev  { spawn "playerctl" "previous";   }
 
     // or do a four-finger swipe up on a touchpad.
