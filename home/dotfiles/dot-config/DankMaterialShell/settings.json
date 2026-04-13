@@ -529,7 +529,7 @@
         }
       ],
       "spacing": 4,
-      "innerPadding": 4,
+      "innerPadding": -2,
       "bottomGap": 0,
       "transparency": 0.7,
       "widgetTransparency": 0.8,
@@ -561,7 +561,8 @@
       "shadowOpacity": 60,
       "shadowColorMode": "text",
       "shadowCustomColor": "#000000",
-      "showOnWindowsOpen": false
+      "showOnWindowsOpen": false,
+      "widgetPadding": 5
     }
   ],
   "desktopClockEnabled": false,
