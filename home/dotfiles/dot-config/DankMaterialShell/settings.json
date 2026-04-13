@@ -238,6 +238,8 @@
   "dankLauncherV2BorderColor": "primary",
   "dankLauncherV2ShowFooter": true,
   "dankLauncherV2UnloadOnClose": false,
+  "dankLauncherV2IncludeFilesInAll": false,
+  "dankLauncherV2IncludeFoldersInAll": false,
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "wifi",
@@ -473,14 +475,7 @@
       "position": 0,
       "screenPreferences": ["all"],
       "showOnLastDisplay": true,
-      "leftWidgets": [
-        "workspaceSwitcher",
-        "focusedWindow",
-        {
-          "id": "music",
-          "enabled": true
-        }
-      ],
+      "leftWidgets": ["workspaceSwitcher", "focusedWindow"],
       "centerWidgets": [
         "clock",
         {
@@ -489,6 +484,15 @@
         }
       ],
       "rightWidgets": [
+        {
+          "id": "music",
+          "enabled": true,
+          "mediaSize": 1
+        },
+        {
+          "id": "separator",
+          "enabled": true
+        },
         {
           "id": "systemTray",
           "enabled": true
@@ -510,6 +514,10 @@
         },
         {
           "id": "notificationButton",
+          "enabled": true
+        },
+        {
+          "id": "separator",
           "enabled": true
         },
         {
@@ -546,7 +554,7 @@
       "widgetOutlineColor": "primary",
       "widgetOutlineOpacity": 0.44,
       "widgetOutlineThickness": 1,
-      "fontScale": 1,
+      "fontScale": 0.9,
       "autoHide": false,
       "autoHideDelay": 250,
       "openOnOverview": false,
@@ -562,7 +570,8 @@
       "shadowColorMode": "text",
       "shadowCustomColor": "#000000",
       "showOnWindowsOpen": false,
-      "widgetPadding": 5
+      "widgetPadding": 5,
+      "iconScale": 0.9
     }
   ],
   "desktopClockEnabled": false,
