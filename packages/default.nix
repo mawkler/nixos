@@ -69,6 +69,7 @@
   environment.systemPackages = with pkgs; [
     # keep-sorted start
     antigen
+    anytype # unstable version throws an error on startup
     bacon
     bat
     beeper
@@ -123,6 +124,8 @@
     libnotify
     librepods
     localsend
+    maestral
+    maestral-gui
     manix
     mission-center
     nautilus
@@ -137,6 +140,7 @@
     onlyoffice-desktopeditors
     opencode
     overskride
+    plotinus
     popsicle
     python3
     quicktype
@@ -155,10 +159,6 @@
     spotify
     spotube
     sshfs
-    stable.anytype # unstable version throws an error on startup
-    stable.maestral
-    stable.maestral-gui
-    stable.plotinus
     steam
     sushi
     tailscale
