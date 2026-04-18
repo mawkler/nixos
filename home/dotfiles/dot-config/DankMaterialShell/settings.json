@@ -68,6 +68,7 @@
   "selectedGpuIndex": 0,
   "enabledGpuPciIds": [],
   "showSystemTray": true,
+  "systemTrayMonochromeIcons": false,
   "showClock": true,
   "showNotificationButton": true,
   "showBattery": true,
