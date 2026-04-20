@@ -3,10 +3,13 @@
   "permission": {
     "edit": "ask",
     "bash": {
+      // keep-sorted start
       "*": "ask",
-      "systemctl status *": "allow",
       "cat *": "allow",
       "grep *": "allow",
+      "ls *": "allow",
+      "systemctl status *": "allow",
+      // keep-sorted end
     },
   },
 }

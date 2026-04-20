@@ -115,4 +115,5 @@ in
   ag = "ag --hidden --pager='less -R'";
   rg = "rg --hidden --smart-case";
   fd = "fd --hidden";
+  o = "opencode";
 }
