@@ -81,7 +81,9 @@
       flake = rootPath;
     };
     fish = {
-      shellAbbrs = { rt = "just run-tool"; };
+      shellAbbrs = {
+        rt = "just run-tool";
+      };
       shellInitLast = "source ~/gitrepos/dfmain/tools/rust_tools/completions/completions.fish";
     };
   };

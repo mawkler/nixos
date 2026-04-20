@@ -1,9 +1,6 @@
 { pkgs, ... }:
 {
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
+  programs.neovim.enable = true;
 
   environment.systemPackages = with pkgs; [
     # General dependencies

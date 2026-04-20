@@ -69,6 +69,7 @@ in
   jd = "jj diff";
   jdf = "jj diff --from";
   jdt = "jj diff -r 'fork_point(@ | trunk())..@'";
+  jD = "jj describe";
   je = "jj edit";
   jr = "jj rebase";
   jR = "jj resolve";

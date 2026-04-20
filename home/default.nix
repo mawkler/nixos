@@ -45,6 +45,9 @@ in
   # Symlink every file in `./dotfiles/home/` to `~/`
   home.file = mkSymlinks ./dotfiles/home "${dotfiles}/home";
 
+  # Minimal version of Neovim (fewer plugins, faster startup time)
+  home.sessionVariables.EDITOR = "nvim --cmd 'lua vim.g.minimal_config = true'";
+
   # Default applications
   xdg.mimeApps = {
     enable = true;

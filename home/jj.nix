@@ -21,6 +21,8 @@
           merge-editor = "diffconflicts";
           diff-editor = [
             "nvim"
+            "--cmd"
+            "lua vim.g.minimal_config = true"
             "-c"
             "DiffEditor $left $right $output"
           ];
