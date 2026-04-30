@@ -6,9 +6,9 @@
     # General dependencies
     ascii-image-converter
     gcc
-    luajit
+    lua5_1
+    lua51Packages.tree-sitter-cli
     luarocks
-    luajitPackages.tree-sitter-cli
     neovide
 
     # Language servers
