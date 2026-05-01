@@ -12,13 +12,16 @@ let
 in
 {
   imports = [
+    # keep-sorted start
+    ./agent-skills.nix
+    ./ghostty.nix
+    ./jj.nix
     ./other.nix
-    ./shell/zsh.nix
     ./shell/fish
     ./shell/zoxide.nix
-    ./ghostty.nix
+    ./shell/zsh.nix
     ./vicinae.nix
-    ./jj.nix
+    # keep-sorted end
   ];
 
   nixpkgs = { inherit overlays; };

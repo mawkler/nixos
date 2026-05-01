@@ -48,6 +48,10 @@
 
     jj-starship.url = "github:dmmulroy/jj-starship";
     jj-starship.inputs.nixpkgs.follows = "nixpkgs";
+
+    agent-skills.url = "github:Kyure-A/agent-skills-nix";
+    neovim-skill.url = "github:fredrikaverpil/dotfiles";
+    neovim-skill.flake = false;
   };
 
   outputs =
