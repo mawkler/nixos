@@ -10,8 +10,13 @@
       input = "neovim-skill";
       subdir = "stow/shared/.claude/skills";
     };
+    sources.nix-skill = {
+      input = "nix-skill";
+      subdir = "nixos-config/.claude/skills";
+    };
     skills.enable = [
       "neovim"
+      "Nix"
     ];
   };
 }

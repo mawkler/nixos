@@ -629,6 +629,22 @@
         "type": "github"
       }
     },
+    "nix-skill": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775923406,
+        "narHash": "sha256-mruzqlpS146UUU+gAIp7vItXXQ5l6zYU4W9cYRzzBGc=",
+        "owner": "aculich",
+        "repo": "toolchain-2026",
+        "rev": "1848eb031105d567054f14740f5100c1118d9d6b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aculich",
+        "repo": "toolchain-2026",
+        "type": "github"
+      }
+    },
     "nixai": {
       "inputs": {
         "flake-utils": "flake-utils_3",
@@ -867,6 +883,7 @@
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nix-index-database": "nix-index-database",
         "nix-search-tv": "nix-search-tv",
+        "nix-skill": "nix-skill",
         "nixai": "nixai",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-stable": "nixpkgs-stable",
