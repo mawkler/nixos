@@ -3,11 +3,19 @@
   "permission": {
     "edit": "ask",
     "bash": {
+      // keep-sorted start
       "*": "ask",
-      "nix eval *": "allow",
-      "nix flake show *": "allow",
+      "basename *": "allow",
+      "cat *": "allow",
       "grep *": "allow",
-      "head *": "allow",
+      "ls *": "allow",
+      "rg *": "allow",
+      "sort *": "allow",
+      "systemctl status *": "allow",
+      // keep-sorted end
     },
+  },
+  "experimental": {
+    "continue_loop_on_deny": true,
   },
 }
