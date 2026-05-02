@@ -6,17 +6,13 @@
     enable = true;
     targets.opencode.enable = true;
 
-    sources.neovim-skill = {
-      input = "neovim-skill";
-      subdir = "stow/shared/.claude/skills";
-    };
-    sources.nix-skill = {
-      input = "nix-skill";
-      subdir = "nixos-config/.claude/skills";
+    sources.skills = {
+      input = "skills";
+      subdir = "skills";
     };
     skills.enable = [
       "neovim"
-      "Nix"
+      "nix"
     ];
   };
 }
