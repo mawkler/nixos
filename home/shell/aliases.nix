@@ -79,6 +79,7 @@ in
   jbm = "jj bookmark move";
   jbs = "jj bookmark set";
   jbt = "jj bookmark track --remote=origin";
+  jbtm = "jj bookmark track --remote=origin main";
   jP = "jj bookmark set main -r @- && jj git push";
   jgp = "jj git push";
   jgf = "jj git fetch";
