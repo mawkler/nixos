@@ -17,6 +17,8 @@
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
     ];
+    # Boot screen resolution
+    loader.systemd-boot.consoleMode = "auto";
     # Hide the OS choice for bootloaders. It's still possible to open the
     # bootloader list by pressing `Esc`.
     loader.timeout = 0;
