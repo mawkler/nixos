@@ -13,11 +13,13 @@
       "cargo test *": "allow",
       "cat *": "allow",
       "grep *": "allow",
+      "head *": "allow",
       "hostname *": "allow",
       "ls *": "allow",
       "rg *": "allow",
       "sort *": "allow",
       "systemctl status *": "allow",
+      "tail *": "allow",
       // keep-sorted end
     },
   },
