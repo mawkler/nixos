@@ -53,10 +53,6 @@
     agent-skills.url = "github:Kyure-A/agent-skills-nix";
     skills.url = "github:mawkler/agent-skills";
     skills.flake = false;
-    # neovim-skill.url = "github:fredrikaverpil/dotfiles";
-    # neovim-skill.flake = false;
-    # nix-skill.url = "github:aculich/toolchain-2026";
-    # nix-skill.flake = false;
   };
 
   outputs =
