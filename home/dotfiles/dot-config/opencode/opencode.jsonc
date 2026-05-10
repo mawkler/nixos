@@ -37,6 +37,7 @@
       "jq *": "allow",
       "locate *": "allow",
       "ls *": "allow",
+      "nix flake check *":"allow",
       "nproc *": "allow",
       "od *": "allow",
       "printenv *": "allow",
