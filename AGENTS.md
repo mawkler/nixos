@@ -36,10 +36,6 @@ Home-manager target format: `${username}@${hostname}` (e.g. `melker@thinkpad-nix
 - **System uses `nh`** (nix helper) instead of raw `nixos-rebuild` / `home-manager`
 - **Dotfiles** are symlinked via `mkSymlinks` out-of-store to allow live editing without rebuild
 
-## Neovim tooling (packages/neovim.nix)
-
-All LSP servers, formatters, and debug adapters are installed system-wide
-
 ## Notable services
 
 - Desktop: DankMaterialShell, Nautilus file manager, Brave browser

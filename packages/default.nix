@@ -8,10 +8,10 @@
   imports = [
     # keep-sorted start
     ./kanata.nix
-    ./neovim.nix
     ./niri.nix
     ./stylix.nix
     ./tmux.nix
+    inputs.neovim.nixosModules.default
     inputs.nix-index-database.nixosModules.nix-index
     inputs.nixai.nixosModules.default
     # keep-sorted end

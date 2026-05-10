@@ -6,7 +6,7 @@
 
    ```sh
    config_path=~/.config/nixos
-   git clone https://github.com/mawkler/nixos.git $config_path
+   nix run nixpkgs#git clone https://github.com/mawkler/nixos.git $config_path
    ```
 2. Add an entry for your machine's hostname to this repo's `flake.nix` (both to the NixOS and Home Manager section)
 3. Install the config
@@ -15,6 +15,7 @@
     hostname=beauty # Set your hostname here (make sure that it matches the name used in step 2)
     config_path=~/.config/nixos
 
+    # Clone NixOS config
     sudo true
     git clone https://github.com/mawkler/nixos.git $config_path
     sudo mv /etc/nixos/ /etc/nixos-old/
@@ -23,8 +24,12 @@
     cp /etc/nixos-old/hardware-configuration.nix $config_path/hosts/$hostname
     git add $config_path/hosts/$hostname
 
+    # Install NixOS config
     sudo hostname $hostname
     sudo nixos-rebuild switch
     home-manager switch --flake ~/.config/nixos#melker@$hostname --impure --extra-experimental-features nix-command --extra-experimental-features flakes
+
+    # Install Neovim configuration
+    git clone https://github.com/mawkler/nvim.git ~/.config/nvim
   '
   ```

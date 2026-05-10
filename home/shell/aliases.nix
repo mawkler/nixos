@@ -3,7 +3,7 @@ let
   iconPath = "${rootPath}/assets/nix.svg";
   notifyDone = "notify-send --icon ${iconPath} NixOS Done";
   hms = "nh home switch";
-  nhOs = cmd: "sudo true && nh os ${cmd} && ${hms} || ${notifyDone}";
+  nhOs = cmd: "sudo true && nh os ${cmd} --update-input neovim && ${hms} || ${notifyDone}";
 in
 {
   # NixOS/home-manager
