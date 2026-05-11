@@ -89,6 +89,17 @@
           ];
         };
 
+
+        beauty = nixpkgs.lib.nixosSystem {
+          specialArgs = specialArgs // {
+            hostname = "beauty";
+          };
+          modules = [
+            ./core
+            ./packages
+          ];
+        };
+
         framework13-df = nixpkgs.lib.nixosSystem {
           specialArgs = specialArgs // {
             hostname = "framework13-df";
@@ -111,6 +122,16 @@
         in
         {
           "${username}@thinkpad-nixos" = home-manager.lib.homeManagerConfiguration (
+            config
+            // {
+              modules = [
+                ./home
+                ./home/dank-material-shell.nix
+              ];
+            }
+          );
+
+          "${username}@beauty" = home-manager.lib.homeManagerConfiguration (
             config
             // {
               modules = [
