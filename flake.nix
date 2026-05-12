@@ -12,6 +12,9 @@
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
+    # TODO: switch to nixpkgs once v0.55 has been published
+    hyprland.url = "github:hyprwm/Hyprland";
+
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 

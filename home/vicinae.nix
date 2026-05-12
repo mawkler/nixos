@@ -18,7 +18,7 @@
       theme.name = "github-dark-dimmed";
       window = {
         csd = true;
-        # opacity = 0.5; # Disabled until Niri gets blur support https://github.com/YaLTeR/niri/issues/54
+        opacity = 0.5;
         rounding = 25;
       };
     };

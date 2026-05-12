@@ -7,8 +7,8 @@
 {
   imports = [
     # keep-sorted start
+    ./hyprland.nix
     ./kanata.nix
-    ./niri.nix
     ./stylix.nix
     ./tmux.nix
     inputs.neovim.nixosModules.default

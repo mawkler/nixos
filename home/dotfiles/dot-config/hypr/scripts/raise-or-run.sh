@@ -25,7 +25,7 @@ if [[ $ACTIVE_WINDOW_CLASS == "$WINDOW_CLASS" ]]; then
   )
 
   if [[ -n $NEXT_WINDOW_ADDRESS ]] && [[ $NEXT_WINDOW_ADDRESS != "null" ]]; then
-    hyprctl dispatch focuswindow address:"$NEXT_WINDOW_ADDRESS"
+    hyprctl dispatch 'hl.dsp.focus({ window = "address:'"$NEXT_WINDOW_ADDRESS"'" })'
   fi
 
   exit
@@ -34,7 +34,7 @@ fi
 WINDOW_ADDRESS=$(echo "$WINDOWS" | jq --raw-output --arg class "$WINDOW_CLASS" \
   'map(select(.class | contains($class))) | sort_by(.focusHistoryID) | .[0] | .address')
 if [[ -n $WINDOW_ADDRESS ]] && [[ $WINDOW_ADDRESS != "null" ]]; then
-  hyprctl dispatch focuswindow address:"$WINDOW_ADDRESS"
+  hyprctl dispatch 'hl.dsp.focus({ window = "address:'"$WINDOW_ADDRESS"'" })'
 else
   $PROGRAM &
 fi
