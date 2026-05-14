@@ -118,4 +118,6 @@ in
   rg = "rg --hidden --smart-case";
   fd = "fd --hidden";
   o = "opencode";
+  oc = "opencode --continue";
+  ol = "opencode session list";
 }
