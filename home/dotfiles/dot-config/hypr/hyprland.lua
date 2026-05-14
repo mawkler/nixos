@@ -34,17 +34,20 @@ hl.monitor({
 -------------------
 
 hl.on("hyprland.start", function()
-    hl.dispatch(cmd("brave", { workspace = "1", silent = true }))
-    hl.dispatch(cmd("neovide", { workspace = "2", silent = true }))
-    hl.dispatch(cmd("ghostty", { workspace = "3", silent = true }))
-    hl.dispatch(cmd("beeper", { workspace = "4", silent = true }))
-    hl.exec_cmd("nm-applet")
-    hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("hyprshell run")
+    hl.exec_cmd("brave")
+    hl.exec_cmd("neovide")
+    hl.exec_cmd("ghostty")
+    hl.exec_cmd("beeper")
+
     hl.exec_cmd("maestral_qt")
-    hl.exec_cmd("mullvad-gui")
 end)
 
+-- Always open these programs on the corresponding workspace
+hl.window_rule({ match = { class = "brave-browser" }, workspace = "1" })
+hl.window_rule({ match = { class = "neovide" }, workspace = "2" })
+hl.window_rule({ match = { class = "com.mitchellh.ghostty" }, workspace = "3" })
+hl.window_rule({ match = { class = "Spotify" }, workspace = "4" })
+hl.window_rule({ match = { class = "beepertexts" }, workspace = "5" })
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -77,7 +80,7 @@ hl.config({
         resize_on_border  = true,
         allow_tearing     = false,
 
-        layout            = "master",
+        layout            = "scrolling",
 
         no_focus_fallback = true,
     },
@@ -208,7 +211,7 @@ end
 raise_or_run("E", "nautilus", "org.gnome.Nautilus")
 raise_or_run("T", "ghostty", "com.mitchellh.ghostty")
 raise_or_run("W", "brave", "brave-browser")
-raise_or_run("B", "beeper", "Beeper")
+raise_or_run("B", "beeper", "beepertexts")
 raise_or_run("N", "neovide", "neovide")
 raise_or_run("S", "spotify", "Spotify")
 raise_or_run("D", "onlyoffice-desktopeditors", "ONLYOFFICE")
