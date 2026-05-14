@@ -3,6 +3,7 @@
   config,
   overlays,
   rootPath,
+  inputs,
   ...
 }:
 let
@@ -31,15 +32,20 @@ in
     homeDirectory = "/home/${username}";
     stateVersion = "25.05";
 
-    sessionVariables = {
-      ZK_NOTEBOOK_DIR = "${homeDirectory}/Dropbox/Dokument/Markdowns/";
-    };
-
     pointerCursor = {
       name = "phinger-cursors-dark";
       package = pkgs.phinger-cursors;
       gtk.enable = true;
     };
+  };
+
+  # System variables
+  systemd.user.sessionVariables = {
+    # keep-sorted start
+    HYPRLAND_LUA_STUBS = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/share/hypr/stubs";
+    UWSM_FINALIZE_VARNAMES = "ZK_NOTEBOOK_DIR";
+    ZK_NOTEBOOK_DIR = "${config.home.homeDirectory}/Dropbox/Dokument/Markdowns/";
+    # keep-sorted end
   };
 
   # Symlink every file in `./dotfiles/dot-config` to `~/.config/`

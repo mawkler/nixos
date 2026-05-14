@@ -1,0 +1,3 @@
+{
+  "workspace.library": ["$HYPRLAND_LUA_STUBS"]
+}
