@@ -1,3 +1,6 @@
+local cmd = hl.dsp.exec_cmd
+local bind = hl.bind
+
 --------------------
 ----  MONITORS  ----
 --------------------
@@ -26,25 +29,15 @@ hl.monitor({
 })
 
 
----------------------
----- MY PROGRAMS ----
----------------------
-
-local terminal    = "ghostty"
-local fileManager = "nautilus"
-local browser     = "brave"
-local editor      = "neovide"
-
-
 -------------------
 ---- AUTOSTART ----
 -------------------
 
 hl.on("hyprland.start", function()
-    hl.dispatch(hl.dsp.exec_cmd(browser, { workspace = "1", silent = true }))
-    hl.dispatch(hl.dsp.exec_cmd(editor, { workspace = "2", silent = true }))
-    hl.dispatch(hl.dsp.exec_cmd(terminal, { workspace = "3", silent = true }))
-    hl.dispatch(hl.dsp.exec_cmd("beeper", { workspace = "4", silent = true }))
+    hl.dispatch(cmd("brave", { workspace = "1", silent = true }))
+    hl.dispatch(cmd("neovide", { workspace = "2", silent = true }))
+    hl.dispatch(cmd("ghostty", { workspace = "3", silent = true }))
+    hl.dispatch(cmd("beeper", { workspace = "4", silent = true }))
     hl.exec_cmd("nm-applet")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hyprshell run")
@@ -74,7 +67,10 @@ hl.config({
         border_size       = 2,
 
         col               = {
-            active_border   = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+            active_border = {
+                colors = { "rgba(33ccffee)", "rgba(00ff99ee)" },
+                angle = 45,
+            },
             inactive_border = "rgba(595959aa)",
         },
 
@@ -107,35 +103,34 @@ hl.config({
             vibrancy = 0.1696,
         },
     },
-
-    animations = {
-        enabled = true,
-    },
 })
 
-hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
-hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
-hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
-hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1.0 } } })
-hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
+local function bezier_curve(name, x1, y1, x2, y2)
+    hl.curve(name, { type = "bezier", points = { { x1, y1 }, { x2, y2 } } })
+end
 
-hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
-hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows", enabled = true, speed = 2.5, bezier = "easeOutQuint" })
-hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
-hl.animation({ leaf = "fade", enabled = true, speed = 2, bezier = "quick" })
-hl.animation({ leaf = "layers", enabled = true, speed = 3.81, bezier = "easeOutQuint" })
-hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "fade" })
-hl.animation({ leaf = "layersOut", enabled = true, speed = 10.5, bezier = "linear", style = "fade" })
-hl.animation({
-    leaf = "workspaces",
-    enabled = true,
-    speed = 1,
-    bezier = "easeOutQuint",
-    style =
-    "slidevert",
-})
+local function animation(leaf, speed, bezier, style)
+    local opts = { leaf = leaf, enabled = true, speed = speed, bezier = bezier }
+    if style then opts.style = style end
+    hl.animation(opts)
+end
+
+bezier_curve("easeOutQuint", 0.23, 1, 0.32, 1)
+bezier_curve("easeInOutCubic", 0.65, 0.05, 0.36, 1)
+bezier_curve("linear", 0, 0, 1, 1)
+bezier_curve("almostLinear", 0.5, 0.5, 0.75, 1.0)
+bezier_curve("quick", 0.15, 0, 0.1, 1)
+
+animation("global", 10, "default")
+animation("border", 5.39, "easeOutQuint")
+animation("windows", 2.5, "easeOutQuint")
+animation("fadeIn", 1.73, "almostLinear")
+animation("fadeOut", 1.46, "almostLinear")
+animation("fade", 2, "quick")
+animation("layers", 3.81, "easeOutQuint")
+animation("layersIn", 4, "easeOutQuint", "fade")
+animation("layersOut", 10.5, "linear", "fade")
+animation("workspaces", 1, "easeOutQuint", "slidevert")
 
 hl.config({
     dwindle = {
@@ -194,120 +189,117 @@ hl.config({
 ---- KEYBINDINGS ----
 ---------------------
 
-local mainMod = "SUPER"
+local super = "SUPER"
+
+local repeat_locked = { locked = true, repeating = true }
+
+local function bind_super(keys, call, options)
+    bind(("%s + %s"):format(super, keys), call, options)
+end
+
+local function raise_or_run(key, name, class)
+    local command = cmd(
+        ("~/.config/hypr/scripts/raise-or-run.sh %s %s"):format(name, class)
+    )
+    bind_super(key, command)
+end
 
 -- Raise-or-run app launchers
-hl.bind(mainMod .. " + E",
-    hl.dsp.exec_cmd("~/.config/hypr/scripts/raise-or-run.sh nautilus org.gnome.Nautilus"))
-hl.bind(mainMod .. " + T",
-    hl.dsp.exec_cmd("~/.config/hypr/scripts/raise-or-run.sh ghostty com.mitchellh.ghostty"))
-hl.bind(mainMod .. " + W",
-    hl.dsp.exec_cmd("~/.config/hypr/scripts/raise-or-run.sh brave brave-browser"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("~/.config/hypr/scripts/raise-or-run.sh beeper Beeper"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/raise-or-run.sh neovide neovide"))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/raise-or-run.sh spotify Spotify"))
-hl.bind(mainMod .. " + D",
-    hl.dsp.exec_cmd("~/.config/hypr/scripts/raise-or-run.sh onlyoffice-desktopeditors ONLYOFFICE"))
-hl.bind(mainMod .. " + A",
-    hl.dsp.exec_cmd("~/.config/hypr/scripts/raise-or-run.sh teams-for-linux teams-for-linux"))
-hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("~/.config/hypr/scripts/raise-or-run.sh zen zen-beta"))
-hl.bind(mainMod .. " + SHIFT + S",
-    hl.dsp.exec_cmd("~/.config/hypr/scripts/raise-or-run.sh slack slack"))
+raise_or_run("E", "nautilus", "org.gnome.Nautilus")
+raise_or_run("T", "ghostty", "com.mitchellh.ghostty")
+raise_or_run("W", "brave", "brave-browser")
+raise_or_run("B", "beeper", "Beeper")
+raise_or_run("N", "neovide", "neovide")
+raise_or_run("S", "spotify", "Spotify")
+raise_or_run("D", "onlyoffice-desktopeditors", "ONLYOFFICE")
+raise_or_run("A", "teams-for-linux", "teams-for-linux")
+raise_or_run("Z", "zen", "zen-beta")
+raise_or_run("SHIFT + S", "slack", "slack")
 
 -- Ctrl variants (always launch new instance)
-hl.bind(mainMod .. " + CTRL + E", hl.dsp.exec_cmd("nautilus"))
-hl.bind(mainMod .. " + CTRL + T", hl.dsp.exec_cmd("ghostty"))
-hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("brave"))
-hl.bind(mainMod .. " + CTRL + N", hl.dsp.exec_cmd("neovide"))
+bind_super("CTRL + E", cmd("nautilus"))
+bind_super("CTRL + T", cmd("ghostty"))
+bind_super("CTRL + W", cmd("brave"))
+bind_super("CTRL + N", cmd("neovide"))
 
 -- Vicinae (launcher)
 local vicinaeUrl = "vicinae://extensions/vicinae"
 
-hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd("vicinae toggle"), { release = true })
+bind("SUPER + SUPER_L", cmd("vicinae toggle"), { release = true })
 
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("vicinae " .. vicinaeUrl .. "/clipboard/history"))
-hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("vicinae " .. vicinaeUrl .. "/core/search-emojis"))
-hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("ghostty --command=\"hyprctl clients && read\""))
+bind_super("V", cmd("vicinae " .. vicinaeUrl .. "/clipboard/history"))
+bind_super("period", cmd("vicinae " .. vicinaeUrl .. "/core/search-emojis"))
+bind_super("I", cmd("ghostty --command=\"hyprctl clients && read\""))
 
 -- Screenshots
-hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("hyprshot --clipboard-only --mode active --mode output"))
-hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot --clipboard-only --mode window"))
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot --clipboard-only --mode region"))
+bind("CTRL + PRINT", cmd("hyprshot --clipboard-only --mode active --mode output"))
+bind("SHIFT + PRINT", cmd("hyprshot --clipboard-only --mode window"))
+bind("PRINT", cmd("hyprshot --clipboard-only --mode region"))
 
 -- Manage windows
-hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + X", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+bind_super("Q", hl.dsp.window.close())
+bind_super("X", hl.dsp.window.float({ action = "toggle" }))
+bind_super("SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
+bind_super("F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "r" }))
-hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "u" }))
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "d" }))
-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "l" }))
+bind_super("SHIFT + L", hl.dsp.window.move({ direction = "r" }))
+bind_super("SHIFT + K", hl.dsp.window.move({ direction = "u" }))
+bind_super("SHIFT + J", hl.dsp.window.move({ direction = "d" }))
+bind_super("SHIFT + H", hl.dsp.window.move({ direction = "l" }))
 
-hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x = 20, y = 0, relative = true }),
-    { locked = true, repeating = true })
-hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -20, y = 0, relative = true }),
-    { locked = true, repeating = true })
-hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x = 0, y = -20, relative = true }),
-    { locked = true, repeating = true })
-hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x = 0, y = 20, relative = true }),
-    { locked = true, repeating = true })
+bind_super("ALT + L", hl.dsp.window.resize({ x = 20, y = 0, relative = true }), repeat_locked)
+bind_super("ALT + H", hl.dsp.window.resize({ x = -20, y = 0, relative = true }), repeat_locked)
+bind_super("ALT + K", hl.dsp.window.resize({ x = 0, y = -20, relative = true }), repeat_locked)
+bind_super("ALT + J", hl.dsp.window.resize({ x = 0, y = 20, relative = true }), repeat_locked)
 
 -- Move window focus
-hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "l" }))
-hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "d" }))
-hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "u" }))
-hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "r" }))
-hl.bind(mainMod .. " + code:49", hl.dsp.focus({ urgent_or_last = true })) -- Backtick
+bind_super("H", hl.dsp.focus({ direction = "l" }))
+bind_super("J", hl.dsp.focus({ direction = "d" }))
+bind_super("K", hl.dsp.focus({ direction = "u" }))
+bind_super("L", hl.dsp.focus({ direction = "r" }))
+bind_super("code:49", hl.dsp.focus({ urgent_or_last = true })) -- Backtick
 
 -- Switch workspaces with mainMod + [0-9]
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+    bind_super(key, hl.dsp.focus({ workspace = i }))
+    bind_super("SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 -- Focus/move to other monitor
-hl.bind(mainMod .. " + CTRL + L", hl.dsp.focus({ monitor = "+1" }))
-hl.bind(mainMod .. " + CTRL + H", hl.dsp.focus({ monitor = "-1" }))
-hl.bind(mainMod .. " + CTRL + SHIFT + L", hl.dsp.window.move({ monitor = "+1" }))
-hl.bind(mainMod .. " + CTRL + SHIFT + H", hl.dsp.window.move({ monitor = "-1" }))
+bind_super("CTRL + L", hl.dsp.focus({ monitor = "+1" }))
+bind_super("CTRL + H", hl.dsp.focus({ monitor = "-1" }))
+bind_super("CTRL + SHIFT + L", hl.dsp.window.move({ monitor = "+1" }))
+bind_super("CTRL + SHIFT + H", hl.dsp.window.move({ monitor = "-1" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+bind_super("mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+bind_super("mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+bind_super("mouse:272", hl.dsp.window.drag(), { mouse = true })
+bind_super("mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
-    { locked = true, repeating = true })
+bind("XF86AudioRaiseVolume", cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), repeat_locked)
+bind("XF86AudioLowerVolume", cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), repeat_locked)
+bind("XF86AudioMute", cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), repeat_locked)
+bind("XF86AudioMicMute", cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), repeat_locked)
 
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),
-    { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),
-    { locked = true, repeating = true })
+bind("XF86MonBrightnessUp", cmd("brightnessctl -e4 -n2 set 5%+"), repeat_locked)
+bind("XF86MonBrightnessDown", cmd("brightnessctl -e4 -n2 set 5%-"), repeat_locked)
+
+local locked = { locked = true }
 
 -- Requires playerctl
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+bind("XF86AudioNext", cmd("playerctl next"), locked)
+bind("XF86AudioPause", cmd("playerctl play-pause"), locked)
+bind("XF86AudioPlay", cmd("playerctl play-pause"), locked)
+bind("XF86AudioPrev", cmd("playerctl previous"), locked)
 
 -- Lid switch
-hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd('hyprctl keyword monitor "eDP-1, enable"'),
-    { locked = true })
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd('hyprctl keyword monitor "eDP-1, disable"'),
-    { locked = true })
+bind("switch:off:Lid Switch", cmd('hyprctl keyword monitor "eDP-1, enable"'), locked)
+bind("switch:on:Lid Switch", cmd('hyprctl keyword monitor "eDP-1, disable"'), locked)
 
 
 --------------------------------
