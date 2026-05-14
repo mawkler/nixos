@@ -105,8 +105,8 @@ hl.config({
     },
 })
 
-local function bezier_curve(name, x1, y1, x2, y2)
-    hl.curve(name, { type = "bezier", points = { { x1, y1 }, { x2, y2 } } })
+local function bezier_curve(name, c1, c2)
+    hl.curve(name, { type = "bezier", points = { c1, c2 } })
 end
 
 local function animation(leaf, speed, bezier, style)
@@ -115,11 +115,11 @@ local function animation(leaf, speed, bezier, style)
     hl.animation(opts)
 end
 
-bezier_curve("easeOutQuint", 0.23, 1, 0.32, 1)
-bezier_curve("easeInOutCubic", 0.65, 0.05, 0.36, 1)
-bezier_curve("linear", 0, 0, 1, 1)
-bezier_curve("almostLinear", 0.5, 0.5, 0.75, 1.0)
-bezier_curve("quick", 0.15, 0, 0.1, 1)
+bezier_curve("easeOutQuint", { 0.23, 1 }, { 0.32, 1 })
+bezier_curve("easeInOutCubic", { 0.65, 0.05 }, { 0.36, 1 })
+bezier_curve("linear", { 0, 0 }, { 1, 1 })
+bezier_curve("almostLinear", { 0.5, 0.5 }, { 0.75, 1.0 })
+bezier_curve("quick", { 0.15, 0 }, { 0.1, 1 })
 
 animation("global", 10, "default")
 animation("border", 5.39, "easeOutQuint")
