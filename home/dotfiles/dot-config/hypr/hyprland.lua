@@ -28,7 +28,6 @@ hl.monitor({
     scale    = "auto",
 })
 
-
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -42,12 +41,18 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("maestral_qt")
 end)
 
--- Always open these programs on the corresponding workspace
-hl.window_rule({ match = { class = "brave-browser" }, workspace = "1" })
-hl.window_rule({ match = { class = "neovide" }, workspace = "2" })
-hl.window_rule({ match = { class = "com.mitchellh.ghostty" }, workspace = "3" })
-hl.window_rule({ match = { class = "Spotify" }, workspace = "4" })
-hl.window_rule({ match = { class = "beepertexts" }, workspace = "5" })
+---Always open program on the given workspace
+---@param class string
+---@param ws string
+local function open_on_workspace(class, ws)
+    hl.window_rule({ match = { class = class }, workspace = ws })
+end
+
+open_on_workspace("brave-browser", "1")
+open_on_workspace("neovide", "2")
+open_on_workspace("com.mitchellh.ghostty", "3")
+open_on_workspace("Spotify", "4")
+open_on_workspace("beepertexts", "5")
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -56,7 +61,6 @@ hl.window_rule({ match = { class = "beepertexts" }, workspace = "5" })
 hl.env("GDK_SCALE", tostring(scaling))
 hl.env("XCURSOR_SIZE", "20")
 hl.env("HYPRCURSOR_SIZE", "20")
-
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -154,7 +158,6 @@ hl.config({
         focus_on_activate       = true,
     },
 })
-
 
 ---------------
 ---- INPUT ----
@@ -303,7 +306,6 @@ bind("XF86AudioPrev", cmd("playerctl previous"), locked)
 -- Lid switch
 bind("switch:off:Lid Switch", cmd('hyprctl keyword monitor "eDP-1, enable"'), locked)
 bind("switch:on:Lid Switch", cmd('hyprctl keyword monitor "eDP-1, disable"'), locked)
-
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
