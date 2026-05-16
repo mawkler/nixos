@@ -90,14 +90,15 @@ bind_super("mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 bind_super("mouse:272", hl.dsp.window.drag(), { mouse = true })
 bind_super("mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Laptop multimedia keys for volume and LCD brightness
-bind("XF86AudioRaiseVolume", cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), repeat_locked)
-bind("XF86AudioLowerVolume", cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), repeat_locked)
-bind("XF86AudioMute", cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), repeat_locked)
-bind("XF86AudioMicMute", cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), repeat_locked)
-
+-- Laptop multimedia keys for LCD brightness
 bind("XF86MonBrightnessUp", cmd("brightnessctl -e4 -n2 set 5%+"), repeat_locked)
 bind("XF86MonBrightnessDown", cmd("brightnessctl -e4 -n2 set 5%-"), repeat_locked)
+
+-- Handled by DankMaterialShell in `dank-material-shell.lua`
+-- bind("XF86AudioRaiseVolume", cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), repeat_locked)
+-- bind("XF86AudioLowerVolume", cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), repeat_locked)
+-- bind("XF86AudioMute", cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), repeat_locked)
+-- bind("XF86AudioMicMute", cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), repeat_locked)
 
 local locked = { locked = true }
 

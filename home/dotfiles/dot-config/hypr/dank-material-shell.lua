@@ -12,3 +12,9 @@ bind("XF86AudioPause", cmd("dms ipc mpris playPause"), { locked = true })
 bind("XF86AudioPlay", cmd("dms ipc mpris playPause"), { locked = true })
 bind("XF86AudioNext", cmd("dms ipc mpris next"), { locked = true })
 bind("XF86AudioPrev", cmd("dms ipc mpris previous"), { locked = true })
+
+-- Audio volume
+bind("XF86AudioRaiseVolume", cmd("dms ipc audio increment 5"), { locked = true, repeating = true })
+bind("XF86AudioLowerVolume", cmd("dms ipc audio decrement 5"), { locked = true, repeating = true })
+bind("XF86AudioMute", cmd("dms ipc audio mute"), { locked = true })
+bind("XF86AudioMicMute", cmd("dms ipc audio micmute"), { locked = true })
