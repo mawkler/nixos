@@ -76,6 +76,12 @@ for i = 1, 10 do
     bind_super("SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
+-- Horizontal resizing
+bind_super("R", hl.dsp.layout("colresize +conf"))
+bind_super("SHIFT + R", hl.dsp.layout("colresize -conf"))
+bind_super("equal", hl.dsp.layout("colresize +0.05"))
+bind_super("minus", hl.dsp.layout("colresize -0.05"))
+
 -- Focus/move to other monitor
 bind_super("CTRL + L", hl.dsp.focus({ monitor = "+1" }))
 bind_super("CTRL + H", hl.dsp.focus({ monitor = "-1" }))

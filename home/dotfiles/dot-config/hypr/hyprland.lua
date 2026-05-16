@@ -148,15 +148,12 @@ hl.config({
     dwindle = {
         preserve_split = true,
     },
-})
-
-hl.config({
     master = {
         new_status = "master",
     },
-})
-
-hl.config({
+    scrolling = {
+        explicit_column_widths = "0.5, 0.667, 0.333",
+    },
     misc = {
         force_default_wallpaper = 0,
         disable_hyprland_logo   = true,
