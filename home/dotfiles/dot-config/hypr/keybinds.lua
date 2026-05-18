@@ -33,7 +33,7 @@ bind_super("CTRL + W", cmd("brave"))
 bind_super("CTRL + N", cmd("neovide"))
 
 -- Vicinae (launcher)
-local vicinaeUrl = "vicinae://extensions/vicinae"
+local vicinaeUrl = "vicinae://launch"
 
 bind("SUPER + SUPER_L", cmd("vicinae toggle"), { release = true })
 
