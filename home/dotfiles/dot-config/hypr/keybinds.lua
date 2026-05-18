@@ -18,7 +18,7 @@ end
 raise_or_run("E", "nautilus", "org.gnome.Nautilus")
 raise_or_run("T", "ghostty", "com.mitchellh.ghostty")
 raise_or_run("W", "brave", "brave-browser")
-raise_or_run("B", "beeper", "beepertexts")
+raise_or_run("B", "beeper", "Beeper")
 raise_or_run("N", "neovide", "neovide")
 raise_or_run("S", "spotify", "Spotify")
 raise_or_run("D", "onlyoffice-desktopeditors", "ONLYOFFICE")
@@ -67,14 +67,17 @@ bind_super("H", hl.dsp.focus({ direction = "l" }))
 bind_super("J", hl.dsp.focus({ direction = "d" }))
 bind_super("K", hl.dsp.focus({ direction = "u" }))
 bind_super("L", hl.dsp.focus({ direction = "r" }))
-bind_super("code:49", hl.dsp.focus({ urgent_or_last = true })) -- Backtick
+bind_super("code:49", hl.dsp.focus({ last = true })) -- Backtick
 
--- Switch workspaces with mainMod + [0-9]
+-- Switch workspaces with SUPER + [0-9]
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
     bind_super(key, hl.dsp.focus({ workspace = i }))
     bind_super("SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
+
+bind_super("J", hl.dsp.focus({ workspace = 'e+1' }))
+bind_super("K", hl.dsp.focus({ workspace = 'e-1' }))
 
 -- Horizontal resizing
 bind_super("R", hl.dsp.layout("colresize +conf"))
