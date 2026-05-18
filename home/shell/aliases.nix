@@ -3,14 +3,15 @@ let
   iconPath = "${rootPath}/assets/nix.svg";
   notifyDone = "notify-send --icon ${iconPath} NixOS Done";
   hms = "nh home switch";
-  nhOs = cmd: "sudo true && nh os ${cmd} --update-input neovim && ${hms} || ${notifyDone}";
+  updateNeovim = "--update-input neovim";
+  nhOs = cmd: "sudo true && nh os ${cmd} ${updateNeovim} && ${hms} || ${notifyDone}";
 in
 {
   # NixOS/home-manager
   n = "nh";
   nos = nhOs "switch";
-  noS = "sudo true && nh os switch";
-  nou = nhOs "switch --update";
+  noS = "sudo true && nh os switch ${updateNeovim}";
+  nou = "sudo true && nh os switch --update && ${hms} || ${notifyDone}";
   not = nhOs "test";
   nob = "nh os build || ${notifyDone}";
   hms = "${hms} || ${notifyDone}";
