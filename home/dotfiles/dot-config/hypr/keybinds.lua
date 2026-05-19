@@ -67,7 +67,7 @@ bind_super("H", hl.dsp.focus({ direction = "l" }))
 bind_super("J", hl.dsp.focus({ direction = "d" }))
 bind_super("K", hl.dsp.focus({ direction = "u" }))
 bind_super("L", hl.dsp.focus({ direction = "r" }))
-bind_super("code:49", hl.dsp.focus({ last = true })) -- Backtick
+bind_super("grave", hl.dsp.focus({ last = true })) -- Backtick
 
 -- Switch workspaces with SUPER + [0-9]
 for i = 1, 10 do

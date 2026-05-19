@@ -7,30 +7,6 @@
   programs = {
     zen-browser.enable = true;
 
-    mergiraf = {
-      enable = true;
-      enableJujutsuIntegration = false;
-    };
-
-    # TODO: move to `shell.nix`
-    atuin = {
-      enable = true;
-      flags = [ "--disable-up-arrow" ];
-      enableZshIntegration = true;
-      enableFishIntegration = true;
-    };
-
-    tealdeer = {
-      enable = true;
-      settings.updates.auto_update = true;
-    };
-
-    direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-    };
-
     brave = {
       enable = true;
       # Send proper notifications, don't just spawn a window with the notification

@@ -18,9 +18,7 @@ in
     ./ghostty.nix
     ./jj.nix
     ./other.nix
-    ./shell/fish
-    ./shell/zoxide.nix
-    ./shell/zsh.nix
+    ./shell
     ./vicinae.nix
     # keep-sorted end
   ];
