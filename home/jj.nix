@@ -99,7 +99,7 @@
             closest="$(jj log -r 'closest_bookmark(@)' -n 1 -T 'bookmarks' --no-graph | cut -d ' ' -f 1)"
             closest="''${closest%\*}"
             tracked="$(jj bookmark list -r ''${closest} -t -T 'if(remote == "origin", name)')"
-            [[ "$tracked" == "$closest" ]] || jj bookmark track "''${closest}@origin"
+            [[ "$tracked" == "$closest" ]] || jj bookmark track ''${closest} --remote origin
           '';
 
           init = exec /* sh */ ''
