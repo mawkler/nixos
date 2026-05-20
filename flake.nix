@@ -89,14 +89,15 @@
           ];
         };
 
-
         beauty = nixpkgs.lib.nixosSystem {
           specialArgs = specialArgs // {
             hostname = "beauty";
           };
           modules = [
             ./core
+            ./core/gpu/nvidia.nix
             ./packages
+            ./hosts/beauty
           ];
         };
 

@@ -76,7 +76,7 @@
     bitwarden-cli
     bitwarden-desktop
     btop
-    calibre
+    # calibre
     cargo-nextest
     cargo-update
     cheese
