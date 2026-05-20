@@ -198,13 +198,8 @@ hl.config({
 --------------------------------
 
 -- This rule doesn't seem to apply
-hl.window_rule({
-    name      = "vicinae-rounding",
-    match     = { class = "vicinae" },
-    animation = "gnomed",
-})
 hl.layer_rule({
-    name  = "vicinae-blur",
-    match = { namespace = "vicinae" },
-    blur  = true,
+    match        = { namespace = "vicinae" },
+    blur         = true,
+    ignore_alpha = 0,
 })
