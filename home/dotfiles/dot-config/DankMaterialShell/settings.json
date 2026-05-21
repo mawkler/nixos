@@ -139,7 +139,7 @@
     }
   ],
   "showWorkspaceIndex": true,
-  "showWorkspaceName": true,
+  "showWorkspaceName": false,
   "showWorkspacePadding": false,
   "workspaceScrolling": false,
   "showWorkspaceApps": true,
@@ -504,7 +504,10 @@
       ],
       "showOnLastDisplay": true,
       "leftWidgets": [
-        "workspaceSwitcher",
+        {
+          "id": "workspaceSwitcher",
+          "enabled": true
+        },
         "focusedWindow"
       ],
       "centerWidgets": [
