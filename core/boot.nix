@@ -1,9 +1,17 @@
 { pkgs, ... }:
 {
   boot = {
-    # Came with default `configuration.nix`
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 10; # Prevent `/boot` from filling up
+        consoleMode = "auto"; # Boot screen resolution
+      };
+      # Hide the OS choice for bootloaders. It's still possible to open the
+      # bootloader list by pressing `Esc`.
+      timeout = 0;
+    };
 
     # Silence the log outputs to make the boot process more aesthetically clean
     consoleLogLevel = 3;
@@ -17,11 +25,6 @@
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
     ];
-    # Boot screen resolution
-    loader.systemd-boot.consoleMode = "auto";
-    # Hide the OS choice for bootloaders. It's still possible to open the
-    # bootloader list by pressing `Esc`.
-    loader.timeout = 0;
 
     # Plymouth theme
     plymouth = rec {
