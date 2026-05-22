@@ -168,6 +168,7 @@
   "audioWheelScrollAmount": 5,
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
+  "focusedWindowSize": 1,
   "runningAppsCompactMode": true,
   "barMaxVisibleApps": 0,
   "barMaxVisibleRunningApps": 0,
@@ -234,6 +235,7 @@
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "rememberLastQuery": false,
+  "rememberLastMode": true,
   "spotlightSectionViewModes": {
     "apps": "list"
   },
@@ -247,7 +249,9 @@
   "dankLauncherV2UnloadOnClose": false,
   "dankLauncherV2IncludeFilesInAll": false,
   "dankLauncherV2IncludeFoldersInAll": false,
+  "launcherUseOverlayLayer": false,
   "launcherStyle": "full",
+  "spotlightBarShowModeChips": false,
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "wifi",
@@ -368,7 +372,7 @@
   "showDock": false,
   "dockAutoHide": false,
   "dockSmartAutoHide": false,
-  "dockHideOnFullscreen": true,
+  "dockUseOverlayLayer": false,
   "dockGroupByApp": false,
   "dockRestoreSpecialWorkspaceOnClick": false,
   "dockOpenOnOverview": false,
@@ -704,7 +708,6 @@
   "frameCloseGaps": true,
   "frameLauncherEmergeSide": "bottom",
   "frameLauncherArcExtender": false,
-  "frameUseSpotlightLauncher": false,
   "frameMode": "separate",
   "configVersion": 11
 }
