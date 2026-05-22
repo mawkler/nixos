@@ -50,7 +50,12 @@ bind("PRINT", cmd("hyprshot --clipboard-only --mode region"))
 bind_super("Q", hl.dsp.window.close())
 bind_super("X", hl.dsp.window.float({ action = "toggle" }))
 bind_super("SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
-bind_super("F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+bind_super("F", function()
+    hl.dispatch(hl.dsp.window.fullscreen({ mode = "maximized" }))
+    -- Workaround because if the window is to the right of another window it
+    -- will just expand out of the screen
+    hl.dispatch(hl.dsp.focus({ window = "activewindow" }))
+end)
 
 bind_super("SHIFT + L", hl.dsp.window.move({ direction = "r" }))
 bind_super("SHIFT + K", hl.dsp.window.move({ direction = "u" }))
