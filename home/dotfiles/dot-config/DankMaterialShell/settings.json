@@ -504,9 +504,7 @@
       "name": "Main Bar",
       "enabled": true,
       "position": 0,
-      "screenPreferences": [
-        "all"
-      ],
+      "screenPreferences": [],
       "showOnLastDisplay": true,
       "leftWidgets": [
         {
