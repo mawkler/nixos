@@ -8,6 +8,7 @@ require('dms.windowrules')
 
 -- DMS IPC calls
 bind("SUPER + COMMA", cmd("dms ipc call notifications toggle"))
+bind("SUPER + SHIFT + COMMA", cmd("dms ipc call notifications dismissAllPopups"))
 bind("CTRL + SHIFT + Escape", cmd("dms ipc call processlist toggle"))
 bind("SUPER + CTRL + COMMA", cmd("dms ipc call settings focusOrToggle"))
 bind("SUPER + BACKSPACE", cmd("dms ipc call powermenu toggle"))
