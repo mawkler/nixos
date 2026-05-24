@@ -6,7 +6,7 @@
     settings =
       let
         cmd = pkgs.lib.splitString " ";
-        exec = command: (cmd "util exec -- bash -c") ++ [ command ];
+        exec = command: (cmd "util exec -- bash -c") ++ [ command ] ++ [ "--" ];
       in
       {
         user = {
