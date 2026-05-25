@@ -173,10 +173,9 @@ hl.config({
         kb_options                  = "grp:win_space_toggle",
         kb_rules                    = "",
 
-        follow_mouse                = 0,
+        follow_mouse                = 2,
         float_switch_override_focus = 0,
 
-        sensitivity                 = 1,
         accel_profile               = "flat",
 
         touchpad                    = {
@@ -185,6 +184,18 @@ hl.config({
             drag_3fg       = 1,
         },
     },
+})
+
+-- ThinkPad's trackpoint
+hl.device({
+    name = "elan-trackpoint",
+    sensitivity = 1,
+})
+
+-- ThinkPad's touchpad
+hl.device({
+    name = "elan-touchpad",
+    sensitivity = 1,
 })
 
 hl.config({
