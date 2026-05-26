@@ -283,7 +283,7 @@
   "monoFontFamily": "Fira Code",
   "fontWeight": 400,
   "fontScale": 1,
-  "textRenderType": 1,
+  "textRenderType": 0,
   "textRenderQuality": 0,
   "notepadUseMonospace": true,
   "notepadFontFamily": "",
@@ -417,7 +417,7 @@
   "maxFprintTries": 15,
   "enableU2f": false,
   "u2fMode": "or",
-  "lockScreenActiveMonitor": "all",
+  "lockScreenActiveMonitor": "DP-3",
   "lockScreenInactiveColor": "#000000",
   "lockScreenNotificationMode": 2,
   "lockScreenVideoEnabled": false,
@@ -428,6 +428,7 @@
   "notificationTimeoutNormal": 2000,
   "notificationTimeoutCritical": 0,
   "notificationCompactMode": false,
+  "notificationDedupeEnabled": true,
   "notificationPopupPosition": 0,
   "notificationAnimationSpeed": 1,
   "notificationCustomAnimationDuration": 400,
@@ -477,7 +478,7 @@
   "updaterIntervalSeconds": 1800,
   "updaterIncludeFlatpak": true,
   "updaterAllowAUR": true,
-  "displayNameMode": "model",
+  "displayNameMode": "system",
   "screenPreferences": {},
   "showOnLastDisplay": {},
   "niriOutputSettings": {
@@ -491,7 +492,7 @@
   "hyprlandOutputSettings": {},
   "displayProfiles": {},
   "activeDisplayProfile": {
-    "hyprland": "auto_748c19c1"
+    "hyprland": "auto_7b1f70ad"
   },
   "displayProfileAutoSelect": true,
   "displayShowDisconnected": false,

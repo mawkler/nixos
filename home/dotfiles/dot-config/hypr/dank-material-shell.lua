@@ -1,6 +1,11 @@
 local cmd = hl.dsp.exec_cmd
 local bind = hl.bind
 
+require('dms.colors')
+require('dms.layout')
+require('dms.outputs')
+require('dms.windowrules')
+
 -- DMS IPC calls
 bind("SUPER + COMMA", cmd("dms ipc call notifications toggle"))
 bind("CTRL + SHIFT + Escape", cmd("dms ipc call processlist toggle"))
