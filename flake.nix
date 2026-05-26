@@ -96,8 +96,8 @@
           modules = [
             ./core
             ./core/gpu/nvidia.nix
+            ./core/ssh.nix
             ./packages
-            ./hosts/beauty
           ];
         };
 
