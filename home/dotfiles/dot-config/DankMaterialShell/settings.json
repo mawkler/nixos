@@ -504,8 +504,10 @@
       "name": "Main Bar",
       "enabled": true,
       "position": 0,
-      "screenPreferences": [],
-      "showOnLastDisplay": true,
+      "screenPreferences": [
+        "all"
+      ],
+      "showOnLastDisplay": false,
       "leftWidgets": [
         {
           "id": "workspaceSwitcher",
