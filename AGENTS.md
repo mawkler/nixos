@@ -4,7 +4,8 @@
 
 ```
 flake.nix                # Entry point, defines system + home-manager configs
-core/                    # Shared NixOS system config (boot, locales, services)
+features/                # Various features like SSH, GPU, CachyOS kernel, etc.
+  core.nix               # Core features shared by all systems
 packages/                # System-level packages, LSPs, formatters, programs
 home/                    # Home-manager config (user dotfiles, shell, apps)
   dotfiles/              # mkSymlinks helper + raw dotfile sources
@@ -14,7 +15,7 @@ overlays/                # pkgs.stable overlay + 3rd-party overlays
 
 ## Hosts
 
-- **thinkpad-nixos**: Primary dev machine, uses `./core` + `./packages`
+- **thinkpad-nixos**: Primary dev machine, uses `./features` + `./packages`
 - **framework13-df**: Framework laptop, adds `./hosts/framework13-df/packages` + `./hosts/framework13-df/home`
 
 ## Commands

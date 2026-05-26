@@ -84,7 +84,7 @@
             hostname = "thinkpad-nixos";
           };
           modules = [
-            ./core
+            ./features/core.nix
             ./packages
           ];
         };
@@ -94,9 +94,9 @@
             hostname = "beauty";
           };
           modules = [
-            ./core
-            ./core/gpu/nvidia.nix
-            ./core/ssh.nix
+            ./features/core.nix
+            ./features/gpu/nvidia.nix
+            ./features/ssh.nix
             ./packages
           ];
         };
@@ -106,7 +106,7 @@
             hostname = "framework13-df";
           };
           modules = [
-            ./core
+            ./features/core.nix
             ./packages
             ./hosts/framework13-df/packages
           ];

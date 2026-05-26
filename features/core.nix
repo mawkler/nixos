@@ -41,7 +41,7 @@
       };
     };
 
-  # Printin
+  # Printing
   services.printing.enable = true;
 
   # Sound

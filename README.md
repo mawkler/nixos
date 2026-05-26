@@ -9,8 +9,8 @@
    nix run nixpkgs#git clone https://github.com/mawkler/nixos.git $config_path
    ```
 2. Add an entry for your machine's hostname to this repo's `flake.nix` (both to the NixOS and Home Manager section)
-3. Temporarily uncomment `boot.kernelPackages = "..."` in `core/cachyos.nix` (because its `nix.settings.substituters` hasn't been built yet, it will try to build the CachyOS kernel from source, which takes hours)
-4. Install the the NixOS and Home-Manager config:
+3. Temporarily uncomment `boot.kernelPackages = "..."` in `features/cachyos.nix` (because its `nix.settings.substituters` hasn't been built yet, it will try to build the CachyOS kernel from source, which takes hours)
+4. Install the NixOS and Home-Manager config:
   ```sh
   nix-shell --packages git home-manager --run '
     hostname=beauty # Set your hostname here (make sure that it matches the name used in step 2)
@@ -32,4 +32,4 @@
     git clone https://github.com/mawkler/nvim.git ~/.config/nvim
   '
   ```
-5. Re-add the line with `boot.kernelPackages = "..."` in `core/cachyos.nix`, and run `nh os switch ~/.config/nixos -- --extra-experimental-features "nix-command flakes"` (now it should use the cached binary)
+5. Re-add the line with `boot.kernelPackages = "..."` in `features/cachyos.nix`, and run `nh os switch ~/.config/nixos -- --extra-experimental-features "nix-command flakes"` (now it should use the cached binary)
