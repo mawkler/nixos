@@ -26,6 +26,5 @@
     fuzzel
 
     xwayland-satellite
-    inputs.raisin.defaultPackage.${stdenv.hostPlatform.system}
   ];
 }

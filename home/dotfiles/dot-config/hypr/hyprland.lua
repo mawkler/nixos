@@ -3,6 +3,7 @@
 -------------------
 
 require("keybinds")
+require("raisin")
 
 require("dank-material-shell")
 

@@ -109,6 +109,7 @@
     hyperfine
     inputs.nox.packages.${stdenv.hostPlatform.system}.default
     inputs.ns-tui.packages.${stdenv.hostPlatform.system}.default
+    inputs.raisin.defaultPackage.${stdenv.hostPlatform.system}
     jless
     jq
     kdePackages.dolphin

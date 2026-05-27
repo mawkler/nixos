@@ -7,25 +7,6 @@ local function bind_super(keys, call, options)
     bind(("%s + %s"):format("SUPER", keys), call, options)
 end
 
-local function raise_or_run(key, name, class)
-    local command = cmd(
-        ("~/.config/hypr/scripts/raise-or-run.sh %s %s"):format(name, class)
-    )
-    bind_super(key, command)
-end
-
--- Raise-or-run app launchers
-raise_or_run("E", "nautilus", "org.gnome.Nautilus")
-raise_or_run("T", "ghostty", "com.mitchellh.ghostty")
-raise_or_run("W", "brave", "brave-browser")
-raise_or_run("B", "beeper", "Beeper")
-raise_or_run("N", "neovide", "neovide")
-raise_or_run("S", "spotify", "Spotify")
-raise_or_run("D", "onlyoffice-desktopeditors", "ONLYOFFICE")
-raise_or_run("A", "teams-for-linux", "teams-for-linux")
-raise_or_run("Z", "zen", "zen-beta")
-raise_or_run("SHIFT + S", "slack", "slack")
-
 -- Ctrl variants (always launch new instance)
 bind_super("CTRL + E", cmd("nautilus"))
 bind_super("CTRL + T", cmd("ghostty"))
