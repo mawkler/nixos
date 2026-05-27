@@ -76,6 +76,14 @@
   programs.zsh.enable = true;
   programs.fish.enable = true;
 
+  security.sudo.extraConfig = # sh
+    ''
+      Defaults lecture = never      # Remove the sudo lecture
+      Defaults pwfeedback           # Make typed password visible as asterisks
+      Defaults timestamp_timeout=60 # Re-ask for password after an hour
+    '';
+
+  # Display  manager
   services.displayManager = {
     # Enable automatic login for the user.
     autoLogin.enable = true;
