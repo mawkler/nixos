@@ -93,6 +93,8 @@ bind_super("minus", hl.dsp.layout("colresize -0.05"))
 -- Focus/move to other monitor
 bind_super("CTRL + L", hl.dsp.focus({ monitor = "+1" }))
 bind_super("CTRL + H", hl.dsp.focus({ monitor = "-1" }))
+bind_super("SHIFT + J", hl.dsp.window.move({ workspace = "+1" }))
+bind_super("SHIFT + K", hl.dsp.window.move({ workspace = "-1" }))
 bind_super("CTRL + SHIFT + L", hl.dsp.window.move({ monitor = "+1" }))
 bind_super("CTRL + SHIFT + H", hl.dsp.window.move({ monitor = "-1" }))
 
