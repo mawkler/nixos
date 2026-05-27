@@ -37,6 +37,7 @@ Home-manager target format: `${username}@${hostname}` (e.g. `melker@thinkpad-nix
 - **System uses `nh`** (nix helper) instead of raw `nixos-rebuild` / `home-manager`
 - **Dotfiles** are symlinked via `mkSymlinks` out-of-store to allow live editing without rebuild
 
-## Notable services
+## Important documentation links
 
-- Desktop: DankMaterialShell, Nautilus file manager, Brave browser
+- Desktop shell: [DankMaterialShell](https://danklinux.com/docs)
+- Compositor: [Hyprland](https://wiki.hypr.land/Configuring/). Note that I'm using a newer Hyprland version (0.55+) which means that its configuration language is Lua instead of the old Hyprlang.
