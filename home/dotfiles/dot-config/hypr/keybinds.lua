@@ -31,7 +31,16 @@ bind("PRINT", cmd("hyprshot --clipboard-only --mode region"))
 bind_super("Q", hl.dsp.window.close())
 bind_super("X", hl.dsp.window.float({ action = "toggle" }))
 bind_super("SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
-bind_super("F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+-- bind_super("F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+-- temporary workaround for issue where DMS's top bar dissappears when maximizing (should be resolved in v. 0.55.1)
+local scroll_max_state = {}
+bind_super("F", function()
+    local ws = hl.get_active_workspace()
+    if not ws then return end
+    local was_max = scroll_max_state[ws.id]
+    hl.dispatch(hl.dsp.layout(was_max and "colresize 0.5" or "colresize 1"))
+    scroll_max_state[ws.id] = not was_max
+end)
 
 bind_super("SHIFT + L", hl.dsp.window.move({ direction = "r" }))
 bind_super("SHIFT + K", hl.dsp.window.move({ direction = "u" }))
