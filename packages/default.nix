@@ -41,6 +41,8 @@
       enable = true;
       package = pkgs.valent;
     };
+
+    steam.enable = true;
   };
 
   # Services
@@ -160,7 +162,6 @@
     spotify
     spotube
     sshfs
-    steam
     sushi
     tailscale
     tokei
