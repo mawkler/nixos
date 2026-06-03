@@ -76,7 +76,7 @@
     bat
     beeper
     bitwarden-cli
-    bitwarden-desktop
+    # bitwarden-desktop # depends electron-39.8.10 which is EOL
     btop
     # calibre
     cargo-nextest
