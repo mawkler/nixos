@@ -14,17 +14,20 @@
           email = "melker.ulander@pm.me";
         };
         ui = {
-          diff-formatter = "delta";
-          # Hide output when quitting pager
-          pager = cmd "delta --pager less";
           default-command = "status";
           merge-editor = "diffconflicts";
-          diff-editor = [
-            "nvim"
-            "--cmd"
-            "lua vim.g.minimal_config = true"
-            "-c"
-            "DiffEditor $left $right $output"
+          diff-formatter = ":git";
+          # Use delta (side-by-side if it fits)
+          pager = [
+            "sh"
+            "-c" # sh
+            ''
+              if [ "$(tput cols)" -gt 200 ]; then
+                exec delta --side-by-side
+              else
+                exec delta --features=one-window
+              fi
+            ''
           ];
         };
         templates = {
