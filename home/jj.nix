@@ -16,19 +16,7 @@
         ui = {
           default-command = "status";
           merge-editor = "diffconflicts";
-          diff-formatter = ":git";
-          # Use delta (side-by-side if it fits)
-          pager = [
-            "sh"
-            "-c" # sh
-            ''
-              if [ "$(tput cols)" -gt 200 ]; then
-                exec delta --side-by-side
-              else
-                exec delta --features=one-window
-              fi
-            ''
-          ];
+          diff-formatter = "delta";
         };
         templates = {
           draft_commit_description = /* nix */ ''
@@ -41,6 +29,21 @@
         };
         merge-tools = {
           delta = {
+            program = "sh";
+            diff-args = [
+              "-c" # sh
+              ''
+                if [ "$3" -gt 200 ]; then
+                  exec delta --side-by-side "$1" "$2" --width="$3"
+                else
+                  exec delta --features=one-window "$1" "$2" --width="$3"
+                fi
+              ''
+              "_"
+              "$left"
+              "$right"
+              "$width"
+            ];
             # Fixes `tool exited with exit status: 1` warning
             diff-expected-exit-codes = [
               0
