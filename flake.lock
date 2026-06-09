@@ -943,8 +943,8 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1780476796,
-        "narHash": "sha256-fCfNVV+wdO4x3gq+t0UVvQqfMKwY6dxwbELSVpFbUxA=",
+        "lastModified": 1780994156,
+        "narHash": "sha256-USLSXjsPQVytr4ptYX1xGJ8zQrItM9GkH3UV9FbSeIk=",
         "path": "/home/melker/.config/nvim",
         "type": "path"
       },

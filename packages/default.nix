@@ -102,6 +102,7 @@
     gnome-disk-utility
     gnumake
     go
+    gram
     grayjay
     gum
     headsetcontrol
