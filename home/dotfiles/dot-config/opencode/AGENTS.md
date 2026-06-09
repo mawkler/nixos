@@ -6,3 +6,4 @@ If you're going to use the command in the first column, please use the preferred
 | ------- | --------- |
 | `find`  | `fd`      |
 | `grep`  | `rg`      |
+| `git`   | `jj`      |
