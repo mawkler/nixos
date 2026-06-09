@@ -17,6 +17,13 @@
           default-command = "status";
           merge-editor = "diffconflicts";
           diff-formatter = "delta";
+          diff-editor = [
+            "nvim"
+            "--cmd"
+            "lua vim.g.minimal_config = true"
+            "-c"
+            "DiffEditor $left $right $output"
+          ];
         };
         templates = {
           draft_commit_description = /* nix */ ''
