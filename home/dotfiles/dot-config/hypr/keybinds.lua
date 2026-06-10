@@ -16,11 +16,15 @@ bind_super("CTRL + N", cmd("neovide"))
 -- Vicinae (launcher)
 local vicinaeUrl = "vicinae://launch"
 
+local function vicinae(path)
+    return cmd("vicinae " .. vicinaeUrl .. path)
+end
+
 bind("SUPER + SUPER_L", cmd("vicinae toggle"), { release = true })
 
-bind_super("V", cmd("vicinae " .. vicinaeUrl .. "/clipboard/history"))
-bind_super("period", cmd("vicinae " .. vicinaeUrl .. "/core/search-emojis"))
-bind_super("I", cmd("ghostty --command=\"hyprctl clients && read\""))
+bind_super("V", vicinae("/clipboard/history"))
+bind_super("period", vicinae("/core/search-emojis"))
+bind_super("RETURN", vicinae("/@botkooper/vicinae-extension-power-profile-0/power-profile"))
 
 -- Screenshots
 bind("CTRL + PRINT", cmd("hyprshot --clipboard-only --mode active --mode output"))
@@ -32,7 +36,7 @@ bind_super("Q", hl.dsp.window.close())
 bind_super("X", hl.dsp.window.float({ action = "toggle" }))
 bind_super("SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 -- bind_super("F", hl.dsp.window.fullscreen({ mode = "maximized" }))
--- temporary workaround for issue where DMS's top bar dissappears when maximizing (should be resolved in v. 0.55.1)
+-- temporary workaround for issue where DMS's top bar disappears when maximizing (should be resolved in v. 0.55.1)
 local scroll_max_state = {}
 bind_super("F", function()
     local ws = hl.get_active_workspace()
