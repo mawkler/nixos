@@ -35,7 +35,11 @@ Home-manager target format: `${username}@${hostname}` (e.g. `melker@thinkpad-nix
 
 - **`nixpkgs-unstable`** is default; **`nixpkgs-stable` (25.05)** available as `pkgs.stable`
 - **System uses `nh`** (nix helper) instead of raw `nixos-rebuild` / `home-manager`
-- **Dotfiles** are symlinked via `mkSymlinks` out-of-store to allow live editing without rebuild
+- **Dotfiles** are symlinked via `mkSymlinks` out-of-store like so:
+  - `~/` -> `./home/dotfiles/home/`
+  - `~/.config/` -> `./home/dotfiles/dot-config/`
+  - This allows live editing of dotfiles **without having to rebuild with Nix** for the edits to reflect
+  - When adding a new dotfile, make sure to run `jj status` (which does `git add` internally) for it to get included by Nix
 
 ## Important documentation links
 
