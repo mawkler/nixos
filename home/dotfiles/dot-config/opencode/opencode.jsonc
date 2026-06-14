@@ -30,6 +30,7 @@
       "factor *": "allow",
       "fd *": "allow",
       "file *": "allow",
+      "find *": "allow",
       "fold *": "allow",
       "git diff *": "allow",
       "git log *": "allow",
@@ -54,6 +55,7 @@
       "ls *": "allow",
       "man *": "allow",
       "nix develop *": "allow",
+      "nix eval *": "allow",
       "nix flake check *": "allow",
       "nix flake show *": "allow",
       "nix search *": "allow",
@@ -92,7 +94,10 @@
       // keep-sorted end
     },
   },
-  "experimental": {
-    "continue_loop_on_deny": true,
+  "mcp": {
+    "nixos": {
+      "type": "local",
+      "command": ["mcp-nixos"],
+    },
   },
 }

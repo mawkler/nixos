@@ -9,6 +9,7 @@
     # keep-sorted start
     ./hyprland.nix
     ./kanata.nix
+    ./opencode.nix
     ./stylix.nix
     ./tmux.nix
     inputs.neovim.nixosModules.default
@@ -142,7 +143,6 @@
     nps
     nurl
     onlyoffice-desktopeditors
-    opencode
     overskride
     plotinus
     popsicle
