@@ -2,7 +2,7 @@
 {
   imports = [
     inputs.dank-material-shell.homeModules.dank-material-shell
-    inputs.dms-plugin-registry.modules.default
+    inputs.dms-plugin-registry.homeModules.default
   ];
 
   programs.dank-material-shell = {

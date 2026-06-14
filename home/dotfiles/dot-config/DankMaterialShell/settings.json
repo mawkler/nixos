@@ -171,6 +171,7 @@
   "audioVisualizerEnabled": true,
   "audioScrollMode": "volume",
   "audioWheelScrollAmount": 5,
+  "audioDeviceScrollVolumeEnabled": false,
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
   "focusedWindowSize": 1,
@@ -178,6 +179,9 @@
   "barMaxVisibleApps": 0,
   "barMaxVisibleRunningApps": 0,
   "barShowOverflowBadge": true,
+  "trayAutoOverflow": true,
+  "trayPopupSingleLine": true,
+  "trayMaxVisibleItems": 0,
   "appsDockHideIndicators": false,
   "appsDockColorizeActive": false,
   "appsDockActiveColorMode": "primary",
@@ -295,9 +299,16 @@
   "notepadUseMonospace": true,
   "notepadFontFamily": "",
   "notepadFontSize": 14,
+  "notificationSummaryFontSize": 0,
+  "notificationBodyFontSize": 0,
   "notepadShowLineNumbers": false,
+  "notepadAutoSave": false,
+  "notepadSlideoutSide": "right",
+  "notepadDefaultMode": "slideout",
   "notepadTransparencyOverride": -1,
   "notepadLastCustomTransparency": 0.7,
+  "notepadUseCompositorGap": false,
+  "notepadEdgeGap": 0,
   "soundsEnabled": true,
   "useSystemSoundTheme": false,
   "soundLogin": false,
@@ -330,7 +341,12 @@
       "Melkers Fairphone 6"
     ]
   },
-  "bluetoothDevicePins": {},
+  "bluetoothDevicePins": {
+    "preferredDevice": [
+      "A0:A3:09:1D:19:A4",
+      "F0:41:C8:32:1B:67"
+    ]
+  },
   "audioInputDevicePins": {},
   "audioOutputDevicePins": {},
   "gtkThemingEnabled": false,
@@ -435,6 +451,7 @@
   "notificationTimeoutNormal": 2000,
   "notificationTimeoutCritical": 0,
   "notificationCompactMode": false,
+  "notificationShowTimeoutBar": false,
   "notificationDedupeEnabled": true,
   "notificationPopupPosition": 0,
   "notificationAnimationSpeed": 1,
@@ -700,6 +717,11 @@
     }
   },
   "clipboardEnterToPaste": false,
+  "clipboardVisibleEntryActions": [
+    "pin",
+    "edit",
+    "delete"
+  ],
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],
   "frameEnabled": false,
