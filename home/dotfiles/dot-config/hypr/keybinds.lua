@@ -24,7 +24,6 @@ bind("SUPER + SUPER_L", cmd("vicinae toggle"), { release = true })
 
 bind_super("V", vicinae("/clipboard/history"))
 bind_super("period", vicinae("/core/search-emojis"))
-bind_super("RETURN", vicinae("/@botkooper/vicinae-extension-power-profile-0/power-profile"))
 
 -- Screenshots
 bind("CTRL + PRINT", cmd("hyprshot --clipboard-only --mode active --mode output"))

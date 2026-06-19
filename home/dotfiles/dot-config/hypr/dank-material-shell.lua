@@ -12,6 +12,7 @@ bind("SUPER + SHIFT + COMMA", cmd("dms ipc call notifications dismissAllPopups")
 bind("CTRL + SHIFT + Escape", cmd("dms ipc call processlist toggle"))
 bind("SUPER + CTRL + COMMA", cmd("dms ipc call settings focusOrToggle"))
 bind("SUPER + BACKSPACE", cmd("dms ipc call powermenu toggle"))
+bind("SUPER + RETURN", cmd("dms ipc powerprofile open"))
 
 -- playerctl doesn't play nice with KDE Connect/Valent but DMS's MPRIS controls do
 bind("XF86AudioPause", cmd("dms ipc mpris playPause"), { locked = true })
