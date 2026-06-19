@@ -1295,6 +1295,7 @@
         "nox": "nox",
         "ns-tui": "ns-tui",
         "raisin": "raisin",
+        "rust-skills": "rust-skills",
         "skills": "skills",
         "stylix": "stylix",
         "vicinae-extensions": "vicinae-extensions",
@@ -1315,6 +1316,22 @@
         "owner": "rust-lang",
         "ref": "nightly",
         "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "rust-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1779665610,
+        "narHash": "sha256-OPvcLvHqWwBTolIvQU9YP8Fl/Ntsjo5OP4Y6g8Hy/Dw=",
+        "owner": "actionbook",
+        "repo": "rust-skills",
+        "rev": "fa60f7931223646fb71c4586b4a6c8545016076a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "actionbook",
+        "repo": "rust-skills",
         "type": "github"
       }
     },

@@ -58,6 +58,9 @@
     agent-skills.url = "github:Kyure-A/agent-skills-nix";
     skills.url = "github:mawkler/agent-skills";
     skills.flake = false;
+
+    rust-skills.url = "github:actionbook/rust-skills";
+    rust-skills.flake = false;
   };
 
   outputs =
