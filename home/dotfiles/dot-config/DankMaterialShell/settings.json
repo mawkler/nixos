@@ -20,10 +20,12 @@
   "niriLayoutRadiusOverride": -1,
   "niriLayoutBorderSize": -1,
   "hyprlandLayoutGapsOverride": -1,
+  "hyprlandLayoutGapsOutOverride": -1,
   "hyprlandLayoutRadiusOverride": -1,
   "hyprlandLayoutBorderSize": -1,
   "hyprlandResizeOnBorder": false,
   "mangoLayoutGapsOverride": -1,
+  "mangoLayoutGapsOutOverride": -1,
   "mangoLayoutRadiusOverride": -1,
   "mangoLayoutBorderSize": -1,
   "mangoTrackpadNaturalScrolling": true,
@@ -89,6 +91,8 @@
   "showBatteryPercentOnlyOnBattery": false,
   "showBatteryTime": false,
   "showBatteryTimeOnlyOnBattery": false,
+  "batteryPillStyle": false,
+  "batteryPillPercentSign": false,
   "showControlCenterButton": true,
   "showCapsLockIndicator": true,
   "controlCenterShowNetworkIcon": true,
@@ -203,6 +207,7 @@
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
   "focusedWindowSize": 1,
+  "focusedWindowShowIcon": true,
   "runningAppsCompactMode": true,
   "barMaxVisibleApps": 0,
   "barMaxVisibleRunningApps": 0,
@@ -263,6 +268,8 @@
   "greeterLockDateFormat": "",
   "greeterFontFamily": "",
   "greeterWallpaperFillMode": "",
+  "greeterSyncPending": false,
+  "greeterSyncBaseline": {},
   "mediaSize": 1,
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
@@ -389,7 +396,9 @@
   "batteryNotifyCritical": true,
   "batteryLowThreshold": 20,
   "batteryNotifyLow": false,
-  "batteryNotificationType": 0,
+  "batteryChargeLimitNotificationType": 0,
+  "batteryLowNotificationType": 0,
+  "batteryCriticalNotificationType": 0,
   "batteryAutoPowerSaver": false,
   "lockBeforeSuspend": true,
   "loginctlLockIntegration": true,
@@ -503,12 +512,14 @@
   "maxFprintTries": 15,
   "enableU2f": false,
   "u2fMode": "or",
-  "lockScreenActiveMonitor": "DP-3",
   "lockScreenInactiveColor": "#000000",
   "lockScreenNotificationMode": 2,
   "lockScreenVideoEnabled": false,
   "lockScreenVideoPath": "",
   "lockScreenVideoCycling": false,
+  "lockScreenWallpaperPath": "",
+  "lockScreenWallpaperFillMode": "",
+  "lockScreenFontFamily": "",
   "hideBrightnessSlider": false,
   "notificationTimeoutLow": 2000,
   "notificationTimeoutNormal": 2000,
@@ -566,7 +577,11 @@
   "updaterIncludeFlatpak": true,
   "updaterAllowAUR": true,
   "displayNameMode": "system",
-  "screenPreferences": {},
+  "screenPreferences": {
+    "lockScreen": [
+      "DP-3"
+    ]
+  },
   "showOnLastDisplay": {},
   "niriOutputSettings": {
     "ASUSTek COMPUTER INC VG248 L7LMQS216433": {
@@ -809,5 +824,5 @@
   "barInsetPaddingShared": -1,
   "barInsetPaddingSyncAll": false,
   "frameBarInsetPadding": -1,
-  "configVersion": 11
+  "configVersion": 12
 }
