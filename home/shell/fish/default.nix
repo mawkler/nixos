@@ -115,10 +115,10 @@ in
         "prompt" = "#c678dd";
         "border" = "#798294";
       };
-      fileWidgetCommand = "${pkgs.ripgrep}/bin/rg --hidden --files --no-messages";
-      fileWidgetOptions = [ "--preview '${batPreview}'" ];
-      changeDirWidgetCommand = "${pkgs.fd}/bin/fd --type directory -H --ignore-file ~/.ignore";
-      changeDirWidgetOptions = [ "--preview '${ezaPreview}'" ];
+      fileWidget.command = "${pkgs.ripgrep}/bin/rg --hidden --files --no-messages";
+      fileWidget.options = [ "--preview '${batPreview}'" ];
+      changeDirWidget.command = "${pkgs.fd}/bin/fd --type directory -H --ignore-file ~/.ignore";
+      changeDirWidget.options = [ "--preview '${ezaPreview}'" ];
     };
   };
 

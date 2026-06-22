@@ -23,6 +23,7 @@
       enableZshIntegration = true;
       enableFishIntegration = true;
     };
+    fzf.historyWidget.command = ""; # Use atuin's `ctrl + r` instead of fzf's
 
     tealdeer = {
       enable = true;
