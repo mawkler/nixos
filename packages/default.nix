@@ -146,7 +146,6 @@ in
     ripdrag
     ripgrep
     rumdl
-    rustup
     screenkey
     shutter
     signal-desktop
