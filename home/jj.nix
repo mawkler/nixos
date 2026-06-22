@@ -17,6 +17,7 @@
           default-command = "status";
           merge-editor = "diffconflicts";
           diff-formatter = "delta";
+          diff-instructions = false; # Don't include a virtual `JJ-INSTRUCTIONS` file in diff
           diff-editor = [
             "nvim"
             "--cmd"
