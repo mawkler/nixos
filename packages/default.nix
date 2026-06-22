@@ -69,7 +69,7 @@
   environment.systemPackages = with pkgs; [
     # keep-sorted start
     antigen
-    anytype # unstable version throws an error on startup
+    anytype
     bacon
     bat
     beeper
@@ -160,6 +160,7 @@
     spotify
     spotube
     sshfs
+    stable.spacedrive # "broken: This package is broken"
     sushi
     tailscale
     tokei
