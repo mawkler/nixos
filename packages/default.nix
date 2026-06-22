@@ -68,7 +68,6 @@ in
     (flake inputs.nox)
     (flake inputs.ns-tui)
     antigen
-    anytype
     bacon
     bat
     beeper
@@ -100,7 +99,6 @@ in
     gnumake
     go
     gram
-    grayjay
     gum
     headsetcontrol
     home-manager
@@ -155,6 +153,8 @@ in
     spotify
     spotube
     sshfs
+    stable.anytype
+    stable.grayjay
     stable.spacedrive # "broken: This package is broken"
     sushi
     tailscale

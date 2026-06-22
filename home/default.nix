@@ -31,6 +31,7 @@ in
     stateVersion = "25.05";
 
     pointerCursor = {
+      enable = true;
       name = "phinger-cursors-dark";
       package = pkgs.phinger-cursors;
       gtk.enable = true;
