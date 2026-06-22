@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
@@ -22,6 +21,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.kernelParams = [ "snd-intel-dspcfg.dsp_driver=1" ]; # Add HDMI audio output (not tested)
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/c7b43eff-07b6-4ea5-b3bc-c6841726ce48";
