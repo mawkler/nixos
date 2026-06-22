@@ -7,6 +7,11 @@
 // custom settings, run `gram: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "terminal": {
+    "shell": {
+      "program": "fish",
+    },
+  },
   "restore_on_startup": "last_session",
   "lsp": {
     "rust-analyzer": {
