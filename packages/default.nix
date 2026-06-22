@@ -14,7 +14,6 @@
     ./tmux.nix
     inputs.neovim.nixosModules.default
     inputs.nix-index-database.nixosModules.nix-index
-    inputs.nixai.nixosModules.default
     # keep-sorted end
   ];
 
@@ -58,11 +57,6 @@
       enable = false;
       loadModels = [ "deepseek-r1:1.5b" ];
     };
-
-    # nixai = {
-    #   enable = true;
-    #   mcp.enable = false;
-    # };
   };
 
   # All other packages

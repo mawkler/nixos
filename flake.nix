@@ -18,9 +18,6 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixai.url = "github:olafkfreund/nix-ai-help";
-    nixai.inputs.nixpkgs.follows = "nixpkgs";
-
     stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 
