@@ -4,6 +4,9 @@
   rootPath,
   ...
 }:
+let
+  flake = name: name.packages.${pkgs.stdenv.hostPlatform.system}.default;
+in
 {
   imports = [
     # keep-sorted start
@@ -62,6 +65,8 @@
   # All other packages
   environment.systemPackages = with pkgs; [
     # keep-sorted start
+    (flake inputs.nox)
+    (flake inputs.ns-tui)
     antigen
     anytype
     bacon
@@ -102,9 +107,7 @@
     htop-vim
     hurl
     hyperfine
-    inputs.nox.packages.${stdenv.hostPlatform.system}.default
-    inputs.ns-tui.packages.${stdenv.hostPlatform.system}.default
-    inputs.raisin.defaultPackage.${stdenv.hostPlatform.system}
+    inputs.raisin.defaultPackage.${stdenv.hostPlatform.system} # TODO: export `.default`
     jless
     jq
     kdePackages.dolphin
@@ -149,7 +152,6 @@
     signal-desktop
     sioyek
     slides
-    spacedrive
     spicetify-cli
     spotify
     spotube
