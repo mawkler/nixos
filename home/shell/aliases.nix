@@ -77,6 +77,7 @@ in
   jrot = "jj rebase --onto 'trunk()'";
   jS = "jj squash";
   jb = "jj bookmark";
+  jba = "jj bookmark advance";
   jbm = "jj bookmark move";
   jbs = "jj bookmark set";
   jbt = "jj bookmark track --remote=origin";

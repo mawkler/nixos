@@ -72,6 +72,9 @@
             ];
           };
         };
+        revsets = {
+          bookmark-advance-to = "closest_pushable(@)";
+        };
         revset-aliases = {
           "closest_pushable(to)" = # nix
             ''heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'';
@@ -84,18 +87,6 @@
           "feature_branch(x)" = /* nix */ "reachable(::x, ~::trunk())";
         };
         aliases = {
-          # Move the closest bookmark (or passed in bookmark name) to the closest pushable commit
-          tug = exec /* sh */ ''
-            if [ -z "$(jj log -r 'closest_pushable(@)')" ]; then
-              echo "No commit is tuggable" && exit 0
-            fi
-            if [ "x$1" = "x" ]; then
-              jj bookmark move --from "closest_bookmark(@)" --to "closest_pushable(@)"
-            else
-              jj bookmark move --to "closest_pushable(@)" "$@"
-            fi
-          '';
-
           pull = exec /* sh */ ''
             closest="$(jj log -r 'closest_bookmark(@)' -n 1 -T 'bookmarks' --no-graph | cut -d ' ' -f 1)"
             closest="''${closest%\*}"
@@ -105,8 +96,8 @@
           '';
 
           push = exec /* sh */ ''
-            tuggable="$(jj log -r 'closest_bookmark(@)..closest_pushable(@)' -T '"n"' --no-graph)"
-            [[ -n "$tuggable" ]] && jj tug
+            advancable="$(jj log -r 'closest_bookmark(@)..closest_pushable(@)' -T '"n"' --no-graph)"
+            [[ -n "$advancable" ]] && jj bookmark advance
             pushable="$(jj log -r 'remote_bookmarks(remote=origin)..@' -T 'bookmarks' --no-graph)"
             [[ -n "$pushable" ]] && jj git push || echo "Nothing to push."
             closest="$(jj log -r 'closest_bookmark(@)' -n 1 -T 'bookmarks' --no-graph | cut -d ' ' -f 1)"
