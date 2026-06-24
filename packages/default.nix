@@ -38,10 +38,7 @@
 
     nix-index-database.comma.enable = true;
 
-    kdeconnect = {
-      enable = true;
-      package = pkgs.valent;
-    };
+    kdeconnect.enable = true;
 
     steam.enable = true;
   };
