@@ -1,7 +1,5 @@
 { pkgs, inputs, ... }:
 {
-  imports = [ inputs.dank-material-shell.nixosModules.greeter ];
-
   programs.hyprland =
     let
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
@@ -16,8 +14,7 @@
       portalPackage = package.xdg-desktop-portal-hyprland;
     };
 
-  # Display manager
-  programs.dank-material-shell.greeter = {
+  services.displayManager.dms-greeter = {
     enable = true;
     compositor.name = "hyprland";
   };
