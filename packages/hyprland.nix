@@ -6,17 +6,13 @@
     withUWSM = true;
   };
 
-  services.displayManager =
-    let
-      compositor = "hyprland";
-    in
-    {
-      dms-greeter = {
-        enable = true;
-        compositor.name = compositor;
-      };
-      defaultSession = compositor;
+  services.displayManager = {
+    dms-greeter = {
+      enable = true;
+      compositor.name = "hyprland";
     };
+    defaultSession = "hyprland-uwsm";
+  };
 
   # Optional, hint electron apps to use wayland (from Hyprland's docs)
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
