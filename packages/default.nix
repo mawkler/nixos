@@ -117,7 +117,6 @@ in
     kdePackages.qt5compat
     killall
     kitty
-    lazygit
     libnotify
     librepods
     localsend

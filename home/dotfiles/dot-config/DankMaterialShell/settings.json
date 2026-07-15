@@ -60,6 +60,7 @@
   "blurEnabled": true,
   "blurForegroundLayers": true,
   "blurLayerOutlineOpacity": 0.12,
+  "blurBorderEnabled": true,
   "blurBorderColor": "outline",
   "blurBorderCustomColor": "#ffffff",
   "blurBorderOpacity": 0.35,
@@ -266,6 +267,7 @@
   "greeterLockDateFormat": "",
   "greeterFontFamily": "",
   "greeterWallpaperFillMode": "",
+  "greeterPamExternallyManaged": false,
   "greeterSyncPending": false,
   "greeterSyncBaseline": {},
   "mediaSize": 1,
@@ -299,7 +301,7 @@
   "launcherStyle": "full",
   "spotlightBarShowModeChips": false,
   "keybindsFloatingWindow": false,
-  "useAutoLocation": false,
+  "useAutoLocation": true,
   "weatherEnabled": true,
   "dashTabs": [
     {
@@ -399,6 +401,7 @@
   "batteryLowNotificationType": 0,
   "batteryCriticalNotificationType": 0,
   "batteryAutoPowerSaver": false,
+  "lowerDisplayRefreshRateOnBattery": false,
   "lockBeforeSuspend": true,
   "loginctlLockIntegration": true,
   "fadeToLockEnabled": true,
@@ -497,6 +500,7 @@
   "notificationOverlayEnabled": false,
   "notificationPopupShadowEnabled": true,
   "notificationPopupPrivacyMode": false,
+  "notificationForegroundLayers": true,
   "modalDarkenBackground": true,
   "lockScreenShowPowerActions": true,
   "lockScreenShowSystemIcons": true,
@@ -511,6 +515,11 @@
   "maxFprintTries": 15,
   "enableU2f": false,
   "u2fMode": "or",
+  "lockPamPath": "",
+  "lockPamInlineFprint": false,
+  "lockPamInlineU2f": false,
+  "lockPamExternallyManaged": false,
+  "lockU2fPamPath": "",
   "lockScreenInactiveColor": "#000000",
   "lockScreenNotificationMode": 2,
   "lockScreenVideoEnabled": false,
@@ -596,6 +605,14 @@
   "activeDisplayProfile": {
     "hyprland": "auto_5af6115"
   },
+  "activeDisplayProfileModes": {
+    "hyprland": {
+      "eDP-1": {
+        "mode": "1920x1080@60.020"
+      }
+    }
+  },
+  "displayPreviousRefreshModes": {},
   "displayProfileAutoSelect": true,
   "displayShowDisconnected": false,
   "displaySnapToEdge": true,
