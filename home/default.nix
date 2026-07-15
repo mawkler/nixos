@@ -41,7 +41,7 @@ in
   # System variables
   systemd.user.sessionVariables = {
     # keep-sorted start
-    HYPRLAND_LUA_STUBS = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/share/hypr/stubs";
+    HYPRLAND_LUA_STUBS = "${pkgs.hyprland}/share/hypr/stubs";
     UWSM_FINALIZE_VARNAMES = "ZK_NOTEBOOK_DIR";
     ZK_NOTEBOOK_DIR = "${config.home.homeDirectory}/Dropbox/Dokument/Markdowns/";
     # keep-sorted end

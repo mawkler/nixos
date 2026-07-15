@@ -1,18 +1,10 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
-  programs.hyprland =
-    let
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
-    in
-    {
-      enable = true;
-      # Properly activate `graphical-session.target` related services (e.g. DMS and Vicinae)
-      withUWSM = true;
-
-      # TODO: remove these two lines once the flake is removed in favour of nixpkgs
-      package = package.hyprland;
-      portalPackage = package.xdg-desktop-portal-hyprland;
-    };
+  programs.hyprland = {
+    enable = true;
+    # Properly activate `graphical-session.target` related services (e.g. DMS and Vicinae)
+    withUWSM = true;
+  };
 
   services.displayManager =
     let
