@@ -53,7 +53,7 @@ in
 
     mullvad-vpn = {
       enable = true;
-      package = pkgs.mullvad-vpn; # Includes the GUI
+      gui.enable = true;
     };
 
     ollama = {
