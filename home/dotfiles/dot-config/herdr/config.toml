@@ -1,0 +1,36 @@
+onboarding = false
+[theme]
+name = "one-dark"
+
+[update]
+version_check = false
+
+[keys]
+prefix = "ctrl+space"
+
+settings = "prefix+,"
+new_tab = "prefix+n"
+previous_tab = "prefix+alt+l"
+next_tab = "prefix+alt+h"
+close_tab = "prefix+C"
+focus_pane_left = ["prefix+h", "prefix+ctrl+h"]
+focus_pane_down = ["prefix+j", "prefix+ctrl+j"]
+focus_pane_up = ["prefix+k", "prefix+ctrl+k"]
+focus_pane_right = ["prefix+l", "prefix+ctrl+l"]
+split_horizontal = ["prefix+s", "prefix+ctrl+s"]
+split_vertical = ["prefix+v", "prefix+ctrl+v"]
+close_pane = ["prefix+c", "prefix+ctrl+c"]
+zoom = "prefix+f"
+toggle_sidebar = "prefix+`"
+
+[ui]
+sidebar_start_collapsed = true
+prompt_new_tab_name = false
+hide_tab_bar_when_single_tab = true
+
+[ui.toast]
+delivery = "system"
+
+[experimental]
+kitty_graphics = true
+pane_history = true

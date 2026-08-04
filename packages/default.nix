@@ -101,6 +101,7 @@ in
     gram
     gum
     headsetcontrol
+    herdr
     home-manager
     htop-vim
     hurl

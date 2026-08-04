@@ -1,8 +1,3 @@
-# Launch tmux if it isn't already running
-if not tmux list-sessions &>/dev/null
-    exec tmux
-end
-
 # Theme
 fish_config theme choose onedark
 

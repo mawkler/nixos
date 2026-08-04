@@ -4,6 +4,8 @@ font-family-italic = Liberation Mono Italic
 font-family-bold-italic = Liberation Mono Bold Italic
 font-size = 11
 
+command = "herdr --session $(uuidgen)"
+
 background-opacity = 0.85
 window-decoration = none
 theme = onedark
