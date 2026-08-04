@@ -155,6 +155,7 @@ in
     stable.anytype
     stable.grayjay
     stable.spacedrive # "broken: This package is broken"
+    superfile
     sushi
     tailscale
     tokei

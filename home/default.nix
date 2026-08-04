@@ -3,7 +3,6 @@
   config,
   overlays,
   rootPath,
-  inputs,
   ...
 }:
 let
