@@ -121,6 +121,7 @@ in
     libnotify
     librepods
     localsend
+    loupe
     maestral
     maestral-gui
     manix
