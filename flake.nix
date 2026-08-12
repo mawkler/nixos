@@ -42,9 +42,6 @@
     vicinae-extensions.url = "github:vicinaehq/extensions";
     vicinae-extensions.inputs.nixpkgs.follows = "nixpkgs";
 
-    ns-tui.url = "github:briheet/ns-tui";
-    ns-tui.inputs.nixpkgs.follows = "nixpkgs";
-
     jj-starship.url = "github:dmmulroy/jj-starship";
     jj-starship.inputs.nixpkgs.follows = "nixpkgs";
 

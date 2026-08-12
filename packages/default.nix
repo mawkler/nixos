@@ -66,7 +66,6 @@ in
   environment.systemPackages = with pkgs; [
     # keep-sorted start
     (flake inputs.nox)
-    (flake inputs.ns-tui)
     antigen
     bacon
     bat
