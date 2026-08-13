@@ -72,43 +72,45 @@
       system = "x86_64-linux";
       username = "melker";
       rootPath = "/home/melker/.config/nixos";
+
+      # The keys double as hostnames, which are used in `trusted-substituters`
+      # in nix-serve
+      hosts = {
+        thinkpad-nixos = [
+          ./features/core.nix
+          ./packages
+        ];
+
+        beauty = [
+          ./features/core.nix
+          ./features/gpu/nvidia.nix
+          ./features/ssh.nix
+          ./packages
+        ];
+
+        framework13-df = [
+          ./features/core.nix
+          ./packages
+          ./hosts/framework13-df/packages
+        ];
+      };
+
+      mkNixosConfig =
+        hosts:
+        builtins.mapAttrs (
+          hostname: modules:
+          nixpkgs.lib.nixosSystem {
+            specialArgs = specialArgs // {
+              inherit hostname;
+              hostnames = builtins.attrNames hosts;
+            };
+            inherit modules;
+          }
+        ) hosts;
     in
     {
       # NixOS
-      nixosConfigurations = {
-        thinkpad-nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = specialArgs // {
-            hostname = "thinkpad-nixos";
-          };
-          modules = [
-            ./features/core.nix
-            ./packages
-          ];
-        };
-
-        beauty = nixpkgs.lib.nixosSystem {
-          specialArgs = specialArgs // {
-            hostname = "beauty";
-          };
-          modules = [
-            ./features/core.nix
-            ./features/gpu/nvidia.nix
-            ./features/ssh.nix
-            ./packages
-          ];
-        };
-
-        framework13-df = nixpkgs.lib.nixosSystem {
-          specialArgs = specialArgs // {
-            hostname = "framework13-df";
-          };
-          modules = [
-            ./features/core.nix
-            ./packages
-            ./hosts/framework13-df/packages
-          ];
-        };
-      };
+      nixosConfigurations = mkNixosConfig hosts;
 
       # Home Manager
       homeConfigurations =

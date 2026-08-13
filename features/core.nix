@@ -9,6 +9,7 @@
   imports = [
     ./boot.nix
     ./cachyos.nix
+    ./nix-serve.nix
     ../hosts/${hostname}/hardware-configuration.nix
   ];
 
