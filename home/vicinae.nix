@@ -15,7 +15,7 @@
       font.size = 12;
       popToRootOnClose = false;
       rootSearch.searchFiles = false;
-      theme.name = "github-dark-dimmed";
+      theme.dark.name = "catppuccin-frappe";
       window = {
         csd = true;
         opacity = 0.5;
