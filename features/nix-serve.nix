@@ -8,6 +8,10 @@
   };
 
   # Client
-  services.avahi.enable = true; # So hosts can reach each other via `<hostname>.local`
   nix.settings.trusted-substituters = map (hostname: "http://${hostname}.local:5000") hostnames;
+  # So hosts can reach each other via `<hostname>.local`
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
 }
