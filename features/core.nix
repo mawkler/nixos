@@ -96,11 +96,15 @@
 
   # Nix
   nix = {
-    settings.experimental-features = [
-      "flakes"
-      "nix-command"
-      "pipe-operators"
-    ];
+    settings = {
+      experimental-features = [
+        "flakes"
+        "nix-command"
+        "pipe-operators"
+      ];
+
+      auto-optimise-store = true;
+    };
     extraOptions = # toml
       ''
         warn-dirty = false # Disable `Git tree '...' is dirty` warnings
