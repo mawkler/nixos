@@ -10,8 +10,8 @@ prefix = "ctrl+space"
 
 settings = "prefix+,"
 new_tab = "prefix+n"
-previous_tab = "prefix+alt+l"
-next_tab = "prefix+alt+h"
+previous_tab = "prefix+alt+h"
+next_tab = "prefix+alt+l"
 close_tab = "prefix+C"
 focus_pane_left = ["prefix+h", "prefix+ctrl+h"]
 focus_pane_down = ["prefix+j", "prefix+ctrl+j"]
