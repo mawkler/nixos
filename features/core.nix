@@ -101,6 +101,10 @@
       "nix-command"
       "pipe-operators"
     ];
+    extraOptions = # toml
+      ''
+        warn-dirty = false # Disable `Git tree '...' is dirty` warnings
+      '';
 
     gc.options = "--delete-older-than 14d";
     optimise.automatic = true;
