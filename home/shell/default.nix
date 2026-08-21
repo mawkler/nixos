@@ -6,6 +6,7 @@
     ./zsh.nix
     # keep-sorted end
   ];
+
   programs = {
     nix-index = {
       enable = true;
@@ -36,5 +37,12 @@
       nix-direnv.enable = true;
     };
 
+    nix-your-shell = {
+      enable = true;
+
+      # Optional: Enable for selected shells. Default: `home.shell.enable<Shell>Integration`.
+      # enableFishIntegration = true;
+      nix-output-monitor.enable = true;
+    };
   };
 }
