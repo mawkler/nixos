@@ -47,18 +47,12 @@ in
 
   # Services
   services = {
-    upower.enable = true; # Required by Caelestia
-
+    # Required by DankMaterialShell
     power-profiles-daemon.enable = true;
 
     mullvad-vpn = {
       enable = true;
       gui.enable = true;
-    };
-
-    ollama = {
-      enable = false;
-      loadModels = [ "deepseek-r1:1.5b" ];
     };
   };
 
