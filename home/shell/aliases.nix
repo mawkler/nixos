@@ -11,7 +11,7 @@ in
   n = "nh";
   nos = nhOs "switch";
   noS = "sudo true && nh os switch ${updateNeovim}";
-  nou = "sudo true && nh os switch --update && ${hms} || ${notifyDone}";
+  nou = "sudo true && time nh os switch --update && ${hms} || ${notifyDone}";
   not = nhOs "test";
   nob = "nh os build || ${notifyDone}";
   hms = "${hms} || ${notifyDone}";
