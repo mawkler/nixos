@@ -33,3 +33,19 @@
   '
   ```
 5. Re-add the line with `boot.kernelPackages = "..."` in `features/cachyos.nix`, and run `nh os switch ~/.config/nixos -- --extra-experimental-features "nix-command flakes"` (now it should use the cached binary)
+
+### Binary cache keys
+
+Generate binary cache keys for `nix-serve`:
+
+  ```fish
+  #!/usr/bin/env fish
+  sudo mkdir -p /var/secrets/nix-serve
+  sudo nix-store --generate-binary-cache-key \
+    cache.(hostname).local-1 \
+    /var/secrets/nix-serve/secret.key \
+    /var/secrets/nix-serve/public.key
+
+  cat /var/secrets/nix-serve/public.key | wl-copy
+  echo "Public key is now in clipboard. Paste it into the `trusted-public-keys` field in `features/nix-serve.nix`"
+  ```

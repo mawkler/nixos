@@ -13,6 +13,7 @@
     trusted-substituters = map (hostname: "http://${hostname}.local:5000") hostnames;
     trusted-public-keys = [
       "cache.thinkpad-nixos.local-1:GOD9LtryYSo83u53HDM7YxYRmsnrltvSFsOUlaqsWjo="
+      "cache.beauty.local-1:FRLDLnUQ+Shu5AzUenJ93K1NryLDFKvwHUOHmUEbtD8="
     ];
   };
 
