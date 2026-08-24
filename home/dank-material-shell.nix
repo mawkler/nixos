@@ -10,6 +10,7 @@
     systemd.enable = true;
     plugins = {
       dankKDEConnect.enable = true;
+      systemMonitor.enable = true;
     };
   };
 

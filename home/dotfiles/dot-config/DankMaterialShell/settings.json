@@ -95,6 +95,10 @@
       ],
       "rightWidgets": [
         {
+          "id": "systemMonitor",
+          "enabled": true
+        },
+        {
           "id": "music",
           "enabled": true,
           "mediaSize": 1
@@ -113,12 +117,12 @@
         },
         {
           "id": "cpuUsage",
-          "enabled": true,
+          "enabled": false,
           "minimumWidth": false
         },
         {
           "id": "memUsage",
-          "enabled": true,
+          "enabled": false,
           "minimumWidth": false,
           "showSwap": false
         },
@@ -184,7 +188,8 @@
       "iconScale": 0.9,
       "maximizeWidgetIcons": false,
       "maximizeWidgetText": false,
-      "removeWidgetPadding": false
+      "removeWidgetPadding": false,
+      "attachToScreenEdge": false
     }
   ],
   "desktopClockCustomColor": {
@@ -216,6 +221,12 @@
   "builtInPluginSettings": {
     "dms_settings_search": {
       "trigger": "?"
+    },
+    "dms_clipboard_search": {
+      "trigger": "cb"
+    },
+    "dms_qr_generator": {
+      "trigger": "qrg"
     }
   },
   "frameMode": "separate",
