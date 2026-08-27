@@ -42,6 +42,8 @@
   "batterySuspendTimeout": 900,
   "batterySuspendBehavior": 2,
   "batteryProfileName": "1",
+  "batteryLowThreshold": 30,
+  "batteryNotifyLow": true,
   "batteryCriticalNotificationType": 0,
   "lockBeforeSuspend": true,
   "enableFprint": true,
@@ -60,9 +62,11 @@
     "hibernate",
     "reboot",
     "poweroff",
-    "restart"
+    "restart",
+    "softreboot"
   ],
   "powerMenuDefaultAction": "lock",
+  "customPowerActionSuspend": "systemctl suspend-then-hibernate",
   "screenPreferences": {
     "lockScreen": [
       "DP-3"

@@ -75,6 +75,7 @@
       hosts = {
         thinkpad-nixos = [
           ./features/core.nix
+          ./features/laptop.nix
           ./packages
         ];
 
