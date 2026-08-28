@@ -37,7 +37,6 @@
           # bluetooth
           nix
           niri
-          power-profile
           port-killer
           wifi-commander
         ];

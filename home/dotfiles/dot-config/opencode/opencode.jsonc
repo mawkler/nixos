@@ -68,6 +68,7 @@
       "nix develop *": "allow",
       "nix eval *": "allow",
       "nix flake check *": "allow",
+      "nix flake metadata *": "allow",
       "nix flake show *": "allow",
       "nix packet-info *": "allow",
       "nix search *": "allow",

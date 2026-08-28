@@ -60,6 +60,7 @@ in
   environment.systemPackages = with pkgs; [
     # keep-sorted start
     (flake inputs.nox)
+    (flake inputs.raisin)
     antigen
     bacon
     bat
@@ -99,7 +100,6 @@ in
     htop-vim
     hurl
     hyperfine
-    inputs.raisin.defaultPackage.${stdenv.hostPlatform.system} # TODO: export `.default`
     jless
     jq
     kdePackages.dolphin
