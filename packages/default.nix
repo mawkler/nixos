@@ -49,6 +49,7 @@ in
   services = {
     # Required by DankMaterialShell
     power-profiles-daemon.enable = true;
+    upower.enable = true;
 
     mullvad-vpn = {
       enable = true;
