@@ -31,6 +31,9 @@ hide_tab_bar_when_single_tab = true
 [ui.toast]
 delivery = "system"
 
+[advanced]
+scrollback_limit_bytes = 50000000
+
 [experimental]
 kitty_graphics = true
 pane_history = true
