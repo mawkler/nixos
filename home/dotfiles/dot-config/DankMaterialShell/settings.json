@@ -100,6 +100,7 @@
   "batteryLowThreshold": 30,
   "batteryNotifyLow": true,
   "batteryCriticalNotificationType": 0,
+  "batteryAutoPowerSaver": true,
   "lockBeforeSuspend": true,
   "enableFprint": true,
   "lockScreenNotificationMode": 2,
@@ -198,10 +199,13 @@
         {
           "id": "battery",
           "enabled": true,
-          "showBatteryPercentOnlyOnBattery": true,
+          "showBatteryPercentOnlyOnBattery": false,
           "showBatteryTime": true,
           "showBatteryPercent": true,
-          "showBatteryTimeOnlyOnBattery": true
+          "showBatteryTimeOnlyOnBattery": false,
+          "showBatteryPowerCharging": false,
+          "batteryStyle": "outline",
+          "showBatteryPowerDischarging": false
         },
         {
           "id": "controlCenterButton",
@@ -254,7 +258,8 @@
       "maximizeWidgetIcons": false,
       "maximizeWidgetText": false,
       "removeWidgetPadding": false,
-      "attachToScreenEdge": false
+      "attachToScreenEdge": false,
+      "batteryColorMode": "level"
     }
   ],
   "desktopClockCustomColor": {
@@ -295,5 +300,5 @@
     }
   },
   "frameMode": "separate",
-  "configVersion": 17
+  "configVersion": 18
 }
