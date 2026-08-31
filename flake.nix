@@ -93,7 +93,7 @@
         ];
       };
 
-      mkNixosConfig =
+      mkNixosConfigs =
         hosts:
         builtins.mapAttrs (
           hostname: modules:
@@ -108,7 +108,7 @@
     in
     {
       # NixOS
-      nixosConfigurations = mkNixosConfig hosts;
+      nixosConfigurations = mkNixosConfigs hosts;
 
       # Home Manager
       homeConfigurations =
