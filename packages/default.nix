@@ -86,7 +86,6 @@ in
     file
     fx
     fzf
-    gimp
     git
     git-standup
     github-cli
@@ -149,6 +148,7 @@ in
     spotube
     sshfs
     stable.anytype
+    stable.gimp
     stable.grayjay
     stable.spacedrive # "broken: This package is broken"
     superfile
