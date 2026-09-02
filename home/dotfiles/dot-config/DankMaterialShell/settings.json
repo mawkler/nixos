@@ -8,6 +8,61 @@
   "clockFormat": "24h",
   "barElevationEnabled": false,
   "blurEnabled": true,
+  "controlCenterWidgets": [
+    {
+      "id": "volumeSlider",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "brightnessSlider",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "wifi",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "bluetooth",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "audioOutput",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "audioInput",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "nightMode",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "darkMode",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "diskUsage",
+      "enabled": true,
+      "width": 50,
+      "instanceId": "mthl2kgp2vylhvfmf8jearv3e01j68",
+      "mountPath": "/",
+      "showMountPath": true
+    },
+    {
+      "id": "colorPicker",
+      "enabled": true,
+      "width": 50
+    }
+  ],
   "showWorkspaceIndex": true,
   "showWorkspaceApps": true,
   "maxWorkspaceIcons": 4,
@@ -66,11 +121,11 @@
     "softreboot"
   ],
   "powerMenuDefaultAction": "lock",
-  "customPowerActionSuspend": "systemctl suspend-then-hibernate",
+  "customPowerActionSuspend": "systemctl sleep",
+  "customPowerActionReboot": "hyprshutdown --post-cmd 'systemctl reboot'",
+  "customPowerActionPowerOff": "hyprshutdown --post-cmd 'systemctl poweroff'",
   "screenPreferences": {
-    "lockScreen": [
-      "DP-3"
-    ]
+    "lockScreen": ["DP-3"]
   },
   "displayProfileAutoSelect": true,
   "barConfigs": [
@@ -79,9 +134,7 @@
       "name": "Main Bar",
       "enabled": true,
       "position": 0,
-      "screenPreferences": [
-        "all"
-      ],
+      "screenPreferences": ["all"],
       "showOnLastDisplay": false,
       "leftWidgets": [
         {
