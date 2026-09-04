@@ -125,7 +125,9 @@
   "customPowerActionReboot": "hyprshutdown --post-cmd 'systemctl reboot'",
   "customPowerActionPowerOff": "hyprshutdown --post-cmd 'systemctl poweroff'",
   "screenPreferences": {
-    "lockScreen": ["DP-3"]
+    "lockScreen": [
+      "DP-3"
+    ]
   },
   "displayProfileAutoSelect": true,
   "barConfigs": [
@@ -134,7 +136,9 @@
       "name": "Main Bar",
       "enabled": true,
       "position": 0,
-      "screenPreferences": ["all"],
+      "screenPreferences": [
+        "all"
+      ],
       "showOnLastDisplay": false,
       "leftWidgets": [
         {
@@ -193,7 +197,11 @@
         },
         {
           "id": "battery",
-          "enabled": true
+          "enabled": true,
+          "showBatteryPercentOnlyOnBattery": true,
+          "showBatteryTime": true,
+          "showBatteryPercent": true,
+          "showBatteryTimeOnlyOnBattery": true
         },
         {
           "id": "controlCenterButton",
@@ -287,5 +295,5 @@
     }
   },
   "frameMode": "separate",
-  "configVersion": 16
+  "configVersion": 17
 }
