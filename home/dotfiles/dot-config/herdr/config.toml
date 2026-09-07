@@ -2,6 +2,9 @@ onboarding = false
 [theme]
 name = "one-dark"
 
+[terminal]
+default_shell = "fish"
+
 [update]
 version_check = false
 

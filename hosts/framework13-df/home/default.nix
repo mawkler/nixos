@@ -33,6 +33,7 @@
     gimp
     github-cli
     glab
+    herdr
     jjui
     jless
     just
@@ -68,10 +69,6 @@
     neovim
     tree-sitter
   ];
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
 
   programs = {
     nh = {
