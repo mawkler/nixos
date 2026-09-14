@@ -96,6 +96,10 @@ in
 
   # Cargo
   cb = "cargo build";
+  cr = "cargo run";
+  ch = "cargo check";
+  ct = "cargo test";
+  cl = "cargo clippy";
 
   # Jujuts (custom commands)
   jt = "jj tug";
