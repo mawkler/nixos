@@ -1,9 +1,11 @@
 # This computer doesn't run NixOS, and therefore only uses the home-manager config
 {
   inputs,
+  lib,
   pkgs,
   config,
   rootPath,
+  username,
   ...
 }:
 {
@@ -20,6 +22,7 @@
     bacon
     bat
     beeper
+    btop
     cargo-insta
     cargo-nextest
     chromedriver
@@ -34,6 +37,7 @@
     github-cli
     glab
     herdr
+    htop
     jjui
     jless
     just
@@ -47,6 +51,7 @@
     nixd
     nodejs
     noto-fonts-color-emoji
+    pnpm
     prettierd
     ripdrag
     ripgrep
@@ -110,4 +115,20 @@
           source-file ~/.tmux.conf
         '';
     };
+
+
+  home.file =
+    let
+      inherit (config.lib.file) mkOutOfStoreSymlink;
+      homeConfig = "${rootPath}/hosts/framework13-df/home";
+    in
+  {
+    ".cargo/config.toml".source = lib.mkForce (mkOutOfStoreSymlink "${homeConfig}/.cargo/config.toml");
+    ".config/sccache".source = # toml
+    ''
+      [cache.disk]
+      dir = "/home/${username}/.cache/sccache"
+      size = 53_687_091_200 # 54 GB
+    '';
+  };
 }
