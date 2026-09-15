@@ -5,7 +5,7 @@
       ''
         [cache.disk]
         dir = "/home/${username}/.cache/sccache"
-        size = 53_687_091_200 # 54 GB
+        size = 214_748_364_800 # 200 GB
       '';
     ".cargo/config.toml".text = # toml
       ''
