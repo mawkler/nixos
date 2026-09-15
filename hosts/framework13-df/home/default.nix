@@ -1,14 +1,16 @@
 # This computer doesn't run NixOS, and therefore only uses the home-manager config
 {
   inputs,
-  lib,
   pkgs,
-  config,
   rootPath,
   username,
   ...
 }:
 {
+  imports = [
+    ./sccache.nix
+  ];
+
   targets = {
     # Make home-manager work better on non-NixOS
     genericLinux.enable = true;
@@ -115,20 +117,4 @@
           source-file ~/.tmux.conf
         '';
     };
-
-
-  home.file =
-    let
-      inherit (config.lib.file) mkOutOfStoreSymlink;
-      homeConfig = "${rootPath}/hosts/framework13-df/home";
-    in
-  {
-    ".cargo/config.toml".source = lib.mkForce (mkOutOfStoreSymlink "${homeConfig}/.cargo/config.toml");
-    ".config/sccache".source = # toml
-    ''
-      [cache.disk]
-      dir = "/home/${username}/.cache/sccache"
-      size = 53_687_091_200 # 54 GB
-    '';
-  };
 }

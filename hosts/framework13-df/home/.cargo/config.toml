@@ -1,7 +1,0 @@
-[build]
-target-dir = "/home/melker/.cargo/targets/dfmain"
-rustc-wrapper = "sccache"
-incremental = false
-
-[target.x86_64-unknown-linux-gnu]
-rustflags = ["--remap-path-prefix=/home/melker/gitrepos=/workspace"]
