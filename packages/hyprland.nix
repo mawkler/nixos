@@ -21,6 +21,7 @@
     brightnessctl
     hyprshot
     playerctl
+    hyprshutdown
   ];
 
   nix.settings = {
