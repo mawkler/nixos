@@ -73,6 +73,7 @@ in
     cargo-nextest
     cargo-update
     cheese
+    claude-code
     clipboard-jh
     comma
     delta
