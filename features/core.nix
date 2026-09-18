@@ -10,6 +10,7 @@
     ./boot.nix
     ./cachyos.nix
     ./nix-serve.nix
+    ./zswap.nix
     ../hosts/${hostname}/hardware-configuration.nix
   ];
 
