@@ -14,7 +14,9 @@
       faviconService = "twenty";
       font.size = 12;
       popToRootOnClose = false;
+      close_on_focus_loss = true;
       rootSearch.searchFiles = false;
+      global_shortcuts.toggle = "";
       theme.dark.name = "catppuccin-frappe";
       window = {
         csd = true;

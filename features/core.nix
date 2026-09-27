@@ -105,6 +105,11 @@
       ];
 
       auto-optimise-store = true;
+      connect-timeout = 1;
+
+      # Vicinae cachix
+      extra-substituters = [ "https://vicinae.cachix.org" ];
+      extra-trusted-public-keys = [ "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc=" ];
     };
     extraOptions = # toml
       ''
