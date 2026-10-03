@@ -1,0 +1,25 @@
+[keys]
+next = "l"
+previous = "h"
+close = "Q"
+
+[keys.apps]
+E = "nautilus"
+T = "ghostty"
+W = "brave"
+B = "beeper"
+N = "neovide"
+S = "spotify"
+A = "anytype"
+Z = "zen-beta"
+G = "gram"
+D = { cmd = "onlyoffice-desktopeditors", app_id = "onlyoffice" }
+"SHIFT + A" = "teams-for-linux"
+"SHIFT + S" = "slack"
+
+[switcher]
+background_opacity = 0.7 # how solid the panel is, from 0 (not at all) to 1
+foreground_opacity = 0.9 # and the sheet the windows lie on, with its tab
+# Uncomment once the installed build is new enough to know it:
+# numbers = { action = "switch" }
+# theme = "catppuccin-frappe"

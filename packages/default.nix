@@ -12,6 +12,7 @@ in
     # keep-sorted start
     ./caps2esc.nix
     ./hyprland.nix
+    ./jaunt.nix
     ./kache.nix
     ./opencode.nix
     ./stylix.nix
@@ -62,7 +63,6 @@ in
   environment.systemPackages = with pkgs; [
     # keep-sorted start
     (flake inputs.nox)
-    (flake inputs.raisin)
     antigen
     bacon
     bat

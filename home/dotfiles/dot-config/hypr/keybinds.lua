@@ -7,12 +7,6 @@ local function bind_super(keys, call, options)
     bind(("%s + %s"):format("SUPER", keys), call, options)
 end
 
--- Ctrl variants (always launch new instance)
-bind_super("CTRL + E", cmd("nautilus"))
-bind_super("CTRL + T", cmd("ghostty"))
-bind_super("CTRL + W", cmd("brave"))
-bind_super("CTRL + N", cmd("neovide"))
-
 -- Vicinae (launcher)
 local vicinaeUrl = "vicinae://launch"
 

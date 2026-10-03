@@ -147,7 +147,7 @@
     "fenix": {
       "inputs": {
         "nixpkgs": [
-          "raisin",
+          "jaunt",
           "naersk",
           "nixpkgs"
         ],
@@ -416,6 +416,26 @@
         "type": "github"
       }
     },
+    "jaunt": {
+      "inputs": {
+        "naersk": "naersk",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792094151,
+        "narHash": "sha256-s9KzKjX7KDUSJiAABrpLuwpt60KYJbxMyNK50v6svvQ=",
+        "rev": "58bff222471b5ea8805b5dcb1c7868a1a9bc68e9",
+        "revCount": 137,
+        "type": "git",
+        "url": "file:///home/melker/jaunt"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///home/melker/jaunt"
+      }
+    },
     "jj-starship": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -484,7 +504,7 @@
       "inputs": {
         "fenix": "fenix",
         "nixpkgs": [
-          "raisin",
+          "jaunt",
           "nixpkgs"
         ]
       },
@@ -508,8 +528,8 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1791998919,
-        "narHash": "sha256-vpavE/r48kNknfA87++LaOFEkgNer+sYRzX0J9o6Nr8=",
+        "lastModified": 1791230967,
+        "narHash": "sha256-iJwVu5ZimQqih1aH/wGTVcmnngxtTcWHO7yrdjvI1Tc=",
         "path": "/home/melker/.config/nvim",
         "type": "path"
       },
@@ -732,33 +752,13 @@
         "type": "github"
       }
     },
-    "raisin": {
-      "inputs": {
-        "naersk": "naersk",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1788197823,
-        "narHash": "sha256-2DCKQEuAvExrsgm3cbhrkDZ3Ekf9fw5i3v+sOdfG+4w=",
-        "owner": "mawkler",
-        "repo": "raisin",
-        "rev": "d7515bfe27e16a1aa27ce02c4d628ccbb65e88e1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mawkler",
-        "repo": "raisin",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "agent-skills": "agent-skills",
         "dank-material-shell": "dank-material-shell",
         "dms-plugin-registry": "dms-plugin-registry",
         "home-manager": "home-manager",
+        "jaunt": "jaunt",
         "jj-starship": "jj-starship",
         "kache": "kache",
         "minimal-tmux": "minimal-tmux",
@@ -770,7 +770,6 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nox": "nox",
         "ponytail": "ponytail",
-        "raisin": "raisin",
         "rust-skills": "rust-skills",
         "skills": "skills",
         "stylix": "stylix",

@@ -578,27 +578,6 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
-
-    // Raisin - raise or run program
-    Mod+W hotkey-overlay-title="Launch/focus Brave" { spawn "raisin" "brave"; }
-    Mod+N hotkey-overlay-title="Launch/focus Neovide" { spawn "raisin" "neovide"; }
-    Mod+T hotkey-overlay-title="Launch/focus Ghostty" { spawn "raisin" "ghostty"; }
-    Mod+B hotkey-overlay-title="Launch/focus Beeper" { spawn "raisin" "beeper"; }
-    Mod+S hotkey-overlay-title="Launch/focus Spotify" { spawn "raisin" "spotify"; }
-    Mod+D hotkey-overlay-title="Launch/focus ONLYOFFICE" { spawn "raisin" "ONLYOFFICE" "onlyoffice-desktopeditors"; }
-    Mod+Z hotkey-overlay-title="Launch/focus Zen" { spawn "raisin" "zen"; }
-    Mod+E hotkey-overlay-title="Launch/focus Files" { spawn "raisin" "nautilus"; }
-    Mod+A hotkey-overlay-title="Launch/focus Anytype" { spawn "raisin" "anytype"; }
-
-    // Force run program
-    Mod+Ctrl+W hotkey-overlay-title=null { spawn "brave"; }
-    Mod+Ctrl+N hotkey-overlay-title=null { spawn "neovide"; }
-    Mod+Ctrl+T hotkey-overlay-title=null { spawn "ghostty"; }
-    Mod+Ctrl+B hotkey-overlay-title=null { spawn "beeper"; }
-    Mod+Ctrl+S hotkey-overlay-title=null { spawn "spotify"; }
-    Mod+Ctrl+D hotkey-overlay-title=null { spawn "onlyoffice-desktopeditors"; }
-    Mod+Ctrl+Z hotkey-overlay-title=null { spawn "zen"; }
-    Mod+Ctrl+E hotkey-overlay-title=null { spawn "nautilus"; }
 }
 
 include "dank-material-shell.kdl"

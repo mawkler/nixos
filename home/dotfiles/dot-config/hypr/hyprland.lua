@@ -3,8 +3,6 @@
 -------------------
 
 require("keybinds")
-require("raisin")
-
 require("dank-material-shell")
 
 --------------------
@@ -228,9 +226,4 @@ hl.config({
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
 
--- This rule doesn't seem to apply
-hl.layer_rule({
-    match        = { namespace = "vicinae" },
-    blur         = true,
-    ignore_alpha = 0,
-})
+hl.layer_rule({ match = { namespace = "^jaunt$" }, blur = true, ignore_alpha = 0.6 })

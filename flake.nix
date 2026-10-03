@@ -30,8 +30,8 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
-    raisin.url = "github:mawkler/raisin";
-    raisin.inputs.nixpkgs.follows = "nixpkgs";
+    jaunt.url = "git+file:///home/melker/jaunt";
+    jaunt.inputs.nixpkgs.follows = "nixpkgs";
 
     dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";
     dank-material-shell.inputs.nixpkgs.follows = "nixpkgs";
