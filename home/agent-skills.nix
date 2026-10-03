@@ -5,6 +5,7 @@
   programs.agent-skills = {
     enable = true;
     targets.opencode.enable = true;
+    targets.claude.enable = true;
 
     sources.skills = {
       input = "skills";
