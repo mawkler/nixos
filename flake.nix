@@ -125,6 +125,7 @@
               modules = [
                 ./home
                 ./home/dank-material-shell.nix
+                ./home/vicinae.nix
               ];
             }
           );
@@ -135,6 +136,7 @@
               modules = [
                 ./home
                 ./home/dank-material-shell.nix
+                ./home/vicinae.nix
               ];
             }
           );

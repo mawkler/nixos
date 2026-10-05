@@ -19,7 +19,6 @@ in
     ./mimeapps.nix
     ./other.nix
     ./shell
-    ./vicinae.nix
     # keep-sorted end
   ];
 

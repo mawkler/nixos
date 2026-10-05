@@ -39,7 +39,7 @@
     github-cli
     glab
     herdr
-    htop
+    htop-vim
     jjui
     jless
     just
