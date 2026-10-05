@@ -1,4 +1,9 @@
-{ pkgs, hostnames, ... }:
+{
+  pkgs,
+  hostnames,
+  hostname,
+  ...
+}:
 {
   # Server
   services = {
@@ -19,7 +24,7 @@
   # Client
   nix.settings =
     let
-      cacheUrls = map (hostname: "http://${hostname}.local:5000") hostnames;
+      cacheUrls = hostnames |> builtins.filter (h: h != hostname) |> map (h: "http://${h}.local:5000");
     in
     {
       substituters = cacheUrls;
