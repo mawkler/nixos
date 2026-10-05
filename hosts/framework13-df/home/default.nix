@@ -87,6 +87,7 @@
     fish = {
       shellAbbrs = {
         rt = "just run-tool";
+        Jr = "just run";
       };
       shellInitLast = "source ~/gitrepos/dfmain/tools/rust_tools/completions/completions.fish";
     };
