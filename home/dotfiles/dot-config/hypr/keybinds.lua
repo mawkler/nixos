@@ -28,16 +28,9 @@ bind("PRINT", cmd("hyprshot --clipboard-only --mode region"))
 bind_super("Q", hl.dsp.window.close())
 bind_super("X", hl.dsp.window.float({ action = "toggle" }))
 bind_super("SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
--- bind_super("F", hl.dsp.window.fullscreen({ mode = "maximized" }))
--- temporary workaround for issue where DMS's top bar disappears when maximizing (should be resolved in v. 0.55.1)
-local scroll_max_state = {}
-bind_super("F", function()
-    local ws = hl.get_active_workspace()
-    if not ws then return end
-    local was_max = scroll_max_state[ws.id]
-    hl.dispatch(hl.dsp.layout(was_max and "colresize 0.5" or "colresize 1"))
-    scroll_max_state[ws.id] = not was_max
-end)
+-- This no longer toggles, there's a discussion here:
+-- https://github.com/hyprwm/Hyprland/discussions/14646
+bind_super("F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 
 bind_super("SHIFT + L", hl.dsp.window.move({ direction = "r" }))
 bind_super("SHIFT + K", hl.dsp.window.move({ direction = "u" }))
@@ -97,5 +90,3 @@ bind("XF86MonBrightnessDown", cmd("brightnessctl -e4 -n2 set 5%-"), repeat_locke
 -- bind("XF86AudioLowerVolume", cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), repeat_locked)
 -- bind("XF86AudioMute", cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), repeat_locked)
 -- bind("XF86AudioMicMute", cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), repeat_locked)
-
--- Lid switch: see `hyprland.lua`
