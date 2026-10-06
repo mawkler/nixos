@@ -9,6 +9,4 @@
   })
 
   inputs.jj-starship.overlays.default
-
-  inputs.nix-cachyos-kernel.overlays.pinned
 ]

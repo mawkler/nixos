@@ -105,7 +105,7 @@
       ];
 
       auto-optimise-store = true;
-      connect-timeout = 1;
+      connect-timeout = 2;
 
       # Vicinae cachix
       extra-substituters = [ "https://vicinae.cachix.org" ];

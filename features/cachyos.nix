@@ -1,9 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore;
+  # Also adds Chaotic-Nyx's binary cache. Must be rebuilt once before switching
+  # the kernel over to Chaotic-Nyx's, so that the cache is active
+  imports = [ inputs.chaotic.nixosModules.default ];
 
-  nix.settings = {
-    substituters = [ "https://attic.xuyh0120.win/lantian" ];
-    trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
-  };
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
 }

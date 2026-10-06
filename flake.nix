@@ -10,7 +10,8 @@
 
     neovim.url = "path:/home/melker/.config/nvim";
 
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    # No `nixpkgs.follows`, or the kernel won't hit Chaotic-Nyx's binary cache
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
