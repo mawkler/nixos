@@ -52,6 +52,9 @@
 
     rust-skills.url = "github:actionbook/rust-skills";
     rust-skills.flake = false;
+
+    ponytail.url = "github:DietrichGebert/ponytail";
+    ponytail.flake = false;
   };
 
   outputs =

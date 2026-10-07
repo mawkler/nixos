@@ -11,10 +11,15 @@
       input = "skills";
       subdir = "skills";
     };
+    sources.ponytail = {
+      input = "ponytail";
+      subdir = "skills";
+    };
     skills.enable = [
       "neovim"
       "nix"
     ];
+    skills.enableAll = [ "ponytail" ];
   };
 
   # OpenCode instructions
