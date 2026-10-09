@@ -21,9 +21,7 @@
       "id": "dock",
       "name": "Dock",
       "enabled": false,
-      "screenPreferences": [
-        "all"
-      ],
+      "screenPreferences": ["all"],
       "showOnLastDisplay": true,
       "position": 1,
       "mode": "compact",
@@ -91,10 +89,7 @@
   "currentThemeCategory": "dynamic",
   "matugenScheme": "scheme-fidelity",
   "popupTransparency": 0.7,
-  "dmsWindowsFloatingSeeded": [
-    "hyprland",
-    "hyprland"
-  ],
+  "dmsWindowsFloatingSeeded": ["hyprland", "hyprland"],
   "widgetBackgroundColor": "sth",
   "barElevationEnabled": false,
   "blurEnabled": true,
@@ -252,9 +247,7 @@
   "customPowerActionReboot": "hyprshutdown --post-cmd 'systemctl reboot'",
   "customPowerActionPowerOff": "hyprshutdown --post-cmd 'systemctl poweroff'",
   "screenPreferences": {
-    "lockScreen": [
-      "DP-3"
-    ]
+    "lockScreen": ["DP-3"]
   },
   "displayProfileAutoSelect": true,
   "barConfigs": [
@@ -263,9 +256,7 @@
       "name": "Main Bar",
       "enabled": true,
       "position": 0,
-      "screenPreferences": [
-        "all"
-      ],
+      "screenPreferences": ["all"],
       "showOnLastDisplay": false,
       "leftWidgets": [
         {
@@ -404,16 +395,14 @@
     }
   },
   "frameMode": "separate",
-  "configVersion": 38,
+  "configVersion": 39,
   "lockScreenWidgetInstances": [
     {
       "id": "lock_clock",
       "widgetType": "desktopClock",
       "enabled": true,
       "config": {
-        "displayPreferences": [
-          "all"
-        ],
+        "displayPreferences": ["all"],
         "syncPositionAcrossScreens": true,
         "style": "expressive",
         "transparency": 0,
@@ -433,9 +422,7 @@
       "widgetType": "lockDate",
       "enabled": false,
       "config": {
-        "displayPreferences": [
-          "all"
-        ],
+        "displayPreferences": ["all"],
         "syncPositionAcrossScreens": true,
         "format": "short",
         "colorMode": "default",
@@ -447,9 +434,7 @@
       "widgetType": "lockAuth",
       "enabled": true,
       "config": {
-        "displayPreferences": [
-          "all"
-        ],
+        "displayPreferences": ["all"],
         "syncPositionAcrossScreens": true,
         "style": "expressive",
         "profileVisibility": "always",
@@ -461,9 +446,7 @@
       "widgetType": "lockNotifications",
       "enabled": true,
       "config": {
-        "displayPreferences": [
-          "all"
-        ],
+        "displayPreferences": ["all"],
         "syncPositionAcrossScreens": true,
         "mode": 2
       }
@@ -473,9 +456,7 @@
       "widgetType": "lockStatus",
       "enabled": true,
       "config": {
-        "displayPreferences": [
-          "all"
-        ],
+        "displayPreferences": ["all"],
         "syncPositionAcrossScreens": true,
         "showMediaPlayer": true,
         "showWeather": true,
@@ -487,9 +468,7 @@
       "widgetType": "lockPower",
       "enabled": false,
       "config": {
-        "displayPreferences": [
-          "all"
-        ],
+        "displayPreferences": ["all"],
         "syncPositionAcrossScreens": true,
         "shape": "round"
       }
