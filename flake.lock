@@ -437,6 +437,29 @@
         "type": "github"
       }
     },
+    "kache": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay",
+        "treefmt-nix": "treefmt-nix"
+      },
+      "locked": {
+        "lastModified": 1791194368,
+        "narHash": "sha256-Kbww7mmdUAASh1sbjdoqoosSA76EALJata+Aa8SJUnE=",
+        "owner": "kunobi-ninja",
+        "repo": "kache",
+        "rev": "7c27329c286e32c17a8dac05cff22442926ff719",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kunobi-ninja",
+        "ref": "stable",
+        "repo": "kache",
+        "type": "github"
+      }
+    },
     "minimal-tmux": {
       "inputs": {
         "nixpkgs": [
@@ -717,18 +740,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1791227549,
-        "narHash": "sha256-eptdqvR1oPLCjuU/+CpXFM0oHvsW6Ti0VZAL4gyS210=",
-        "ref": "gui2",
-        "rev": "08e8ed4d6d0298866cb2de467ce501d87bf5b766",
-        "revCount": 88,
-        "type": "git",
-        "url": "file:///home/melker/raisin"
+        "lastModified": 1788197823,
+        "narHash": "sha256-2DCKQEuAvExrsgm3cbhrkDZ3Ekf9fw5i3v+sOdfG+4w=",
+        "owner": "mawkler",
+        "repo": "raisin",
+        "rev": "d7515bfe27e16a1aa27ce02c4d628ccbb65e88e1",
+        "type": "github"
       },
       "original": {
-        "ref": "gui2",
-        "type": "git",
-        "url": "file:///home/melker/raisin"
+        "owner": "mawkler",
+        "repo": "raisin",
+        "type": "github"
       }
     },
     "root": {
@@ -738,6 +760,7 @@
         "dms-plugin-registry": "dms-plugin-registry",
         "home-manager": "home-manager",
         "jj-starship": "jj-starship",
+        "kache": "kache",
         "minimal-tmux": "minimal-tmux",
         "neovim": "neovim",
         "nix-cachyos-kernel": "nix-cachyos-kernel",
@@ -769,6 +792,27 @@
         "owner": "rust-lang",
         "ref": "nightly",
         "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "kache",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791101754,
+        "narHash": "sha256-y/GF+9B0t0TZ0nQiSRMqDXpr76yT7sdDbS/3GNLhzkE=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "dbc715a4b7c0ace63b9769a032d1dd34cd89e5bd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
         "type": "github"
       }
     },
@@ -974,6 +1018,27 @@
       "original": {
         "owner": "tinted-theming",
         "repo": "base16-zed",
+        "type": "github"
+      }
+    },
+    "treefmt-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "kache",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784369104,
+        "narHash": "sha256-47cxbcZODibHv3rELFQ9vZly0vUNkND/atn/U7HLeb0=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "df3c0640565d04a0261253cdd89fce78ec50168a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
         "type": "github"
       }
     },

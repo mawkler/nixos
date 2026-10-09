@@ -45,6 +45,9 @@
     jj-starship.url = "github:dmmulroy/jj-starship";
     jj-starship.inputs.nixpkgs.follows = "nixpkgs";
 
+    kache.url = "github:kunobi-ninja/kache/stable";
+    kache.inputs.nixpkgs.follows = "nixpkgs";
+
     # LLM agent skills
     agent-skills.url = "github:Kyure-A/agent-skills-nix";
     skills.url = "github:mawkler/agent-skills";

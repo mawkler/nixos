@@ -40,6 +40,7 @@
     glab
     herdr
     htop-vim
+    inputs.kache.packages.${pkgs.stdenv.hostPlatform.system}.default
     jjui
     jless
     just

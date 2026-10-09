@@ -11,6 +11,7 @@ in
   imports = [
     # keep-sorted start
     ./hyprland.nix
+    ./kache.nix
     ./kanata.nix
     ./opencode.nix
     ./stylix.nix
