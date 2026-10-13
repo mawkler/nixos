@@ -11,20 +11,27 @@ version_check = false
 [keys]
 prefix = "ctrl+space"
 
-settings = "prefix+,"
-new_tab = "prefix+n"
-previous_tab = "prefix+alt+h"
-next_tab = "prefix+alt+l"
-close_tab = "prefix+C"
-focus_pane_left = ["prefix+h", "prefix+ctrl+h"]
+# keep-sorted start
+close_pane = ["prefix+c", "prefix+ctrl+c"]
+close_tab = "prefix+alt+w"
+close_workspace = "prefix+C"
+focus_agent = "prefix+alt+1..9"
 focus_pane_down = ["prefix+j", "prefix+ctrl+j"]
-focus_pane_up = ["prefix+k", "prefix+ctrl+k"]
+focus_pane_left = ["prefix+h", "prefix+ctrl+h"]
 focus_pane_right = ["prefix+l", "prefix+ctrl+l"]
+focus_pane_up = ["prefix+k", "prefix+ctrl+k"]
+move_tab_next = "prefix+>"
+move_tab_previous = "prefix+<"
+new_tab = "prefix+n"
+next_tab = "prefix+alt+l"
+previous_tab = "prefix+alt+h"
+settings = "prefix+,"
 split_horizontal = ["prefix+s", "prefix+ctrl+s"]
 split_vertical = ["prefix+v", "prefix+ctrl+v"]
-close_pane = ["prefix+c", "prefix+ctrl+c"]
-zoom = "prefix+f"
+switch_workspace = "prefix+shift+1..9"
 toggle_sidebar = "prefix+`"
+zoom = "prefix+f"
+# keep-sorted end
 
 [ui]
 sidebar_start_collapsed = true
