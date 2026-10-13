@@ -46,6 +46,7 @@
     jless
     just
     keep-sorted
+    libreoffice
     librepods
     luarocks
     maestral
@@ -85,6 +86,7 @@
       clean.extraArgs = "--keep-since 7d --keep 10";
       flake = rootPath;
     };
+
     fish = {
       shellAbbrs = {
         rt = "just run-tool";
@@ -92,6 +94,8 @@
       };
       shellInitLast = "source ~/gitrepos/dfmain/tools/rust_tools/completions/completions.fish";
     };
+
+    onlyoffice.enable = true;
   };
 
   fonts.fontconfig.enable = true;
