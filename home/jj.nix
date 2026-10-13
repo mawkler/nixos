@@ -18,6 +18,11 @@
           merge-editor = "codediff";
           diff-formatter = "delta";
           diff-instructions = false; # Don't include a virtual `JJ-INSTRUCTIONS` file in diff
+          # Default value minus `-X`
+          pager.command = [
+            "less"
+            "-FRK"
+          ];
           diff-editor = [
             "nvim"
             "--cmd"
