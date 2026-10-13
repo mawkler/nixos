@@ -1,6 +1,6 @@
 { config, rootPath, ... }:
 let
-  agentsMd = config.lib.file.mkOutOfStoreSymlink "${rootPath}/home/agents/AGENTS.md";
+  agentsMd = config.lib.file.mkOutOfStoreSymlink "${rootPath}/home/agents/instructions/AGENTS.md";
 in
 {
   # Shared global instructions for coding agents

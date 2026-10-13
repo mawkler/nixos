@@ -15,11 +15,15 @@
       input = "ponytail";
       subdir = "skills";
     };
+    sources.personal-preferences.path = ./agents/skills;
     skills.enable = [
       "neovim"
       "nix"
     ];
-    skills.enableAll = [ "ponytail" ];
+    skills.enableAll = [
+      "ponytail"
+      "personal-preferences"
+    ];
   };
 
   # OpenCode instructions
