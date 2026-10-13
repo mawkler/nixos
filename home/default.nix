@@ -14,6 +14,7 @@ in
   imports = [
     # keep-sorted start
     ./agent-skills.nix
+    ./agents
     ./ghostty.nix
     ./jj.nix
     ./mimeapps.nix
