@@ -15,7 +15,7 @@
         };
         ui = {
           default-command = "status";
-          merge-editor = "diffconflicts";
+          merge-editor = "codediff";
           diff-formatter = "delta";
           diff-instructions = false; # Don't include a virtual `JJ-INSTRUCTIONS` file in diff
           diff-editor = [
@@ -65,11 +65,33 @@
               "-c"
               "let g:jj_diffconflicts_marker_length=$marker_length"
               "-c"
-              "JJDiffConflicts"
+              "JJDiffConflicts!"
               "$output"
               "$base"
               "$left"
               "$right"
+            ];
+          };
+          codediff = {
+            program = "sh";
+            # codediff.nvim reads base/ours/theirs from git's index stages (:1/:2/:3), which jj doesn't
+            # populate, so turn jj's temp dir into a git repo with `$output` staged as conflicted
+            merge-args = [
+              "-c" # sh
+              ''
+                set -e
+                dir="$(dirname "$4")"
+                name="$(basename "$4")"
+                git -C "$dir" init -q
+                stage() { printf '100644 %s %s\t%s\n' "$(git -C "$dir" hash-object -w "$2")" "$1" "$name"; }
+                { stage 1 "$1"; stage 2 "$2"; stage 3 "$3"; } | git -C "$dir" update-index --index-info
+                nvim "$4" -c "CodeDiff --exit-on-close merge \"$4\""
+              ''
+              "_"
+              "$base"
+              "$left"
+              "$right"
+              "$output"
             ];
           };
         };
