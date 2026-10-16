@@ -305,6 +305,7 @@
   "spotlightSectionViewModes": {
     "apps": "list"
   },
+  "avatarRing": "primary",
   "networkPreference": "wifi",
   "cursorSettings": {
     "theme": "System Default",
@@ -484,7 +485,8 @@
       "attachToScreenEdge": false,
       "batteryColorMode": "level",
       "followInterfaceStyle": false,
-      "widgetFollowInterfaceStyle": false
+      "widgetFollowInterfaceStyle": false,
+      "hoverPopouts": false
     }
   ],
   "builtInPluginSettings": {
