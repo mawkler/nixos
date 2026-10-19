@@ -104,8 +104,4 @@ bind("XF86MonBrightnessDown", cmd("brightnessctl -e4 -n2 set 5%-"), repeat_locke
 -- bind("XF86AudioMute", cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), repeat_locked)
 -- bind("XF86AudioMicMute", cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), repeat_locked)
 
-local locked = { locked = true }
-
--- Lid switch
-bind("switch:off:Lid Switch", cmd('hyprctl keyword monitor "eDP-1, enable"'), locked)
-bind("switch:on:Lid Switch", cmd('hyprctl keyword monitor "eDP-1, disable"'), locked)
+-- Lid switch: see `hyprland.lua`

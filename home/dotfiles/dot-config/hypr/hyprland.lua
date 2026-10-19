@@ -20,12 +20,31 @@ hl.monitor({
 
 local scaling = 1
 
-hl.monitor({
-    output   = "eDP-1",
-    mode     = "1920x1080",
-    position = "auto",
-    scale    = scaling,
-})
+-- `disabled` has to be passed every time, a rule without it keeps the old value
+local function laptop_monitor(disabled)
+    hl.monitor({
+        output   = "eDP-1",
+        mode     = "1920x1080",
+        position = "auto",
+        scale    = scaling,
+        disabled = disabled,
+    })
+end
+
+-- Check the lid on (re)load, otherwise saving this file turns on the panel while it's closed
+local function lid_closed()
+    local f = io.open("/proc/acpi/button/lid/LID/state")
+    if not f then return false end
+    local closed = f:read("a"):find("closed") ~= nil
+    f:close()
+    return closed
+end
+
+laptop_monitor(lid_closed())
+
+-- Lid switch (`hyprctl keyword` doesn't work with the Lua config)
+hl.bind("switch:off:Lid Switch", function() laptop_monitor(false) end, { locked = true })
+hl.bind("switch:on:Lid Switch", function() laptop_monitor(true) end, { locked = true })
 
 hl.monitor({
     output   = "HDMI-A-2",
