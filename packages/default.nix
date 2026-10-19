@@ -10,9 +10,9 @@ in
 {
   imports = [
     # keep-sorted start
+    ./caps2esc.nix
     ./hyprland.nix
     ./kache.nix
-    ./kanata.nix
     ./opencode.nix
     ./stylix.nix
     ./tmux.nix
