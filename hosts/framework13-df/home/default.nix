@@ -30,6 +30,7 @@
     chromedriver
     claude-code
     comma
+    entr
     eza
     fd
     fishPlugins.bass
@@ -72,7 +73,7 @@
 
     # For Neovim
     luaPackages.mimetypes
-    luaPackages.xml2lua
+    stable.luaPackages.xml2lua # 2026-10-15: the unstable version is marked as broken
     neovide
     neovim
     tree-sitter

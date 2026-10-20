@@ -1,0 +1,16 @@
+{
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "feedbackDrafts": "off",
+  "tui": "fullscreen",
+  "editorMode": "vim",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
+  "attribution": {
+    "commit": ""
+  }
+}
