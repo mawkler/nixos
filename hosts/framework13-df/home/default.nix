@@ -60,7 +60,6 @@
     ripdrag
     ripgrep
     rumdl
-    rustup
     sccache
     signal-desktop
     sioyek
