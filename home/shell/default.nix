@@ -2,6 +2,7 @@
   imports = [
     # keep-sorted start
     ./fish
+    ./lig.nix
     ./zoxide.nix
     ./zsh.nix
     # keep-sorted end

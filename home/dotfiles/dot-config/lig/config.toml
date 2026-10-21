@@ -1,0 +1,15 @@
+[ui]
+theme = "terminal"
+border = "square"
+density = "compact"
+min_width = 80
+height = "50%"
+
+[keys]
+accept = ["ctrl-i"]
+toggle = ["alt-space"] # herdr's prefix is ctrl+space
+next = ["tab", "down", "ctrl-j"]
+prev = ["shift-tab", "up", "ctrl-k"]
+
+[behavior]
+complete_commands = true

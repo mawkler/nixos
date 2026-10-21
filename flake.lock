@@ -502,6 +502,27 @@
         "type": "github"
       }
     },
+    "lig": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792606688,
+        "narHash": "sha256-Yue3goIFpI04VD9CmLLsd0hROFYxQb5e2Ce2GjqtpY0=",
+        "ref": "main",
+        "rev": "a47b9f095ac3c38deca8a944b98687aa171e4421",
+        "revCount": 51,
+        "type": "git",
+        "url": "file:///home/melker/code/lig"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "file:///home/melker/code/lig"
+      }
+    },
     "minimal-tmux": {
       "inputs": {
         "nixpkgs": [
@@ -550,8 +571,8 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1791230967,
-        "narHash": "sha256-iJwVu5ZimQqih1aH/wGTVcmnngxtTcWHO7yrdjvI1Tc=",
+        "lastModified": 1791998919,
+        "narHash": "sha256-vpavE/r48kNknfA87++LaOFEkgNer+sYRzX0J9o6Nr8=",
         "path": "/home/melker/.config/nvim",
         "type": "path"
       },
@@ -745,6 +766,7 @@
         "jaunt": "jaunt",
         "jj-starship": "jj-starship",
         "kache": "kache",
+        "lig": "lig",
         "minimal-tmux": "minimal-tmux",
         "neovim": "neovim",
         "nix-index-database": "nix-index-database",

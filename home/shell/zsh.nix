@@ -51,7 +51,6 @@
         { name = "ael-code/zsh-colored-man-pages"; }
         { name = "mawkler/zsh-bd"; }
         { name = "hlissner/zsh-autopair"; }
-        { name = "Aloxaf/fzf-tab"; }
         {
           name = "romkatv/powerlevel10k";
           tags = [

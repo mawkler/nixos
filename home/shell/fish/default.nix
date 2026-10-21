@@ -52,7 +52,7 @@ in
           };
         in
         {
-          "tab" = bind "fzf_complete";
+          # Overrides fzf's `fzf_complete` binding, which would compete with lig
           "shift-tab" = bind "complete";
           "alt-t" =
             bind
