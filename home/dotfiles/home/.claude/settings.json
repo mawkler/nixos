@@ -1,6 +1,7 @@
 {
   "enabledPlugins": {
-    "rust-analyzer-lsp@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": false
   },
   "feedbackDrafts": "off",
   "tui": "fullscreen",
@@ -8,9 +9,15 @@
   "modelSettings": {
     "claude-opus-5-5": {
       "effortLevel": "xhigh"
+    },
+    "claude-opus-5": {
+      "effortLevel": "xhigh"
     }
   },
   "attribution": {
-    "commit": ""
-  }
+    "commit": "",
+    "pr": ""
+  },
+  "model": "opus",
+  "theme": "dark"
 }
