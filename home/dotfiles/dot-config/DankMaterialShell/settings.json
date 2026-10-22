@@ -390,7 +390,9 @@
         {
           "id": "music",
           "enabled": true,
-          "mediaSize": 1
+          "mediaSize": 1,
+          "mediaStyle": "activity",
+          "overflowMode": "section"
         },
         {
           "id": "separator",
@@ -604,5 +606,35 @@
   "lockScreenShowPowerActions": false,
   "lockScreenFontFamily": "",
   "lockPamExternallyManaged": false,
-  "focusRingWidth": 1.5
+  "focusRingWidth": 1.5,
+  "dashTabs": [
+    {
+      "id": "overview",
+      "enabled": true
+    },
+    {
+      "id": "media",
+      "enabled": true
+    },
+    {
+      "id": "wallpaper",
+      "enabled": true
+    },
+    {
+      "id": "weather",
+      "enabled": true
+    },
+    {
+      "id": "wellbeing",
+      "enabled": true
+    },
+    {
+      "id": "notifications",
+      "enabled": false
+    },
+    {
+      "id": "settings",
+      "enabled": false
+    }
+  ]
 }
