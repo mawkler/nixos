@@ -34,7 +34,7 @@
     jaunt.url = "git+file:///home/melker/jaunt";
     jaunt.inputs.nixpkgs.follows = "nixpkgs";
 
-    lig.url = "git+file:///home/melker/code/lig?ref=main";
+    lig.url = "git+file:///home/melker/code/lig";
     lig.inputs.nixpkgs.follows = "nixpkgs";
 
     dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";

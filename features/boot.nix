@@ -15,8 +15,6 @@
 
     # Silence the log outputs to make the boot process more aesthetically clean
     consoleLogLevel = 3;
-    initrd.verbose = false;
-    initrd.systemd.enable = true;
     kernelParams = [
       "quiet"
       "splash"

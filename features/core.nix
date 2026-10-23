@@ -106,6 +106,8 @@
 
       auto-optimise-store = true;
       connect-timeout = 2;
+      # Skip unreachable substituters instead of aborting the build
+      fallback = true;
 
       # Vicinae cachix
       extra-substituters = [ "https://vicinae.cachix.org" ];
