@@ -14,11 +14,17 @@
     };
   };
 
+  home.sessionVariables = {
+    # Required by KDE applications under a non-Plasma compositor
+    XDG_MENU_PREFIX = "plasma-";
+  };
+
   home.packages = with pkgs; [
+    # keep-sorted start
+    accountsservice # For persisint user profile picture
     polkit
     prettier # For formatting `settings.json`
-
-    # For DankKDEConnect
-    sshfs
+    sshfs # For DankKDEConnect
+    # keep-sorted end
   ];
 }

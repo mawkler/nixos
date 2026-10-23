@@ -51,7 +51,7 @@
           "all"
         ],
         "syncPositionAcrossScreens": true,
-        "style": "ring",
+        "style": "expressive",
         "profileVisibility": "always",
         "passwordVisibility": "typing"
       }
@@ -488,7 +488,8 @@
       "batteryColorMode": "level",
       "followInterfaceStyle": false,
       "widgetFollowInterfaceStyle": false,
-      "hoverPopouts": false
+      "hoverPopouts": true,
+      "hoverPopoutDelay": 0
     }
   ],
   "builtInPluginSettings": {
@@ -556,7 +557,7 @@
           "all"
         ],
         "syncPositionAcrossScreens": true,
-        "style": "ring",
+        "style": "expressive",
         "profileVisibility": "always",
         "passwordVisibility": "typing"
       }
