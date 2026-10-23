@@ -46,9 +46,6 @@
     vicinae-extensions.url = "github:vicinaehq/extensions";
     vicinae-extensions.inputs.nixpkgs.follows = "nixpkgs";
 
-    jj-starship.url = "github:dmmulroy/jj-starship";
-    jj-starship.inputs.nixpkgs.follows = "nixpkgs";
-
     kache.url = "github:kunobi-ninja/kache/stable";
     kache.inputs.nixpkgs.follows = "nixpkgs";
 

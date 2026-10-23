@@ -1,8 +1,12 @@
-format = "$directory$username$hostname$character"
-right_format = "$custom$all$time"
+"$schema" = 'https://starship.rs/config-schema.json'
 
-# Disable Git in favour of Jujutsu
+format = "$directory$username$hostname$character"
+right_format = "$vcs$all$time"
+
+# Disable git in favour of jj. This keeps git out of `$all` and therefore
+# doesn't render jj *and*. `$vcs` still renders git when there's no jj.
 git_branch.disabled = true
+git_branch.symbol = "󰊢 "
 git_commit.disabled = true
 git_state.disabled = true
 git_status.disabled = true
@@ -21,6 +25,36 @@ style = "italic dimmed white"
 truncation_length = 5
 fish_style_pwd_dir_length = 1
 truncation_symbol = "…/"
+read_only = " 󰌾" # Instead of the emoji
+
+[vcs]
+order = ["jj", "git", "hg", "pijul", "fossil"] # jj has prio over git
+# Change first so the jj symbol shows even without a bookmark
+jj_modules = "$jj_change$jj_bookmark$jj_metrics$jj_status"
+
+[jj_change]
+format = "on [󱗆 ](blue)$change "
+prefix_style = "bold purple"
+
+[jj_bookmark]
+# Include the symbol even if there's no bookmark
+format = '[$bookmark(@$remote)$diverged( \(+$overflow_count others\))]($style) '
+
+[jj_metrics]
+# Don't put spaces between the add/deleted numbers
+format = "(([+$added]($added_style))([-$deleted]($deleted_style)) )"
+
+[jj_status]
+format = '([$all]($style) )'
+conflicted = "×"
+immutable = "◆"
+hidden = "󰈉"
+description_empty = "[󱗢 ](bold green)"
+added = " "
+copied = " "
+deleted = " "
+modified = " "
+renamed = " "
 
 # Use Nerd Font symbols instead of emojis
 
@@ -334,7 +368,5 @@ symbol = " "
 [xmake]
 symbol = " "
 
-[custom.jj]
-when = "jj-starship detect"
-shell = ["jj-starship", "--jj-symbol", "󱗆 ", "--git-symbol", "󰊢 "]
-format = "$output "
+[zig]
+symbol = " "

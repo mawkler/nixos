@@ -7,6 +7,4 @@
       config.allowUnfree = true;
     };
   })
-
-  inputs.jj-starship.overlays.default
 ]

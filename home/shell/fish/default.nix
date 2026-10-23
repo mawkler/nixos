@@ -124,6 +124,5 @@ in
 
   home.packages = with pkgs; [
     fishPlugins.fish-bd
-    jj-starship
   ];
 }
