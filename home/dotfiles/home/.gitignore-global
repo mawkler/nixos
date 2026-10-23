@@ -1,3 +1,4 @@
 *.class
 ltex.*.*.txt
 .typos.toml
+.~lock.*# # libreoffice lock files
