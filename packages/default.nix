@@ -149,7 +149,7 @@ in
     spotify
     spotube
     sshfs
-    stable.anytype
+    # stable.anytype
     stable.gimp
     stable.grayjay
     stable.spacedrive # "broken: This package is broken"

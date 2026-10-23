@@ -290,7 +290,9 @@
       "enabled": true,
       "w": 4,
       "h": 1,
-      "footer": true
+      "small": true,
+      "col": 0,
+      "row": 6
     },
     {
       "id": "edit",
@@ -298,8 +300,8 @@
       "w": 1,
       "h": 1,
       "small": true,
-      "footer": true,
-      "footerEnd": true
+      "col": 7,
+      "row": 6
     }
   ],
   "spotlightSectionViewModes": {
@@ -471,7 +473,7 @@
       "popupGapsManual": 4,
       "maximizeDetection": true,
       "scrollEnabled": true,
-      "scrollXBehavior": "column",
+      "scrollXBehavior": "focusWindow",
       "scrollYBehavior": "workspace",
       "shadowIntensity": 0,
       "shadowOpacity": 60,
@@ -501,7 +503,7 @@
     }
   },
   "frameMode": "separate",
-  "configVersion": 39,
+  "configVersion": 42,
   "lockScreenWidgetInstances": [
     {
       "id": "lock_clock",
