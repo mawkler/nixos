@@ -10,8 +10,8 @@ in
 {
   imports = [
     # keep-sorted start
-    ./caps2esc.nix
     ./hyprland.nix
+    ./interception-tools.nix
     ./jaunt.nix
     ./kache.nix
     ./opencode.nix

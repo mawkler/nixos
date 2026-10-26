@@ -470,14 +470,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1792780405,
-        "narHash": "sha256-Q70Q9AcG7/LdiTLVSg0NUAmUwIHDn2BXBssMGQD611Y=",
-        "rev": "84e8a96dcdbd92555c46a54b33f2194c4f8dbe2f",
-        "revCount": 57,
+        "lastModified": 1792782424,
+        "narHash": "sha256-CtdGGQc75L1l7Kz3COcu9OcllmlGY26mZO3SDO9bLNc=",
+        "ref": "main",
+        "rev": "98e943df7e33055a556f829a0fae8e975af434c8",
+        "revCount": 60,
         "type": "git",
         "url": "file:///home/melker/code/lig"
       },
       "original": {
+        "ref": "main",
         "type": "git",
         "url": "file:///home/melker/code/lig"
       }
