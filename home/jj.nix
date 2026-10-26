@@ -45,11 +45,13 @@
             program = "sh";
             diff-args = [
               "-c" # sh
+              # Go through `git diff -b` to ignore whitespace changes, which jj's `-b` doesn't do for
+              # external formatters
               ''
                 if [ "$3" -gt 200 ]; then
-                  exec delta --side-by-side "$1" "$2" --width="$3"
+                  git diff --no-index -b "$1" "$2" | delta --side-by-side --width="$3"
                 else
-                  exec delta --features=one-window "$1" "$2" --width="$3"
+                  git diff --no-index -b "$1" "$2" | delta --features=one-window --width="$3"
                 fi
               ''
               "_"
