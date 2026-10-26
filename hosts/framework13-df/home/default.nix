@@ -77,6 +77,11 @@
     neovide
     neovim
     tree-sitter
+
+    # Sandboxed (FHS) Nix apps like Beeper and OnlyOffice can't see Ubuntu's
+    # /usr/share/fonts, so text fonts must come from the Nix profile
+    noto-fonts
+    ubuntu-sans
   ];
 
   programs = {
