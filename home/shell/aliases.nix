@@ -76,16 +76,15 @@ in
   jR = "jj resolve";
   jrot = "jj rebase --onto 'trunk()'";
   jS = "jj squash";
+  jsp = "jj show @-";
   jb = "jj bookmark";
   jba = "jj bookmark advance";
   jbm = "jj bookmark move";
   jbs = "jj bookmark set";
   jbt = "jj bookmark track --remote=origin";
   jbtm = "jj bookmark track --remote=origin main";
-  jP = "jj bookmark set main -r @- && jj git push";
   jgp = "jj git push";
   jgf = "jj git fetch";
-  jp = "jj prev";
   jpe = "jj prev --edit";
   jpc = "jj prev --conflict";
   jn = "jj next";
@@ -93,6 +92,9 @@ in
   jnc = "jj next --conflict";
   jwu = "jj workspace update-stale";
   jwa = "jj workspace add";
+  # Custom aliases
+  jp = "jj pull";
+  jP = "jj push";
 
   # Cargo
   cb = "cargo build";

@@ -10,6 +10,7 @@ accept = ["ctrl-i"]
 toggle = ["alt-space"] # herdr's prefix is ctrl+space
 next = ["tab", "down", "ctrl-j"]
 prev = ["shift-tab", "up", "ctrl-k"]
+dismiss = []
 
 [behavior]
 complete_commands = true
