@@ -15,6 +15,9 @@ gcloud.disabled = true
 
 add_newline = false
 
+# Default is 500ms, which jj sometimes exceeds in larger repos.
+command_timeout = 1000
+
 [time]
 disabled = false
 format = "[$time]($style)"
