@@ -43,6 +43,9 @@
     dms-plugin-registry.url = "github:AvengeMedia/dms-plugin-registry";
     dms-plugin-registry.inputs.nixpkgs.follows = "nixpkgs";
 
+    dux-files.url = "github:duxlabs-dev/dux-files";
+    dux-files.inputs.nixpkgs.follows = "nixpkgs";
+
     vicinae-extensions.url = "github:vicinaehq/extensions";
     vicinae-extensions.inputs.nixpkgs.follows = "nixpkgs";
 

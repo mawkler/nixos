@@ -4,7 +4,7 @@ previous = "h"
 close = "Q"
 
 [keys.apps]
-E = "nautilus"
+E = { cmd = "dfiles", app_id = "dev.duxlabs.files" }
 T = "ghostty"
 W = "brave"
 B = "beeper"

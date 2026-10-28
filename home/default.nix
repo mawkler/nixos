@@ -15,6 +15,7 @@ in
     # keep-sorted start
     ./agent-skills.nix
     ./agents
+    ./dux-files.nix
     ./ghostty.nix
     ./jj.nix
     ./mimeapps.nix

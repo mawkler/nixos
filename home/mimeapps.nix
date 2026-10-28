@@ -5,7 +5,7 @@
     defaultApplications = let browser = "brave-browser.desktop"; in {
       # keep-sorted start
       "application/pdf" = "sioyek.desktop";
-      "inode/directory" = "org.gnome.Nautilus.desktop";
+      "inode/directory" = "dev.duxlabs.files.desktop";
       "text/markdown" = browser;
       "text/plain" = "neovide.desktop";
       "x-scheme-handler/beeper" = "beepertexts.desktop";
