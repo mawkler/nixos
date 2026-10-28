@@ -18,8 +18,7 @@ D = { cmd = "onlyoffice-desktopeditors", app_id = "onlyoffice" }
 "SHIFT + S" = "slack"
 
 [switcher]
-background_opacity = 0.7 # how solid the panel is, from 0 (not at all) to 1
-foreground_opacity = 0.9 # and the sheet the windows lie on, with its tab
-# Uncomment once the installed build is new enough to know it:
-# numbers = { action = "switch" }
+background_opacity = 0.7
+foreground_opacity = 0.9
+numbers = { action = "switch" }
 # theme = "catppuccin-frappe"

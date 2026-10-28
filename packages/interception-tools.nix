@@ -10,8 +10,6 @@ let
       - KEY: KEY_CAPSLOCK
         TAP: KEY_ESC
         HOLD: KEY_LEFTCTRL
-        # Only press Ctrl once another key is pressed, so a tap is a clean `Esc`
-        HOLD_START: BEFORE_CONSUME
   '';
 in
 {
