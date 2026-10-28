@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     opencode
-    stable.mcp-nixos # 2026-10-27 build error
+    mcp-nixos # 2026-10-27 build error
   ];
 }
