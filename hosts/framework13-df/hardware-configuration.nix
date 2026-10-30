@@ -44,12 +44,6 @@
   boot.kernelParams = [ "resume_offset=195610624" ];
   boot.resumeDevice = "/dev/disk/by-uuid/8981ed1d-50a3-4aa3-a8c3-4594006fa0a1";
   powerManagement.enable = true;
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 32 * 1024; # 32 GB
-    }
-  ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
