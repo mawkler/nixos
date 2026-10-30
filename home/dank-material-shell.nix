@@ -1,4 +1,11 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  config,
+  inputs,
+  rootPath,
+  hostname,
+  ...
+}:
 {
   imports = [
     inputs.dank-material-shell.homeModules.dank-material-shell
@@ -25,6 +32,11 @@
       };
     };
   };
+
+  # Host-specific settings, layered on top of the shared `settings.json`. DMS
+  # writes changes back to whichever file a setting comes from
+  xdg.configFile."dms/config.d/host.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${rootPath}/hosts/${hostname}/dms.json";
 
   # Make DMS's panels launchable from Vicinae, since DMS doesn't ship visible
   # desktop entries for them

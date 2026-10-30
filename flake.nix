@@ -127,14 +127,14 @@
       # Home Manager
       homeConfigurations =
         let
-          config = {
+          config = hostname: {
             pkgs = nixpkgs.legacyPackages.${system};
-            extraSpecialArgs = specialArgs;
+            extraSpecialArgs = specialArgs // { inherit hostname; };
           };
         in
         {
           "${username}@thinkpad-nixos" = home-manager.lib.homeManagerConfiguration (
-            config
+            config "thinkpad-nixos"
             // {
               modules = [
                 ./home
@@ -145,7 +145,7 @@
           );
 
           "${username}@beauty" = home-manager.lib.homeManagerConfiguration (
-            config
+            config "beauty"
             // {
               modules = [
                 ./home
@@ -156,7 +156,7 @@
           );
 
           "${username}@framework13-df" = home-manager.lib.homeManagerConfiguration (
-            config
+            config "framework13-df"
             // {
               modules = [
                 ./home

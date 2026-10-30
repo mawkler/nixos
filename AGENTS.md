@@ -40,6 +40,7 @@ Home-manager target format: `${username}@${hostname}` (e.g. `melker@thinkpad-nix
   - `~/.config/` -> `./home/dotfiles/dot-config/`
   - This allows live editing of dotfiles **without having to rebuild with Nix** for the edits to reflect
   - When adding a new dotfile, make sure to run `jj status` (which does `git add` internally) for it to get included by Nix
+- **DankMaterialShell host-specific settings** live in `hosts/<hostname>/dms.json`, symlinked to `~/.config/dms/config.d/host.json` and shallowly merged over the shared `settings.json`. DMS writes a setting back to whichever file contains it, so a host-specific key must be in every host's `dms.json` and not in `settings.json`
 
 ## Important documentation links
 
