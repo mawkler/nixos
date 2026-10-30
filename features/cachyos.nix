@@ -4,5 +4,5 @@
   # the kernel over to Chaotic-Nyx's, so that the cache is active
   imports = [ inputs.chaotic.nixosModules.default ];
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-bore;
 }
