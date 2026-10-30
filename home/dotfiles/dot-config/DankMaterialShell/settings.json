@@ -603,5 +603,6 @@
   ],
   "lockScreenShowPowerActions": false,
   "lockScreenFontFamily": "",
-  "lockPamExternallyManaged": false
+  "lockPamExternallyManaged": false,
+  "focusRingWidth": 1.5
 }

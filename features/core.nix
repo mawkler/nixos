@@ -108,10 +108,6 @@
       connect-timeout = 2;
       # Skip unreachable substituters instead of aborting the build
       fallback = true;
-
-      # Vicinae cachix
-      extra-substituters = [ "https://vicinae.cachix.org" ];
-      extra-trusted-public-keys = [ "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc=" ];
     };
     extraOptions = # toml
       ''
