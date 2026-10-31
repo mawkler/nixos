@@ -13,6 +13,15 @@
   # Because GTX 980 is too old
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
+  # This host doesn't hibernate (swap is just a zswap backing buffer). Without
+  # this, `systemctl sleep` picks `suspend-then-hibernate`, which NixOS's
+  # `nvidia-suspend.service` doesn't hook into, so the GPU fails to suspend
+  systemd.sleep.settings.Sleep = {
+    AllowHibernation = "no";
+    AllowSuspendThenHibernate = "no";
+    AllowHybridSleep = "no";
+  };
+
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "ahci"
