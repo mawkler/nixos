@@ -2,9 +2,11 @@
 {
   # Fingerprint reader (Synaptics 06cb:00a2): the REA-FS libfprint-TOD driver.
   # fprintd-tod loads it; templates live on the sensor. Rollback: enable = false
-  services.fprintd.tod = {
+  imports = [ inputs.syna-00a2.nixosModules.default ];
+  services.syna-00a2 = {
     enable = true;
-    driver = inputs.syna-00a2.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    # Keeps recent login touches as templates; see the option for the risk
+    refresh = true;
   };
 
   # Fingerprint reader (Synaptics 06cb:00a2). Lets the logged-in user open it
