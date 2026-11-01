@@ -133,7 +133,6 @@ in
     nodejs
     nps
     nurl
-    onlyoffice-desktopeditors
     overskride
     plotinus
     popsicle
@@ -156,6 +155,7 @@ in
     # stable.anytype
     stable.gimp
     stable.grayjay
+    stable.onlyoffice-desktopeditors
     stable.spacedrive # "broken: This package is broken"
     superfile
     sushi
