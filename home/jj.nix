@@ -92,7 +92,8 @@
                 git -C "$dir" init -q
                 stage() { printf '100644 %s %s\t%s\n' "$(git -C "$dir" hash-object -w "$2")" "$1" "$name"; }
                 { stage 1 "$1"; stage 2 "$2"; stage 3 "$3"; } | git -C "$dir" update-index --index-info
-                nvim "$4" -c "CodeDiff --exit-on-close merge \"$4\""
+                # $4 is outside the repo, so a formatter would ignore the project's config
+                nvim "$4" -c "let b:format_on_write = v:false" -c "CodeDiff --exit-on-close merge \"$4\""
               ''
               "_"
               "$base"
