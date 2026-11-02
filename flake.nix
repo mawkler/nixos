@@ -39,7 +39,7 @@
 
     # libfprint-TOD driver for the Synaptics 06cb:00a2 fingerprint reader
     # (thinkpad-nixos). `follows`, so it links the libfprint-tod fprintd-tod uses
-    syna-00a2.url = "git+file:///home/melker/code/REA-FS/workspace/syna-00a2?ref=main";
+    syna-00a2.url = "github:mawkler/synaptics-00a2";
     syna-00a2.inputs.nixpkgs.follows = "nixpkgs";
 
     dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";
