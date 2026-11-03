@@ -34,7 +34,7 @@
     jaunt.url = "github:mawkler/jaunt";
     jaunt.inputs.nixpkgs.follows = "nixpkgs";
 
-    lig.url = "git+file:///home/melker/code/lig";
+    lig.url = "github:KevenGoncalves/lig";
     lig.inputs.nixpkgs.follows = "nixpkgs";
 
     # libfprint-TOD driver for the Synaptics 06cb:00a2 fingerprint reader

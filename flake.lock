@@ -508,16 +508,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1792660817,
-        "narHash": "sha256-3mLjfvJLTuE8cAWjOkBnoCtAnTZXIRJzyKtrRTysypU=",
-        "rev": "5a806cc13e0f7294f7eac7e8dfa02506ef94ce5c",
-        "revCount": 58,
-        "type": "git",
-        "url": "file:///home/melker/code/lig"
+        "lastModified": 1793180523,
+        "narHash": "sha256-DuLR0+lJkc+ui6oKBCfuUaDhZobcM4D9OF7w6wYTiXU=",
+        "owner": "KevenGoncalves",
+        "repo": "lig",
+        "rev": "77b7189d3d58375c9e528274e0f57e60405c9cad",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/melker/code/lig"
+        "owner": "KevenGoncalves",
+        "repo": "lig",
+        "type": "github"
       }
     },
     "minimal-tmux": {
