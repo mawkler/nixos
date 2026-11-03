@@ -122,6 +122,7 @@
       "showOnLastDisplay": true,
       "position": 1,
       "mode": "compact",
+      "middleClickAction": "close",
       "taskbarAlign": "center",
       "widgetExpansion": "popout",
       "iconSize": 40,
@@ -506,7 +507,7 @@
     }
   },
   "frameMode": "separate",
-  "configVersion": 42,
+  "configVersion": 43,
   "lockScreenWidgetInstances": [
     {
       "id": "lock_clock",
