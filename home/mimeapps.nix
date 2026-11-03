@@ -1,3 +1,4 @@
+{ rootPath, ... }:
 {
   # Default applications
   xdg.mimeApps = {
@@ -5,7 +6,7 @@
     defaultApplications = let browser = "brave-browser.desktop"; in {
       # keep-sorted start
       "application/pdf" = "sioyek.desktop";
-      "inode/directory" = "dev.duxlabs.files.desktop";
+      "inode/directory" = "org.gnome.Nautilus.desktop";
       "text/markdown" = browser;
       "text/plain" = "neovide.desktop";
       "x-scheme-handler/beeper" = "beepertexts.desktop";
@@ -17,4 +18,21 @@
       # keep-sorted end
     };
   };
+
+  # Diff `~/.config/mimeapps.list`'s default applications against this file
+  programs.fish.functions.mimediff =
+    # fish
+    ''
+      awk -F= '
+        /^\[/ { in_section = ($0 == "[Default Applications]"); next }
+        in_section && NF { printf "      \"%s\" = \"%s\";\n", $1, $2 }
+      ' ~/.config/mimeapps.list \
+        | sort \
+        | diff -u (
+            sed -n '/keep-sorted[ ]start/,/keep-sorted[ ]end/{//!p}' \
+              ${rootPath}/home/mimeapps.nix \
+              | psub
+          ) - \
+        | delta
+    '';
 }
