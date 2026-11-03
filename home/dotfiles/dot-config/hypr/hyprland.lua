@@ -227,3 +227,12 @@ hl.config({
 --------------------------------
 
 hl.layer_rule({ match = { namespace = "^jaunt$" }, blur = true, ignore_alpha = 0.6 })
+
+-- Workspace 9 lives on the laptop panel, everything else on the external monitor
+for workspace = 1, 10 do
+    hl.workspace_rule({
+        workspace = tostring(workspace),
+        monitor   = workspace == 9 and "eDP-1" or "HDMI-A-2",
+        default   = workspace == 9 or workspace == 1, -- what each monitor shows when it turns on
+    })
+end
