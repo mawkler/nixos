@@ -43,6 +43,9 @@
     syna-00a2.url = "github:mawkler/synaptics-00a2";
     syna-00a2.inputs.nixpkgs.follows = "nixpkgs";
 
+    # nix-serve binary caches between the hosts, started on demand. No inputs
+    nix-servant.url = "github:mawkler/nix-servant";
+
     dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";
     dank-material-shell.inputs.nixpkgs.follows = "nixpkgs";
 

@@ -585,18 +585,19 @@
         "type": "github"
       }
     },
-    "nix-serve-lan": {
+    "nix-servant": {
       "locked": {
-        "lastModified": 1793738676,
-        "narHash": "sha256-ussmsGy28Qzj0llTT9xUq2PiVpllXSuzOsDGYDxtZUU=",
-        "rev": "3b88d7f72cc62401c27fd973193026f68a3137ef",
-        "revCount": 2,
-        "type": "git",
-        "url": "file:///home/melker/code/nix-serve-lan"
+        "lastModified": 1794254403,
+        "narHash": "sha256-zd00mQsmxx9UV6violPheiuz5PHsw4Cva3L2aajuYpI=",
+        "owner": "mawkler",
+        "repo": "nix-servant",
+        "rev": "1958c1477c94791ae1dd5d0903d6d07987d6f0e0",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/melker/code/nix-serve-lan"
+        "owner": "mawkler",
+        "repo": "nix-servant",
+        "type": "github"
       }
     },
     "nixpkgs": {
@@ -744,7 +745,7 @@
         "neovim": "neovim",
         "nix-index-database": "nix-index-database",
         "nix-search-tv": "nix-search-tv",
-        "nix-serve-lan": "nix-serve-lan",
+        "nix-servant": "nix-servant",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-brave": "nixpkgs-brave",
         "nixpkgs-stable": "nixpkgs-stable",
@@ -867,11 +868,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793566770,
-        "narHash": "sha256-t7ExWC6ebwFskkngpRHtWEavkT4JHhBkeumQqWNmdDE=",
+        "lastModified": 1794228959,
+        "narHash": "sha256-MT7zCdyJlxdpsW5Yc1IV9tj1g8QjphPuXDN5ATE+2WI=",
         "owner": "mawkler",
         "repo": "synaptics-00a2",
-        "rev": "0d241dbc94068a0ba32be9287079c2039ecaea2a",
+        "rev": "d91f5d3ceb2ba0dfdf516a1d156e1e364d7ebdef",
         "type": "github"
       },
       "original": {
