@@ -92,7 +92,7 @@
           ./features/core.nix
           ./features/laptop.nix
           ./packages
-          ./hosts/thinkpad-nixos/packages
+          ./hosts/thinkpad-nixos/features/fingerprint-reader-synaptics.nix
         ];
 
         beauty = [
