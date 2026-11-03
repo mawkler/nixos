@@ -226,8 +226,6 @@ hl.config({
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
 
-hl.layer_rule({ match = { namespace = "^jaunt$" }, blur = true, ignore_alpha = 0.6 })
-
 -- Workspace 9 lives on the laptop panel, everything else on the external monitor
 for workspace = 1, 10 do
     hl.workspace_rule({
