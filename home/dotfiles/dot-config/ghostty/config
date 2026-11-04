@@ -7,6 +7,9 @@ font-size = 11
 command = "bash ~/.config/ghostty/herdr-attach.sh"
 
 background-opacity = 0.85
+# Since 1.4 Ghostty tells the compositor whether to blur it, and Hyprland
+# obeys: without this it asks for no blur at all.
+background-blur = true
 window-decoration = none
 theme = onedark
 title = Ghostty
