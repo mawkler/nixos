@@ -54,6 +54,7 @@ in
         {
           # Overrides fzf's `fzf_complete` binding, which would compete with lig
           "shift-tab" = bind "complete";
+          "ctrl-o" = bind "fzf_complete";
           "alt-t" =
             bind
               # fish
