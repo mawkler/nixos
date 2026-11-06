@@ -1,0 +1,10 @@
+[preview]
+show_at_start = true
+
+[ui]
+auto_refresh_interval = 1
+# enabling mouse support seems to disable copying text with the mouse
+mouse_support = false
+
+[bookmark]
+interactive_bookmark_pane = true
