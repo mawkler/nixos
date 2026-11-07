@@ -176,6 +176,9 @@ hl.config({
         force_default_wallpaper = 0,
         disable_hyprland_logo   = true,
         focus_on_activate       = true,
+        -- The lid binds re-add eDP-1 on wake, and DMS needs >1s (the default) to
+        -- put its lock surface on it, so Hyprland briefly shows "lockscreen app died"
+        lockdead_screen_delay   = 5000,
     },
 })
 
