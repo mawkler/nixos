@@ -41,7 +41,7 @@
     glab
     herdr
     htop-vim
-    inputs.kache.packages.${pkgs.stdenv.hostPlatform.system}.default
+    kache
     jjui
     jless
     just
