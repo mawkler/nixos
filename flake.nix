@@ -2,8 +2,8 @@
   description = "NixOS system configuration";
 
   inputs = {
-    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
-    nixpkgs-stable.url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.zst";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "nixpkgs/nixos-26.05";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -55,7 +55,7 @@
     vicinae-extensions.url = "github:vicinaehq/extensions";
     vicinae-extensions.inputs.nixpkgs.follows = "nixpkgs";
 
-    kache.url = "github:kunobi-ninja/kache";
+    kache.url = "github:kunobi-ninja/kache/stable";
     kache.inputs.nixpkgs.follows = "nixpkgs";
 
     # TEMPORARY: brave-origin was re-added to nixpkgs (f9b44bb) on 2026-11-07

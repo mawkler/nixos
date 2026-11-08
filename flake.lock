@@ -452,15 +452,16 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1794169887,
-        "narHash": "sha256-CxD1sIqfQqr9hhL5fG5qfnvAFyGdS85aD5C8J07gMew=",
+        "lastModified": 1793620549,
+        "narHash": "sha256-1O4JrN2zzKS7QgBT2fnih2W+zvEqBT5dvEuxCuyU3Kg=",
         "owner": "kunobi-ninja",
         "repo": "kache",
-        "rev": "57a90855a0149d00da0582ce4386c947eaa354ce",
+        "rev": "e465eff90d87669d7b0a9ee1010f1ee1e44090ed",
         "type": "github"
       },
       "original": {
         "owner": "kunobi-ninja",
+        "ref": "stable",
         "repo": "kache",
         "type": "github"
       }
@@ -639,8 +640,9 @@
         "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.13627.c56a87d8e41c/nixexprs.tar.zst"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://channels.nixos.org/nixos-26.05/nixexprs.tar.zst"
+        "id": "nixpkgs",
+        "ref": "nixos-26.05",
+        "type": "indirect"
       }
     },
     "nixpkgs_2": {
@@ -681,8 +683,9 @@
         "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1113206.f4a03c008967/nixexprs.tar.zst"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
+        "id": "nixpkgs",
+        "ref": "nixos-unstable",
+        "type": "indirect"
       }
     },
     "nur": {
