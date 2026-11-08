@@ -685,28 +685,6 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
       }
     },
-    "nox": {
-      "inputs": {
-        "flake-utils": "flake-utils_2",
-        "gitignore": "gitignore",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1788296288,
-        "narHash": "sha256-9XcYDlHHTzFEXQZJwwwIMG18cgRx1IQdzfKet0GY1A8=",
-        "owner": "madsbv",
-        "repo": "nix-options-search",
-        "rev": "cd409281767d5b2f9274f45f8c96a361f3acc025",
-        "type": "github"
-      },
-      "original": {
-        "owner": "madsbv",
-        "repo": "nix-options-search",
-        "type": "github"
-      }
-    },
     "nur": {
       "inputs": {
         "flake-parts": [

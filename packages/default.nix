@@ -65,7 +65,7 @@ in
   # All other packages
   environment.systemPackages = with pkgs; [
     # keep-sorted start
-    (flake inputs.nox)
+    # (flake inputs.nox)
     antigen
     bacon
     bat

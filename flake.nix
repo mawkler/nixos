@@ -25,8 +25,9 @@
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
     nix-search-tv.inputs.nixpkgs.follows = "nixpkgs";
 
-    nox.url = "github:madsbv/nix-options-search";
-    nox.inputs.nixpkgs.follows = "nixpkgs";
+    # 2026-11-08: build failure
+    # nox.url = "github:madsbv/nix-options-search";
+    # nox.inputs.nixpkgs.follows = "nixpkgs";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
