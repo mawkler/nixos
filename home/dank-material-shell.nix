@@ -11,6 +11,18 @@
     plugins = {
       dankKDEConnect.enable = true;
       systemMonitor.enable = true;
+      # Bar icon showing the current power profile; click to cycle. Not in the
+      # plugin registry, so pinned by rev + hash and only updated manually.
+      # Reviewed at this rev on 2026-11-08: pure QML, no processes/files/network
+      powerProfileIcons = {
+        enable = true;
+        src = pkgs.fetchFromGitHub {
+          owner = "georgestafilidis";
+          repo = "dankPowerProfileWidget";
+          rev = "e847aa56954e988decb4a411c22370784a4a5bb4";
+          hash = "sha256-hlpf2WlcOo0JTgA6Rw4z4SItg0ab5Hd0G9IBOwC5k8Q=";
+        };
+      };
     };
   };
 
