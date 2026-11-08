@@ -7,6 +7,7 @@
       # keep-sorted start
       "application/pdf" = "sioyek.desktop";
       "inode/directory" = "org.gnome.Nautilus.desktop";
+      "text/calendar" = browser;
       "text/markdown" = browser;
       "text/plain" = "neovide.desktop";
       "x-scheme-handler/beeper" = "beepertexts.desktop";
