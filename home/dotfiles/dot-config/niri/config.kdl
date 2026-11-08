@@ -252,7 +252,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 spawn-at-startup "maestral_qt"
-spawn-at-startup "brave"
+spawn-at-startup "brave-origin"
 spawn-at-startup "neovide"
 spawn-at-startup "ghostty"
 

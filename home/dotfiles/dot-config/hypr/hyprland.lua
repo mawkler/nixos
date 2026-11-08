@@ -56,7 +56,7 @@ hl.monitor({
 -------------------
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("brave")
+    hl.exec_cmd("brave-origin")
     hl.exec_cmd("neovide")
     hl.exec_cmd("ghostty")
     hl.exec_cmd("beeper")
@@ -71,7 +71,7 @@ local function open_on_workspace(class, ws)
     hl.window_rule({ match = { class = class }, workspace = ws })
 end
 
-open_on_workspace("brave-browser", "1")
+open_on_workspace("brave-origin", "1")
 open_on_workspace("neovide", "2")
 open_on_workspace("com.mitchellh.ghostty", "3")
 open_on_workspace("Spotify", "4")

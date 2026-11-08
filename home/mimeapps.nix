@@ -3,7 +3,7 @@
   # Default applications
   xdg.mimeApps = {
     enable = true;
-    defaultApplications = let browser = "brave-browser.desktop"; in {
+    defaultApplications = let browser = "brave-origin.desktop"; in {
       # keep-sorted start
       "application/pdf" = "sioyek.desktop";
       "inode/directory" = "org.gnome.Nautilus.desktop";

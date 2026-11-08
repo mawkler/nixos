@@ -6,7 +6,7 @@ close = "Q"
 [keys.apps]
 E = { cmd = "dfiles", app_id = "dev.duxlabs.files" }
 T = "ghostty"
-W = "brave"
+W = "brave-origin"
 B = "beeper"
 N = "neovide"
 S = "spotify"
