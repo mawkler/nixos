@@ -17,6 +17,12 @@
       package = pkgs.nix-serve-ng;
       secretKeyFile = "/var/secrets/nix-serve/secret.key";
     };
+
+    # So hosts can reach each other via `<hostname>.local`
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+    };
   };
 
   nix.settings.trusted-public-keys = [
