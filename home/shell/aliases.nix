@@ -128,4 +128,6 @@ in
   o = "opencode";
   oc = "opencode --continue";
   ol = "opencode session list";
+  clc = "claude --continue";
+  clr = "claude --resume";
 }
