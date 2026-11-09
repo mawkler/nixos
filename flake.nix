@@ -61,11 +61,6 @@
     kache.url = "github:kunobi-ninja/kache/stable";
     kache.inputs.nixpkgs.follows = "nixpkgs";
 
-    # TEMPORARY: brave-origin was re-added to nixpkgs (f9b44bb) on 2026-11-07
-    # but hasn't reached nixos-unstable yet. Remove this input, and its use in
-    # `home/other.nix`, once it has
-    nixpkgs-brave.url = "github:NixOS/nixpkgs/f9b44bb14af83919dd3e79a01a97330d550ab0c3";
-
     # LLM agent skills
     agent-skills.url = "github:Kyure-A/agent-skills-nix";
     skills.url = "github:mawkler/agent-skills";
