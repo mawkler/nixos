@@ -10,7 +10,7 @@ If you're going to use the command in the first column, please use the preferred
 
 ## Ways of working
 
-Each time that you're about to make changes to the file system and the repository has working copy changes (i.e. `jj status` outputs some modified files) please first create a new change by running `jj new`.
+Each time that you're about to make changes to the file system and the repository has working copy changes (i.e. `jj status` outputs some modified files) please first create a new change by running `jj new`. When you're done with the feature, make sure that the change has a short and very concise description using `jj describe --message <message>`.
 
 ## General
 
