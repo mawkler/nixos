@@ -99,7 +99,7 @@ in
   # Cargo
   cb = "cargo build";
   cr = "cargo run";
-  ch = "cargo check";
+  cc = "cargo check";
   ct = "cargo test";
   cl = "cargo clippy";
 
