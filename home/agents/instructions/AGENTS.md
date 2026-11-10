@@ -16,3 +16,7 @@ Each time that you're about to make changes to the file system and the repositor
 ## General
 
 Don't remove or edit comments unless they're factually incorrect, or you have some other good reason to do so.
+
+## Responding
+
+When referring to a file, use its full file path from the project root.
