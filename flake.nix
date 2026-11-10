@@ -32,7 +32,7 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
-    jaunt.url = "git+file:///home/melker/jaunt";
+    jaunt.url = "github:mawkler/jaunt";
     jaunt.inputs.nixpkgs.follows = "nixpkgs";
 
     lig.url = "github:KevenGoncalves/lig";
@@ -128,7 +128,9 @@
         let
           config = hostname: {
             pkgs = nixpkgs.legacyPackages.${system};
-            extraSpecialArgs = specialArgs // { inherit hostname; };
+            extraSpecialArgs = specialArgs // {
+              inherit hostname;
+            };
           };
         in
         {
