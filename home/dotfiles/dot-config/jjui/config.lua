@@ -17,20 +17,22 @@ function setup(config)
 
     -- `closest_bookmark` is a revset alias defined in home/jj.nix
     local out, err = jj(
-      "log", "-r", "closest_bookmark(" .. id .. ")", "--no-graph", "--ignore-working-copy", "--color", "never",
-      "-T", 'local_bookmarks.map(|b| b.name() ++ "\n").join("")'
+      "log", "-r", "closest_bookmark(" .. id .. ")", "--no-graph", "--ignore-working-copy", "--color",
+      "never", "-T", 'local_bookmarks.map(|b| b.name() ++ "\n").join("")'
     )
     if err then
       flash({ text = err, error = true })
       return
     end
 
-    local bookmarks = split_lines(out)
-    local bookmark = bookmarks[1]
+    local bookmarks = split_lines(out or "")
     if #bookmarks == 0 then
       flash("No bookmarks on " .. id .. " or its ancestors")
       return
-    elseif #bookmarks > 1 then
+    end
+
+    local bookmark
+    if #bookmarks > 1 then
       bookmark = choose({ options = bookmarks, title = "Copy bookmark" })
       if not bookmark then
         return
