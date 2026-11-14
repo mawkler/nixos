@@ -65,4 +65,23 @@ function setup(config)
     jjui.builtin.revisions.details.cancel()
     jjui.builtin.revisions.refresh()
   end, { key = "s", scope = "revisions.details", desc = "split (no editor)" })
+
+  -- In the file details view, abandon only the checked files (or the file under
+  -- the cursor). Restoring the files from the parent is the same as abandoning
+  -- their changes
+  config.bind({
+    key = "a",
+    action = "revisions.details.restore",
+    scope = "revisions.details",
+    desc = "abandon files",
+  })
+
+  -- The file details view only leaks keys to the `ui` scope, not `revisions`,
+  -- so the default `u` (undo) needs binding there too
+  config.bind({
+    key = "u",
+    action = "ui.open_undo",
+    scope = "revisions.details",
+    desc = "undo",
+  })
 end
