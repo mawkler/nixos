@@ -136,6 +136,7 @@
       "smartAutoHide": false,
       "useOverlayLayer": false,
       "editOnRightClick": false,
+      "showEditWidgetsInContextMenu": true,
       "showOnFullscreen": false,
       "openOnOverview": false,
       "groupByApp": false,
@@ -543,7 +544,7 @@
     }
   },
   "frameMode": "separate",
-  "configVersion": 43,
+  "configVersion": 44,
   "lockScreenWidgetInstances": [
     {
       "id": "lock_clock",
