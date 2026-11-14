@@ -38,11 +38,6 @@
     lig.url = "github:KevenGoncalves/lig";
     lig.inputs.nixpkgs.follows = "nixpkgs";
 
-    # libfprint-TOD driver for the Synaptics 06cb:00a2 fingerprint reader
-    # (thinkpad-nixos). `follows`, so it links the libfprint-tod fprintd-tod uses
-    syna-00a2.url = "github:mawkler/synaptics-00a2";
-    syna-00a2.inputs.nixpkgs.follows = "nixpkgs";
-
     # nix-serve binary caches between the hosts, started on demand. No inputs
     nix-servant.url = "github:mawkler/nix-servant";
 
@@ -96,7 +91,6 @@
           ./features/core.nix
           ./features/laptop.nix
           ./packages
-          ./hosts/thinkpad-nixos/features/fingerprint-reader-synaptics.nix
         ];
 
         beauty = [

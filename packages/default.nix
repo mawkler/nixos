@@ -57,9 +57,6 @@ in
       enable = true;
       gui.enable = true;
     };
-
-    # Fingerprint scanner
-    fprintd.enable = true;
   };
 
   # All other packages

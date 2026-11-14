@@ -780,7 +780,6 @@
         "rust-skills": "rust-skills",
         "skills": "skills",
         "stylix": "stylix",
-        "syna-00a2": "syna-00a2",
         "vicinae-extensions": "vicinae-extensions",
         "zen-browser": "zen-browser"
       }
@@ -885,26 +884,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "stylix",
-        "type": "github"
-      }
-    },
-    "syna-00a2": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1794229321,
-        "narHash": "sha256-J4tVgf1FNylp0+szxFkxiIB64cINBaMOw68MAfxY1qQ=",
-        "owner": "mawkler",
-        "repo": "synaptics-00a2",
-        "rev": "ad6a67d61cfea7ce0dbbf2d7bd1e969f88089877",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mawkler",
-        "repo": "synaptics-00a2",
         "type": "github"
       }
     },
