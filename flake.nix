@@ -38,7 +38,6 @@
     lig.url = "github:KevenGoncalves/lig";
     lig.inputs.nixpkgs.follows = "nixpkgs";
 
-    # nix-serve binary caches between the hosts, started on demand. No inputs
     nix-servant.url = "github:mawkler/nix-servant";
 
     dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";
