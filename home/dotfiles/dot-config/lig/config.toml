@@ -14,3 +14,5 @@ dismiss = []
 
 [behavior]
 complete_commands = true
+# Leaves Ctrl+R to atuin
+history = false
