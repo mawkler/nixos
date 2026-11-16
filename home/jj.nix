@@ -119,10 +119,15 @@
         };
         aliases = {
           pull = exec /* sh */ ''
-            closest="$(jj log -r 'closest_bookmark(@)' -n 1 -T 'bookmarks' --no-graph | cut -d ' ' -f 1)"
-            closest="''${closest%\*}"
+            stack="$(jj log -r 'trunk()..@ & bookmarks()' --no-graph -T 'local_bookmarks.map(|b| b.name() ++ "\n")')"
             jj git fetch
-            jj log -n 1 -r "''${closest}" 2>&1 > /dev/null && jj rebase -d "''${closest}" || jj rebase -d 'trunk()'
+            # Rebase onto each base `@` is no longer on, from the top of the stack down to trunk
+            # shortcut: a squash-merged or force-pushed bookmark's old commits stay if they
+            # conflict, abandon them via `at_operation()` if doing so by hand gets old
+            for base in $stack 'trunk()'; do
+              moved="$(jj log -r "present($base) ~ ::@" -T '"n"' --no-graph)"
+              [[ -n "$moved" ]] && jj rebase -d "$base" --skip-emptied
+            done
             jj log -r 'stack()'
           '';
 
