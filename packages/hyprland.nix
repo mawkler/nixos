@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   programs.hyprland = {
     enable = true;
@@ -10,6 +10,9 @@
     dux-greeter = {
       enable = true;
       compositor.name = "hyprland";
+      # Copy DMS settings, session (wallpaper) and colors into the greeter on
+      # each greetd start, i.e. the NixOS equivalent of `dms-greeter sync`
+      configHome = "/home/${username}";
     };
     defaultSession = "hyprland-uwsm";
   };
