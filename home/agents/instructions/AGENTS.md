@@ -21,4 +21,6 @@ Don't remove or edit comments unless they're factually incorrect, or you have so
 
 ## Responding
 
+When responding, try to keep the response as short, concise and to the point as possible while. I can always ask follow up questions if anything is too vague.
+
 When referring to a file, use its full file path from the project root.
