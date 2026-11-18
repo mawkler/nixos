@@ -13,6 +13,8 @@ If you're going to use the command in the first column, please use the preferred
 
 Each time that you're about to make changes to the file system and the repository has working copy changes (i.e. `jj status` outputs some modified files) please first create a new change by running `jj new`. When you're done with the feature, make sure that the change has a short and very concise description using `jj describe --message <message>`.
 
+If you're asked to create a GitHub issue or pull request, use something like `gh {issue,pr} create --web --title "<title>" --body "<body>"` so that it's not actually submitted and I can review it in my web browser.
+
 ## General
 
 Don't remove or edit comments unless they're factually incorrect, or you have some other good reason to do so.
