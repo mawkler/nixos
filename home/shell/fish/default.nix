@@ -43,6 +43,25 @@ in
       };
       functions = {
         open = "xdg-open &>/dev/null $argv & disown";
+        # Re-print the NixOS and home-manager diffs against the closures passed
+        # as arguments, so the system's diff doesn't get buried by home-manager's
+        nh-recap = {
+          description = "Diff the given system and home-manager closures against the current ones";
+          body = # fish
+            ''
+              set -l titles NixOS home-manager
+              set -l profiles /run/current-system $HOME/.local/state/nix/profiles/home-manager
+              for i in 1 2
+                  set -l new (readlink -f $profiles[$i])
+                  test -z "$argv[$i]" -o "$argv[$i]" = "$new"; and continue
+                  echo
+                  set_color --bold magenta
+                  echo "━━━ $titles[$i] ━━━"
+                  set_color normal
+                  ${pkgs.dix}/bin/dix diff $argv[$i] $new
+              end
+            '';
+        };
       };
       binds =
         let

@@ -11,7 +11,8 @@ in
   n = "nh";
   nos = nhOs "switch";
   noS = "sudo true && nh os switch ${updateNeovim}";
-  nou = "sudo true && time begin nh os switch --update && ${hms} || ${notifyDone}; end";
+  # Fish only. `nh-recap` (defined in ./fish) re-prints both diffs at the end
+  nou = "sudo true && set nh_before (readlink -f /run/current-system ~/.local/state/nix/profiles/home-manager) && time begin nh os switch --update && ${hms} || ${notifyDone}; end; nh-recap $nh_before";
   not = nhOs "test";
   nob = "nh os build || ${notifyDone}";
   hms = "${hms} || ${notifyDone}";
