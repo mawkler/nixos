@@ -580,4 +580,4 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-include "dank-material-shell.kdl"
+include "dux.kdl"

@@ -3,7 +3,7 @@
 -------------------
 
 require("keybinds")
-require("dank-material-shell")
+require("dux")
 
 --------------------
 ----  MONITORS  ----
