@@ -52,7 +52,7 @@
     vicinae-extensions.url = "github:vicinaehq/extensions";
     vicinae-extensions.inputs.nixpkgs.follows = "nixpkgs";
 
-    kache.url = "github:kunobi-ninja/kache/stable";
+    kache.url = "github:kunobi-ninja/kache";
     kache.inputs.nixpkgs.follows = "nixpkgs";
 
     # LLM agent skills
