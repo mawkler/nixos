@@ -8,8 +8,9 @@
 }:
 {
   imports = [
-    inputs.dank-material-shell.homeModules.dank-material-shell
+    inputs.dux.homeModules.default
     inputs.dms-plugin-registry.homeModules.default
+    ./cast.nix
   ];
   programs.dank-material-shell = {
     enable = true;

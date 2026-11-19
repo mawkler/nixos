@@ -40,8 +40,8 @@
 
     nix-servant.url = "github:mawkler/nix-servant";
 
-    dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";
-    dank-material-shell.inputs.nixpkgs.follows = "nixpkgs";
+    dux.url = "github:duxlabs-dev/dux-shell";
+    dux.inputs.nixpkgs.follows = "nixpkgs";
 
     dms-plugin-registry.url = "github:AvengeMedia/dms-plugin-registry";
     dms-plugin-registry.inputs.nixpkgs.follows = "nixpkgs";
@@ -139,7 +139,7 @@
             // {
               modules = [
                 ./home
-                ./home/dank-material-shell.nix
+                ./home/dux
                 ./home/vicinae.nix
               ];
             }
@@ -150,7 +150,7 @@
             // {
               modules = [
                 ./home
-                ./home/dank-material-shell.nix
+                ./home/dux
                 ./home/vicinae.nix
               ];
             }

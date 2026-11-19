@@ -20,6 +20,8 @@
   # Networking
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
+  # DMS Cast plugin: Chromecasts fetch played files from this port
+  networking.firewall.allowedTCPPorts = [ 47830 ];
 
   # Locale
   time.timeZone = "Europe/Stockholm";
