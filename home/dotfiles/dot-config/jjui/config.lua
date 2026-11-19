@@ -84,4 +84,19 @@ function setup(config)
     scope = "revisions.details",
     desc = "undo",
   })
+
+  -- Swap the inline describe defaults so that enter accepts and alt+enter
+  -- inserts a new line
+  config.bind({
+    key = "enter",
+    action = "revisions.inline_describe.accept",
+    scope = "revisions.inline_describe",
+    desc = "accept",
+  })
+  config.bind({
+    key = "alt+enter",
+    action = "revisions.inline_describe.new_line",
+    scope = "revisions.inline_describe",
+    desc = "new line",
+  })
 end
