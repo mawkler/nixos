@@ -5,6 +5,8 @@ description: Personal preferences for writing Rust. Use when writing, editing, r
 
 # Rust preferences
 
+## Field init shorthand
+
 When possible, prefer structs to be one-lined using field init shorthand. For example, prefer this:
 
 ```rust
@@ -14,7 +16,7 @@ let z = Coordinate::new(30);
 let p = Point { x, y, z };
 ```
 
-over this:
+...over this:
 
 ```rust
 let p = Point {
@@ -25,3 +27,17 @@ let p = Point {
 ```
 
 However, if `rustfmt` would have multi-lined the struct anyway because it's too wide, prefer the second version.
+
+## Prefer type annotation over turbofish syntax
+
+Prefer type annotation over turbofish syntax where it makes sense. For example, prefer this:
+
+```rust
+let foo: Vec<_> = iter.collect::<Vec<_>>();
+```
+
+...over this:
+
+```rust
+let foo = iter.collect::<Vec<_>>();
+```
