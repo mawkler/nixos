@@ -1,7 +1,7 @@
 [build]
 rustdoc = "/home/melker/.local/lib/kache/shims/rustdoc"
 rustc-wrapper = "kache"
-jobs = 20 # number of parallel jobs
+jobs = 8 # number of parallel jobs (linking rust_tools at 20 exhausted 30 GiB RAM)
 
 [env]
 HOST_CC = "kache cc"

@@ -39,12 +39,13 @@
     gimp
     github-cli
     glab
+    go
     herdr
     htop-vim
-    kache
     jjui
     jless
     just
+    kache
     keep-sorted
     libreoffice
     librepods
