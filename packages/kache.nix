@@ -1,9 +1,21 @@
-{ inputs, ... }:
+{ pkgs, lib, ... }:
+let
+  kache = lib.getExe pkgs.kache;
+in
 {
-  imports = [ inputs.kache.nixosModules.default ];
+  environment.systemPackages = [ pkgs.kache ];
+  environment.variables.RUSTC_WRAPPER = kache;
 
-  services.kache = {
-    enable = true;
-    daemon.enable = true;
+  systemd.user.services.kache = {
+    description = "kache build cache daemon";
+    after = [ "default.target" ];
+    wantedBy = [ "default.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${kache} daemon run";
+      Restart = "on-failure";
+      RestartSec = "5s";
+    };
+    environment.KACHE_LOG = "kache=info";
   };
 }

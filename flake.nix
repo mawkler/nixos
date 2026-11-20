@@ -52,9 +52,6 @@
     vicinae-extensions.url = "github:vicinaehq/extensions";
     vicinae-extensions.inputs.nixpkgs.follows = "nixpkgs";
 
-    kache.url = "github:kunobi-ninja/kache";
-    kache.inputs.nixpkgs.follows = "nixpkgs";
-
     # LLM agent skills
     agent-skills.url = "github:Kyure-A/agent-skills-nix";
     skills.url = "github:mawkler/agent-skills";
