@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, username, inputs, ... }:
 {
   programs.hyprland = {
     enable = true;
@@ -25,5 +25,7 @@
     hyprshot
     playerctl
     hyprshutdown
+    # Loaded from `/run/current-system/sw/lib` in `hyprland.lua`
+    (callPackage "${inputs.hyprexpo}/default.nix" { })
   ];
 }

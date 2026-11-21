@@ -40,6 +40,10 @@
 
     nix-servant.url = "github:mawkler/nix-servant";
 
+    # Not used as a flake, so that it's built against nixpkgs' Hyprland
+    hyprexpo.url = "github:sandwichfarm/hyprexpo";
+    hyprexpo.flake = false;
+
     dux.url = "github:duxlabs-dev/dux-shell";
     dux.inputs.nixpkgs.follows = "nixpkgs";
 

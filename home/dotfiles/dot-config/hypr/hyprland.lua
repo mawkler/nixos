@@ -4,6 +4,7 @@
 
 require("keybinds")
 require("dux")
+require("hyprexpo")
 
 --------------------
 ----  MONITORS  ----
