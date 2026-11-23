@@ -1,6 +1,6 @@
 [ui]
 theme = "terminal"
-border = "square"
+border = "none"
 density = "compact"
 min_width = 80
 height = "50%"
@@ -16,3 +16,8 @@ dismiss = []
 complete_commands = true
 # Leaves Ctrl+R to atuin
 history = false
+
+[colors]
+# The terminal theme has no background, so use the palette's black
+bg = "0"
+selected_description_fg = "0"
