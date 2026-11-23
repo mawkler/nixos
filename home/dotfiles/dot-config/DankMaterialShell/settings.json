@@ -561,7 +561,7 @@
     }
   },
   "frameMode": "separate",
-  "configVersion": 46,
+  "configVersion": 47,
   "lockScreenWidgetInstances": [
     {
       "id": "lock_clock",
@@ -692,5 +692,6 @@
       "enabled": false
     }
   ],
-  "motionDuration": 0
+  "motionDuration": 0,
+  "controlCenterColumns": 8
 }
