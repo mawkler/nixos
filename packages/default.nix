@@ -12,7 +12,7 @@ in
     # keep-sorted start
     ./hyprland.nix
     ./interception-tools.nix
-    ./jaunt.nix
+    ./jaunte.nix
     ./kache.nix
     ./opencode.nix
     ./stylix.nix

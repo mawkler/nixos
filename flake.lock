@@ -249,7 +249,7 @@
     "fenix": {
       "inputs": {
         "nixpkgs": [
-          "jaunt",
+          "jaunte",
           "naersk",
           "nixpkgs"
         ],
@@ -483,7 +483,7 @@
         "type": "github"
       }
     },
-    "jaunt": {
+    "jaunte": {
       "inputs": {
         "naersk": "naersk",
         "nixpkgs": [
@@ -491,16 +491,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1795120502,
-        "narHash": "sha256-DEFpdUbbd/MqPnrbA8mqwapR1kCWHPXy1OrWo0mcvNM=",
+        "lastModified": 1795122380,
+        "narHash": "sha256-HhOxF7OunKrA8/CAi3XpgLw8xS2YfmuZ0Ij04dC9aJI=",
         "owner": "mawkler",
-        "repo": "jaunt",
-        "rev": "3c87587b6650fce94a95143eb0964f54cb903d51",
+        "repo": "jaunte",
+        "rev": "3963d711d97533b742b7afc09c62b0de4f74427e",
         "type": "github"
       },
       "original": {
         "owner": "mawkler",
-        "repo": "jaunt",
+        "repo": "jaunte",
         "type": "github"
       }
     },
@@ -548,7 +548,7 @@
       "inputs": {
         "fenix": "fenix",
         "nixpkgs": [
-          "jaunt",
+          "jaunte",
           "nixpkgs"
         ]
       },
@@ -761,7 +761,7 @@
         "dux-files": "dux-files",
         "home-manager": "home-manager_2",
         "hyprexpo": "hyprexpo",
-        "jaunt": "jaunt",
+        "jaunte": "jaunte",
         "lig": "lig",
         "minimal-tmux": "minimal-tmux",
         "neovim": "neovim",
