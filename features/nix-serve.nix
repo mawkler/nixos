@@ -28,5 +28,6 @@
   nix.settings.trusted-public-keys = [
     "cache.thinkpad-nixos.local-1:GOD9LtryYSo83u53HDM7YxYRmsnrltvSFsOUlaqsWjo="
     "cache.beauty.local-1:FRLDLnUQ+Shu5AzUenJ93K1NryLDFKvwHUOHmUEbtD8="
+    "cache.framework13-df.local-1:IHev0+Lo+KJUQNAiJsXXGVjVD5t5MQNAeZLdyi1aDgQ="
   ];
 }

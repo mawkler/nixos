@@ -131,6 +131,7 @@
             pkgs = nixpkgs.legacyPackages.${system};
             extraSpecialArgs = specialArgs // {
               inherit hostname;
+              hostnames = builtins.attrNames hosts;
             };
           };
         in

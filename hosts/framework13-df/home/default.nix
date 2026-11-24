@@ -8,6 +8,7 @@
 }:
 {
   imports = [
+    ./nix-servant.nix
     ./sccache.nix
   ];
 
