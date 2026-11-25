@@ -112,7 +112,7 @@
         };
         revset-aliases = {
           "closest_pushable(to)" = # nix
-            ''heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'';
+            ''heads(::to & mutable() & ~description(exact:"") & ~description('TEMPORARY*') & (~empty() | merges()))'';
           "closest_bookmark(to)" = # nix
             "heads(::to & bookmarks())";
 
