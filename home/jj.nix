@@ -106,6 +106,10 @@
         revsets = {
           bookmark-advance-to = "closest_pushable(@)";
         };
+        git = {
+          # `jj git push` refuses these and their descendants
+          private-commits = /* nix */ "description('TEMPORARY*')";
+        };
         revset-aliases = {
           "closest_pushable(to)" = # nix
             ''heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'';
