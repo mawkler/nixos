@@ -43,6 +43,21 @@ function setup(config)
     flash("Copied: " .. bookmark)
   end, { desc = "copy closest bookmark", key = "y", scope = "bookmark_pane" })
 
+  -- View the diff in diffnav (file tree + fuzzy file search) instead of the
+  -- built-in diff view.
+  -- https://github.com/idursun/jjui/issues/366
+  config.action("diffnav", function()
+    local id = context.change_id()
+    if not id then return end
+
+    if os.execute("command -v diffnav >/dev/null 2>&1") ~= 0 then
+      flash({ text = "diffnav is not installed", error = true })
+      return
+    end
+
+    exec_shell("jj diff -r " .. id .. " --git | diffnav")
+  end, { desc = "diff (diffnav)", key = "d", scope = "revisions" })
+
   -- In the file details view, split the checked files (or the file under the
   -- cursor) out of the revision without opening the description editor
   -- (`true` as editor keeps the pre-filled description).

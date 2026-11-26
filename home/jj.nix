@@ -178,5 +178,6 @@
   home.packages = with pkgs; [
     lazyjj
     jjui
+    diffnav
   ];
 }
