@@ -15,3 +15,5 @@ bind -M insert alt-backspace backward-kill-path-component
 bind -M insert alt-shift-p fish_clipboard_paste
 bind -M insert alt-L 'commandline "ls -a"' execute
 bind -M insert alt-z zi repaint
+bind -M insert ctrl-j ''
+bind -M default ctrl-j ''
