@@ -1,0 +1,6 @@
+# Closest match to the delta config in ~/.gitconfig (syntax-theme = TwoDark)
+ui:
+  theme: one_half_dark
+  # Render diffs with the `[delta]` config in ~/.gitconfig. Unreleased, newer than v0.13.1:
+  # https://github.com/dlvhdr/diffnav/pull/160
+  useUserDeltaTheme: true
