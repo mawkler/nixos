@@ -8,3 +8,6 @@ mouse_support = false
 
 [bookmark]
 interactive_bookmark_pane = true
+
+[suggest.exec]
+mode = "fuzzy"
